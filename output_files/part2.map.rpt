@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Sun Nov 17 15:37:14 2019
+Sun Nov 17 18:31:30 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,21 +15,25 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |part2|control:c0|current_state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
- 14. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 15. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 16. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 17. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 20. altsyncram Parameter Settings by Entity Instance
- 21. altpll Parameter Settings by Entity Instance
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 10. State Machine - |part2|control:c0|next_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
+ 16. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 17. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. altpll Parameter Settings by Entity Instance
+ 24. Port Connectivity Checks: "control:c0"
+ 25. Port Connectivity Checks: "vga_adapter:VGA"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -55,13 +59,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 17 15:37:14 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 17 18:31:30 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 96                                          ;
+; Total registers                 ; 98                                          ;
 ; Total pins                      ; 57                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600                                      ;
@@ -216,16 +220,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 99           ;
+; Estimate of Logic utilization (ALMs needed) ; 95           ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 178          ;
+; Combinational ALUT usage for logic          ; 174          ;
 ;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 16           ;
-;     -- 5 input functions                    ; 30           ;
+;     -- 6 input functions                    ; 12           ;
+;     -- 5 input functions                    ; 14           ;
 ;     -- 4 input functions                    ; 12           ;
-;     -- <=3 input functions                  ; 120          ;
+;     -- <=3 input functions                  ; 136          ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 96           ;
+; Dedicated logic registers                   ; 98           ;
 ;                                             ;              ;
 ; I/O pins                                    ; 57           ;
 ; Total MLAB memory bits                      ; 0            ;
@@ -237,9 +241,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 80           ;
-; Total fan-out                               ; 1239         ;
-; Average fan-out                             ; 3.11         ;
+; Maximum fan-out                             ; 62           ;
+; Total fan-out                               ; 1151         ;
+; Average fan-out                             ; 2.91         ;
 +---------------------------------------------+--------------+
 
 
@@ -248,13 +252,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |part2                                                  ; 178 (19)            ; 96 (4)                    ; 57600             ; 0          ; 57   ; 0            ; |part2                                                                                                ; part2                  ; work         ;
+; |part2                                                  ; 174 (19)            ; 98 (4)                    ; 57600             ; 0          ; 57   ; 0            ; |part2                                                                                                ; part2                  ; work         ;
 ;    |PixelCounter:counter|                               ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|PixelCounter:counter                                                                           ; PixelCounter           ; work         ;
-;    |TimeCounter:tc|                                     ; 41 (41)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
-;    |XCounter:xc|                                        ; 18 (18)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
-;    |YCounter:yc|                                        ; 16 (16)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YCounter:yc                                                                                    ; YCounter               ; work         ;
-;    |control:c0|                                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0                                                                                     ; control                ; work         ;
-;    |datapath:d0|                                        ; 1 (1)               ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapath:d0                                                                                    ; datapath               ; work         ;
+;    |TimeCounter:tc|                                     ; 48 (48)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
+;    |XCounter:xc|                                        ; 11 (11)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
+;    |YCounter:yc|                                        ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YCounter:yc                                                                                    ; YCounter               ; work         ;
+;    |control:c0|                                         ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0                                                                                     ; control                ; work         ;
+;    |datapath:d0|                                        ; 3 (3)               ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapath:d0                                                                                    ; datapath               ; work         ;
 ;    |hex_decoder:hexzero|                                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|hex_decoder:hexzero                                                                            ; hex_decoder            ; work         ;
 ;    |vga_adapter:VGA|                                    ; 71 (2)              ; 30 (0)                    ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 9 (0)               ; 4 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
@@ -292,15 +296,44 @@ Encoding Type:  One-Hot
 +-----------------------+-------------------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; control:c0|current_state~3            ; Lost fanout        ;
-; control:c0|current_state~4            ; Lost fanout        ;
-; Total Number of Removed Registers = 2 ;                    ;
-+---------------------------------------+--------------------+
+Encoding Type:  One-Hot
++----------------------------------------------+
+; State Machine - |part2|control:c0|next_state ;
++--------------------+-------------------------+
+; Name               ; next_state.S_DRAW       ;
++--------------------+-------------------------+
+; next_state.S_ERASE ; 0                       ;
+; next_state.S_DRAW  ; 1                       ;
++--------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; datapath:d0|out_c[2]                               ; TimeCounter:tc|drawEnable ; yes                    ;
+; datapath:d0|out_c[1]                               ; TimeCounter:tc|drawEnable ; yes                    ;
+; datapath:d0|out_c[0]                               ; TimeCounter:tc|drawEnable ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; control:c0|ld_c                       ; Stuck at VCC due to stuck port data_in ;
+; control:c0|ld_y                       ; Stuck at VCC due to stuck port data_in ;
+; control:c0|ld_x                       ; Stuck at VCC due to stuck port data_in ;
+; control:c0|current_state~5            ; Lost fanout                            ;
+; control:c0|current_state~6            ; Lost fanout                            ;
+; control:c0|next_state~3               ; Lost fanout                            ;
+; control:c0|next_state~4               ; Lost fanout                            ;
+; Total Number of Removed Registers = 7 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -308,12 +341,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 96    ;
-; Number of registers using Synchronous Clear  ; 70    ;
+; Total registers                              ; 98    ;
+; Number of registers using Synchronous Clear  ; 61    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -323,13 +356,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[4]                                                                               ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[9]                                             ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |part2|datapath:d0|out_y[1]                                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|PixelCounter:counter|display[2]                                                                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[7]                                                                           ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YCounter:yc|yDisplay[6]                                                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[0] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[8]                                             ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[23]                                                                              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[1] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 
 
@@ -867,30 +896,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+-------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control:c0"                                                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; plot ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "vga_adapter:VGA" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; plot ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 96                          ;
+; arriav_ff             ; 98                          ;
 ;     CLR SCLR          ; 10                          ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 26                          ;
-;     SCLR              ; 24                          ;
-;     plain             ; 26                          ;
-; arriav_lcell_comb     ; 180                         ;
+;     SCLR              ; 41                          ;
+;     plain             ; 37                          ;
+; arriav_lcell_comb     ; 176                         ;
 ;     arith             ; 92                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 79                          ;
-;         2 data inputs ; 12                          ;
-;     normal            ; 78                          ;
+;         1 data inputs ; 66                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 74                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 6                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 12                          ;
 ;         4 data inputs ; 12                          ;
-;         5 data inputs ; 30                          ;
-;         6 data inputs ; 16                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 12                          ;
 ;     shared            ; 10                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
@@ -901,7 +947,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.90                        ;
-; Average LUT depth     ; 2.74                        ;
+; Average LUT depth     ; 2.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -920,7 +966,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Nov 17 15:37:00 2019
+    Info: Processing started: Sun Nov 17 18:31:16 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -932,17 +978,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
     Info (12023): Found entity 1: vga_controller File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
     Info (12023): Found entity 1: vga_pll File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
+Warning (10275): Verilog HDL Module Instantiation warning at part2.v(129): ignored dangling comma in List of Port Connections File: D:/GitHub/CSC258FinalProject/part2.v Line: 129
 Warning (12125): Using design file part2.v, which is not specified as a design file for the current project, but contains definitions for 10 design units and 10 entities in project
     Info (12023): Found entity 1: part2 File: D:/GitHub/CSC258FinalProject/part2.v Line: 1
-    Info (12023): Found entity 2: PixelCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 171
-    Info (12023): Found entity 3: combine File: D:/GitHub/CSC258FinalProject/part2.v Line: 185
-    Info (12023): Found entity 4: datapath File: D:/GitHub/CSC258FinalProject/part2.v Line: 201
-    Info (12023): Found entity 5: control File: D:/GitHub/CSC258FinalProject/part2.v Line: 238
-    Info (12023): Found entity 6: XCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 296
-    Info (12023): Found entity 7: YCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 313
-    Info (12023): Found entity 8: TimeCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 331
-    Info (12023): Found entity 9: FrequencyCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 353
-    Info (12023): Found entity 10: hex_decoder File: D:/GitHub/CSC258FinalProject/part2.v Line: 367
+    Info (12023): Found entity 2: PixelCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 155
+    Info (12023): Found entity 3: combine File: D:/GitHub/CSC258FinalProject/part2.v Line: 173
+    Info (12023): Found entity 4: datapath File: D:/GitHub/CSC258FinalProject/part2.v Line: 189
+    Info (12023): Found entity 5: control File: D:/GitHub/CSC258FinalProject/part2.v Line: 237
+    Info (12023): Found entity 6: XCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 297
+    Info (12023): Found entity 7: YCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 322
+    Info (12023): Found entity 8: TimeCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 348
+    Info (12023): Found entity 9: FrequencyCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 373
+    Info (12023): Found entity 10: hex_decoder File: D:/GitHub/CSC258FinalProject/part2.v Line: 387
 Info (12127): Elaborating entity "part2" for the top level hierarchy
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: D:/GitHub/CSC258FinalProject/part2.v Line: 64
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
@@ -995,18 +1042,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/altp
     Info (12023): Found entity 1: altpll_80u File: D:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 25
 Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 91
-Warning (10230): Verilog HDL assignment warning at part2.v(349): truncated value with size 32 to match size of target (1) File: D:/GitHub/CSC258FinalProject/part2.v Line: 349
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 97
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 103
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: D:/GitHub/CSC258FinalProject/part2.v Line: 117
-Info (12128): Elaborating entity "PixelCounter" for hierarchy "PixelCounter:counter" File: D:/GitHub/CSC258FinalProject/part2.v Line: 122
-Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: D:/GitHub/CSC258FinalProject/part2.v Line: 135
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: D:/GitHub/CSC258FinalProject/part2.v Line: 144
+Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 95
+Warning (10230): Verilog HDL assignment warning at part2.v(368): truncated value with size 32 to match size of target (1) File: D:/GitHub/CSC258FinalProject/part2.v Line: 368
+Warning (10230): Verilog HDL assignment warning at part2.v(369): truncated value with size 32 to match size of target (1) File: D:/GitHub/CSC258FinalProject/part2.v Line: 369
+Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 101
+Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 107
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: D:/GitHub/CSC258FinalProject/part2.v Line: 122
+Warning (10240): Verilog HDL Always Construct warning at part2.v(226): inferring latch(es) for variable "out_c", which holds its previous value in one or more paths through the always construct File: D:/GitHub/CSC258FinalProject/part2.v Line: 226
+Info (10041): Inferred latch for "out_c[0]" at part2.v(226) File: D:/GitHub/CSC258FinalProject/part2.v Line: 226
+Info (10041): Inferred latch for "out_c[1]" at part2.v(226) File: D:/GitHub/CSC258FinalProject/part2.v Line: 226
+Info (10041): Inferred latch for "out_c[2]" at part2.v(226) File: D:/GitHub/CSC258FinalProject/part2.v Line: 226
+Info (12128): Elaborating entity "PixelCounter" for hierarchy "PixelCounter:counter" File: D:/GitHub/CSC258FinalProject/part2.v Line: 129
+Warning (10036): Verilog HDL or VHDL warning at part2.v(160): object "nDraw" assigned a value but never read File: D:/GitHub/CSC258FinalProject/part2.v Line: 160
+Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: D:/GitHub/CSC258FinalProject/part2.v Line: 142
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: D:/GitHub/CSC258FinalProject/part2.v Line: 150
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: D:/GitHub/CSC258FinalProject/part2.v Line: 32
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: D:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 33
@@ -1022,16 +1075,16 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[4]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
     Warning (15610): No output dependent on input pin "SW[5]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
     Warning (15610): No output dependent on input pin "SW[6]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
-Info (21057): Implemented 270 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 266 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 203 logic cells
+    Info (21061): Implemented 199 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4901 megabytes
-    Info: Processing ended: Sun Nov 17 15:37:14 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4902 megabytes
+    Info: Processing ended: Sun Nov 17 18:31:30 2019
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Total CPU time (on all processors): 00:00:26
 
 

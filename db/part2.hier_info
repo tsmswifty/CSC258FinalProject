@@ -869,10 +869,12 @@ reset_n => q.OUTPUTSELECT
 reset_n => q.OUTPUTSELECT
 reset_n => q.OUTPUTSELECT
 display <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+drawEnable <= drawEnable.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|XCounter:xc
 count_enable => ~NO_FANOUT~
+clk => direction.CLK
 clk => xDisplay[0]~reg0.CLK
 clk => xDisplay[1]~reg0.CLK
 clk => xDisplay[2]~reg0.CLK
@@ -889,6 +891,7 @@ reset_n => xDisplay.OUTPUTSELECT
 reset_n => xDisplay.OUTPUTSELECT
 reset_n => xDisplay.OUTPUTSELECT
 reset_n => xDisplay.OUTPUTSELECT
+reset_n => direction.OUTPUTSELECT
 xDisplay[0] <= xDisplay[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 xDisplay[1] <= xDisplay[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 xDisplay[2] <= xDisplay[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -901,6 +904,7 @@ xDisplay[7] <= xDisplay[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 |part2|YCounter:yc
 count_enable => ~NO_FANOUT~
+clk => direction.CLK
 clk => yDisplay[0]~reg0.CLK
 clk => yDisplay[1]~reg0.CLK
 clk => yDisplay[2]~reg0.CLK
@@ -915,6 +919,7 @@ reset_n => yDisplay.OUTPUTSELECT
 reset_n => yDisplay.OUTPUTSELECT
 reset_n => yDisplay.OUTPUTSELECT
 reset_n => yDisplay.OUTPUTSELECT
+reset_n => direction.OUTPUTSELECT
 yDisplay[0] <= yDisplay[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 yDisplay[1] <= yDisplay[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 yDisplay[2] <= yDisplay[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -925,9 +930,6 @@ yDisplay[6] <= yDisplay[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|datapath:d0
-clk => out_c[0]~reg0.CLK
-clk => out_c[1]~reg0.CLK
-clk => out_c[2]~reg0.CLK
 clk => out_y[0]~reg0.CLK
 clk => out_y[1]~reg0.CLK
 clk => out_y[2]~reg0.CLK
@@ -958,9 +960,10 @@ datayin[3] => out_y.DATAB
 datayin[4] => out_y.DATAB
 datayin[5] => out_y.DATAB
 datayin[6] => out_y.DATAB
-colorin[0] => out_c.DATAB
-colorin[1] => out_c.DATAB
-colorin[2] => out_c.DATAB
+colorin[0] => out_c[0].DATAB
+colorin[1] => out_c[1].DATAB
+colorin[2] => out_c[2].DATAB
+drawClk => out_c[2].IN1
 ld_x => out_x.OUTPUTSELECT
 ld_x => out_x.OUTPUTSELECT
 ld_x => out_x.OUTPUTSELECT
@@ -976,9 +979,10 @@ ld_y => out_y.OUTPUTSELECT
 ld_y => out_y.OUTPUTSELECT
 ld_y => out_y.OUTPUTSELECT
 ld_y => out_y.OUTPUTSELECT
-ld_c => out_c.OUTPUTSELECT
-ld_c => out_c.OUTPUTSELECT
-ld_c => out_c.OUTPUTSELECT
+ld_c => out_c[0].OUTPUTSELECT
+ld_c => out_c[1].OUTPUTSELECT
+ld_c => out_c[2].OUTPUTSELECT
+ld_c => out_c[2].IN0
 resetn => out_x.OUTPUTSELECT
 resetn => out_x.OUTPUTSELECT
 resetn => out_x.OUTPUTSELECT
@@ -994,9 +998,7 @@ resetn => out_y.OUTPUTSELECT
 resetn => out_y.OUTPUTSELECT
 resetn => out_y.OUTPUTSELECT
 resetn => out_y.OUTPUTSELECT
-resetn => out_c.OUTPUTSELECT
-resetn => out_c.OUTPUTSELECT
-resetn => out_c.OUTPUTSELECT
+resetn => out_c[2].IN1
 out_x[0] <= out_x[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_x[1] <= out_x[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_x[2] <= out_x[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1012,20 +1014,19 @@ out_y[3] <= out_y[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_y[4] <= out_y[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_y[5] <= out_y[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_y[6] <= out_y[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out_c[0] <= out_c[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out_c[1] <= out_c[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-out_c[2] <= out_c[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out_c[0] <= out_c[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out_c[1] <= out_c[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out_c[2] <= out_c[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|PixelCounter:counter
-enable => display.OUTPUTSELECT
-enable => display.OUTPUTSELECT
-enable => display.OUTPUTSELECT
-enable => display.OUTPUTSELECT
+enable => ~NO_FANOUT~
 clk => display[0]~reg0.CLK
 clk => display[1]~reg0.CLK
 clk => display[2]~reg0.CLK
 clk => display[3]~reg0.CLK
+drawSignal => ~NO_FANOUT~
+signal => ~NO_FANOUT~
 display[0] <= display[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 display[1] <= display[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 display[2] <= display[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1033,17 +1034,24 @@ display[3] <= display[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|control:c0
+clk => ld_c~reg0.CLK
+clk => ld_y~reg0.CLK
+clk => ld_x~reg0.CLK
+clk => plot~reg0.CLK
+clk => enable_yc~reg0.CLK
+clk => enable_xc~reg0.CLK
 clk => current_state~1.DATAIN
+clk => next_state~1.DATAIN
 resetn => current_state.OUTPUTSELECT
 resetn => current_state.OUTPUTSELECT
-go => current_state.DATAA
-go => current_state.DATAA
-ld_x <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
-ld_y <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
-ld_c <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
-plot <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
-enable_xc <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
-enable_yc <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
+go => next_state.S_DRAW.DATAIN
+go => next_state.S_ERASE.DATAIN
+ld_x <= ld_x~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ld_y <= ld_y~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ld_c <= ld_c~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plot <= plot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable_xc <= enable_xc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+enable_yc <= enable_yc~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|hex_decoder:hexzero

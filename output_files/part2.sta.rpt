@@ -1,5 +1,5 @@
 Timing Analyzer report for part2
-Sun Nov 17 15:38:48 2019
+Sun Nov 17 18:32:45 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -99,22 +99,22 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.35        ;
+; Average used               ; 1.32        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.4%      ;
-;     Processor 3            ;   3.4%      ;
-;     Processor 4            ;   3.3%      ;
-;     Processor 5            ;   3.1%      ;
-;     Processor 6            ;   3.1%      ;
-;     Processor 7            ;   3.1%      ;
-;     Processor 8            ;   3.1%      ;
-;     Processor 9            ;   3.1%      ;
-;     Processor 10           ;   3.1%      ;
-;     Processor 11           ;   3.1%      ;
-;     Processor 12           ;   3.1%      ;
+;     Processor 2            ;   3.3%      ;
+;     Processor 3            ;   3.0%      ;
+;     Processor 4            ;   3.0%      ;
+;     Processor 5            ;   2.9%      ;
+;     Processor 6            ;   2.9%      ;
+;     Processor 7            ;   2.9%      ;
+;     Processor 8            ;   2.9%      ;
+;     Processor 9            ;   2.9%      ;
+;     Processor 10           ;   2.9%      ;
+;     Processor 11           ;   2.9%      ;
+;     Processor 12           ;   2.9%      ;
 +----------------------------+-------------+
 
 
@@ -124,7 +124,9 @@ refer to the applicable agreement for further details.
 ; Clock Name                                                                       ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master                                                                         ; Source                                                                              ; Targets                                                                              ;
 +----------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 ; CLOCK_50                                                                         ; Base      ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { CLOCK_50 }                                                                         ;
-; control:c0|current_state.S_DRAW                                                  ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { control:c0|current_state.S_DRAW }                                                  ;
+; control:c0|enable_xc                                                             ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { control:c0|enable_xc }                                                             ;
+; control:c0|enable_yc                                                             ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { control:c0|enable_yc }                                                             ;
+; TimeCounter:tc|q[0]                                                              ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                ;                                                                                     ; { TimeCounter:tc|q[0] }                                                              ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; Generated ; 3.333  ; 300.0 MHz  ; 0.000 ; 1.666  ; 50.00      ; 2         ; 12          ;       ;        ;           ;            ; false    ; CLOCK_50                                                                       ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] }   ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; Generated ; 40.000 ; 25.0 MHz   ; 0.000 ; 20.000 ; 50.00      ; 12        ; 1           ;       ;        ;           ;            ; false    ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|vco0ph[0] ; { VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk } ;
 +----------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
@@ -135,9 +137,11 @@ refer to the applicable agreement for further details.
 +------------+-----------------+----------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                       ; Note ;
 +------------+-----------------+----------------------------------------------------------------------------------+------+
-; 92.6 MHz   ; 92.6 MHz        ; CLOCK_50                                                                         ;      ;
-; 190.8 MHz  ; 190.8 MHz       ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 311.04 MHz ; 311.04 MHz      ; control:c0|current_state.S_DRAW                                                  ;      ;
+; 113.58 MHz ; 113.58 MHz      ; CLOCK_50                                                                         ;      ;
+; 192.38 MHz ; 192.38 MHz      ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 333.22 MHz ; 333.22 MHz      ; control:c0|enable_xc                                                             ;      ;
+; 357.4 MHz  ; 357.4 MHz       ; control:c0|enable_yc                                                             ;      ;
+; 442.67 MHz ; 442.67 MHz      ; TimeCounter:tc|q[0]                                                              ;      ;
 +------------+-----------------+----------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -153,9 +157,11 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                         ; -3.261 ; -111.678      ;
-; control:c0|current_state.S_DRAW                                                  ; -2.215 ; -29.915       ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 34.759 ; 0.000         ;
+; CLOCK_50                                                                         ; -5.459 ; -573.955      ;
+; control:c0|enable_xc                                                             ; -2.001 ; -20.251       ;
+; control:c0|enable_yc                                                             ; -1.798 ; -16.321       ;
+; TimeCounter:tc|q[0]                                                              ; -1.259 ; -7.256        ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 34.802 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -164,9 +170,11 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                            ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                         ; 0.243 ; 0.000         ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.399 ; 0.000         ;
-; control:c0|current_state.S_DRAW                                                  ; 0.762 ; 0.000         ;
+; CLOCK_50                                                                         ; 0.022 ; 0.000         ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.309 ; 0.000         ;
+; control:c0|enable_yc                                                             ; 0.527 ; 0.000         ;
+; control:c0|enable_xc                                                             ; 0.555 ; 0.000         ;
+; TimeCounter:tc|q[0]                                                              ; 0.667 ; 0.000         ;
 +----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -187,10 +195,12 @@ No paths to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; control:c0|current_state.S_DRAW                                                  ; -0.394 ; -9.135        ;
+; control:c0|enable_xc                                                             ; -0.394 ; -6.622        ;
+; control:c0|enable_yc                                                             ; -0.394 ; -5.598        ;
+; TimeCounter:tc|q[0]                                                              ; -0.394 ; -4.760        ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
-; CLOCK_50                                                                         ; 8.881  ; 0.000         ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.782 ; 0.000         ;
+; CLOCK_50                                                                         ; 8.578  ; 0.000         ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.774 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -205,9 +215,11 @@ No synchronizer chains to report.
 +------------+-----------------+----------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                       ; Note ;
 +------------+-----------------+----------------------------------------------------------------------------------+------+
-; 93.29 MHz  ; 93.29 MHz       ; CLOCK_50                                                                         ;      ;
-; 193.91 MHz ; 193.91 MHz      ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 309.31 MHz ; 309.31 MHz      ; control:c0|current_state.S_DRAW                                                  ;      ;
+; 117.11 MHz ; 117.11 MHz      ; CLOCK_50                                                                         ;      ;
+; 194.21 MHz ; 194.21 MHz      ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 329.06 MHz ; 329.06 MHz      ; control:c0|enable_xc                                                             ;      ;
+; 347.58 MHz ; 347.58 MHz      ; control:c0|enable_yc                                                             ;      ;
+; 440.72 MHz ; 440.72 MHz      ; TimeCounter:tc|q[0]                                                              ;      ;
 +------------+-----------------+----------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -217,9 +229,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                         ; -2.940 ; -96.582       ;
-; control:c0|current_state.S_DRAW                                                  ; -2.233 ; -30.454       ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 34.843 ; 0.000         ;
+; CLOCK_50                                                                         ; -5.109 ; -505.242      ;
+; control:c0|enable_xc                                                             ; -2.039 ; -21.118       ;
+; control:c0|enable_yc                                                             ; -1.877 ; -16.983       ;
+; TimeCounter:tc|q[0]                                                              ; -1.269 ; -7.281        ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 34.851 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -228,9 +242,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                         ; -0.088 ; -0.125        ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.396  ; 0.000         ;
-; control:c0|current_state.S_DRAW                                                  ; 0.753  ; 0.000         ;
+; CLOCK_50                                                                         ; -0.267 ; -0.267        ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.286  ; 0.000         ;
+; control:c0|enable_yc                                                             ; 0.491  ; 0.000         ;
+; control:c0|enable_xc                                                             ; 0.539  ; 0.000         ;
+; TimeCounter:tc|q[0]                                                              ; 0.640  ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -251,10 +267,12 @@ No paths to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; control:c0|current_state.S_DRAW                                                  ; -0.394 ; -8.974        ;
+; control:c0|enable_xc                                                             ; -0.394 ; -6.633        ;
+; control:c0|enable_yc                                                             ; -0.394 ; -5.600        ;
+; TimeCounter:tc|q[0]                                                              ; -0.394 ; -5.065        ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
-; CLOCK_50                                                                         ; 8.832  ; 0.000         ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.764 ; 0.000         ;
+; CLOCK_50                                                                         ; 8.587  ; 0.000         ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.751 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -269,9 +287,11 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                         ; -2.514 ; -87.365       ;
-; control:c0|current_state.S_DRAW                                                  ; -0.923 ; -12.003       ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 36.613 ; 0.000         ;
+; CLOCK_50                                                                         ; -4.002 ; -420.037      ;
+; control:c0|enable_xc                                                             ; -0.808 ; -7.248        ;
+; control:c0|enable_yc                                                             ; -0.646 ; -5.704        ;
+; TimeCounter:tc|q[0]                                                              ; -0.455 ; -2.087        ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 37.050 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -280,9 +300,11 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                            ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------------+-------+---------------+
-; CLOCK_50                                                                         ; 0.182 ; 0.000         ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.242 ; 0.000         ;
-; control:c0|current_state.S_DRAW                                                  ; 0.341 ; 0.000         ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.177 ; 0.000         ;
+; CLOCK_50                                                                         ; 0.183 ; 0.000         ;
+; control:c0|enable_yc                                                             ; 0.250 ; 0.000         ;
+; control:c0|enable_xc                                                             ; 0.301 ; 0.000         ;
+; TimeCounter:tc|q[0]                                                              ; 0.343 ; 0.000         ;
 +----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -303,10 +325,12 @@ No paths to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; control:c0|current_state.S_DRAW                                                  ; -0.040 ; -0.312        ;
+; TimeCounter:tc|q[0]                                                              ; 0.058  ; 0.000         ;
+; control:c0|enable_xc                                                             ; 0.148  ; 0.000         ;
+; control:c0|enable_yc                                                             ; 0.159  ; 0.000         ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
-; CLOCK_50                                                                         ; 8.806  ; 0.000         ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.895 ; 0.000         ;
+; CLOCK_50                                                                         ; 8.680  ; 0.000         ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.887 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -321,9 +345,11 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                         ; -1.986 ; -67.990       ;
-; control:c0|current_state.S_DRAW                                                  ; -0.832 ; -10.616       ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 37.044 ; 0.000         ;
+; CLOCK_50                                                                         ; -3.353 ; -321.305      ;
+; control:c0|enable_xc                                                             ; -0.731 ; -6.623        ;
+; control:c0|enable_yc                                                             ; -0.602 ; -5.186        ;
+; TimeCounter:tc|q[0]                                                              ; -0.360 ; -1.612        ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 37.294 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -332,9 +358,11 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                         ; -0.037 ; -0.047        ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.231  ; 0.000         ;
-; control:c0|current_state.S_DRAW                                                  ; 0.307  ; 0.000         ;
+; CLOCK_50                                                                         ; -0.034 ; -0.034        ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.146  ; 0.000         ;
+; control:c0|enable_yc                                                             ; 0.215  ; 0.000         ;
+; control:c0|enable_xc                                                             ; 0.270  ; 0.000         ;
+; TimeCounter:tc|q[0]                                                              ; 0.305  ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -355,10 +383,12 @@ No paths to report.
 +----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                            ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------------+--------+---------------+
-; control:c0|current_state.S_DRAW                                                  ; 0.003  ; 0.000         ;
+; TimeCounter:tc|q[0]                                                              ; 0.061  ; 0.000         ;
+; control:c0|enable_xc                                                             ; 0.146  ; 0.000         ;
+; control:c0|enable_yc                                                             ; 0.160  ; 0.000         ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
-; CLOCK_50                                                                         ; 8.799  ; 0.000         ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.891 ; 0.000         ;
+; CLOCK_50                                                                         ; 8.732  ; 0.000         ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.888 ; 0.000         ;
 +----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -373,16 +403,20 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------------+----------+--------+----------+---------+---------------------+
 ; Clock                                                                             ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------------------------------------------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                                  ; -3.261   ; -0.088 ; N/A      ; N/A     ; -0.394              ;
-;  CLOCK_50                                                                         ; -3.261   ; -0.088 ; N/A      ; N/A     ; 8.799               ;
+; Worst-case Slack                                                                  ; -5.459   ; -0.267 ; N/A      ; N/A     ; -0.394              ;
+;  CLOCK_50                                                                         ; -5.459   ; -0.267 ; N/A      ; N/A     ; 8.578               ;
+;  TimeCounter:tc|q[0]                                                              ; -1.269   ; 0.305  ; N/A      ; N/A     ; -0.394              ;
 ;  VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; N/A      ; N/A    ; N/A      ; N/A     ; 1.666               ;
-;  VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 34.759   ; 0.231  ; N/A      ; N/A     ; 18.764              ;
-;  control:c0|current_state.S_DRAW                                                  ; -2.233   ; 0.307  ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS                                                                   ; -141.593 ; -0.125 ; 0.0      ; 0.0     ; -9.135              ;
-;  CLOCK_50                                                                         ; -111.678 ; -0.125 ; N/A      ; N/A     ; 0.000               ;
+;  VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 34.802   ; 0.146  ; N/A      ; N/A     ; 18.751              ;
+;  control:c0|enable_xc                                                             ; -2.039   ; 0.270  ; N/A      ; N/A     ; -0.394              ;
+;  control:c0|enable_yc                                                             ; -1.877   ; 0.215  ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS                                                                   ; -617.783 ; -0.267 ; 0.0      ; 0.0     ; -17.298             ;
+;  CLOCK_50                                                                         ; -573.955 ; -0.267 ; N/A      ; N/A     ; 0.000               ;
+;  TimeCounter:tc|q[0]                                                              ; -7.281   ; 0.000  ; N/A      ; N/A     ; -5.065              ;
 ;  VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; N/A      ; N/A    ; N/A      ; N/A     ; 0.000               ;
 ;  VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.000    ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-;  control:c0|current_state.S_DRAW                                                  ; -30.454  ; 0.000  ; N/A      ; N/A     ; -9.135              ;
+;  control:c0|enable_xc                                                             ; -21.118  ; 0.000  ; N/A      ; N/A     ; -6.633              ;
+;  control:c0|enable_yc                                                             ; -16.983  ; 0.000  ; N/A      ; N/A     ; -5.600              ;
 +-----------------------------------------------------------------------------------+----------+--------+----------+---------+---------------------+
 
 
@@ -452,8 +486,8 @@ No synchronizer chains to report.
 ; SW[5]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[6]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; CLOCK_50 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; KEY[0]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[9]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[0]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[8]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[7]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +----------+--------------+-----------------+-----------------+
@@ -484,8 +518,8 @@ No synchronizer chains to report.
 ; VGA_R[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_R[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_R[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
-; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
-; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 ; VGA_G[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
@@ -494,8 +528,8 @@ No synchronizer chains to report.
 ; VGA_G[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
-; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
-; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 ; VGA_B[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
@@ -504,7 +538,7 @@ No synchronizer chains to report.
 ; VGA_B[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
-; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 ; VGA_B[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -534,8 +568,8 @@ No synchronizer chains to report.
 ; VGA_R[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_R[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_R[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
-; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
-; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_G[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
@@ -544,8 +578,8 @@ No synchronizer chains to report.
 ; VGA_G[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
-; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
-; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_B[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
@@ -554,7 +588,7 @@ No synchronizer chains to report.
 ; VGA_B[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
-; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -584,8 +618,8 @@ No synchronizer chains to report.
 ; VGA_R[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_R[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_R[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
-; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
-; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 ; VGA_G[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_G[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_G[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
@@ -594,8 +628,8 @@ No synchronizer chains to report.
 ; VGA_G[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_G[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_G[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
-; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
-; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_B[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 ; VGA_B[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_B[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
@@ -604,7 +638,7 @@ No synchronizer chains to report.
 ; VGA_B[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
-; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 ; VGA_B[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -634,8 +668,8 @@ No synchronizer chains to report.
 ; VGA_R[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_R[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_R[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
-; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; VGA_R[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; VGA_R[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
 ; VGA_G[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_G[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_G[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
@@ -644,8 +678,8 @@ No synchronizer chains to report.
 ; VGA_G[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_G[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_G[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; VGA_G[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; VGA_G[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_B[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
 ; VGA_B[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
@@ -654,7 +688,7 @@ No synchronizer chains to report.
 ; VGA_B[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
-; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; VGA_B[8]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
 ; VGA_B[9]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
 +-------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
@@ -664,10 +698,14 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                       ; To Clock                                                                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                                         ; CLOCK_50                                                                         ; 19588    ; 0        ; 0        ; 0        ;
-; control:c0|current_state.S_DRAW                                                  ; CLOCK_50                                                                         ; 53       ; 38       ; 0        ; 0        ;
-; control:c0|current_state.S_DRAW                                                  ; control:c0|current_state.S_DRAW                                                  ; 315      ; 0        ; 0        ; 0        ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 2162     ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                                         ; CLOCK_50                                                                         ; 19297    ; 0        ; 0        ; 0        ;
+; control:c0|enable_xc                                                             ; CLOCK_50                                                                         ; 8        ; 0        ; 0        ; 0        ;
+; control:c0|enable_yc                                                             ; CLOCK_50                                                                         ; 7        ; 0        ; 0        ; 0        ;
+; TimeCounter:tc|q[0]                                                              ; CLOCK_50                                                                         ; 157      ; 37       ; 0        ; 0        ;
+; control:c0|enable_xc                                                             ; control:c0|enable_xc                                                             ; 89       ; 0        ; 0        ; 0        ;
+; control:c0|enable_yc                                                             ; control:c0|enable_yc                                                             ; 72       ; 0        ; 0        ; 0        ;
+; TimeCounter:tc|q[0]                                                              ; TimeCounter:tc|q[0]                                                              ; 0        ; 0        ; 0        ; 17       ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 2190     ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -677,10 +715,14 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                       ; To Clock                                                                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50                                                                         ; CLOCK_50                                                                         ; 19588    ; 0        ; 0        ; 0        ;
-; control:c0|current_state.S_DRAW                                                  ; CLOCK_50                                                                         ; 53       ; 38       ; 0        ; 0        ;
-; control:c0|current_state.S_DRAW                                                  ; control:c0|current_state.S_DRAW                                                  ; 315      ; 0        ; 0        ; 0        ;
-; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 2162     ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                                         ; CLOCK_50                                                                         ; 19297    ; 0        ; 0        ; 0        ;
+; control:c0|enable_xc                                                             ; CLOCK_50                                                                         ; 8        ; 0        ; 0        ; 0        ;
+; control:c0|enable_yc                                                             ; CLOCK_50                                                                         ; 7        ; 0        ; 0        ; 0        ;
+; TimeCounter:tc|q[0]                                                              ; CLOCK_50                                                                         ; 157      ; 37       ; 0        ; 0        ;
+; control:c0|enable_xc                                                             ; control:c0|enable_xc                                                             ; 89       ; 0        ; 0        ; 0        ;
+; control:c0|enable_yc                                                             ; control:c0|enable_yc                                                             ; 72       ; 0        ; 0        ; 0        ;
+; TimeCounter:tc|q[0]                                                              ; TimeCounter:tc|q[0]                                                              ; 0        ; 0        ; 0        ; 17       ;
+; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 2190     ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -705,7 +747,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 86    ; 86   ;
+; Unconstrained Input Port Paths  ; 69    ; 69   ;
 ; Unconstrained Output Ports      ; 41    ; 41   ;
 ; Unconstrained Output Port Paths ; 182   ; 182  ;
 +---------------------------------+-------+------+
@@ -717,9 +759,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                                                                           ; Clock                                                                            ; Type      ; Status      ;
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+-------------+
 ; CLOCK_50                                                                         ; CLOCK_50                                                                         ; Base      ; Constrained ;
+; TimeCounter:tc|q[0]                                                              ; TimeCounter:tc|q[0]                                                              ; Base      ; Constrained ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; Generated ; Constrained ;
 ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
-; control:c0|current_state.S_DRAW                                                  ; control:c0|current_state.S_DRAW                                                  ; Base      ; Constrained ;
+; control:c0|enable_xc                                                             ; control:c0|enable_xc                                                             ; Base      ; Constrained ;
+; control:c0|enable_yc                                                             ; control:c0|enable_yc                                                             ; Base      ; Constrained ;
 +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+-------------+
 
 
@@ -851,13 +895,14 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Nov 17 15:38:38 2019
+    Info: Processing started: Sun Nov 17 18:32:36 2019
 Info: Command: quartus_sta part2 -c part2
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 3 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'part2.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
 Info (332110): Deriving PLL clocks
@@ -866,7 +911,9 @@ Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 12 -duty_cycle 50.00 -name {VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk} {VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk}
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name control:c0|current_state.S_DRAW control:c0|current_state.S_DRAW
+    Info (332105): create_clock -period 1.000 -name control:c0|enable_yc control:c0|enable_yc
+    Info (332105): create_clock -period 1.000 -name control:c0|enable_xc control:c0|enable_xc
+    Info (332105): create_clock -period 1.000 -name TimeCounter:tc|q[0] TimeCounter:tc|q[0]
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
@@ -877,27 +924,33 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.261
+Info (332146): Worst-case setup slack is -5.459
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.261            -111.678 CLOCK_50 
-    Info (332119):    -2.215             -29.915 control:c0|current_state.S_DRAW 
-    Info (332119):    34.759               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.243
+    Info (332119):    -5.459            -573.955 CLOCK_50 
+    Info (332119):    -2.001             -20.251 control:c0|enable_xc 
+    Info (332119):    -1.798             -16.321 control:c0|enable_yc 
+    Info (332119):    -1.259              -7.256 TimeCounter:tc|q[0] 
+    Info (332119):    34.802               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.022
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.243               0.000 CLOCK_50 
-    Info (332119):     0.399               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.762               0.000 control:c0|current_state.S_DRAW 
+    Info (332119):     0.022               0.000 CLOCK_50 
+    Info (332119):     0.309               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.527               0.000 control:c0|enable_yc 
+    Info (332119):     0.555               0.000 control:c0|enable_xc 
+    Info (332119):     0.667               0.000 TimeCounter:tc|q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394              -9.135 control:c0|current_state.S_DRAW 
+    Info (332119):    -0.394              -6.622 control:c0|enable_xc 
+    Info (332119):    -0.394              -5.598 control:c0|enable_yc 
+    Info (332119):    -0.394              -4.760 TimeCounter:tc|q[0] 
     Info (332119):     1.666               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.881               0.000 CLOCK_50 
-    Info (332119):    18.782               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.578               0.000 CLOCK_50 
+    Info (332119):    18.774               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -908,27 +961,33 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.940
+Info (332146): Worst-case setup slack is -5.109
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.940             -96.582 CLOCK_50 
-    Info (332119):    -2.233             -30.454 control:c0|current_state.S_DRAW 
-    Info (332119):    34.843               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -0.088
+    Info (332119):    -5.109            -505.242 CLOCK_50 
+    Info (332119):    -2.039             -21.118 control:c0|enable_xc 
+    Info (332119):    -1.877             -16.983 control:c0|enable_yc 
+    Info (332119):    -1.269              -7.281 TimeCounter:tc|q[0] 
+    Info (332119):    34.851               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -0.267
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.088              -0.125 CLOCK_50 
-    Info (332119):     0.396               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.753               0.000 control:c0|current_state.S_DRAW 
+    Info (332119):    -0.267              -0.267 CLOCK_50 
+    Info (332119):     0.286               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.491               0.000 control:c0|enable_yc 
+    Info (332119):     0.539               0.000 control:c0|enable_xc 
+    Info (332119):     0.640               0.000 TimeCounter:tc|q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394              -8.974 control:c0|current_state.S_DRAW 
+    Info (332119):    -0.394              -6.633 control:c0|enable_xc 
+    Info (332119):    -0.394              -5.600 control:c0|enable_yc 
+    Info (332119):    -0.394              -5.065 TimeCounter:tc|q[0] 
     Info (332119):     1.666               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.832               0.000 CLOCK_50 
-    Info (332119):    18.764               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.587               0.000 CLOCK_50 
+    Info (332119):    18.751               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -939,27 +998,33 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.514
+Info (332146): Worst-case setup slack is -4.002
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.514             -87.365 CLOCK_50 
-    Info (332119):    -0.923             -12.003 control:c0|current_state.S_DRAW 
-    Info (332119):    36.613               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.182
+    Info (332119):    -4.002            -420.037 CLOCK_50 
+    Info (332119):    -0.808              -7.248 control:c0|enable_xc 
+    Info (332119):    -0.646              -5.704 control:c0|enable_yc 
+    Info (332119):    -0.455              -2.087 TimeCounter:tc|q[0] 
+    Info (332119):    37.050               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.177
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.182               0.000 CLOCK_50 
-    Info (332119):     0.242               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.341               0.000 control:c0|current_state.S_DRAW 
+    Info (332119):     0.177               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.183               0.000 CLOCK_50 
+    Info (332119):     0.250               0.000 control:c0|enable_yc 
+    Info (332119):     0.301               0.000 control:c0|enable_xc 
+    Info (332119):     0.343               0.000 TimeCounter:tc|q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.040
+Info (332146): Worst-case minimum pulse width slack is 0.058
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.040              -0.312 control:c0|current_state.S_DRAW 
+    Info (332119):     0.058               0.000 TimeCounter:tc|q[0] 
+    Info (332119):     0.148               0.000 control:c0|enable_xc 
+    Info (332119):     0.159               0.000 control:c0|enable_yc 
     Info (332119):     1.666               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.806               0.000 CLOCK_50 
-    Info (332119):    18.895               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.680               0.000 CLOCK_50 
+    Info (332119):    18.887               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL  from: refclkin  to: fbclk
@@ -968,33 +1033,39 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.986
+Info (332146): Worst-case setup slack is -3.353
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.986             -67.990 CLOCK_50 
-    Info (332119):    -0.832             -10.616 control:c0|current_state.S_DRAW 
-    Info (332119):    37.044               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -0.037
+    Info (332119):    -3.353            -321.305 CLOCK_50 
+    Info (332119):    -0.731              -6.623 control:c0|enable_xc 
+    Info (332119):    -0.602              -5.186 control:c0|enable_yc 
+    Info (332119):    -0.360              -1.612 TimeCounter:tc|q[0] 
+    Info (332119):    37.294               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -0.034
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.037              -0.047 CLOCK_50 
-    Info (332119):     0.231               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.307               0.000 control:c0|current_state.S_DRAW 
+    Info (332119):    -0.034              -0.034 CLOCK_50 
+    Info (332119):     0.146               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.215               0.000 control:c0|enable_yc 
+    Info (332119):     0.270               0.000 control:c0|enable_xc 
+    Info (332119):     0.305               0.000 TimeCounter:tc|q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.003
+Info (332146): Worst-case minimum pulse width slack is 0.061
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.003               0.000 control:c0|current_state.S_DRAW 
+    Info (332119):     0.061               0.000 TimeCounter:tc|q[0] 
+    Info (332119):     0.146               0.000 control:c0|enable_xc 
+    Info (332119):     0.160               0.000 control:c0|enable_yc 
     Info (332119):     1.666               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.799               0.000 CLOCK_50 
-    Info (332119):    18.891               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.732               0.000 CLOCK_50 
+    Info (332119):    18.888               0.000 VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5288 megabytes
-    Info: Processing ended: Sun Nov 17 15:38:48 2019
-    Info: Elapsed time: 00:00:10
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 5293 megabytes
+    Info: Processing ended: Sun Nov 17 18:32:45 2019
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:10
 
 

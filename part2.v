@@ -80,14 +80,18 @@ module part2
 	wire [3:0] count;
 	wire [7:0] xcount;
 	wire [6:0] ycount;
-	
+	wire writeEnAlt;
 	wire signal;
-	// drawBorder l0(.x(x), .y(y), .clk(CLOCK_50), .colour(colour), .writeEn(writeEn));
+	wire drawSignal;
+
+	// assign writeEn = drawSignal;
+	assign writeEn = 1'b1;
 	TimeCounter tc(
 			.count_enable(SW[0]), 
 			.clk(CLOCK_50), 
 			.reset_n(KEY[0]), 
-			.display(signal)
+			.display(signal),
+			.drawEnable(drawSignal)
 			);
 	XCounter xc(
 			.count_enable(SW[0]), 
@@ -107,6 +111,7 @@ module part2
 			.dataxin(xcount),
 			.datayin(ycount),
 			.colorin(SW[9:7]),
+			.drawClk(drawSignal),
 			.ld_x(load_x),
 			.ld_y(load_y),
 			.ld_c(load_c),
@@ -118,67 +123,50 @@ module part2
 	PixelCounter counter(
 			.enable(writeEn),
 			.clk(CLOCK_50),
-			.display(count)
+			.drawSignal(drawSignal),
+			.signal(signal),
+			.display(count),
 			);
 	assign x = out_x + count[1:0];
-	assign y = out_y + count [3:2];
+	assign y = out_y + count[3:2];
 	control c0(
 			.clk(CLOCK_50),
 			.resetn(KEY[0]),
-			.go(signal),
+			.go(drawSignal),
 			.ld_x(load_x), 
 			.ld_y(load_y), 
 			.ld_c(load_c), 
-			.plot(writeEn),
+			.plot(writeEnAlt), //changed
 			.enable_xc(signal_xc),
 			.enable_yc(signal_yc)
 			);
 
 	//register to display clock speed
 	reg [3:0] clock_counter = 1'b0;
-	always@(posedge CLOCK_50)
+	always@(posedge drawSignal)
 	begin
-		if(signal == 1'b1)
-			clock_counter <= clock_counter + 1'b1;
+		clock_counter <= clock_counter + 1'b1;
 	end
 	hex_decoder hexzero(.hex_digit(clock_counter), .segments(HEX0));
 
 endmodule
 
-// module drawBorder(x, y, clk, colour, writeEn);
-// 	input clk;
-// 	output reg [7:0] x;
-// 	output reg [6:0] y;
-// 	output reg [2:0] colour;
-// 	output reg writeEn;
+//draws the square
+module PixelCounter(enable,clk, drawSignal, signal, display);
+	input enable;
+	input clk;
+	input signal;
+	input drawSignal;
+	wire nDraw = !drawSignal;
+	output reg [3:0] display; 
+	reg reset;
 
-// 	reg done = 1'b0;
-// 	reg xcounter = 8'd159;
-// 	reg ycounter = 1'b0;
-// 	//draw left border
-// 	always @(posedge clk)
-// 	begin
-// 		if (done == 1'b0) begin
-// 			colour <= 3'b111;
-// 			y <= ycounter;
-// 			x <= xcounter;
-// 			writeEn <= 1;
-// 			xcounter <= xcounter - 1'b1;
-// 		end
-// 	end
-// endmodule
-
-module PixelCounter(enable,clk, display);
-input enable;
-input clk ;
-output [3:0]display; 
-reg [3:0]display;
-always @(posedge clk) 
-   begin
-	 if( display == 4'b1111) 
-	 display <= 0 ; // Set q to 0
-	 else if (enable == 1'b1)
-		display <= display + 1'b1; 
+	always @(posedge clk) 
+	begin
+		// if (signal) begin
+		// 	display <= 4'b1111;
+		// 	end
+		display <= display - 1'b1;
 	end
 endmodule
 
@@ -196,9 +184,9 @@ module combine(input enable, input clk,input[2:0]colorin,input reset,input go,ou
    YCounter yc(.count_enable(enable), .clk(signal_yc), .reset_n(reset),.yDisplay(ycount));
 	datapath d0(.clk(clk),.dataxin(xcount),.datayin(ycount),.colorin(colorin),.ld_x(load_x),.ld_y(load_y),.ld_c(load_c),.resetn(reset),
 	.out_x(out_x),.out_y(out_y),.out_c(c));
-	endmodule
+endmodule
 	
-module datapath(clk,dataxin, datayin, colorin,ld_x,ld_y,ld_c,resetn,out_x,out_y,out_c);
+module datapath(clk,dataxin, datayin, colorin, drawClk,ld_x,ld_y,ld_c,resetn,out_x,out_y,out_c);
 	input clk;
 	// 8bits for coordinate load to register x
 	input [7:0]dataxin;
@@ -206,6 +194,8 @@ module datapath(clk,dataxin, datayin, colorin,ld_x,ld_y,ld_c,resetn,out_x,out_y,
 	input [6:0]datayin;
 	// 3 bits for color load to register c
 	input [2:0]colorin;
+	//draw enable signal
+	input drawClk;
 	// reset signal
 	input resetn;
 	// enable x register
@@ -222,16 +212,25 @@ module datapath(clk,dataxin, datayin, colorin,ld_x,ld_y,ld_c,resetn,out_x,out_y,
 		if (!resetn) begin
 			out_x <= 8'd0;
 			out_y <= 7'd0;
-			out_c <= 3'd0;
 		end
 		else begin
 			if (ld_x)
-				out_x <=  dataxin;
+				out_x <= dataxin;
 			if (ld_y)
 				out_y <= datayin;
-			if (ld_c)
-				out_c <= colorin;
 		end
+	end
+	
+	always@(*)
+	begin
+		if(drawClk)	begin
+			if (ld_c)
+				out_c = colorin;
+			else if (!resetn)
+				out_c = 3'b0;
+			end
+	// 	else if (!drawClk)
+	// 		out_c <= 3'b0;
 	end
 endmodule
 
@@ -248,34 +247,36 @@ module control(
 	S_DRAW   = 3'd1;
 
 	// Next state logic aka our state table
-	always@(*)
+	always@(posedge clk)
 		begin: state_table
 			case (current_state)
-				S_ERASE: next_state = go ? S_DRAW : S_ERASE;
+				S_ERASE: next_state = go ? S_DRAW : S_ERASE; 
 				S_DRAW: next_state = go ? S_DRAW : S_ERASE; 
 				default:     next_state = S_ERASE;
 			endcase
 		end // state_table
 	// Output logic aka all of our datapath control signals
-	always @(*)
+	always @(posedge clk)
 		begin: enable_signals
-			ld_x = 1'b0;
-			ld_y = 1'b0;
-			ld_c = 1'b0;
-			plot = 1'b0;
-			enable_xc = 1'b0;
-			enable_yc = 1'b0;
+			// ld_x = 1'b0;
+			// ld_y = 1'b0;
+			// ld_c = 1'b0;
+			// plot = 1'b0;
+			// enable_xc = 1'b0;
+			// enable_yc = 1'b0;
 			case (current_state)
 				S_ERASE: begin
-					plot = 1'b0;
+					//this should not be enabled, as we are going to draw over the previous shape with black
+					//plot = 1'b0;
 					enable_xc = 1'b0;
 					enable_yc = 1'b0;
+					// ld_c <= 1'b0;
 				end
 				S_DRAW: begin
 					plot = 1'b1;
 					ld_x = 1'b1;
-			      ld_y = 1'b1;
-			      ld_c = 1'b1;
+			      	ld_y = 1'b1;
+			      	ld_c = 1'b1;
 					enable_xc = 1'b1;
 					enable_yc = 1'b1;
 				end
@@ -294,74 +295,93 @@ module control(
 endmodule
 
 module XCounter(count_enable, clk, reset_n,xDisplay);
-input clk;
-input reset_n;
-input count_enable;
-output reg [7:0]xDisplay;
-always @(posedge clk) 
-   begin
-	 if(reset_n == 1'b0) 
-	 xDisplay <= 0; 
-	 else if (xDisplay == 8'b11111111)
-	 xDisplay <= xDisplay - 1'b1;
-	 else if (xDisplay == 8'b0)
-	 xDisplay <= xDisplay + 1'b1; 
-	
+	input clk;
+	input reset_n;
+	input count_enable;
+	output reg [7:0] xDisplay;
+	reg direction; //0 = left, 1 = right
+	reg [3:0] square_size = 4'd4; //size of edge of square
+	always @(posedge clk) 
+	begin
+		if(reset_n == 1'b0) begin
+			xDisplay <= 1'b0;
+			direction <= 1'b0;
+			end
+		else if (xDisplay == 1'b0)
+			direction <= 1'b1; //reached left, has to go right
+		else if (xDisplay == (8'd160 - square_size)) //subtract square size to determine true boundary of x
+			direction <= 1'b0; //reached rightmost area, has to go left
+
+		if (direction == 1'b0)
+			xDisplay <= xDisplay - 1'b1; //going left
+		else if (direction == 1'b1)
+			xDisplay <= xDisplay + 1'b1; //going right
 	end
 endmodule
 
 module YCounter(count_enable, clk, reset_n,yDisplay);
-input clk;
-input reset_n;
-input count_enable;
-output reg [6:0]yDisplay;
-always @(posedge clk) 
-   begin
-	 if(reset_n == 1'b0) 
-	 yDisplay <= 0; 
-	 else if (yDisplay == 7'b1111111)
-	 yDisplay <= yDisplay - 1'b1;
-	 else if (yDisplay == 7'b0)
-	 yDisplay <= yDisplay + 1'b1; 
-	
+	input clk;
+	input reset_n;
+	input count_enable;
+	output reg [6:0]yDisplay;
+	reg direction; //0 = down, 1 = up: note to go up is to decrease y
+	reg [3:0] square_size = 4'd4; //size of edge of square
+	always @(posedge clk) 
+	begin
+		if (reset_n == 1'b0) begin
+			yDisplay <= 1'b0; //initialize to 0
+			direction <= 1'b0;
+			end
+		else if (yDisplay == 1'b0)
+			direction <= 1'b0; //reached top of screen; has to go down.
+		else if (yDisplay == (7'd120 - square_size)) //subtract square size to determine true boundary of y
+			direction <= 1'b1; //reached bottom of screen; has to go up.
+
+		if (direction == 1'b0)
+			yDisplay <= yDisplay + 1'b1; //going down
+		else if (direction == 1'b1)
+			yDisplay <= yDisplay - 1'b1; //going up
 	end
 endmodule
 
 //should run at 1/60th of a second
-module TimeCounter(count_enable, clk, reset_n, display);
-input count_enable;
-input clk;
-input reset_n;
-output display;
-reg [23:0] q;
-// wire [23:0] value = 24'd12500000;
-//wire [23:0] value = 24'd5;
-wire [19:0] value = 20'd833333;
-always @(posedge clk) 
-   begin
-	 if(reset_n == 1'b0) 
-	 q <= 0; 
-	 else if (q == 24'b0)
-	 q <= value;
-	 else
-	 q <= q - 1'b1; 
-	end
-  assign display = ( q == 0 ) ? 1 : 0 ;
+module TimeCounter(count_enable, clk, reset_n, display, drawEnable);
+	input count_enable;
+	input clk;
+	input reset_n;
+	output display;
+	output drawEnable;
+	reg [23:0] q;
+	// wire [23:0] value = 24'd12500000;
+	//wire [23:0] value = 24'd5;
+	wire [19:0] value = 20'd833333; //1-60th of a second
+	always @(posedge clk) 
+	begin
+		if(reset_n == 1'b0) 
+		q <= 0; 
+		else if (q == 1'b0)
+		q <= value;
+		else
+		q <= q - 1'b1; 
+		end
+	//note: the reason why the square was not drawing itself properly is because it was only able to draw one or two pixels before display went to 0, thus disabling drawing.
+	assign drawEnable = (1'b0 <= q & q <= 20'd416666) ? 1 : 0 ; //this generates a true 60hz wave instead of having the clock go high once every 1/60th of a second
+	assign display = (q == 20'd416666) ? 1 : 0; //this only goes high every 1/60th of a second for 1/50M 
 endmodule
 
 //what is this for?
 module FrequencyCounter(enable,clk,display);
-input enable;
-input clk;
-output [3:0]display; 
-reg [3:0]display;
-always @(posedge clk) 
-    begin
-	 if(display == 4'b1111) 
-	 display <= 0;
-	 else if (enable == 1'b1)
-	 display <= display + 1'b1; 
- 	 end
+	input enable;
+	input clk;
+	output [3:0]display; 
+	reg [3:0]display;
+	always @(posedge clk) 
+		begin
+		if(display == 4'b1111) 
+		display <= 0;
+		else if (enable == 1'b1)
+		display <= display + 1'b1; 
+		end
 endmodule
 
 module hex_decoder(hex_digit, segments);

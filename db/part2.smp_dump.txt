@@ -3,3 +3,8 @@ State Machine - |part2|control:c0|current_state
 Name current_state.S_DRAW 
 current_state.S_ERASE 0 
 current_state.S_DRAW 1 
+
+State Machine - |part2|control:c0|next_state
+Name next_state.S_DRAW 
+next_state.S_ERASE 0 
+next_state.S_DRAW 1 
