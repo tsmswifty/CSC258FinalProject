@@ -1,0 +1,37 @@
+
+
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v
+
+Nov 17 11AM:51:24>: Error in CNX file format.
+
+Error messages are listed in file
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v
+
+Nov 17 11AM:53:40>: Error in CNX file format.
+
+Error messages are listed in file
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v
+
+Nov 17 11AM:53:51>: Error in CNX file format.
+
+Error messages are listed in file
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)
+
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v
+
+Nov 17 12PM:32:50>: Error in CNX file format.
+
+Error messages are listed in file
+D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.cnxerr.
+
+Can't create the custom megafunction variation file(s)

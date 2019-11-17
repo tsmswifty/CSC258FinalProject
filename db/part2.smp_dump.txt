@@ -1,0 +1,5 @@
+
+State Machine - |part2|control:c0|current_state
+Name current_state.S_DRAW 
+current_state.S_ERASE 0 
+current_state.S_DRAW 1 
