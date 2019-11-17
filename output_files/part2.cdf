@@ -1,4 +1,4 @@
-/* Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition */
+/* Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("D:/Git repos/CSC258FinalProject/output_files/") File("part2.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("D:/GitHub/CSC258FinalProject/output_files/") File("part2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

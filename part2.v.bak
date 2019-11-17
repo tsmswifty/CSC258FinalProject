@@ -1,0 +1,389 @@
+module part2
+	(
+		CLOCK_50,						//	On Board 50 MHz
+		// Your inputs and outputs here
+        KEY,
+        SW,
+		HEX0,
+		// The ports below are for the VGA output.  Do not change.
+		VGA_CLK,   						//	VGA Clock
+		VGA_HS,							//	VGA H_SYNC
+		VGA_VS,							//	VGA V_SYNC
+		VGA_BLANK_N,						//	VGA BLANK
+		VGA_SYNC_N,						//	VGA SYNC
+		VGA_R,   						//	VGA Red[9:0]
+		VGA_G,	 						//	VGA Green[9:0]
+		VGA_B   						//	VGA Blue[9:0]
+	);
+
+	input	  CLOCK_50;				//	50 MHz
+	input   [9:0]   SW;
+	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
+	input   [3:0]   KEY;
+
+	input [6:0] HEX0;
+
+	// Declare your inputs and outputs here
+	// Do not change the following outputs
+	output			VGA_CLK;   				//	VGA Clock
+	output			VGA_HS;					//	VGA H_SYNC
+	output			VGA_VS;					//	VGA V_SYNC
+	output			VGA_BLANK_N;				//	VGA BLANK
+	output			VGA_SYNC_N;				//	VGA SYNC
+	output	[9:0]	VGA_R;   				//	VGA Red[9:0]
+	output	[9:0]	VGA_G;	 				//	VGA Green[9:0]
+	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
+	
+	wire resetn;
+	assign resetn = KEY[0];
+	
+	// Create the colour, x, y and writeEn wires that are inputs to the controller.
+	wire [2:0] colour;
+	wire [7:0] x;
+	wire [6:0] y;
+	wire writeEn;
+
+	// Create an Instance of a VGA controller - there can be only one!
+	// Define the number of colours as well as the initial background
+	// image file (.MIF) for the controller.
+	vga_adapter VGA(
+			.resetn(resetn),
+			.clock(CLOCK_50),
+			.colour(colour),
+			.x(x),
+			.y(y),
+			.plot(writeEn),
+			/* Signals for the DAC to drive the monitor. */
+			.VGA_R(VGA_R),
+			.VGA_G(VGA_G),
+			.VGA_B(VGA_B),
+			.VGA_HS(VGA_HS),
+			.VGA_VS(VGA_VS),
+			.VGA_BLANK(VGA_BLANK_N),
+			.VGA_SYNC(VGA_SYNC_N),
+			.VGA_CLK(VGA_CLK));
+		defparam VGA.RESOLUTION = "160x120";
+		defparam VGA.MONOCHROME = "FALSE";
+		defparam VGA.BITS_PER_COLOUR_CHANNEL = 1;
+		defparam VGA.BACKGROUND_IMAGE = "black.mif";
+			
+	// Put your code here. Your code should produce signals x,y,colour and writeEn/plot
+	// for the VGA controller, in addition to any other functionality your design may require.
+	
+	wire load_x;
+	wire load_y;
+	wire load_c;
+	wire signal_xc;
+	wire signal_yc;
+	wire [7:0]out_x;
+	wire [6:0]out_y;
+	wire [3:0] count;
+	wire [7:0] xcount;
+	wire [6:0] ycount;
+	
+	wire signal;
+	// drawBorder l0(.x(x), .y(y), .clk(CLOCK_50), .colour(colour), .writeEn(writeEn));
+	TimeCounter tc(
+			.count_enable(SW[0]), 
+			.clk(CLOCK_50), 
+			.reset_n(KEY[0]), 
+			.display(signal)
+			);
+	XCounter xc(
+			.count_enable(SW[0]), 
+			.clk(signal_xc), 
+			.reset_n(KEY[0]),
+			.xDisplay(xcount)
+			);
+   	YCounter yc(
+			.count_enable(SW[0]), 
+			.clk(signal_yc), 
+			.reset_n(KEY[0]),
+			.yDisplay(ycount)
+			);
+	// output from the counter
+	datapath d0(
+			.clk(CLOCK_50),
+			.dataxin(xcount),
+			.datayin(ycount),
+			.colorin(SW[9:7]),
+			.ld_x(load_x),
+			.ld_y(load_y),
+			.ld_c(load_c),
+			.resetn(KEY[0]),
+			.out_x(out_x),
+			.out_y(out_y),
+			.out_c(colour)
+			);
+	PixelCounter counter(
+			.enable(writeEn),
+			.clk(CLOCK_50),
+			.display(count)
+			);
+	assign x = out_x + count[1:0];
+	assign y = out_y + count [3:2];
+	control c0(
+			.clk(CLOCK_50),
+			.resetn(KEY[0]),
+			.go(signal),
+			.ld_x(load_x), 
+			.ld_y(load_y), 
+			.ld_c(load_c), 
+			.plot(writeEn),
+			.enable_xc(signal_xc),
+			.enable_yc(signal_yc)
+			);
+
+	//register to display clock speed
+	reg [3:0] clock_counter = 1'b0;
+	always@(posedge CLOCK_50)
+	begin
+		if(signal == 1'b1)
+			clock_counter <= clock_counter + 1'b1;
+	end
+	hex_decoder hexzero(.hex_digit(clock_counter), .segments(HEX0));
+
+endmodule
+
+// module drawBorder(x, y, clk, colour, writeEn);
+// 	input clk;
+// 	output reg [7:0] x;
+// 	output reg [6:0] y;
+// 	output reg [2:0] colour;
+// 	output reg writeEn;
+
+// 	reg done = 1'b0;
+// 	reg xcounter = 8'd159;
+// 	reg ycounter = 1'b0;
+// 	//draw left border
+// 	always @(posedge clk)
+// 	begin
+// 		if (done == 1'b0) begin
+// 			colour <= 3'b111;
+// 			y <= ycounter;
+// 			x <= xcounter;
+// 			writeEn <= 1;
+// 			xcounter <= xcounter - 1'b1;
+// 		end
+// 	end
+// endmodule
+
+module PixelCounter(enable,clk, display);
+input enable;
+input clk ;
+output [3:0]display; 
+reg [3:0]display;
+always @(posedge clk) 
+   begin
+	 if( display == 4'b1111) 
+	 display <= 0 ; // Set q to 0
+	 else if (enable == 1'b1)
+		display <= display + 1'b1; 
+	end
+endmodule
+
+module combine(input enable, input clk,input[2:0]colorin,input reset,input go,output [7:0]out_x,output [6:0]out_y,output [2:0]c,output writeEn);
+	wire load_x,load_y,load_c;
+	wire signal_xc;
+	wire signal_yc;
+	wire [7:0]xcount;
+	wire [6:0]ycount;
+	wire [3:0] count;
+	wire signal;
+	TimeCounter tc(.count_enable(enable), .clk(clk), .reset_n(reset), .display(signal));
+	control c0(.clk(clk),.resetn(reset),.go(signal),.ld_x(load_x), .ld_y(load_y), .ld_c(load_c), .plot(writeEn),.enable_xc(signal_xc),.enable_yc(signal_yc));
+	XCounter xc(.count_enable(enable), .clk(signal_xc), .reset_n(reset),.xDisplay(xcount));
+   YCounter yc(.count_enable(enable), .clk(signal_yc), .reset_n(reset),.yDisplay(ycount));
+	datapath d0(.clk(clk),.dataxin(xcount),.datayin(ycount),.colorin(colorin),.ld_x(load_x),.ld_y(load_y),.ld_c(load_c),.resetn(reset),
+	.out_x(out_x),.out_y(out_y),.out_c(c));
+	endmodule
+	
+module datapath(clk,dataxin, datayin, colorin,ld_x,ld_y,ld_c,resetn,out_x,out_y,out_c);
+	input clk;
+	// 8bits for coordinate load to register x
+	input [7:0]dataxin;
+	// 7 bits for coordinate load to register x
+	input [6:0]datayin;
+	// 3 bits for color load to register c
+	input [2:0]colorin;
+	// reset signal
+	input resetn;
+	// enable x register
+	input ld_x;
+	// enable y register
+	input ld_y;
+	// enable c register
+	input ld_c;
+	output reg [7:0]out_x;
+	output reg [6:0]out_y;
+	output reg [2:0]out_c;
+	always @ (posedge clk) begin
+		//reset
+		if (!resetn) begin
+			out_x <= 8'd0;
+			out_y <= 7'd0;
+			out_c <= 3'd0;
+		end
+		else begin
+			if (ld_x)
+				out_x <=  dataxin;
+			if (ld_y)
+				out_y <= datayin;
+			if (ld_c)
+				out_c <= colorin;
+		end
+	end
+endmodule
+
+module control(
+	input clk,
+	input resetn,
+	input go,
+	output reg  ld_x, ld_y, ld_c, plot,enable_xc,enable_yc
+);
+
+	reg [2:0] current_state, next_state;
+
+	localparam  S_ERASE = 3'd0,
+	S_DRAW   = 3'd1;
+
+	// Next state logic aka our state table
+	always@(*)
+		begin: state_table
+			case (current_state)
+				S_ERASE: next_state = go ? S_DRAW : S_ERASE;
+				S_DRAW: next_state = go ? S_DRAW : S_ERASE; 
+				default:     next_state = S_ERASE;
+			endcase
+		end // state_table
+	// Output logic aka all of our datapath control signals
+	always @(*)
+		begin: enable_signals
+			ld_x = 1'b0;
+			ld_y = 1'b0;
+			ld_c = 1'b0;
+			plot = 1'b0;
+			enable_xc = 1'b0;
+			enable_yc = 1'b0;
+			case (current_state)
+				S_ERASE: begin
+					plot = 1'b0;
+					enable_xc = 1'b0;
+					enable_yc = 1'b0;
+				end
+				S_DRAW: begin
+					plot = 1'b1;
+					ld_x = 1'b1;
+			      ld_y = 1'b1;
+			      ld_c = 1'b1;
+					enable_xc = 1'b1;
+					enable_yc = 1'b1;
+				end
+				// default:    // don't need default since we already made sure all of our outputs were assigned a value at the start of the always block
+			endcase
+		end // enable_signals
+
+	// current_state registers
+	always@(posedge clk)
+		begin: state_FFs
+			if(!resetn)
+				current_state <= S_ERASE;
+			else
+				current_state <= next_state;
+		end // state_FFS
+endmodule
+
+module XCounter(count_enable, clk, reset_n,xDisplay);
+input clk;
+input reset_n;
+input count_enable;
+output reg [7:0]xDisplay;
+always @(posedge clk) 
+   begin
+	 if(reset_n == 1'b0) 
+	 xDisplay <= 0; 
+	 else if (xDisplay == 8'b11111111)
+	 xDisplay <= xDisplay - 1'b1;
+	 else if (xDisplay == 8'b0)
+	 xDisplay <= xDisplay + 1'b1; 
+	
+	end
+endmodule
+
+module YCounter(count_enable, clk, reset_n,yDisplay);
+input clk;
+input reset_n;
+input count_enable;
+output reg [6:0]yDisplay;
+always @(posedge clk) 
+   begin
+	 if(reset_n == 1'b0) 
+	 yDisplay <= 0; 
+	 else if (yDisplay == 7'b1111111)
+	 yDisplay <= yDisplay - 1'b1;
+	 else if (yDisplay == 7'b0)
+	 yDisplay <= yDisplay + 1'b1; 
+	
+	end
+endmodule
+
+module TimeCounter(count_enable, clk, reset_n, display);
+input count_enable;
+input clk;
+input reset_n;
+output display;
+reg [23:0] q;
+wire [23:0] value = 24'd12500000;
+//wire [23:0] value = 24'd5;
+always @(posedge clk) 
+   begin
+	 if(reset_n == 1'b0) 
+	 q <= 0; 
+	 else if (q == 24'b0)
+	 q <= value;
+	 else
+	 q <= q - 1'b1; 
+	end
+  assign display = ( q == 0 ) ? 1 : 0 ;
+endmodule
+
+
+module FrequencyCounter(enable,clk,display);
+input enable;
+input clk;
+output [3:0]display; 
+reg [3:0]display;
+always @(posedge clk) 
+    begin
+	 if(display == 4'b1111) 
+	 display <= 0;
+	 else if (enable == 1'b1)
+	 display <= display + 1'b1; 
+ 	 end
+endmodule
+
+module hex_decoder(hex_digit, segments);
+    input [3:0] hex_digit;
+    output reg [6:0] segments;
+   
+    always @(*)
+        case (hex_digit)
+            4'h0: segments = 7'b100_0000;
+            4'h1: segments = 7'b111_1001;
+            4'h2: segments = 7'b010_0100;
+            4'h3: segments = 7'b011_0000;
+            4'h4: segments = 7'b001_1001;
+            4'h5: segments = 7'b001_0010;
+            4'h6: segments = 7'b000_0010;
+            4'h7: segments = 7'b111_1000;
+            4'h8: segments = 7'b000_0000;
+            4'h9: segments = 7'b001_1000;
+            4'hA: segments = 7'b000_1000;
+            4'hB: segments = 7'b000_0011;
+            4'hC: segments = 7'b100_0110;
+            4'hD: segments = 7'b010_0001;
+            4'hE: segments = 7'b000_0110;
+            4'hF: segments = 7'b000_1110;   
+            default: segments = 7'h7f;
+        endcase
+endmodule

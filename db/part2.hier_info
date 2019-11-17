@@ -14,41 +14,48 @@ SW[6] => ~NO_FANOUT~
 SW[7] => SW[7].IN1
 SW[8] => SW[8].IN1
 SW[9] => SW[9].IN1
-VGA_CLK << vga_adapter:VGA.VGA_CLK
-VGA_HS << vga_adapter:VGA.VGA_HS
-VGA_VS << vga_adapter:VGA.VGA_VS
-VGA_BLANK_N << vga_adapter:VGA.VGA_BLANK
-VGA_SYNC_N << vga_adapter:VGA.VGA_SYNC
-VGA_R[0] << vga_adapter:VGA.VGA_R
-VGA_R[1] << vga_adapter:VGA.VGA_R
-VGA_R[2] << vga_adapter:VGA.VGA_R
-VGA_R[3] << vga_adapter:VGA.VGA_R
-VGA_R[4] << vga_adapter:VGA.VGA_R
-VGA_R[5] << vga_adapter:VGA.VGA_R
-VGA_R[6] << vga_adapter:VGA.VGA_R
-VGA_R[7] << vga_adapter:VGA.VGA_R
-VGA_R[8] << vga_adapter:VGA.VGA_R
-VGA_R[9] << vga_adapter:VGA.VGA_R
-VGA_G[0] << vga_adapter:VGA.VGA_G
-VGA_G[1] << vga_adapter:VGA.VGA_G
-VGA_G[2] << vga_adapter:VGA.VGA_G
-VGA_G[3] << vga_adapter:VGA.VGA_G
-VGA_G[4] << vga_adapter:VGA.VGA_G
-VGA_G[5] << vga_adapter:VGA.VGA_G
-VGA_G[6] << vga_adapter:VGA.VGA_G
-VGA_G[7] << vga_adapter:VGA.VGA_G
-VGA_G[8] << vga_adapter:VGA.VGA_G
-VGA_G[9] << vga_adapter:VGA.VGA_G
-VGA_B[0] << vga_adapter:VGA.VGA_B
-VGA_B[1] << vga_adapter:VGA.VGA_B
-VGA_B[2] << vga_adapter:VGA.VGA_B
-VGA_B[3] << vga_adapter:VGA.VGA_B
-VGA_B[4] << vga_adapter:VGA.VGA_B
-VGA_B[5] << vga_adapter:VGA.VGA_B
-VGA_B[6] << vga_adapter:VGA.VGA_B
-VGA_B[7] << vga_adapter:VGA.VGA_B
-VGA_B[8] << vga_adapter:VGA.VGA_B
-VGA_B[9] << vga_adapter:VGA.VGA_B
+HEX0[0] <= hex_decoder:hexzero.segments[0]
+HEX0[1] <= hex_decoder:hexzero.segments[1]
+HEX0[2] <= hex_decoder:hexzero.segments[2]
+HEX0[3] <= hex_decoder:hexzero.segments[3]
+HEX0[4] <= hex_decoder:hexzero.segments[4]
+HEX0[5] <= hex_decoder:hexzero.segments[5]
+HEX0[6] <= hex_decoder:hexzero.segments[6]
+VGA_CLK <= vga_adapter:VGA.VGA_CLK
+VGA_HS <= vga_adapter:VGA.VGA_HS
+VGA_VS <= vga_adapter:VGA.VGA_VS
+VGA_BLANK_N <= vga_adapter:VGA.VGA_BLANK
+VGA_SYNC_N <= vga_adapter:VGA.VGA_SYNC
+VGA_R[0] <= vga_adapter:VGA.VGA_R
+VGA_R[1] <= vga_adapter:VGA.VGA_R
+VGA_R[2] <= vga_adapter:VGA.VGA_R
+VGA_R[3] <= vga_adapter:VGA.VGA_R
+VGA_R[4] <= vga_adapter:VGA.VGA_R
+VGA_R[5] <= vga_adapter:VGA.VGA_R
+VGA_R[6] <= vga_adapter:VGA.VGA_R
+VGA_R[7] <= vga_adapter:VGA.VGA_R
+VGA_R[8] <= vga_adapter:VGA.VGA_R
+VGA_R[9] <= vga_adapter:VGA.VGA_R
+VGA_G[0] <= vga_adapter:VGA.VGA_G
+VGA_G[1] <= vga_adapter:VGA.VGA_G
+VGA_G[2] <= vga_adapter:VGA.VGA_G
+VGA_G[3] <= vga_adapter:VGA.VGA_G
+VGA_G[4] <= vga_adapter:VGA.VGA_G
+VGA_G[5] <= vga_adapter:VGA.VGA_G
+VGA_G[6] <= vga_adapter:VGA.VGA_G
+VGA_G[7] <= vga_adapter:VGA.VGA_G
+VGA_G[8] <= vga_adapter:VGA.VGA_G
+VGA_G[9] <= vga_adapter:VGA.VGA_G
+VGA_B[0] <= vga_adapter:VGA.VGA_B
+VGA_B[1] <= vga_adapter:VGA.VGA_B
+VGA_B[2] <= vga_adapter:VGA.VGA_B
+VGA_B[3] <= vga_adapter:VGA.VGA_B
+VGA_B[4] <= vga_adapter:VGA.VGA_B
+VGA_B[5] <= vga_adapter:VGA.VGA_B
+VGA_B[6] <= vga_adapter:VGA.VGA_B
+VGA_B[7] <= vga_adapter:VGA.VGA_B
+VGA_B[8] <= vga_adapter:VGA.VGA_B
+VGA_B[9] <= vga_adapter:VGA.VGA_B
 
 
 |part2|vga_adapter:VGA
@@ -1037,5 +1044,19 @@ ld_c <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
 plot <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
 enable_xc <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
 enable_yc <= ld_c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|hex_decoder:hexzero
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

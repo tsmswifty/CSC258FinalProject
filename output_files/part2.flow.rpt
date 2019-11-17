@@ -1,6 +1,6 @@
 Flow report for part2
-Sun Nov 17 13:34:28 2019
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Sun Nov 17 15:38:48 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -29,28 +29,27 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Nov 17 13:34:22 2019       ;
-; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Flow Status                     ; Successful - Sun Nov 17 15:38:37 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 95 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 95                                          ;
-; Total pins                      ; 50 / 457 ( 11 % )                           ;
+; Logic utilization (in ALMs)     ; 98 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 102                                         ;
+; Total pins                      ; 57 / 457 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600 / 4,065,280 ( 1 % )                  ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,7 +67,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/17/2019 13:33:20 ;
+; Start date & time ; 11/17/2019 15:37:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; part2               ;
 +-------------------+---------------------+
@@ -79,7 +78,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 247207021063411.157401560010668        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 1097835180110.157402302004296          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -89,29 +88,29 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4866 MB             ; 00:00:22                           ;
-; Fitter                    ; 00:00:44     ; 1.0                     ; 6917 MB             ; 00:01:48                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4838 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.2                     ; 5215 MB             ; 00:00:07                           ;
-; Total                     ; 00:01:06     ; --                      ; --                  ; 00:02:23                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4901 MB             ; 00:00:27                           ;
+; Fitter               ; 00:01:11     ; 1.0                     ; 7455 MB             ; 00:04:03                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4840 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.3                     ; 5288 MB             ; 00:00:10                           ;
+; Total                ; 00:01:44     ; --                      ; --                  ; 00:04:49                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                         ;
-+---------------------------+------------------+------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-S0MPN1C  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; DESKTOP-S0MPN1C  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; DESKTOP-S0MPN1C  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-S0MPN1C  ; Windows 10 ; 10.0       ; x86_64         ;
-+---------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-F1K7U67  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-F1K7U67  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-F1K7U67  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-F1K7U67  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------

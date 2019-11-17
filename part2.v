@@ -4,6 +4,7 @@ module part2
 		// Your inputs and outputs here
         KEY,
         SW,
+		HEX0,
 		// The ports below are for the VGA output.  Do not change.
 		VGA_CLK,   						//	VGA Clock
 		VGA_HS,							//	VGA H_SYNC
@@ -19,6 +20,8 @@ module part2
 	input   [9:0]   SW;
 	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
 	input   [3:0]   KEY;
+
+	output [6:0] HEX0;
 
 	// Declare your inputs and outputs here
 	// Do not change the following outputs
@@ -79,17 +82,91 @@ module part2
 	wire [6:0] ycount;
 	
 	wire signal;
-	TimeCounter tc(.count_enable(SW[0]), .clk(CLOCK_50), .reset_n(KEY[0]), .display(signal));
-	XCounter xc(.count_enable(SW[0]), .clk(signal_xc), .reset_n(KEY[0]),.xDisplay(xcount));
-   YCounter yc(.count_enable(SW[0]), .clk(signal_yc), .reset_n(KEY[0]),.yDisplay(ycount));
+	// drawBorder l0(.x(x), .y(y), .clk(CLOCK_50), .colour(colour), .writeEn(writeEn));
+	TimeCounter tc(
+			.count_enable(SW[0]), 
+			.clk(CLOCK_50), 
+			.reset_n(KEY[0]), 
+			.display(signal)
+			);
+	XCounter xc(
+			.count_enable(SW[0]), 
+			.clk(signal_xc), 
+			.reset_n(KEY[0]),
+			.xDisplay(xcount)
+			);
+   	YCounter yc(
+			.count_enable(SW[0]), 
+			.clk(signal_yc), 
+			.reset_n(KEY[0]),
+			.yDisplay(ycount)
+			);
 	// output from the counter
-	datapath d0(.clk(CLOCK_50),.dataxin(xcount),.datayin(ycount),.colorin(SW[9:7]),.ld_x(load_x),.ld_y(load_y),.ld_c(load_c),
-		.resetn(KEY[0]),.out_x(out_x),.out_y(out_y),.out_c(colour));
-		PixelCounter counter(.enable(writeEn),.clk(CLOCK_50),.display(count));
-		assign x = out_x + count[1:0];
-		assign y = out_y + count [3:2];
-	control c0(.clk(CLOCK_50),.resetn(KEY[0]),.go(signal),.ld_x(load_x), .ld_y(load_y), .ld_c(load_c), .plot(writeEn),.enable_xc(signal_xc),.enable_yc(signal_yc));
+	datapath d0(
+			.clk(CLOCK_50),
+			.dataxin(xcount),
+			.datayin(ycount),
+			.colorin(SW[9:7]),
+			.ld_x(load_x),
+			.ld_y(load_y),
+			.ld_c(load_c),
+			.resetn(KEY[0]),
+			.out_x(out_x),
+			.out_y(out_y),
+			.out_c(colour)
+			);
+	PixelCounter counter(
+			.enable(writeEn),
+			.clk(CLOCK_50),
+			.display(count)
+			);
+	assign x = out_x + count[1:0];
+	assign y = out_y + count [3:2];
+	control c0(
+			.clk(CLOCK_50),
+			.resetn(KEY[0]),
+			.go(signal),
+			.ld_x(load_x), 
+			.ld_y(load_y), 
+			.ld_c(load_c), 
+			.plot(writeEn),
+			.enable_xc(signal_xc),
+			.enable_yc(signal_yc)
+			);
+
+	//register to display clock speed
+	reg [3:0] clock_counter = 1'b0;
+	always@(posedge CLOCK_50)
+	begin
+		if(signal == 1'b1)
+			clock_counter <= clock_counter + 1'b1;
+	end
+	hex_decoder hexzero(.hex_digit(clock_counter), .segments(HEX0));
+
 endmodule
+
+// module drawBorder(x, y, clk, colour, writeEn);
+// 	input clk;
+// 	output reg [7:0] x;
+// 	output reg [6:0] y;
+// 	output reg [2:0] colour;
+// 	output reg writeEn;
+
+// 	reg done = 1'b0;
+// 	reg xcounter = 8'd159;
+// 	reg ycounter = 1'b0;
+// 	//draw left border
+// 	always @(posedge clk)
+// 	begin
+// 		if (done == 1'b0) begin
+// 			colour <= 3'b111;
+// 			y <= ycounter;
+// 			x <= xcounter;
+// 			writeEn <= 1;
+// 			xcounter <= xcounter - 1'b1;
+// 		end
+// 	end
+// endmodule
 
 module PixelCounter(enable,clk, display);
 input enable;
@@ -144,8 +221,8 @@ module datapath(clk,dataxin, datayin, colorin,ld_x,ld_y,ld_c,resetn,out_x,out_y,
 		//reset
 		if (!resetn) begin
 			out_x <= 8'd0;
-			out_y<= 7'd0;
-			out_c<= 3'd0;
+			out_y <= 7'd0;
+			out_c <= 3'd0;
 		end
 		else begin
 			if (ld_x)
@@ -244,20 +321,22 @@ always @(posedge clk)
 	 yDisplay <= 0; 
 	 else if (yDisplay == 7'b1111111)
 	 yDisplay <= yDisplay - 1'b1;
-	 else if (yDisplay ==8'b0)
+	 else if (yDisplay == 7'b0)
 	 yDisplay <= yDisplay + 1'b1; 
 	
 	end
 endmodule
 
+//should run at 1/60th of a second
 module TimeCounter(count_enable, clk, reset_n, display);
 input count_enable;
 input clk;
 input reset_n;
 output display;
 reg [23:0] q;
-//wire [23:0] value = 24'd12500000;
-wire [23:0] value = 24'd5;
+// wire [23:0] value = 24'd12500000;
+//wire [23:0] value = 24'd5;
+wire [19:0] value = 20'd833333;
 always @(posedge clk) 
    begin
 	 if(reset_n == 1'b0) 
@@ -270,7 +349,7 @@ always @(posedge clk)
   assign display = ( q == 0 ) ? 1 : 0 ;
 endmodule
 
-
+//what is this for?
 module FrequencyCounter(enable,clk,display);
 input enable;
 input clk;
@@ -283,4 +362,30 @@ always @(posedge clk)
 	 else if (enable == 1'b1)
 	 display <= display + 1'b1; 
  	 end
+endmodule
+
+module hex_decoder(hex_digit, segments);
+    input [3:0] hex_digit;
+    output reg [6:0] segments;
+   
+    always @(*)
+        case (hex_digit)
+            4'h0: segments = 7'b100_0000;
+            4'h1: segments = 7'b111_1001;
+            4'h2: segments = 7'b010_0100;
+            4'h3: segments = 7'b011_0000;
+            4'h4: segments = 7'b001_1001;
+            4'h5: segments = 7'b001_0010;
+            4'h6: segments = 7'b000_0010;
+            4'h7: segments = 7'b111_1000;
+            4'h8: segments = 7'b000_0000;
+            4'h9: segments = 7'b001_1000;
+            4'hA: segments = 7'b000_1000;
+            4'hB: segments = 7'b000_0011;
+            4'hC: segments = 7'b100_0110;
+            4'hD: segments = 7'b010_0001;
+            4'hE: segments = 7'b000_0110;
+            4'hF: segments = 7'b000_1110;   
+            default: segments = 7'h7f;
+        endcase
 endmodule

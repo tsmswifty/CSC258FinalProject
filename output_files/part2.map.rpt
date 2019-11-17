@@ -1,6 +1,6 @@
 Analysis & Synthesis report for part2
-Sun Nov 17 13:33:30 2019
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Sun Nov 17 15:37:14 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -36,7 +36,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -44,26 +44,25 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Intel and sold by Intel or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 17 13:33:29 2019       ;
-; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 17 15:37:14 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 92                                          ;
-; Total pins                      ; 50                                          ;
+; Total registers                 ; 96                                          ;
+; Total pins                      ; 57                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600                                      ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -85,13 +84,13 @@ agreement for further details.
 ; Top-level entity name                                                           ; part2              ; part2              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
 ; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
 ; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
 ; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
 ; Preserve fewer node names                                                       ; On                 ; On                 ;
-; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
 ; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                        ; Auto               ; Auto               ;
@@ -142,7 +141,7 @@ agreement for further details.
 ; Report Connectivity Checks                                                      ; On                 ; On                 ;
 ; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
 ; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
-; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
 ; HDL message level                                                               ; Level2             ; Level2             ;
 ; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
 ; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
@@ -169,14 +168,15 @@ agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -185,29 +185,29 @@ agreement for further details.
 +--------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
 +--------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v                    ;         ;
-; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_address_translator.v         ;         ;
-; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_controller.v                 ;         ;
-; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File   ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v                        ;         ;
-; part2.v                              ; yes             ; Auto-Found Verilog HDL File  ; D:/Git repos/CSC258FinalProject/part2.v                                      ;         ;
-; altsyncram.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal170.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/aglobal170.inc        ;         ;
-; a_rdenreg.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_m6m1.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf                       ;         ;
-; db/decode_7la.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/decode_7la.tdf                            ;         ;
-; db/decode_01a.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/decode_01a.tdf                            ;         ;
-; db/mux_ifb.tdf                       ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/mux_ifb.tdf                               ;         ;
-; altpll.tdf                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; stratix_pll.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/altpll_80u.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/altpll_80u.tdf                            ;         ;
+; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File        ; D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v                       ;         ;
+; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File        ; D:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v            ;         ;
+; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File        ; D:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v                    ;         ;
+; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File   ; D:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v                           ;         ;
+; part2.v                              ; yes             ; Auto-Found Verilog HDL File  ; D:/GitHub/CSC258FinalProject/part2.v                                         ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_m6m1.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf                          ;         ;
+; db/decode_7la.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/GitHub/CSC258FinalProject/db/decode_7la.tdf                               ;         ;
+; db/decode_01a.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/GitHub/CSC258FinalProject/db/decode_01a.tdf                               ;         ;
+; db/mux_ifb.tdf                       ; yes             ; Auto-Generated Megafunction  ; D:/GitHub/CSC258FinalProject/db/mux_ifb.tdf                                  ;         ;
+; altpll.tdf                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; stratix_pll.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/altpll_80u.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/GitHub/CSC258FinalProject/db/altpll_80u.tdf                               ;         ;
 +--------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
@@ -216,18 +216,18 @@ agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 102          ;
+; Estimate of Logic utilization (ALMs needed) ; 99           ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 177          ;
+; Combinational ALUT usage for logic          ; 178          ;
 ;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 23           ;
-;     -- 5 input functions                    ; 25           ;
-;     -- 4 input functions                    ; 3            ;
-;     -- <=3 input functions                  ; 126          ;
+;     -- 6 input functions                    ; 16           ;
+;     -- 5 input functions                    ; 30           ;
+;     -- 4 input functions                    ; 12           ;
+;     -- <=3 input functions                  ; 120          ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 92           ;
+; Dedicated logic registers                   ; 96           ;
 ;                                             ;              ;
-; I/O pins                                    ; 50           ;
+; I/O pins                                    ; 57           ;
 ; Total MLAB memory bits                      ; 0            ;
 ; Total block memory bits                     ; 57600        ;
 ;                                             ;              ;
@@ -238,8 +238,8 @@ agreement for further details.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 80           ;
-; Total fan-out                               ; 1210         ;
-; Average fan-out                             ; 3.19         ;
+; Total fan-out                               ; 1239         ;
+; Average fan-out                             ; 3.11         ;
 +---------------------------------------------+--------------+
 
 
@@ -248,13 +248,14 @@ agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |part2                                                  ; 177 (15)            ; 92 (0)                    ; 57600             ; 0          ; 50   ; 0            ; |part2                                                                                                ; part2                  ; work         ;
+; |part2                                                  ; 178 (19)            ; 96 (4)                    ; 57600             ; 0          ; 57   ; 0            ; |part2                                                                                                ; part2                  ; work         ;
 ;    |PixelCounter:counter|                               ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|PixelCounter:counter                                                                           ; PixelCounter           ; work         ;
-;    |TimeCounter:tc|                                     ; 51 (51)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
+;    |TimeCounter:tc|                                     ; 41 (41)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
 ;    |XCounter:xc|                                        ; 18 (18)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
 ;    |YCounter:yc|                                        ; 16 (16)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YCounter:yc                                                                                    ; YCounter               ; work         ;
 ;    |control:c0|                                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|control:c0                                                                                     ; control                ; work         ;
 ;    |datapath:d0|                                        ; 1 (1)               ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapath:d0                                                                                    ; datapath               ; work         ;
+;    |hex_decoder:hexzero|                                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|hex_decoder:hexzero                                                                            ; hex_decoder            ; work         ;
 ;    |vga_adapter:VGA|                                    ; 71 (2)              ; 30 (0)                    ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 9 (0)               ; 4 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
 ;          |altsyncram_m6m1:auto_generated|               ; 9 (0)               ; 4 (4)                     ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated                          ; altsyncram_m6m1        ; work         ;
@@ -307,7 +308,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 92    ;
+; Total registers                              ; 96    ;
 ; Number of registers using Synchronous Clear  ; 70    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
@@ -871,35 +872,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 92                          ;
+; arriav_ff             ; 96                          ;
 ;     CLR SCLR          ; 10                          ;
 ;     ENA CLR SCLR      ; 10                          ;
 ;     ENA SCLR          ; 26                          ;
 ;     SCLR              ; 24                          ;
-;     plain             ; 22                          ;
-; arriav_lcell_comb     ; 178                         ;
+;     plain             ; 26                          ;
+; arriav_lcell_comb     ; 180                         ;
 ;     arith             ; 92                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 79                          ;
 ;         2 data inputs ; 12                          ;
-;     normal            ; 76                          ;
+;     normal            ; 78                          ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 18                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 12                          ;
 ;         3 data inputs ; 6                           ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 25                          ;
-;         6 data inputs ; 23                          ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 30                          ;
+;         6 data inputs ; 16                          ;
 ;     shared            ; 10                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 6                           ;
 ;         3 data inputs ; 1                           ;
-; boundary_port         ; 50                          ;
+; boundary_port         ; 57                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.90                        ;
-; Average LUT depth     ; 2.82                        ;
+; Average LUT depth     ; 2.74                        ;
 +-----------------------+-----------------------------+
 
 
@@ -917,35 +919,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Nov 17 13:33:19 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Nov 17 15:37:00 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_address_translator.v Line: 4
+    Info (12023): Found entity 1: vga_address_translator File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
+    Info (12023): Found entity 1: vga_controller File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
-Warning (12125): Using design file part2.v, which is not specified as a design file for the current project, but contains definitions for 9 design units and 9 entities in project
-    Info (12023): Found entity 1: part2 File: D:/Git repos/CSC258FinalProject/part2.v Line: 1
-    Info (12023): Found entity 2: PixelCounter File: D:/Git repos/CSC258FinalProject/part2.v Line: 94
-    Info (12023): Found entity 3: combine File: D:/Git repos/CSC258FinalProject/part2.v Line: 108
-    Info (12023): Found entity 4: datapath File: D:/Git repos/CSC258FinalProject/part2.v Line: 124
-    Info (12023): Found entity 5: control File: D:/Git repos/CSC258FinalProject/part2.v Line: 161
-    Info (12023): Found entity 6: XCounter File: D:/Git repos/CSC258FinalProject/part2.v Line: 219
-    Info (12023): Found entity 7: YCounter File: D:/Git repos/CSC258FinalProject/part2.v Line: 236
-    Info (12023): Found entity 8: TimeCounter File: D:/Git repos/CSC258FinalProject/part2.v Line: 253
-    Info (12023): Found entity 9: FrequencyCounter File: D:/Git repos/CSC258FinalProject/part2.v Line: 274
+    Info (12023): Found entity 1: vga_pll File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
+Warning (12125): Using design file part2.v, which is not specified as a design file for the current project, but contains definitions for 10 design units and 10 entities in project
+    Info (12023): Found entity 1: part2 File: D:/GitHub/CSC258FinalProject/part2.v Line: 1
+    Info (12023): Found entity 2: PixelCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 171
+    Info (12023): Found entity 3: combine File: D:/GitHub/CSC258FinalProject/part2.v Line: 185
+    Info (12023): Found entity 4: datapath File: D:/GitHub/CSC258FinalProject/part2.v Line: 201
+    Info (12023): Found entity 5: control File: D:/GitHub/CSC258FinalProject/part2.v Line: 238
+    Info (12023): Found entity 6: XCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 296
+    Info (12023): Found entity 7: YCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 313
+    Info (12023): Found entity 8: TimeCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 331
+    Info (12023): Found entity 9: FrequencyCounter File: D:/GitHub/CSC258FinalProject/part2.v Line: 353
+    Info (12023): Found entity 10: hex_decoder File: D:/GitHub/CSC258FinalProject/part2.v Line: 367
 Info (12127): Elaborating entity "part2" for the top level hierarchy
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: D:/Git repos/CSC258FinalProject/part2.v Line: 61
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: D:/GitHub/CSC258FinalProject/part2.v Line: 64
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -962,21 +965,21 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
-    Info (12023): Found entity 1: altsyncram_m6m1 File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 34
-Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_m6m1 File: D:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
-    Info (12023): Found entity 1: decode_7la File: D:/Git repos/CSC258FinalProject/db/decode_7la.tdf Line: 23
-Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
+    Info (12023): Found entity 1: decode_7la File: D:/GitHub/CSC258FinalProject/db/decode_7la.tdf Line: 22
+Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: D:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
-    Info (12023): Found entity 1: decode_01a File: D:/Git repos/CSC258FinalProject/db/decode_01a.tdf Line: 23
-Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 48
+    Info (12023): Found entity 1: decode_01a File: D:/GitHub/CSC258FinalProject/db/decode_01a.tdf Line: 22
+Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: D:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
-    Info (12023): Found entity 1: mux_ifb File: D:/Git repos/CSC258FinalProject/db/mux_ifb.tdf Line: 23
-Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 50
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_ifb File: D:/GitHub/CSC258FinalProject/db/mux_ifb.tdf Line: 22
+Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: D:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 49
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -989,45 +992,46 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
-    Info (12023): Found entity 1: altpll_80u File: D:/Git repos/CSC258FinalProject/db/altpll_80u.tdf Line: 26
-Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/Git repos/CSC258FinalProject/part2.v Line: 82
-Warning (10230): Verilog HDL assignment warning at part2.v(270): truncated value with size 32 to match size of target (1) File: D:/Git repos/CSC258FinalProject/part2.v Line: 270
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/Git repos/CSC258FinalProject/part2.v Line: 83
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/Git repos/CSC258FinalProject/part2.v Line: 84
-Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: D:/Git repos/CSC258FinalProject/part2.v Line: 87
-Info (12128): Elaborating entity "PixelCounter" for hierarchy "PixelCounter:counter" File: D:/Git repos/CSC258FinalProject/part2.v Line: 88
-Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: D:/Git repos/CSC258FinalProject/part2.v Line: 91
+    Info (12023): Found entity 1: altpll_80u File: D:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 25
+Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: D:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 91
+Warning (10230): Verilog HDL assignment warning at part2.v(349): truncated value with size 32 to match size of target (1) File: D:/GitHub/CSC258FinalProject/part2.v Line: 349
+Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 97
+Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/GitHub/CSC258FinalProject/part2.v Line: 103
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:d0" File: D:/GitHub/CSC258FinalProject/part2.v Line: 117
+Info (12128): Elaborating entity "PixelCounter" for hierarchy "PixelCounter:counter" File: D:/GitHub/CSC258FinalProject/part2.v Line: 122
+Info (12128): Elaborating entity "control" for hierarchy "control:c0" File: D:/GitHub/CSC258FinalProject/part2.v Line: 135
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: D:/GitHub/CSC258FinalProject/part2.v Line: 144
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: D:/Git repos/CSC258FinalProject/part2.v Line: 29
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: D:/GitHub/CSC258FinalProject/part2.v Line: 32
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: D:/Git repos/CSC258FinalProject/db/altpll_80u.tdf Line: 34
+Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: D:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 33
     Info: Must be connected
 Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 21
-    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 21
-    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 21
-    Warning (15610): No output dependent on input pin "SW[0]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[1]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[2]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[3]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[4]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[5]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-    Warning (15610): No output dependent on input pin "SW[6]" File: D:/Git repos/CSC258FinalProject/part2.v Line: 19
-Info (21057): Implemented 262 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "SW[0]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+    Warning (15610): No output dependent on input pin "SW[1]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+    Warning (15610): No output dependent on input pin "SW[2]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+    Warning (15610): No output dependent on input pin "SW[3]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+    Warning (15610): No output dependent on input pin "SW[4]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+    Warning (15610): No output dependent on input pin "SW[6]" File: D:/GitHub/CSC258FinalProject/part2.v Line: 20
+Info (21057): Implemented 270 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 202 logic cells
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 203 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4866 megabytes
-    Info: Processing ended: Sun Nov 17 13:33:30 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 4901 megabytes
+    Info: Processing ended: Sun Nov 17 15:37:14 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 
