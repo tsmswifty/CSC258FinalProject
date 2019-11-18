@@ -1,0 +1,226 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/gitHub/csc258finalProject/sim
+vcombine
+Z1 !s110 1574054472
+!i10b 1
+!s100 g8GRWGdG7;:Zi[VkGEA7T2
+IFQ22gAImo_=8cOFmgf@073
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1574054466
+Z4 8part2.v
+Z5 Fpart2.v
+L0 173
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1574054472.000000
+Z8 !s107 part2.v|
+Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|
+!i113 1
+Z10 o-timescale 1ns/1ns
+Z11 tCvgOpt 0
+vdatapath
+R1
+!i10b 1
+!s100 F`kbjij5^FG;k@DCEn@W30
+Ikk9UgYLPRhj`N@Cci^E?f1
+R2
+R0
+R3
+R4
+R5
+L0 190
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vFrequencyCounter
+R1
+!i10b 1
+!s100 >lL^am^4l<9nS[;JPCUMN1
+IW4^JTdEKEl8X_5zTL65`h2
+R2
+R0
+R3
+R4
+R5
+L0 400
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@frequency@counter
+vhex_decoder
+R1
+!i10b 1
+!s100 2YRG]gd[kn2<j8@CCDzHY2
+I`ge<Rz@Zb_j><<8C<joB`2
+R2
+R0
+R3
+R4
+R5
+L0 414
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vpart2
+R1
+!i10b 1
+!s100 E5HYG2lC`eg_1EHg>QSi30
+Ii`NfYGf:0E6BSgQZMQN;A1
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vPixelCounter
+R1
+!i10b 1
+!s100 R6303PZJBd;PSUCHTVF:<0
+I9F_iBUH:5;P0LjR12^VWc2
+R2
+R0
+R3
+R4
+R5
+L0 159
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@pixel@counter
+vsquareFSM
+R1
+!i10b 1
+!s100 2E]R0Jf8X5m[c`jDbj4Je3
+INTN^NLYTiD3PRfejee=C03
+R2
+R0
+R3
+R4
+R5
+L0 227
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nsquare@f@s@m
+vTimeCounter
+R1
+!i10b 1
+!s100 JSbQ5nQT]dAg=Jg7VIY:O3
+IBakUCQhLCnVhE?SFDGa3D3
+R2
+R0
+R3
+R4
+R5
+L0 373
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@time@counter
+vXCounter
+R1
+!i10b 1
+!s100 Uk0edB[YI<U0dhc>^De<=2
+Ic6fBJZH=NWg;U;ZU3Al]H2
+R2
+R0
+R3
+R4
+R5
+L0 322
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@x@counter
+vYCounter
+R1
+!i10b 1
+!s100 5`g]:Vl]FEnI8=BMS5W5i3
+IloW`KBcL6H[K;8Kb7D4ne1
+R2
+R0
+R3
+R4
+R5
+L0 347
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@y@counter
