@@ -251,8 +251,8 @@ module drawBorder(x, y, clk, colour, done);
  		colour <= 3'b111;
  		if (x == 8'd159 & y == 7'd119 & !done) begin//we only run this at the start so that the last pixel is drawn
  			done <= 1'b1;
-			x <= 1'b0;
-			y <= 1'b0;
+			x <= 8'd80; //starting coordinates
+			y <= 7'd60;
 		end
  		else if (!done) begin
  			if (x == 1'b0) begin
