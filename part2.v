@@ -82,16 +82,33 @@ module part2
 	wire [7:0] out_x;
 	wire [6:0] out_y;
 	wire [4:0] count;
-	wire [7:0] xcount;
+	wire [7:0] xcount; //for border
 	wire [6:0] ycount;
-	wire writeEnAlt;
+	wire [2:0] colour_count;
+	wire [7:0] xCounter; //for counter
+	wire [6:0] yCounter;
+	wire [2:0] colour_counter;
+	wire [7:0] x_in;
+	wire [6:0] y_in;
+	wire [2:0] colour_in;
 	wire signal;
-	wire drawSignal;
-
-	wire [2:0] color_in;
+	
+	assign x_in = (pause == 1'b0) ? xCounter : xcount;
+	assign y_in = (pause == 1'b0) ? yCounter : ycount;
+	assign colour_in = (pause == 1'b0) ? colour_counter : colour_count;
+	
 	wire erase, draw;
+	wire pause;
+	wire systemPause; //only triggered by system
+	
+	assign pause = (!systemPause | SW[3]);
+	
+	reg clock_25;
+	always@(posedge CLOCK_50) begin
+		clock_25 <= ~clock_25;
+	end
 
-	// assign writeEn = drawSignal;
+	drawBorder draw0(.x(xcount), .y(ycount), .clk(clock_25), .colour(colour_count), .done(systemPause));
 	TimeCounter tc(
 		.count_enable(SW[0]),
 		.clk(CLOCK_50),
@@ -99,26 +116,27 @@ module part2
 		.difficulty(SW[1:0]),
 		.display(signal), //1 tick
 		.erase(erase),
-		.draw(draw)
+		.draw(draw),
+		.pause(pause)
 	);
 	XCounter xc(
 		.count_enable(SW[0]),
 		.clk(signal),
 		.reset_n(KEY[0]),
-		.xDisplay(xcount)
+		.xDisplay(xCounter)
 	);
 	YCounter yc(
 		.count_enable(SW[0]), //not implemented yet
 		.clk(signal),
 		.reset_n(KEY[0]),
-		.yDisplay(ycount)
+		.yDisplay(yCounter)
 	);
 	// output from the counter
 	datapath d0(
 		.clk(CLOCK_50),
-		.dataxin(xcount),
-		.datayin(ycount),
-		.colorin(color_in),
+		.dataxin(x_in),
+		.datayin(y_in),
+		.colorin(colour_in),
 		.ld_x(load_x),
 		.ld_y(load_y),
 		.ld_c(load_c),
@@ -140,10 +158,10 @@ module part2
 		.draw(draw),
 		.color_input(SW[9:7]),
 		.display(count),
-		.color_output(color_in)
+		.color_output(colour_counter)
 	);
-	assign x = out_x + count[1:0];
-	assign y = out_y + count[3:2];
+	assign x = (pause == 1'b0) ? out_x + count[1:0] : out_x;
+	assign y = (pause == 1'b0) ? out_y + count[3:2] : out_y;
 	// control c0(
 	// 		.clk(CLOCK_50),
 	// 		.resetn(KEY[0]),
@@ -159,7 +177,7 @@ module part2
 
 	reg [4:0] drawTimer;
 	always@(posedge CLOCK_50) begin
-		if (erase | draw) begin
+		if (erase | draw | !systemPause) begin
 			drawTimer <= 5'b10001; //this has to be equal to squareFSM counter
 		end
 		
@@ -184,7 +202,7 @@ module part2
 	hex_decoder hexfour(.hex_digit(x[3:0]), .segments(HEX4));
 	hex_decoder hexthree(.hex_digit(y[6:4]), .segments(HEX3));
 	hex_decoder hextwo(.hex_digit(y[3:0]), .segments(HEX2));
-	hex_decoder hexone(.hex_digit(colour), .segments(HEX1));
+	hex_decoder hexone(.hex_digit(pause), .segments(HEX1));
 
 
 endmodule
@@ -218,6 +236,53 @@ module combine(input enable, input clk,input[2:0]colorin,input reset,input go,ou
 	YCounter yc(.count_enable(enable), .clk(signal_yc), .reset_n(reset),.yDisplay(ycount));
 	datapath d0(.clk(clk),.dataxin(xcount),.datayin(ycount),.colorin(colorin),.ld_x(load_x),.ld_y(load_y),.ld_c(load_c),.resetn(reset),
 		.out_x(out_x),.out_y(out_y),.out_c(c));
+endmodule
+
+module drawBorder(x, y, clk, colour, done);
+ 	input clk;
+ 	output reg [7:0] x;
+ 	output reg [6:0] y;
+ 	output reg [2:0] colour;
+ 	output reg done = 1'b0;
+ 	
+ 	//draw left border
+ 	always @(posedge clk)
+ 	begin
+ 		colour <= 3'b111;
+ 		if (x == 8'd159 & y == 7'd119 & !done) begin//we only run this at the start so that the last pixel is drawn
+ 			done <= 1'b1;
+			x <= 1'b0;
+			y <= 1'b0;
+		end
+ 		else if (!done) begin
+ 			if (x == 1'b0) begin
+ 				if (y == 7'd119) begin
+ 					x <= x + 1'b1;
+ 					y <= 1'b0;
+ 				end else begin
+ 					//y != 120, x == 1'b0
+ 					y <= y + 1'b1;
+ 				end
+ 			end else if (x == 8'd159) begin
+	 			if (y != 7'd119) begin
+	 					//assuming y is at 0 when starting the final right border
+	 					//we want to start drawing down
+	 					y <= y + 1'b1;
+	 				end
+	 		end else if (x < 8'd159) begin
+	 			//middle part, only draw top and bottom
+	 			//draw current pixel then either jump down or top and right
+	 			//we start at x = 1, y = 0
+	 			if (y == 1'b0)
+	 				y <= 7'd119;
+	 			else begin
+	 				//y = 119
+	 				y <= 1'b0;
+	 				x <= x + 1'b1;
+	 			end
+	 		end
+	 	end
+ 	end
 endmodule
 
 //module that primarily interacts with vga
@@ -359,12 +424,12 @@ module XCounter(count_enable, clk, reset_n,xDisplay);
 	always @(posedge clk)
 	begin
 		if(reset_n == 1'b0) begin
-			xDisplay <= 1'b0;
+			xDisplay <= 1'b1;
 			direction <= 1'b0;
 		end
-		if (xDisplay == 1'b0)
+		if (xDisplay == 2'd2)
 			direction <= 1'b1; //reached left, has to go right
-		else if (xDisplay == (8'd160 - square_size)) //subtract square size to determine true boundary of x
+		else if (xDisplay == (8'd160 - square_size - 2'd2)) //subtract square size AND BORDER SIZE to determine true boundary of x
 			direction <= 1'b0; //reached rightmost area, has to go left
 		if (direction == 1'b0)
 			xDisplay <= xDisplay - 1'b1; //going left
@@ -383,12 +448,12 @@ module YCounter(count_enable, clk, reset_n,yDisplay);
 	always @(posedge clk)
 	begin
 		if (reset_n == 1'b0) begin
-			yDisplay <= 1'b0; //initialize to 0
+			yDisplay <= 2'd2; //initialize to 0
 			direction <= 1'b0;
 		end
-		else if (yDisplay == 1'b0)
+		else if (yDisplay == 2'd2)
 			direction <= 1'b0; //reached top of screen; has to go down.
-		else if (yDisplay == (7'd120 - square_size)) //subtract square size to determine true boundary of y
+		else if (yDisplay == (7'd120 - square_size - 2'd2)) //subtract square size to determine true boundary of y
 			direction <= 1'b1; //reached bottom of screen; has to go up.
 		
 		if (direction == 1'b0)
@@ -400,18 +465,19 @@ module YCounter(count_enable, clk, reset_n,yDisplay);
 endmodule
 
 //should run at 1/60th of a second
-module TimeCounter(count_enable, clk, reset_n, difficulty, display, erase, draw);
+module TimeCounter(count_enable, clk, reset_n, difficulty, display, erase, draw, pause);
 	input count_enable;
 	input clk;
 	input reset_n;
 	input [1:0] difficulty;
+	input pause;
 	output reg display;
 	output reg erase;
 	output reg draw;
 	reg [19:0] q;
 	// wire [23:0] value = 24'd12500000;
 	//wire [23:0] value = 24'd5;
-	wire [19:0] value = 20'd100000 + 20'd300000 * difficulty; //1-60th of a second - maybe try 1/50
+	wire [19:0] value = 20'd200000 + 20'd211111 * difficulty; //1-60th of a second - maybe try 1/50
 	always @(posedge clk)
 	begin
 	if(reset_n == 1'b0) begin
@@ -420,7 +486,7 @@ module TimeCounter(count_enable, clk, reset_n, difficulty, display, erase, draw)
 		draw <= 1'b0;
 		erase <= 1'b0;
 	end else begin
-		if (q < value) begin
+		if (q < value & !pause) begin
 			q <= q + 1'b1;
 			if (q == 20'd30000 - 20'd18) //(20'd499980 < q & q < 20'd500000)
 					erase <= 1'b1;

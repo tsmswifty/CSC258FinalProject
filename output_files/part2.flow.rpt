@@ -1,5 +1,5 @@
 Flow report for part2
-Mon Nov 18 20:16:18 2019
+Mon Nov 18 22:36:33 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Nov 18 20:16:07 2019       ;
+; Flow Status                     ; Successful - Mon Nov 18 22:36:22 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 162 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 153                                         ;
+; Logic utilization (in ALMs)     ; 179 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 176                                         ;
 ; Total pins                      ; 102 / 457 ( 22 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600 / 4,065,280 ( 1 % )                  ;
@@ -67,36 +67,28 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/18/2019 20:14:22 ;
+; Start date & time ; 11/18/2019 22:34:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; part2               ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                         ;
-+--------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+--------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                ; 1097835180110.157412606113464          ; --            ; --          ; --         ;
-; FITTER_EFFORT                        ; Standard Fit                           ; Auto Fit      ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --         ;
-; MUX_RESTRUCTURE                      ; Off                                    ; Auto          ; --          ; --         ;
-; OPTIMIZATION_MODE                    ; Aggressive Performance                 ; Balanced      ; --          ; --         ;
-; OPTIMIZATION_TECHNIQUE               ; Speed                                  ; Balanced      ; --          ; --         ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PHYSICAL_SYNTHESIS_COMBO_LOGIC       ; On                                     ; Off           ; --          ; --         ;
-; PHYSICAL_SYNTHESIS_REGISTER_RETIMING ; On                                     ; Off           ; --          ; --         ;
-; PLACEMENT_EFFORT_MULTIPLIER          ; 4.0                                    ; 1.0           ; --          ; --         ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --         ;
-; ROUTER_TIMING_OPTIMIZATION_LEVEL     ; MAXIMUM                                ; Normal        ; --          ; --         ;
-; SMART_RECOMPILE                      ; On                                     ; Off           ; --          ; --         ;
-+--------------------------------------+----------------------------------------+---------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 1097835180110.157413448405328          ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; SMART_RECOMPILE                     ; On                                     ; Off           ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -104,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4904 MB             ; 00:00:26                           ;
-; Fitter               ; 00:01:21     ; 1.0                     ; 7454 MB             ; 00:05:19                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4842 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:10     ; 1.3                     ; 5295 MB             ; 00:00:11                           ;
-; Total                ; 00:01:53     ; --                      ; --                  ; 00:06:04                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4911 MB             ; 00:00:26                           ;
+; Fitter               ; 00:01:12     ; 1.1                     ; 7457 MB             ; 00:05:19                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4843 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.4                     ; 5297 MB             ; 00:00:12                           ;
+; Total                ; 00:01:45     ; --                      ; --                  ; 00:06:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

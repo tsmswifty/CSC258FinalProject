@@ -7,7 +7,7 @@ KEY[3] => ~NO_FANOUT~
 SW[0] => SW[0].IN4
 SW[1] => SW[1].IN1
 SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
+SW[3] => pause.IN1
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
 SW[6] => ~NO_FANOUT~
@@ -863,6 +863,47 @@ mem_address[13] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 mem_address[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|part2|drawBorder:draw0
+x[0] <= x[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[1] <= x[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[2] <= x[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[3] <= x[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[4] <= x[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[5] <= x[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[6] <= x[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x[7] <= x[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[0] <= y[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= y[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= y[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= y[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => y[0]~reg0.CLK
+clk => y[1]~reg0.CLK
+clk => y[2]~reg0.CLK
+clk => y[3]~reg0.CLK
+clk => y[4]~reg0.CLK
+clk => y[5]~reg0.CLK
+clk => y[6]~reg0.CLK
+clk => x[0]~reg0.CLK
+clk => x[1]~reg0.CLK
+clk => x[2]~reg0.CLK
+clk => x[3]~reg0.CLK
+clk => x[4]~reg0.CLK
+clk => x[5]~reg0.CLK
+clk => x[6]~reg0.CLK
+clk => x[7]~reg0.CLK
+clk => done~reg0.CLK
+clk => colour[0]~reg0.CLK
+clk => colour[1]~reg0.CLK
+clk => colour[2]~reg0.CLK
+colour[0] <= colour[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+colour[1] <= colour[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+colour[2] <= colour[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |part2|TimeCounter:tc
 count_enable => ~NO_FANOUT~
 clk => erase~reg0.CLK
@@ -911,11 +952,12 @@ reset_n => q.OUTPUTSELECT
 reset_n => display.OUTPUTSELECT
 reset_n => draw.OUTPUTSELECT
 reset_n => erase.OUTPUTSELECT
-difficulty[0] => Mult0.IN20
-difficulty[1] => Mult0.IN19
+difficulty[0] => Mult0.IN19
+difficulty[1] => Mult0.IN18
 display <= display~reg0.DB_MAX_OUTPUT_PORT_TYPE
 erase <= erase~reg0.DB_MAX_OUTPUT_PORT_TYPE
 draw <= draw~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pause => always0.IN1
 
 
 |part2|XCounter:xc

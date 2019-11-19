@@ -36,14 +36,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[2]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX1[3]",
 					"strict" : false
 				},
@@ -53,10 +45,6 @@
 				},
 				{
 					"name" : "HEX1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
@@ -344,6 +332,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},
@@ -352,11 +344,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[8]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[7]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
@@ -364,11 +356,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
+					"name" : "SW[7]",
 					"strict" : false
 				}
 			]
