@@ -1,5 +1,5 @@
 |part2
-CLOCK_50 => CLOCK_50.IN4
+CLOCK_50 => CLOCK_50.IN5
 KEY[0] => KEY[0].IN5
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
@@ -972,6 +972,7 @@ clk => xDisplay[5]~reg0.CLK
 clk => xDisplay[6]~reg0.CLK
 clk => xDisplay[7]~reg0.CLK
 reset_n => direction.OUTPUTSELECT
+paddle_hit => direction.OUTPUTSELECT
 xDisplay[0] <= xDisplay[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 xDisplay[1] <= xDisplay[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 xDisplay[2] <= xDisplay[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1130,6 +1131,49 @@ display[4] <= display[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 color_output[0] <= color_output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 color_output[1] <= color_output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 color_output[2] <= color_output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|paddleFSM:paddle0
+clock50 => draw_clock[0].CLK
+clock50 => draw_clock[1].CLK
+clock50 => draw_clock[2].CLK
+clock50 => draw_clock[3].CLK
+clock50 => draw_clock[4].CLK
+clock50 => display[0]~reg0.CLK
+clock50 => display[1]~reg0.CLK
+clock50 => display[2]~reg0.CLK
+clock50 => display[3]~reg0.CLK
+clock50 => display[4]~reg0.CLK
+clock50 => erase_clock[0].CLK
+clock50 => erase_clock[1].CLK
+clock50 => erase_clock[2].CLK
+clock50 => erase_clock[3].CLK
+clock50 => erase_clock[4].CLK
+erase => erase_clock.OUTPUTSELECT
+erase => erase_clock.OUTPUTSELECT
+erase => erase_clock.OUTPUTSELECT
+erase => erase_clock.OUTPUTSELECT
+erase => erase_clock.OUTPUTSELECT
+erase => display.OUTPUTSELECT
+erase => display.OUTPUTSELECT
+erase => display.OUTPUTSELECT
+erase => display.OUTPUTSELECT
+erase => display.OUTPUTSELECT
+draw => draw_clock.OUTPUTSELECT
+draw => draw_clock.OUTPUTSELECT
+draw => draw_clock.OUTPUTSELECT
+draw => draw_clock.OUTPUTSELECT
+draw => draw_clock.OUTPUTSELECT
+draw => display.OUTPUTSELECT
+draw => display.OUTPUTSELECT
+draw => display.OUTPUTSELECT
+draw => display.OUTPUTSELECT
+draw => display.OUTPUTSELECT
+display[0] <= display[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|hex_decoder:hexzero

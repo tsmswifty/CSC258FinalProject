@@ -20,6 +20,7 @@ module part2
 	input   [9:0]   SW;
 	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
 	input   [3:0]   KEY;
+	//KEY[0] is active low reset
 
 	output [6:0] HEX0;
 	output [6:0] HEX1;
@@ -44,6 +45,7 @@ module part2
 	assign resetn = KEY[0];
 
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
+	// Notice that we need 8 bits for x input and 7 bits for y input
 	wire [2:0] colour;
 	wire [7:0] x;
 	wire [6:0] y;
@@ -82,6 +84,7 @@ module part2
 	wire [7:0] out_x;
 	wire [6:0] out_y;
 	wire [4:0] count;
+	wire [4:0] paddleount;
 	wire [7:0] xcount; //for border
 	wire [6:0] ycount;
 	wire [2:0] colour_count;
@@ -92,6 +95,7 @@ module part2
 	wire [6:0] y_in;
 	wire [2:0] colour_in;
 	wire signal;
+	wire bounce;// 1 for hit ; 0 for not hit
 	
 	assign x_in = (pause == 1'b0) ? xCounter : xcount;
 	assign y_in = (pause == 1'b0) ? yCounter : ycount;
@@ -123,6 +127,7 @@ module part2
 		.count_enable(SW[0]),
 		.clk(signal),
 		.reset_n(KEY[0]),
+		.paddle_hit(bounce),
 		.xDisplay(xCounter)
 	);
 	YCounter yc(
@@ -145,13 +150,7 @@ module part2
 		.out_y(out_y),
 		.out_c(colour)
 	);
-	// PixelCounter counter(
-	// 		.enable(writeEn),
-	// 		.clk(CLOCK_50),
-	// 		.drawSignal(drawSignal),
-	// 		.signal(signal),
-	// 		.display(count),
-	// 		);
+
 	squareFSM square0(
 		.clock50(CLOCK_50),
 		.erase(erase),
@@ -160,20 +159,15 @@ module part2
 		.display(count),
 		.color_output(colour_counter)
 	);
+	paddleFSM paddle0(
+	    .clock50(CLOCK_50),
+		 .erase(erase),
+		 .draw(draw),
+		 .display(paddleCount)
+	);
+	
 	assign x = (pause == 1'b0) ? out_x + count[1:0] : out_x;
 	assign y = (pause == 1'b0) ? out_y + count[3:2] : out_y;
-	// control c0(
-	// 		.clk(CLOCK_50),
-	// 		.resetn(KEY[0]),
-	// 		.go(drawSignal),
-	// 		.ld_x(load_x), 
-	// 		.ld_y(load_y), 
-	// 		.ld_c(load_c), 
-	// 		.plot(writeEnAlt), //changed
-	// 		.enable_xc(signal_xc),
-	// 		.enable_yc(signal_yc)
-	// 		);
-
 
 	reg [4:0] drawTimer;
 	always@(posedge CLOCK_50) begin
@@ -220,22 +214,6 @@ module PixelCounter(clk, reset, display);
 		if (display != 1'b0)
 			display <= display - 1'b1;
 	end
-endmodule
-
-module combine(input enable, input clk,input[2:0]colorin,input reset,input go,output [7:0]out_x,output [6:0]out_y,output [2:0]c,output writeEn);
-	wire load_x,load_y,load_c;
-	wire signal_xc;
-	wire signal_yc;
-	wire [7:0]xcount;
-	wire [6:0]ycount;
-	wire [3:0] count;
-	wire signal;
-	TimeCounter tc(.count_enable(enable), .clk(clk), .reset_n(reset), .display(signal));
-	control c0(.clk(clk),.resetn(reset),.go(signal),.ld_x(load_x), .ld_y(load_y), .ld_c(load_c), .plot(writeEn),.enable_xc(signal_xc),.enable_yc(signal_yc));
-	XCounter xc(.count_enable(enable), .clk(signal_xc), .reset_n(reset),.xDisplay(xcount));
-	YCounter yc(.count_enable(enable), .clk(signal_yc), .reset_n(reset),.yDisplay(ycount));
-	datapath d0(.clk(clk),.dataxin(xcount),.datayin(ycount),.colorin(colorin),.ld_x(load_x),.ld_y(load_y),.ld_c(load_c),.resetn(reset),
-		.out_x(out_x),.out_y(out_y),.out_c(c));
 endmodule
 
 module drawBorder(x, y, clk, colour, done);
@@ -322,7 +300,7 @@ module datapath(clk,dataxin, datayin, colorin, ld_x, ld_y, ld_c, resetn, out_x, 
 	end
 
 endmodule
-
+//Based on erase or draw input on every active clock edge
 module squareFSM(input clock50, input erase, input draw, input [2:0] color_input, output reg [4:0] display, output reg [2:0] color_output);
 	reg [4:0] erase_clock;
 	reg [4:0] draw_clock;
@@ -354,83 +332,65 @@ module squareFSM(input clock50, input erase, input draw, input [2:0] color_input
 	end
 endmodule
 
-// module control(
-// 	input clk,
-// 	input resetn,
-// 	input go,
-// 	output reg  ld_x, ld_y, ld_c, plot,enable_xc,enable_yc
-// );
+//Based on erase or draw input on every active clock edge
+//Set the paddle to be white as default color 
+module paddleFSM(input clock50, input erase, input draw, output reg [4:0] display);
+	reg [4:0] erase_clock;
+	reg [4:0] draw_clock;
+	always@(posedge clock50)
+	begin
 
-// 	reg [2:0] current_state, next_state;
+		if (erase == 1'b1) begin
+			erase_clock <= 5'b10001; //gives us 16 ticks
+			display <= 1'b0;
+		end
+		if (draw == 1'b1) begin
+			draw_clock <= 5'b10001; //gives us 16 ticks
+			display <= 1'b0;
+		end
+		if (erase_clock != 1'b0) begin
+			//draw black over current coordinates
+			//we have 16 ticks
+			display <= display + 1'b1;
+			erase_clock <= erase_clock - 1'b1;
+		end
+		if (draw_clock != 1'b0) begin
+			//draw color over current coordinates
+			display <= display + 1'b1;
+			draw_clock <= draw_clock - 1'b1;
+		end
+	end
+endmodule
 
-// 	localparam  S_ERASE = 3'd0,
-// 	S_DRAW   = 3'd1;
+//TODO WRITE LOGIC that check paddle_hit
+// compare the x and y coordinate of the square and paddle;
+// produce 1 when hits; 0 when not;
+// should be checked all the time?
 
-// 	// Next state logic aka our state table
-// 	always@(posedge clk)
-// 		begin: state_table
-// 			case (current_state)
-// 				S_ERASE: next_state = go ? S_DRAW : S_ERASE; 
-// 				S_DRAW: next_state = go ? S_DRAW : S_ERASE; 
-// 				default:     next_state = S_ERASE;
-// 			endcase
-// 		end // state_table
-// 	// Output logic aka all of our datapath control signals
-// 	always @(posedge clk)
-// 		begin: enable_signals
-// 			// ld_x = 1'b0;
-// 			// ld_y = 1'b0;
-// 			// ld_c = 1'b0;
-// 			// plot = 1'b0;
-// 			// enable_xc = 1'b0;
-// 			// enable_yc = 1'b0;
-// 			case (current_state)
-// 				S_ERASE: begin
-// 					//this should not be enabled, as we are going to draw over the previous shape with black
-// 					//plot = 1'b0;
-// 					enable_xc = 1'b0;
-// 					enable_yc = 1'b0;
-// 					// ld_c <= 1'b0;
-// 				end
-// 				S_DRAW: begin
-// 					plot = 1'b1;
-// 					ld_x = 1'b1;
-// 			      	ld_y = 1'b1;
-// 			      	ld_c = 1'b1;
-// 					enable_xc = 1'b1;
-// 					enable_yc = 1'b1;
-// 				end
-// 				// default:    // don't need default since we already made sure all of our outputs were assigned a value at the start of the always block
-// 			endcase
-// 		end // enable_signals
-
-// 	// current_state registers
-// 	always@(posedge clk)
-// 		begin: state_FFs
-// 			if(!resetn)
-// 				current_state <= S_ERASE;
-// 			else
-// 				current_state <= next_state;
-// 		end // state_FFS
-// endmodule
-
-module XCounter(count_enable, clk, reset_n,xDisplay);
+module XCounter(count_enable, clk, reset_n,paddle_hit,xDisplay);
 	input clk;
 	input reset_n;
-	input count_enable;
+	input count_enable;//TODO: use count_enable to activate counter
+	input paddle_hit;// when the object hits the paddle,paddle_hit is 1 
 	output reg [7:0] xDisplay;
-	reg direction; //0 = left, 1 = right
+	reg direction; //0 = left, 1 = right:note to go right is to increase x
 	reg [3:0] square_size = 4'd4; //size of edge of square
 	always @(posedge clk)
 	begin
+	   // reset position and diretion
 		if(reset_n == 1'b0) begin
 			xDisplay <= 1'b1;
 			direction <= 1'b0;
 		end
-		if (xDisplay == 2'd2)
+		if (paddle_hit == 1)
+		   direction <= ~direction;
+		// go to right if hits left wall
+		else if (xDisplay == 2'd2)
 			direction <= 1'b1; //reached left, has to go right
+		// go to left if hits right wall
 		else if (xDisplay == (8'd160 - square_size - 2'd2)) //subtract square size AND BORDER SIZE to determine true boundary of x
 			direction <= 1'b0; //reached rightmost area, has to go left
+			
 		if (direction == 1'b0)
 			xDisplay <= xDisplay - 1'b1; //going left
 		else
@@ -441,18 +401,23 @@ endmodule
 module YCounter(count_enable, clk, reset_n,yDisplay);
 	input clk;
 	input reset_n;
-	input count_enable;
+	input count_enable;//TODO: use count_enable to activate counter
 	output reg [6:0]yDisplay;
 	reg direction; //0 = down, 1 = up: note to go up is to decrease y
 	reg [3:0] square_size = 4'd4; //size of edge of square
 	always @(posedge clk)
 	begin
+	   // reset position and diretion
 		if (reset_n == 1'b0) begin
 			yDisplay <= 2'd2; //initialize to 0
 			direction <= 1'b0;
 		end
+		// go down if hits upper wall
+	   // TODO: check the condition of hitting upper walls	
 		else if (yDisplay == 2'd2)
 			direction <= 1'b0; //reached top of screen; has to go down.
+		// go up if hits lower wall
+	   // TODO: check the condition of hitting lower walls	
 		else if (yDisplay == (7'd120 - square_size - 2'd2)) //subtract square size to determine true boundary of y
 			direction <= 1'b1; //reached bottom of screen; has to go up.
 		
