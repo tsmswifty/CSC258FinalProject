@@ -267,9 +267,9 @@ module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 		if (enable == 1'b1)
 		   begin 
 			if (lpaddle <= yobject && yobject <= lpaddle + 6'd40) 
-			lsignal<= 1'b1;
-			else 
 			lsignal<= 1'b0;
+			else 
+			lsignal<= 1'b1;
 			end 
 		else
 		   lsignal = 1'b0;
@@ -292,9 +292,9 @@ module RightScoreDetector(enable,rhit,rpaddle,yobject,rsignal);
 		if (enable == 1'b1)
 		   begin 
 			if (rpaddle <= yobject && yobject <= rpaddle + 6'd40) 
-			rsignal<= 1'b1;
-			else 
 			rsignal<= 1'b0;
+			else 
+			rsignal<= 1'b1;
 			end 
 		else
 		   rsignal = 1'b0;
