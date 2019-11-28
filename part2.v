@@ -96,6 +96,7 @@ module part2
 	//ball position
 	wire [7:0] xCounter;
 	wire [6:0] yCounter;
+	 
 	
 	wire [7:0] leftPaddleXpos, rightPaddleXpos;
 	
@@ -133,24 +134,44 @@ module part2
 	
 	wire [6:0] ylpaddle; // the left paddle
 	wire [6:0] yrpaddle; // the right paddle
-	//TODO: Hook up after finish drawing paddle,
+	
+	YPaddle yleftPaddle(
+	.clk(signal), 
+	.reset_n(KEY[0]),
+	.moveEnable(SW[0]),
+	.up(~KEY[1]),
+	.down(~KEY[2]),
+	.ypDisplay(ylpaddle)
+	);
+	
+	YPaddle yrightPaddle(
+	.clk(signal), 
+	.reset_n(KEY[0]),
+	.moveEnable(SW[0]),
+	.up(SW[2]),
+	.down(SW[3]),
+	.ypDisplay(yrpaddle)
+	);
+	
+	//TODO: Temporialy set KEY1,KEY2 to control left paddle; set sw[2],sw[3] to control right paddle
+	// In milestone 3 , hook up keyboard so that we can control from the keyboard
 	
 	LeftScoreDetector lDetect(
-	.enable(SW[9]), //TODO: SW 9 is currently being used for color
+	.enable(SW[0]), 
 	.lhit(lhitPulse),
 	.lpaddle(ylpaddle),
 	.yobject(yCounter),
 	.lsignal(lsignal));
 	
 	RightScoreDetector rDetect(
-	.enable(SW[9]),
+	.enable(SW[0]),
 	.rhit(rhitPulse),
 	.rpaddle(yrpaddle),
 	.yobject(yCounter),
 	.rsignal(rsignal));
 	
-	LeftScoreCounter lScore(.enable(SW[9]),.reset(resetn),.rsignal(rsignal),.lscore(lscore));
-	RightScoreCounter rScore(.enable(SW[9]),.reset(resetn),.lsignal(lsignal),.rscore(rscore));
+	LeftScoreCounter lScore(.enable(SW[0]),.reset(resetn),.rsignal(rsignal),.lscore(lscore));
+	RightScoreCounter rScore(.enable(SW[0]),.reset(resetn),.lsignal(lsignal),.rscore(rscore));
 	
 	datapathFSM fsm0(
 		.clock(CLOCK_50),
@@ -196,6 +217,27 @@ module part2
 	hex_decoder hexthree(.hex_digit(lscore[3:0]),.segments(HEX3));
 	hex_decoder hexfour(.hex_digit(lscore[7:4]),.segments(HEX4));
 	hex_decoder hexfive(.hex_digit(lscore[11:7]),.segments(HEX5));
+endmodule
+
+module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle); 
+	YPaddle yleftPaddle(
+	.clk(signal), 
+	.reset_n(reset),
+	.moveEnable(enable),
+	.up(lup),
+	.down(ldown),
+	.ypDisplay(ylpaddle)
+	);
+	
+	YPaddle yrightPaddle(
+	.clk(signal), 
+	.reset_n(reset),
+	.moveEnable(enable),
+	.up(rup),
+	.down(rdown),
+	.ypDisplay(yrpaddle)
+	);
+
 endmodule
 
 // update and count the score for the left hand side user
@@ -694,6 +736,41 @@ module YCounter(count_enable, clk, reset_n,yDisplay);
 		
 	end
 endmodule
+
+
+module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay);
+	input clk;
+	input reset_n;
+	input moveEnable;
+	input up;
+	input down;
+	output reg [6:0]ypDisplay;
+	reg [1:0] paddle_size = 6'd40; //size of edge of square
+	always @(posedge clk)
+	begin
+	   // reset position and diretion
+		if (reset_n == 1'b0) 
+		begin
+			ypDisplay <= 7'd50; //initialize to 50
+		end
+	
+		if (moveEnable)
+		begin
+		if (up == 1'b0 && down == 1'b1)
+		   begin 
+			if (ypDisplay < (7'd120 - paddle_size - 2'd2))
+			   ypDisplay <= ypDisplay + 1'b1; //going down
+			end 
+		else if (up == 1'b1 && down == 1'b0)
+		    begin 
+			 if (ypDisplay > 2'd2)
+			 ypDisplay <= ypDisplay - 1'b1; //going up
+			 end
+		end
+		
+	end
+endmodule
+
 
 //should run at 1/60th of a second
 module TimeCounter(count_enable, clk, reset_n, difficulty, display, erase, draw, pause);
