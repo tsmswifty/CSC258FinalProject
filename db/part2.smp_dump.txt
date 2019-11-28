@@ -1,10 +1,14 @@
 
-State Machine - |part2|control:c0|current_state
-Name current_state.S_DRAW 
-current_state.S_ERASE 0 
-current_state.S_DRAW 1 
-
-State Machine - |part2|control:c0|next_state
-Name next_state.S_DRAW 
-next_state.S_ERASE 0 
-next_state.S_DRAW 1 
+State Machine - |part2|datapathFSM:fsm0|current_state
+Name current_state.S_RESET_COUNTERS current_state.S_WAIT_DRAW current_state.S_ERASE_RIGHT_PADDLE current_state.S_ERASE_LEFT_PADDLE current_state.S_ERASE_SQUARE current_state.S_WAIT_ERASE current_state.S_DRAW_RIGHT_PADDLE current_state.S_DRAW_LEFT_PADDLE current_state.S_DRAW_SQUARE current_state.S_INIT_OBJ current_state.S_DRAW_BORDER 
+current_state.S_DRAW_BORDER 0 0 0 0 0 0 0 0 0 0 0 
+current_state.S_INIT_OBJ 0 0 0 0 0 0 0 0 0 1 1 
+current_state.S_DRAW_SQUARE 0 0 0 0 0 0 0 0 1 0 1 
+current_state.S_DRAW_LEFT_PADDLE 0 0 0 0 0 0 0 1 0 0 1 
+current_state.S_DRAW_RIGHT_PADDLE 0 0 0 0 0 0 1 0 0 0 1 
+current_state.S_WAIT_ERASE 0 0 0 0 0 1 0 0 0 0 1 
+current_state.S_ERASE_SQUARE 0 0 0 0 1 0 0 0 0 0 1 
+current_state.S_ERASE_LEFT_PADDLE 0 0 0 1 0 0 0 0 0 0 1 
+current_state.S_ERASE_RIGHT_PADDLE 0 0 1 0 0 0 0 0 0 0 1 
+current_state.S_WAIT_DRAW 0 1 0 0 0 0 0 0 0 0 1 
+current_state.S_RESET_COUNTERS 1 0 0 0 0 0 0 0 0 0 1 
