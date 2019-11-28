@@ -332,8 +332,8 @@ module datapathFSM(
 	
 	//draw the square
 	reg [4:0] squareAdd;
-	reg resetSquare = 1'b1;
-	squareFSM m1(.clock(clock), .draw(resetSquare), .enable(current_state == S_DRAW_SQUARE | current_state == S_ERASE_SQUARE), .display(squareAdd));
+	reg resetSquare = 1'b1; //note resetn is not negated here as resetSquare is active low
+	squareFSM m1(.clock(clock), .reset(resetSquare | resetn), .enable(current_state == S_DRAW_SQUARE | current_state == S_ERASE_SQUARE), .display(squareAdd));
 	
 	//draw the left paddle
 	reg [4:0] LpaddleX;
@@ -449,11 +449,11 @@ module drawBorder(enable, x, y, clk);
 endmodule
 
 //Based on erase or draw input on every active clock edge
-module squareFSM(input clock, input draw, input enable, output reg [4:0] display);
+module squareFSM(input clock, input reset, input enable, output reg [4:0] display);
 	reg [4:0] draw_clock;
 	always@(posedge clock)
 	begin
-		if (draw == 1'b1) begin
+		if (reset) begin
 			draw_clock <= 5'b10001; //gives us 16 ticks
 			display <= 1'b0;
 		end
@@ -467,33 +467,31 @@ endmodule
 
 //Based on erase or draw input on every active clock edge
 //Set the paddle to be white as default color 
-module paddleFSM(input clock50, input erase, input draw, output reg [4:0] display);
-	reg [4:0] erase_clock;
-	reg [4:0] draw_clock;
-	always@(posedge clock50)
-	begin
-
-		if (erase == 1'b1) begin
-			erase_clock <= 5'b10001; //gives us 16 ticks
-			display <= 1'b0;
+module paddleFSM(input clock, input enable, input draw, output reg [4:0] paddleX, output reg [4:0] paddleY);
+	reg [6:0] draw_clock; //goes from 0 to 79
+	
+	always@(posedge clock) begin
+		if (reset) begin
+			draw_clock <= 7'd81;
+			paddleX <= 1'b0;
+			paddleY <= 1'b0;
 		end
-		if (draw == 1'b1) begin
-			draw_clock <= 5'b10001; //gives us 16 ticks
-			display <= 1'b0;
-		end
-		if (erase_clock != 1'b0) begin
-			//draw black over current coordinates
-			//we have 16 ticks
-			display <= display + 1'b1;
-			erase_clock <= erase_clock - 1'b1;
-		end
-		if (draw_clock != 1'b0) begin
-			//draw color over current coordinates
-			display <= display + 1'b1;
-			draw_clock <= draw_clock - 1'b1;
+		else begin
+			if(paddleX == 5'd39) begin
+				if (paddleY != 1'd1) begin
+					paddleY <= 1'd1;
+					paddleX <= 1'd0;
+					end
+				end //do nothing otherwise, as we are done
+			else begin
+				paddleX <= paddleX + 1'b1;
+			end
 		end
 	end
+	
 endmodule
+			
+					
 
 //TODO WRITE LOGIC that check paddle_hit
 // compare the x and y coordinate of the square and paddle;
