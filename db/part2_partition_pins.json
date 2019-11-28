@@ -232,7 +232,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "KEY[7]",
 					"strict" : false
 				},
 				{
@@ -244,7 +244,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
@@ -252,15 +252,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[3]",
+					"name" : "KEY[1]",
 					"strict" : false
 				}
 			]

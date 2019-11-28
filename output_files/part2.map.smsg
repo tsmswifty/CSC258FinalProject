@@ -1,4 +1,4 @@
-Info (10281): Verilog HDL Declaration information at part2.v(90): object "lscore" differs only in case from object "lScore" in the same scope File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 90
-Info (10281): Verilog HDL Declaration information at part2.v(91): object "rscore" differs only in case from object "rScore" in the same scope File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 91
-Warning (10268): Verilog HDL information at part2.v(286): always construct contains both blocking and non-blocking assignments File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 286
-Warning (10268): Verilog HDL information at part2.v(312): always construct contains both blocking and non-blocking assignments File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 312
+Info (10281): Verilog HDL Declaration information at part2.v(89): object "lscore" differs only in case from object "lScore" in the same scope File: D:/Git repos/CSC258FinalProject/part2.v Line: 89
+Info (10281): Verilog HDL Declaration information at part2.v(90): object "rscore" differs only in case from object "rScore" in the same scope File: D:/Git repos/CSC258FinalProject/part2.v Line: 90
+Warning (10268): Verilog HDL information at part2.v(285): always construct contains both blocking and non-blocking assignments File: D:/Git repos/CSC258FinalProject/part2.v Line: 285
+Warning (10268): Verilog HDL information at part2.v(311): always construct contains both blocking and non-blocking assignments File: D:/Git repos/CSC258FinalProject/part2.v Line: 311

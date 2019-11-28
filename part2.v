@@ -19,8 +19,8 @@ module part2
 	input	  CLOCK_50; //	50 MHz
 	input   [9:0]   SW;
 	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
-	input   [3:0]   KEY;
-	//KEY[0] is active low reset
+	input   [8:0]   KEY;
+	//KEY[7] is active low reset
 
 	output [6:0] HEX0;
 	output [6:0] HEX1;
@@ -48,11 +48,10 @@ module part2
 	output	[9:0]	VGA_B; //	VGA Blue[9:0]
 
 	wire resetn;
-	assign resetn = KEY[0];
+	assign resetn = KEY[7];
 
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
 	// Notice that we need 8 bits for x input and 7 bits for y input
-	wire [2:0] colour;
 	wire [7:0] x;
 	wire [6:0] y;
 	wire writeEn;
@@ -107,9 +106,9 @@ module part2
 
 //	drawBorder draw0(.x(xcount), .y(ycount), .clk(clock_25), .colour(colour_count), .done(systemPause));
 	TimeCounter tc(
-		.count_enable(SW[0]),
+		.count_enable(SW[6]),
 		.clk(CLOCK_50),
-		.reset_n(KEY[0]),
+		.reset_n(resetn),
 		.difficulty(SW[1:0]),
 		.display(signal), //1 tick
 		.erase(erase),
@@ -117,18 +116,18 @@ module part2
 		.pause(pause)
 	);
 	XCounter xc(
-		.count_enable(SW[0]),
+		.count_enable(SW[6]),
 		.clk(signal),
-		.reset_n(KEY[0]),
+		.reset_n(resetn),
 		.xDisplay(xCounter),
 		.lhitPulse(lhitPulse),
 		.rhitPulse(rhitPulse)
 	);
 	
 	YCounter yc(
-		.count_enable(SW[0]), //not implemented yet
+		.count_enable(SW[6]), //not implemented yet
 		.clk(signal),
-		.reset_n(KEY[0]),
+		.reset_n(resetn),
 		.yDisplay(yCounter)
 	);
 	
@@ -137,19 +136,19 @@ module part2
 	
 	YPaddle yleftPaddle(
 	.clk(signal), 
-	.reset_n(KEY[0]),
+	.reset_n(resetn),
 	.moveEnable(SW[0]),
-	.up(~KEY[1]),
+	.up(~KEY[3]),
 	.down(~KEY[2]),
 	.ypDisplay(ylpaddle)
 	);
 	
 	YPaddle yrightPaddle(
 	.clk(signal), 
-	.reset_n(KEY[0]),
+	.reset_n(resetn),
 	.moveEnable(SW[0]),
-	.up(SW[2]),
-	.down(SW[3]),
+	.up(~KEY[1]),
+	.down(~KEY[0]),
 	.ypDisplay(yrpaddle)
 	);
 	
@@ -157,14 +156,14 @@ module part2
 	// In milestone 3 , hook up keyboard so that we can control from the keyboard
 	
 	LeftScoreDetector lDetect(
-	.enable(SW[0]), 
+	.enable(SW[6]), 
 	.lhit(lhitPulse),
 	.lpaddle(ylpaddle),
 	.yobject(yCounter),
 	.lsignal(lsignal));
 	
 	RightScoreDetector rDetect(
-	.enable(SW[0]),
+	.enable(SW[6]),
 	.rhit(rhitPulse),
 	.rpaddle(yrpaddle),
 	.yobject(yCounter),
@@ -187,7 +186,7 @@ module part2
 		//right paddle inputs
 		.rightPaddleXin(rightPaddleXpos),
 		.rightPaddleYin(yrpaddle),
-		.resetn(KEY[0]), //key0, active low, as pressing key results in 0
+		.resetn(resetn), //key0, active low, as pressing key results in 0
 		.colorSwitch(SW[9:7]), //switches determine color - optional
 		.enableCounter(enableCounter),
 		.Xout(x),
@@ -275,7 +274,7 @@ endmodule
 // Generate pulse 1 if object hits the left paddle
 // Generate pulse o if object does not hit the left paddle
 // lpaddle should be the top y coordinate of the left paddle
-// we hardcode the length of the paddle to be 40 pxl
+// we hardcode the length of the paddle to be 20 pxl
 
 module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 	input enable; //TODO: implement this
@@ -287,7 +286,7 @@ module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 	begin
 		if (enable == 1'b1)
 		   begin 
-			if (lpaddle <= yobject && yobject <= lpaddle + 6'd40) 
+			if (lpaddle <= yobject && yobject <= lpaddle + 6'd20) 
 			lsignal<= 1'b0;
 			else 
 			lsignal<= 1'b1;
@@ -301,7 +300,7 @@ endmodule
 // Generate pulse 1 if object hits the right paddle
 // Generate pulse o if object does not hit the right paddle
 // rpaddle should be the top y coordinate of the right paddle
-// we hardcode the length of the paddle to be 40 pxl
+// we hardcode the length of the paddle to be 20 pxl
 
 module RightScoreDetector(enable,rhit,rpaddle,yobject,rsignal);
 	input enable; //TODO: implement this
@@ -313,7 +312,7 @@ module RightScoreDetector(enable,rhit,rpaddle,yobject,rsignal);
 	begin
 		if (enable == 1'b1)
 		   begin 
-			if (rpaddle <= yobject && yobject <= rpaddle + 6'd40) 
+			if (rpaddle <= yobject && yobject <= rpaddle + 6'd20) 
 			rsignal<= 1'b0;
 			else 
 			rsignal<= 1'b1;
@@ -643,7 +642,7 @@ module paddleFSM(input clock, input enable, input reset, output reg [5:0] paddle
 			paddleY <= 1'b0;
 		end
 		else if (enable) begin
-			if(paddleY < 6'd40) begin
+			if(paddleY < 6'd20) begin //adjust here for paddle size
 				paddleY <= paddleY + 1'b1;
 			end
 			else begin
@@ -686,7 +685,7 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 				direction <= 1'b1; //reached left, has to go right
 			end
 		// go to left if hits right wall
-		else if (xDisplay >= (8'd160 - square_size - 8'd20)) //subtract square size AND BORDER SIZE to determine true boundary of x
+		else if (xDisplay >= (8'd160 - square_size - 8'd19)) //subtract square size AND BORDER SIZE to determine true boundary of x
 			begin
 			   rhitPulse <= 1'b1; // hit the right wall, should have high pulse
 				lhitPulse <= 1'b0;
@@ -745,7 +744,7 @@ module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay);
 	input up;
 	input down;
 	output reg [6:0]ypDisplay;
-	reg [1:0] paddle_size = 6'd40; //size of edge of square
+	reg [1:0] paddle_size = 6'd20; //size of edge of square
 	always @(posedge clk)
 	begin
 	   // reset position and diretion
@@ -817,21 +816,6 @@ module TimeCounter(count_enable, clk, reset_n, difficulty, display, erase, draw,
 //	assign erase = (q == 20'd601000 | q == 20'd600900) ? 1 : 0; //goes high around 400000 ticks before increment - decreasing gap seems to decrease speed
 //	assign display = (q == 20'd590000) ? 1 : 0; //this only goes high every 1/60th of a second for 1/50M of a second - increment when this is high
 //	assign draw = (q == 20'd200000 | q == 20'd201000) ? 1 : 0; //goes high 100 ticks after increment
-endmodule
-
-//what is this for?
-module FrequencyCounter(enable,clk,display);
-	input enable;
-	input clk;
-	output [3:0]display;
-	reg [3:0]display;
-	always @(posedge clk)
-	begin
-		if(display == 4'b1111)
-			display <= 0;
-		else if (enable == 1'b1)
-			display <= display + 1'b1;
-	end
 endmodule
 
 module hex_decoder(hex_digit, segments);
