@@ -101,7 +101,8 @@ module part2
 	wire [6:0] y_in;
 	wire [2:0] colour_in;
 	wire signal;
-	wire bounce;// 1 for hit ; 0 for not hit
+	wire lhitPulse;// 1 if the object hits the left wall
+	wire rhitPulse;// 1 if the object hits the right wall
 	wire [11:0]lscore; //score for the left hand player
 	wire [11:0]rscore; //score for the right hand player
 	
@@ -135,30 +136,18 @@ module part2
 		.count_enable(SW[0]),
 		.clk(signal),
 		.reset_n(KEY[0]),
-		.paddle_hit(bounce),
-		.xDisplay(xCounter)
+		.xDisplay(xCounter),
+		.lhitPulse(lhitPulse),
+		.rhitPulse(rhitPulse)
 	);
+	
 	YCounter yc(
 		.count_enable(SW[0]), //not implemented yet
 		.clk(signal),
 		.reset_n(KEY[0]),
 		.yDisplay(yCounter)
 	);
-	// output from the counter
-//	datapath d0(
-//		.clk(CLOCK_50),
-//		.dataxin(x_in),
-//		.datayin(y_in),
-//		.colorin(colour_in),
-//		.ld_x(load_x),
-//		.ld_y(load_y),
-//		.ld_c(load_c),
-//		.resetn(KEY[0]),
-//		.out_x(out_x),
-//		.out_y(out_y),
-//		.out_c(colour)
-//	);
-
+	
 	squareFSM square0(
 		.clock50(CLOCK_50),
 		.erase(erase),
@@ -210,17 +199,35 @@ module part2
 	hex_decoder hexfour(.hex_digit(lscore[7:4]),.segments(HEX4));
 	hex_decoder hexfive(.hex_digit(lscore[11:7]),.segments(HEX5));
 	
-	LeftScoreCounter lScore(.enable(SW[9]),.reset(resetn),.clk(...),.lscore(lscore));
-	RightScoreCounter rScore(.enable(SW[9]),.reset(resetn),.clk(...),.lscore(rscore));
+	wire [6:0] ylpaddle; // the left paddle
+	wire [6:0] yrpaddle; // the right paddle
+	//TODO: Hook up after finish drawing paddle,
+	
+	LeftScoreDetector lDetect(
+	.enable(SW[9]),
+	.lhit(lhitPulse),
+	.lpaddle(ylpaddle),
+	.yobject(yCounter),
+	.lsignal(lsignal));
+	
+	RightScoreDetector rDetect(
+	.enable(SW[9]),
+	.rhit(rhitPulse),
+	.rpaddle(yrpaddle),
+	.yobject(yCounter),
+	.rsignal(rsignal));
+	
+	LeftScoreCounter lScore(.enable(SW[9]),.reset(resetn),.rsignal(rsignal),.lscore(lscore));
+	RightScoreCounter rScore(.enable(SW[9]),.reset(resetn),.lsignal(lsignal),.lscore(rscore));
 
 endmodule
 
 // update and count the score for the left hand side user
-module LeftScoreCounter(enable,reset,clk,lscore);
-	input clk;// update signal, clk is 1 when object hits the right wall
+module LeftScoreCounter(enable,reset,rsignal,lscore);
+	input rsignal;// update signal, clk is 1 when object hits the right wall
 	input reset;
 	output reg [11:0] lscore;
-	always @(posedge clk)
+	always @(posedge rsignal)
 	begin
 		if(reset == 1'b0)
 			lscore <= 0;
@@ -231,11 +238,11 @@ endmodule
 
 
 // update and count the score for the right hand side user
-module RightScoreCounter(enable,reset,clk,rscore);
-	input clk;// update signal, clk is 1 when object hits the left wall
+module RightScoreCounter(enable,reset,lsignal,rscore);
+	input lsignal;// update signal, clk is 1 when object hits the left wall
 	input reset;
 	output reg [11:0] rscore;
-	always @(posedge clk)
+	always @(posedge lsignal)
 	begin
 		if(reset == 1'b0)
 			rscore <= 0;
@@ -243,6 +250,57 @@ module RightScoreCounter(enable,reset,clk,rscore);
 			rscore <= rscore + 1'b1;
 	end
 endmodule
+
+// Check and update if the object hits the left paddle
+// Generate pulse 1 if object hits the left paddle
+// Generate pulse o if object does not hit the left paddle
+// lpaddle should be the top y coordinate of the left paddle
+// we hardcode the length of the paddle to be 40 pxl
+
+module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
+	input lhit;// update signal, lhit is 1 when object hits the left wall
+	input [6:0]lpaddle;// ycoordinate of the left paddle
+	input [6:0] yobject;// ycoordinate of the object
+	output reg lsignal;// output 1 if the left paddle missed the object
+	always @(posedge lhit)
+	begin
+		if (enable == 1'b1)
+		   begin 
+			if (lpaddle <= yobject && yobject <= lpaddle + 6'd40) 
+			lsignal<= 1'b1;
+			else 
+			lsignal<= 1'b0;
+			end 
+		else
+		   lsignal = 1'b0;
+	end
+endmodule
+
+// Check and update if the object hits the right paddle
+// Generate pulse 1 if object hits the right paddle
+// Generate pulse o if object does not hit the right paddle
+// rpaddle should be the top y coordinate of the right paddle
+// we hardcode the length of the paddle to be 40 pxl
+
+module RightScoreDetector(enable,rhit,rpaddle,yobject,rsignal);
+	input rhit;// update signal, rhit is 1 when object hits the right wall
+	input [6:0]rpaddle;// ycoordinate of the righgt paddle
+	input [6:0]yobject;// ycoordinate of the object
+	output reg rsignal;// output 1 if the right paddle missed the object
+	always @(posedge rhit)
+	begin
+		if (enable == 1'b1)
+		   begin 
+			if (rpaddle <= yobject && yobject <= rpaddle + 6'd40) 
+			rsignal<= 1'b1;
+			else 
+			rsignal<= 1'b0;
+			end 
+		else
+		   rsignal = 1'b0;
+	end
+endmodule
+
 
 //outputs the coordinates needed for drawing a square
 module PixelCounter(clk, reset, display);
@@ -461,16 +519,12 @@ module paddleFSM(input clock50, input erase, input draw, output reg [4:0] displa
 	end
 endmodule
 
-//TODO WRITE LOGIC that check paddle_hit
-// compare the x and y coordinate of the square and paddle;
-// produce 1 when hits; 0 when not;
-// should be checked all the time?
-
-module XCounter(count_enable, clk, reset_n,paddle_hit,xDisplay);
+module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 	input clk;
 	input reset_n;
 	input count_enable;//TODO: use count_enable to activate counter
-	input paddle_hit;// when the object hits the paddle,paddle_hit is 1 
+	output reg lhitPulse;// When the object hits the left side of the wall,lhitPulse is 1,otherwise it is 0
+	output reg rhitPulse;// When the object hits the right side of the wall,rhitPulse is 1,otherwise it is 0
 	output reg [7:0] xDisplay;
 	reg direction; //0 = left, 1 = right:note to go right is to increase x
 	reg [3:0] square_size = 4'd4; //size of edge of square
@@ -480,22 +534,38 @@ module XCounter(count_enable, clk, reset_n,paddle_hit,xDisplay);
 		if(reset_n == 1'b0) begin
 			xDisplay <= 1'b1;
 			direction <= 1'b0;
+			lhitPulse <= 1'b0;
+			rhitPulse <= 1'b0;
 		end
-		if (paddle_hit == 1)
-		   direction <= ~direction;
+		
 		// go to right if hits left wall
 		else if (xDisplay == 2'd2)
+		begin 
+		   lhitPulse <= 1'b1; // hit the left wall, should have high pulse
+			rhitPulse <= 1'b0;
 			direction <= 1'b1; //reached left, has to go right
+		end
+		
 		// go to left if hits right wall
 		else if (xDisplay == (8'd160 - square_size - 2'd2)) //subtract square size AND BORDER SIZE to determine true boundary of x
+		begin
+		   rhitPulse <= 1'b1; // hit the right wall, should have high pulse
+			lhitPulse <= 1'b0;
 			direction <= 1'b0; //reached rightmost area, has to go left
+		end 
+		
+		else 
+		   lhitPulse <= 1'b0; // the object is in the middle, should have low pulse
+		   rhitPulse <= 1'b0;
 			
 		if (direction == 1'b0)
 			xDisplay <= xDisplay - 1'b1; //going left
 		else
 			xDisplay <= xDisplay + 1'b1; //going right	
-		end
+			
+	end	
 endmodule
+
 
 module YCounter(count_enable, clk, reset_n,yDisplay);
 	input clk;
@@ -507,16 +577,17 @@ module YCounter(count_enable, clk, reset_n,yDisplay);
 	always @(posedge clk)
 	begin
 	   // reset position and diretion
-		if (reset_n == 1'b0) begin
+		if (reset_n == 1'b0) 
+		begin
 			yDisplay <= 2'd2; //initialize to 0
 			direction <= 1'b0;
 		end
 		// go down if hits upper wall
-	   // TODO: check the condition of hitting upper walls	
+		
 		else if (yDisplay == 2'd2)
 			direction <= 1'b0; //reached top of screen; has to go down.
 		// go up if hits lower wall
-	   // TODO: check the condition of hitting lower walls	
+		
 		else if (yDisplay == (7'd120 - square_size - 2'd2)) //subtract square size to determine true boundary of y
 			direction <= 1'b1; //reached bottom of screen; has to go up.
 		
