@@ -338,7 +338,7 @@ module datapathFSM(
 	input [2:0] colorSwitch, //switches determine color - optional
 	output reg [7:0] Xout,
 	output reg [6:0] Yout,
-	output reg [2:0] colour,
+	output reg [2:0] colour
 	);
 	
 	//states 
@@ -568,7 +568,7 @@ endmodule
 
 //Based on erase or draw input on every active clock edge
 //Set the paddle to be white as default color 
-module paddleFSM(input clock, input enable, input draw, output reg [4:0] paddleX, output reg [4:0] paddleY);
+module paddleFSM(input clock, input draw, output reg [4:0] paddleX, output reg [4:0] paddleY);
 	reg [6:0] draw_clock; //goes from 0 to 79
 	
 	always@(posedge clock) begin
