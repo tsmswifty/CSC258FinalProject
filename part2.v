@@ -19,8 +19,7 @@ module part2
 	input	  CLOCK_50; //	50 MHz
 	input   [9:0]   SW;
 	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
-	input   [8:0]   KEY;
-	//KEY[7] is active low reset
+	input   [3:0]   KEY;
 
 	output [6:0] HEX0;
 	output [6:0] HEX1;
@@ -48,13 +47,15 @@ module part2
 	output	[9:0]	VGA_B; //	VGA Blue[9:0]
 
 	wire resetn;
-	assign resetn = KEY[7];
+	assign resetn = SW[2];
 
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
 	// Notice that we need 8 bits for x input and 7 bits for y input
 	wire [7:0] x;
 	wire [6:0] y;
 	wire writeEn;
+	
+	wire [2:0] colour;
 
 	// Create an Instance of a VGA controller - there can be only one!
 	// Define the number of colours as well as the initial background
@@ -169,8 +170,8 @@ module part2
 	.yobject(yCounter),
 	.rsignal(rsignal));
 	
-	LeftScoreCounter lScore(.enable(SW[0]),.reset(resetn),.rsignal(rsignal),.lscore(lscore));
-	RightScoreCounter rScore(.enable(SW[0]),.reset(resetn),.lsignal(lsignal),.rscore(rscore));
+	LeftScoreCounter lScore(.enable(SW[6]),.reset(resetn),.rsignal(rsignal),.lscore(lscore));
+	RightScoreCounter rScore(.enable(SW[6]),.reset(resetn),.lsignal(lsignal),.rscore(rscore));
 	
 	datapathFSM fsm0(
 		.clock(CLOCK_50),
@@ -493,7 +494,7 @@ module datapathFSM(
 					
 					enableCounter <= 1'b0;
 					
-					colour <= 3'b111; //white color for borders
+					colour <= colorSwitch; //white color for borders
 					Xout <= borderX;
 					Yout <= borderY;
 				end
@@ -505,7 +506,7 @@ module datapathFSM(
 				S_DRAW_SQUARE: begin
 					
 					writeEn <= 1'b1;
-					colour <= 3'b111;
+					colour <= colorSwitch;
 					resetSquare <= 1'b0;
 					Xout <= Xin + squareAdd[1:0];
 					Yout <= Yin + squareAdd[3:2];
@@ -515,13 +516,13 @@ module datapathFSM(
 					//freeze square counter
 					resetSquare <= 1'b1;
 					resetLeftPaddle <= 1'b0;
-					colour <= 3'b111;
+					colour <= colorSwitch;
 					Xout <= leftPaddleXin + LpaddleX;
 					Yout <= leftPaddleYin + LpaddleY;
 				end
 				S_DRAW_RIGHT_PADDLE: begin
 					writeEn <= 1'b1;
-					colour <= 3'b111; //change for customization if you want
+					colour <= colorSwitch; //change for customization if you want
 					resetLeftPaddle <= 1'b1;
 					resetRightPaddle <= 1'b0;
 					Xout <= rightPaddleXin + RpaddleX;
@@ -678,14 +679,14 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 		end
 		
 		// go to right if hits left wall
-		else if (xDisplay == 8'd24) //CURRENT OFFSET: 22: 22 for paddles and 2 for border
+		else if (xDisplay == 8'd23) //CURRENT OFFSET: 24: 22 for paddles and 2 for border
 			begin 
 			   lhitPulse <= 1'b1; // hit the left wall, should have high pulse
 				rhitPulse <= 1'b0;
 				direction <= 1'b1; //reached left, has to go right
 			end
 		// go to left if hits right wall
-		else if (xDisplay >= (8'd160 - square_size - 8'd19)) //subtract square size AND BORDER SIZE to determine true boundary of x
+		else if (xDisplay >= (8'd160 - square_size - 8'd20)) //subtract square size AND BORDER SIZE to determine true boundary of x
 			begin
 			   rhitPulse <= 1'b1; // hit the right wall, should have high pulse
 				lhitPulse <= 1'b0;
@@ -744,7 +745,7 @@ module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay);
 	input up;
 	input down;
 	output reg [6:0]ypDisplay;
-	reg [1:0] paddle_size = 6'd20; //size of edge of square
+	reg [5:0] paddle_size = 6'd20; //size of edge of square
 	always @(posedge clk)
 	begin
 	   // reset position and diretion
