@@ -431,19 +431,23 @@ module datapathFSM(
 	reg [6:0] borderY;
 	drawBorder m0(.enable(current_state == S_DRAW_BORDER), .x(borderX), .y(borderY), .clk(clock)); //cannot use counter count to determine whether active
 	
-	//draw the square
+	//draw/erase the square
 	reg [4:0] squareAdd;
 	reg resetSquare = 1'b1; //note resetn is not negated here as resetSquare is active low
 	squareFSM m1(.clock(clock), .reset(resetSquare | resetn), .enable(current_state == S_DRAW_SQUARE | current_state == S_ERASE_SQUARE), .display(squareAdd));
 	
-	//draw the left paddle
+	//draw/erase the left paddle
 	reg [4:0] LpaddleX;
 	reg [4:0] LpaddleY;
+	reg resetLeftPaddle = 1'b1;
+	paddleFSM m2(.clock(clock), .reset(reset), .enable(resetLeftPaddle | resetn), .paddleX(LpaddleX), .paddleY(LpaddleY));
 	
-	//draw the right paddle
+	
+	//draw/erase the right paddle
+	reg resetRightPaddle = 1'b1;
 	reg [4:0] RpaddleX;
 	reg [4:0] RpaddleY;
-	
+	paddleFSM m3(.clock(clock), .reset(reset), .enable(resetRightPaddle | resetn), .paddleX(RpaddleX), .paddleY(RpaddleY));
 	
 	//datapath control
 	always@(posedge clock)
@@ -465,33 +469,42 @@ module datapathFSM(
 				end
 				S_DRAW_LEFT_PADDLE: begin
 					//freeze square counter
-					resetSquare = 1'b1;
+					resetSquare <= 1'b1;
+					resetLeftPaddle <= 1'b0;
 					color <= 3'b111;
 					Xout <= leftPaddleXin + LpaddleX;
 					Yout <= leftPaddleYin + LpaddleY;
 				end
 				S_DRAW_RIGHT_PADDLE: begin
 					color <= 3'b111; //change for customization if you want
+					resetLeftPaddle <= 1'b1;
+					resetRightPaddle <= 1'b0;
 					Xout <= rightPaddleXin + RpaddleX;
 					Yout <= rightPaddleYin + RpaddleY;
 				end
 				S_ERASE_SQUARE: begin
 					color <= 1'b0;
+					resetRightPaddle <= 1'b1;
 					resetSquare <= 1'b0;
 					Xout <= Xin + squareAdd[1:0];
 					Yout <= Yin + squareAdd[3:2];
 				end
 				S_ERASE_LEFT_PADDLE: begin
 					color <= 3'b0;
+					resetSquare <= 1'b1;
+					resetLeftPaddle <= 1'b0;
 					Xout <= leftPaddleXin + LpaddleX;
 					Yout <= leftPaddleYin + LpaddleY;
 				end
 				S_ERASE_RIGHT_PADDLE: begin
 					color <= 3'b0;
+					resetLeftPaddle <= 1'b1;
+					resetRightPaddle <= 1'b0;
 					Xout <= rightPaddleXin + RpaddleX;
 					Yout <= rightPaddleYin + RpaddleY;
 				end
 				S_RESET_COUNTERS: begin
+					resetRightPaddle <= 1'b1;
 					//borderCount <= 10'd600; 
 					squareCount <= 5'd18; 
 					LpaddleCount <= 7'd100; 
@@ -568,8 +581,8 @@ endmodule
 
 //Based on erase or draw input on every active clock edge
 //Set the paddle to be white as default color 
-module paddleFSM(input clock, input draw, output reg [4:0] paddleX, output reg [4:0] paddleY);
-	reg [6:0] draw_clock; //goes from 0 to 79
+module paddleFSM(input clock, input enable, input reset, output reg [4:0] paddleX, output reg [4:0] paddleY);
+	reg [6:0] draw_clock; //goes from 0 to 81 - some wiggle room left for error
 	
 	always@(posedge clock) begin
 		if (reset) begin
@@ -578,14 +591,14 @@ module paddleFSM(input clock, input draw, output reg [4:0] paddleX, output reg [
 			paddleY <= 1'b0;
 		end
 		else begin
-			if(paddleX == 5'd39) begin
-				if (paddleY != 1'd1) begin
-					paddleY <= 1'd1;
-					paddleX <= 1'd0;
+			if(paddleY == 5'd39) begin
+				if (paddleX != 1'd1) begin
+					paddleX <= 1'd1;
+					paddleY <= 1'd0;
 					end
 				end //do nothing otherwise, as we are done
 			else begin
-				paddleX <= paddleX + 1'b1;
+				paddleY <= paddleY + 1'b1;
 			end
 		end
 	end
