@@ -25,9 +25,15 @@ module part2
 	output [6:0] HEX0;
 	output [6:0] HEX1;
 	output [6:0] HEX2;
+	// HEX2,HEX1,HEX0 will display the score for the right-hand side player;
+	// Add 1 to the right hand side score if the ball touches the left wall
 	output [6:0] HEX3;
 	output [6:0] HEX4;
 	output [6:0] HEX5;
+	// HEX5,HEXR4,HEX3 will display the score for the left-hand side player;
+	// Add 1 to the left  hand side score if the ball touches the right wall
+
+	
 	output [9:0] LEDR;
 
 	// Declare your inputs and outputs here
@@ -96,6 +102,8 @@ module part2
 	wire [2:0] colour_in;
 	wire signal;
 	wire bounce;// 1 for hit ; 0 for not hit
+	wire [11:0]lscore; //score for the left hand player
+	wire [11:0]rscore; //score for the right hand player
 	
 	assign x_in = (pause == 1'b0) ? xCounter : xcount;
 	assign y_in = (pause == 1'b0) ? yCounter : ycount;
@@ -191,14 +199,49 @@ module part2
 		writeIndicator <= writeEn + writeIndicator;
 	end
 	assign LEDR[9:0] = clock_counter;
-	hex_decoder hexzero(.hex_digit(writeIndicator), .segments(HEX0));
-	hex_decoder hexfive(.hex_digit(x[7:4]), .segments(HEX5));
-	hex_decoder hexfour(.hex_digit(x[3:0]), .segments(HEX4));
-	hex_decoder hexthree(.hex_digit(y[6:4]), .segments(HEX3));
-	hex_decoder hextwo(.hex_digit(y[3:0]), .segments(HEX2));
-	hex_decoder hexone(.hex_digit(pause), .segments(HEX1));
+	
+	// HEXO,HEX1,HEX2 displays the right hand player score
+	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));
+	hex_decoder hexone(.hex_digit(rscore[7:4]),.segments(HEX1));
+	hex_decoder hextwo(.hex_digit(rscore[11:7]),.segments(HEX2));
+	
+	// HEX3,HEX4,HEX5 displays the left hand player score
+	hex_decoder hexthree(.hex_digit(lscore[3:0]),.segments(HEX3));
+	hex_decoder hexfour(.hex_digit(lscore[7:4]),.segments(HEX4));
+	hex_decoder hexfive(.hex_digit(lscore[11:7]),.segments(HEX5));
+	
+	LeftScoreCounter lScore(.enable(SW[9]),.reset(resetn),.clk(...),.lscore(lscore));
+	RightScoreCounter rScore(.enable(SW[9]),.reset(resetn),.clk(...),.lscore(rscore));
+
+endmodule
+
+// update and count the score for the left hand side user
+module LeftScoreCounter(enable,reset,clk,lscore);
+	input clk;// update signal, clk is 1 when object hits the right wall
+	input reset;
+	output reg [11:0] lscore;
+	always @(posedge clk)
+	begin
+		if(reset == 1'b0)
+			lscore <= 0;
+		else if (enable == 1'b1)
+			lscore <= lscore + 1'b1;
+	end
+endmodule
 
 
+// update and count the score for the right hand side user
+module RightScoreCounter(enable,reset,clk,rscore);
+	input clk;// update signal, clk is 1 when object hits the left wall
+	input reset;
+	output reg [11:0] rscore;
+	always @(posedge clk)
+	begin
+		if(reset == 1'b0)
+			rscore <= 0;
+		else if (enable == 1'b1)
+			rscore <= rscore + 1'b1;
+	end
 endmodule
 
 //outputs the coordinates needed for drawing a square
