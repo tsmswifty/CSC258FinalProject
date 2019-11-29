@@ -1,3 +1,4 @@
+
 module part2
 	(
 	CLOCK_50, //	On Board 50 MHz
@@ -295,10 +296,12 @@ module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 	output reg lsignal;// output 1 if the left paddle missed the object
 	always @(lhit)
 	begin
-		if (enable == 1'b1) begin
-			if (lpaddle <= yobject && yobject <= lpaddle + 6'd20) 
-				lsignal <= 1'b0;
-			else begin
+		if (enable == 1'b1) 
+		begin
+			if (lpaddle - 6'd10 <= yobject  && yobject <= lpaddle + 6'd30) 
+			lsignal <= 1'b0;
+			else 
+			begin
 				if (lhit)
 					lsignal <= 1'b1;
 				else
@@ -306,6 +309,7 @@ module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 			end 
 		end
 	end
+
 endmodule
 
 // Check and update if the object hits the right paddle
@@ -320,17 +324,20 @@ module RightScoreDetector(enable,rhit,rpaddle,yobject,rsignal);
 	input [6:0]rpaddle;// ycoordinate of the righgt paddle
 	input [6:0]yobject;// ycoordinate of the object
 	output reg rsignal;// output 1 if the right paddle missed the object
-	always @(posedge rhit)
+	always @(rhit)
 	begin
-		if (enable == 1'b1)
-		   begin 
-			if (rpaddle <= yobject && yobject <= rpaddle + 6'd20) 
-			rsignal<= 1'b0;
+	  if (enable == 1'b1) 
+	  begin
+			if (rpaddle - 6'd10 <= yobject  && yobject <= rpaddle + 6'd30) 
+				rsignal <= 1'b0;
 			else 
-			rsignal<= 1'b1;
+			begin
+				if (rhit)
+					rsignal <= 1'b1;
+				else
+					rsignal <= 1'b0;
 			end 
-		else
-		   rsignal = 1'b0;
+	end	
 	end
 endmodule
 
