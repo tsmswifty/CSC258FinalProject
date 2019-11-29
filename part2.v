@@ -679,14 +679,14 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 		end
 		
 		// go to right if hits left wall
-		else if (xDisplay == 8'd23) //CURRENT OFFSET: 24: 22 for paddles and 2 for border
+		else if (xDisplay == 8'd24) //CURRENT OFFSET: 22: 20 for paddles and 2 for border
 			begin 
 			   lhitPulse <= 1'b1; // hit the left wall, should have high pulse
 				rhitPulse <= 1'b0;
 				direction <= 1'b1; //reached left, has to go right
 			end
 		// go to left if hits right wall
-		else if (xDisplay >= (8'd160 - square_size - 8'd20)) //subtract square size AND BORDER SIZE to determine true boundary of x
+		else if (xDisplay >= (8'd160 - square_size - 8'd19)) //subtract square size AND BORDER SIZE to determine true boundary of x
 			begin
 			   rhitPulse <= 1'b1; // hit the right wall, should have high pulse
 				lhitPulse <= 1'b0;
