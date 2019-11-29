@@ -293,22 +293,23 @@ module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 	input [6:0]lpaddle;// ycoordinate of the left paddle
 	input [6:0] yobject;// ycoordinate of the object
 	output reg lsignal;// output 1 if the left paddle missed the object
-	always @(posedge lhit)
+	always @(posedge lhit, negedge lhit)
 	begin
 		if (enable == 1'b1)
-		   begin 
+		begin 
 			if (lpaddle <= yobject && yobject <= lpaddle + 6'd20) 
-			lsignal<= 1'b0;
-			else 
-			lsignal<= 1'b1;
+				lsignal<= 1'b0;
+			else begin
+				if (lhit)
+					lsignal<= 1'b1;
+				else
+					lsignal<= 1'b0;
 			end 
-		else
-		   lsignal = 1'b0;
 	end
-	always @(negedge lhit)
-	begin 
-	      lsignal = 1'b0;
-	end
+//	always @(negedge lhit)
+//	begin 
+//	      lsignal = 1'b0;
+//	end
 endmodule
 
 // Check and update if the object hits the right paddle
