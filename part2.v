@@ -219,6 +219,16 @@ module part2
 	hex_decoder hexfive(.hex_digit(lscore[11:7]),.segments(HEX5));
 endmodule
 
+module testScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] rightscore);
+LeftScoreDetector lDetect(
+	.enable(enable), 
+	.lhit(lhitPulse),
+	.lpaddle(ylpaddle),
+	.yobject(yCounter),
+	.lsignal(lsignal));
+	RightScoreCounter rScore(.enable(enable),.reset(reset),.lsignal(lsignal),.rscore(rightscore));
+endmodule
+	
 module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle); 
 	YPaddle yleftPaddle(
 	.clk(signal), 
@@ -294,6 +304,10 @@ module LeftScoreDetector(enable,lhit,lpaddle,yobject,lsignal);
 			end 
 		else
 		   lsignal = 1'b0;
+	end
+	always @(negedge lhit)
+	begin 
+	      lsignal = 1'b0;
 	end
 endmodule
 
