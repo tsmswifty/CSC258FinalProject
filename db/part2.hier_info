@@ -1037,8 +1037,9 @@ ypDisplay[6] <= ypDisplay[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|LeftScoreDetector:lDetect
-enable => lsignal.OUTPUTSELECT
-lhit => lsignal~reg0.CLK
+enable => lsignal1.ENA
+lhit => lsignal1.CLK
+lhit => lsignal2.CLK
 lpaddle[0] => LessThan0.IN7
 lpaddle[0] => LessThan1.IN7
 lpaddle[1] => LessThan0.IN6
@@ -1067,7 +1068,7 @@ yobject[5] => LessThan0.IN9
 yobject[5] => LessThan1.IN9
 yobject[6] => LessThan0.IN8
 yobject[6] => LessThan1.IN8
-lsignal <= lsignal~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lsignal <= lsignal.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|RightScoreDetector:rDetect
