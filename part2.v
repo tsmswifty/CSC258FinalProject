@@ -443,7 +443,7 @@ module datapathFSM(
 	end
 	
 	//FSM
-	always@(*) //can be always@* but idk
+	always@(posedge clock) //can be always@* but idk
 	begin: state_table
 		case (current_state) 
 			S_DRAW_BORDER: next_state = (borderCount == 1'b0) ? S_INIT_OBJ : S_DRAW_BORDER;
@@ -463,8 +463,8 @@ module datapathFSM(
 	
 	//update states
 	always@(posedge clock) begin
-		if(!resetn)
-            current_state <= S_DRAW_BORDER;
+		if(~resetn)
+			current_state <= S_DRAW_BORDER;
         else
         	current_state <= next_state;
     end

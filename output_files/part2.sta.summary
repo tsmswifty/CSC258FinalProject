@@ -3,183 +3,183 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -4.563
-TNS   : -57.399
+Slack : -4.535
+TNS   : -57.926
 
 Type  : Slow 1100mV 85C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -3.630
-TNS   : -3.630
+Slack : -3.782
+TNS   : -3.782
 
 Type  : Slow 1100mV 85C Model Setup 'TimeCounter:tc|display'
-Slack : -2.428
-TNS   : -116.602
+Slack : -2.317
+TNS   : -99.959
 
 Type  : Slow 1100mV 85C Model Setup 'LeftScoreDetector:lDetect|lsignal1'
-Slack : -1.710
-TNS   : -12.115
+Slack : -1.947
+TNS   : -12.729
 
 Type  : Slow 1100mV 85C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 35.274
+Slack : 34.834
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'XCounter:xc|lhitPulse'
-Slack : 0.070
-TNS   : 0.000
+Slack : -0.050
+TNS   : -0.050
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.267
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.343
+Slack : 0.414
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'TimeCounter:tc|display'
-Slack : 0.523
+Slack : 0.514
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'LeftScoreDetector:lDetect|lsignal1'
-Slack : 0.654
+Slack : 0.627
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'TimeCounter:tc|display'
 Slack : -0.394
-TNS   : -31.890
+TNS   : -29.736
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'LeftScoreDetector:lDetect|lsignal1'
 Slack : -0.394
-TNS   : -4.386
+TNS   : -4.179
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
 Slack : -0.394
-TNS   : -0.508
+TNS   : -0.509
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.870
+Slack : 8.872
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.780
+Slack : 18.779
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -4.352
-TNS   : -53.385
+Slack : -4.272
+TNS   : -53.426
 
 Type  : Slow 1100mV 0C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -3.629
-TNS   : -3.629
+Slack : -3.706
+TNS   : -3.706
 
 Type  : Slow 1100mV 0C Model Setup 'TimeCounter:tc|display'
-Slack : -2.465
-TNS   : -118.044
+Slack : -2.323
+TNS   : -101.789
 
 Type  : Slow 1100mV 0C Model Setup 'LeftScoreDetector:lDetect|lsignal1'
-Slack : -1.806
-TNS   : -12.571
+Slack : -2.019
+TNS   : -13.112
 
 Type  : Slow 1100mV 0C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 35.322
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.002
+Slack : 34.913
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'XCounter:xc|lhitPulse'
-Slack : 0.163
+Slack : 0.047
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.056
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.318
+Slack : 0.404
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'TimeCounter:tc|display'
-Slack : 0.512
+Slack : 0.504
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'LeftScoreDetector:lDetect|lsignal1'
-Slack : 0.647
+Slack : 0.621
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'TimeCounter:tc|display'
 Slack : -0.394
-TNS   : -30.475
+TNS   : -29.440
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'LeftScoreDetector:lDetect|lsignal1'
 Slack : -0.394
-TNS   : -4.312
+TNS   : -4.182
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
 Slack : -0.394
-TNS   : -0.510
+TNS   : -0.509
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.823
+Slack : 8.834
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.760
+Slack : 18.761
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -3.035
-TNS   : -37.227
+Slack : -3.027
+TNS   : -37.176
 
 Type  : Fast 1100mV 85C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -1.824
-TNS   : -1.824
+Slack : -1.985
+TNS   : -1.985
 
 Type  : Fast 1100mV 85C Model Setup 'TimeCounter:tc|display'
-Slack : -1.071
-TNS   : -50.961
+Slack : -1.057
+TNS   : -42.289
 
 Type  : Fast 1100mV 85C Model Setup 'LeftScoreDetector:lDetect|lsignal1'
-Slack : -0.626
-TNS   : -4.292
+Slack : -0.759
+TNS   : -4.759
 
 Type  : Fast 1100mV 85C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 37.182
+Slack : 36.830
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'XCounter:xc|lhitPulse'
-Slack : -0.114
-TNS   : -0.114
+Slack : -0.178
+TNS   : -0.178
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.006
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.200
+Slack : 0.161
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'TimeCounter:tc|display'
-Slack : 0.240
+Slack : 0.225
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.226
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'LeftScoreDetector:lDetect|lsignal1'
-Slack : 0.341
+Slack : 0.321
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'TimeCounter:tc|display'
-Slack : -0.007
-TNS   : -0.007
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'LeftScoreDetector:lDetect|lsignal1'
-Slack : 0.067
+Slack : 0.029
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
-Slack : 0.157
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'LeftScoreDetector:lDetect|lsignal1'
+Slack : 0.145
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -187,63 +187,63 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.815
+Slack : 8.809
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.891
+Slack : 18.892
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.527
-TNS   : -29.607
+Slack : -2.521
+TNS   : -29.194
 
 Type  : Fast 1100mV 0C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -1.653
-TNS   : -1.653
+Slack : -1.756
+TNS   : -1.756
 
 Type  : Fast 1100mV 0C Model Setup 'TimeCounter:tc|display'
-Slack : -0.934
-TNS   : -45.160
+Slack : -0.930
+TNS   : -37.309
 
 Type  : Fast 1100mV 0C Model Setup 'LeftScoreDetector:lDetect|lsignal1'
-Slack : -0.579
-TNS   : -3.950
+Slack : -0.695
+TNS   : -4.309
 
 Type  : Fast 1100mV 0C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 37.430
+Slack : 37.135
 TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.178
-TNS   : -0.602
 
 Type  : Fast 1100mV 0C Model Hold 'XCounter:xc|lhitPulse'
-Slack : -0.109
-TNS   : -0.109
+Slack : -0.161
+TNS   : -0.161
 
-Type  : Fast 1100mV 0C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.184
-TNS   : 0.000
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -0.073
+TNS   : -0.266
 
 Type  : Fast 1100mV 0C Model Hold 'TimeCounter:tc|display'
-Slack : 0.211
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.207
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'LeftScoreDetector:lDetect|lsignal1'
-Slack : 0.312
+Slack : 0.292
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'TimeCounter:tc|display'
-Slack : 0.040
+Slack : 0.057
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'LeftScoreDetector:lDetect|lsignal1'
-Slack : 0.086
+Slack : 0.141
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
-Slack : 0.157
+Slack : 0.149
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -251,7 +251,7 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.806
+Slack : 8.803
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
