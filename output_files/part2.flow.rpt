@@ -1,5 +1,9 @@
 Flow report for part2
+<<<<<<< Updated upstream
 Sun Dec 01 18:15:58 2019
+=======
+Sun Dec 01 17:51:09 2019
+>>>>>>> Stashed changes
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +44,26 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
+<<<<<<< Updated upstream
 ; Flow Status                     ; Successful - Sun Dec 01 18:15:31 2019       ;
+=======
+; Flow Status                     ; Successful - Sun Dec 01 17:50:57 2019       ;
+>>>>>>> Stashed changes
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
+<<<<<<< Updated upstream
 ; Logic utilization (in ALMs)     ; 314 / 32,070 ( < 1 % )                      ;
 ; Total registers                 ; 295                                         ;
 ; Total pins                      ; 104 / 457 ( 23 % )                          ;
+=======
+; Logic utilization (in ALMs)     ; 321 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 264                                         ;
+; Total pins                      ; 102 / 457 ( 22 % )                          ;
+>>>>>>> Stashed changes
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600 / 4,065,280 ( 1 % )                  ;
 ; Total DSP Blocks                ; 1 / 87 ( 1 % )                              ;
@@ -67,12 +81,17 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< Updated upstream
 ; Start date & time ; 12/01/2019 18:13:37 ;
+=======
+; Start date & time ; 12/01/2019 17:48:43 ;
+>>>>>>> Stashed changes
 ; Main task         ; Compilation         ;
 ; Revision Name     ; part2               ;
 +-------------------+---------------------+
 
 
+<<<<<<< Updated upstream
 +-------------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
@@ -89,6 +108,26 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
 ; SMART_RECOMPILE                     ; On                                     ; Off           ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
+=======
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++--------------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                            ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++--------------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID                      ; 1098620466640.157524052208056          ; --            ; --          ; --         ;
+; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION ; Always                                 ; Automatically ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP                     ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP                     ; 0                                      ; --            ; --          ; --         ;
+; OPTIMIZATION_MODE                          ; High Power Effort                      ; Balanced      ; --          ; --         ;
+; PARTITION_COLOR                            ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL        ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL                  ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION              ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY                   ; output_files                           ; --            ; --          ; --         ;
+; SMART_RECOMPILE                            ; On                                     ; Off           ; --          ; --         ;
++--------------------------------------------+----------------------------------------+---------------+-------------+------------+
+>>>>>>> Stashed changes
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -96,11 +135,19 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< Updated upstream
 ; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4875 MB             ; 00:00:26                           ;
 ; Fitter               ; 00:01:31     ; 1.0                     ; 6640 MB             ; 00:03:11                           ;
 ; Assembler            ; 00:00:08     ; 1.0                     ; 4855 MB             ; 00:00:07                           ;
 ; Timing Analyzer      ; 00:00:26     ; 1.1                     ; 5216 MB             ; 00:00:28                           ;
 ; Total                ; 00:02:17     ; --                      ; --                  ; 00:04:12                           ;
+=======
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4912 MB             ; 00:00:29                           ;
+; Fitter               ; 00:01:48     ; 1.1                     ; 7415 MB             ; 00:06:12                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4842 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:11     ; 1.5                     ; 5304 MB             ; 00:00:13                           ;
+; Total                ; 00:02:24     ; --                      ; --                  ; 00:07:03                           ;
+>>>>>>> Stashed changes
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,10 +156,17 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
+<<<<<<< Updated upstream
 ; Analysis & Synthesis ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Fitter               ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
+=======
+; Analysis & Synthesis ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+>>>>>>> Stashed changes
 +----------------------+------------------+------------+------------+----------------+
 
 

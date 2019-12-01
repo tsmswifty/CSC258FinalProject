@@ -120,8 +120,8 @@ module part2
 	
 	wire [7:0] leftPaddleXpos, rightPaddleXpos;
 	
-	assign leftPaddleXpos = 8'd22;
-	assign rightPaddleXpos = 8'd142;
+	assign leftPaddleXpos = 8'd12;
+	assign rightPaddleXpos = 8'd147;
 	
 	wire enableCounter;
 
@@ -155,6 +155,7 @@ module part2
 	wire [6:0] ylpaddle; // the left paddle
 	wire [6:0] yrpaddle; // the right paddle
 	
+	//TODO: change moveenable to something else
 	YPaddle yleftPaddle(
 	.clk(signal), 
 	.reset_n(resetn),
@@ -415,9 +416,11 @@ module datapathFSM(
 				S_ERASE_LEFT_PADDLE = 4'd7,
 				S_ERASE_RIGHT_PADDLE = 4'd8,
 				S_WAIT_DRAW = 4'd9,
-				S_RESET_COUNTERS = 4'd10;
+				S_RESET_COUNTERS = 4'd10,
+				S_RESET_STATE = 4'd11; //the state you transition to when you click reset
 	
 	//counters	
+	reg [14:0] resetCount = 15'd19500; //should be 19200 (160x120), added 300 for error
 	reg [9:0] borderCount = 10'd600; //should be 560, added 40 for error
 	reg [4:0] squareCount = 5'd18; //should be 16, added 2 for error
 	reg [6:0] LpaddleCount = 7'd100; //allocated 100 for paddles, maybe have them be 2x16?
@@ -440,6 +443,7 @@ module datapathFSM(
 			eraseSquareCount <= 5'd18; 
 			LerasePaddleCount <= 7'd100; 
 			RerasePaddleCount <= 7'd100; 
+			resetCount <= 15'd19500;
 		end
 	else begin
 		if (current_state == S_DRAW_BORDER & borderCount != 1'b0)
@@ -456,6 +460,8 @@ module datapathFSM(
 			LerasePaddleCount <= LerasePaddleCount - 1'b1;
 		else if (current_state == S_ERASE_RIGHT_PADDLE & RerasePaddleCount != 1'b0)
 			RerasePaddleCount <= RerasePaddleCount - 1'b1;
+		else if (current_state == S_RESET_STATE & resetCount != 1'b0)
+			resetCount <= resetCount - 1'b1;	
 		else if (current_state == S_RESET_COUNTERS) begin
 			borderCount <= 10'd600; 
 			squareCount <= 5'd18; 
@@ -464,14 +470,16 @@ module datapathFSM(
 			eraseSquareCount <= 5'd18; 
 			LerasePaddleCount <= 7'd100; 
 			RerasePaddleCount <= 7'd100; 
+			resetCount <= 15'd19500;
 			end
-		end
+		end 
 	end
 	
 	//FSM
 	always@(posedge clock) //can be always@* but idk
 	begin: state_table
-		case (current_state) 
+	case (current_state) 
+			S_RESET_STATE: next_state = (resetCount == 1'b0) ? S_DRAW_BORDER : S_RESET_STATE;
 			S_DRAW_BORDER: next_state = (borderCount == 1'b0) ? S_INIT_OBJ : S_DRAW_BORDER;
 			S_INIT_OBJ: next_state = S_DRAW_SQUARE;
 			S_DRAW_SQUARE: next_state = (squareCount == 1'b0) ? S_DRAW_LEFT_PADDLE : S_DRAW_SQUARE;
@@ -483,14 +491,14 @@ module datapathFSM(
 			S_ERASE_RIGHT_PADDLE: next_state = (RerasePaddleCount == 1'b0) ? S_WAIT_DRAW : S_ERASE_RIGHT_PADDLE;
 			S_WAIT_DRAW: next_state = (drawIn == 1'b1) ? S_RESET_COUNTERS : S_WAIT_DRAW;
 			S_RESET_COUNTERS: next_state = S_DRAW_SQUARE;
-//			default: next_state = S_DRAW_BORDER;
+			default: next_state = S_RESET_STATE;
 		endcase
 	end
 	
 	//update states
 	always@(posedge clock) begin
 		if(~resetn)
-			current_state <= S_DRAW_BORDER;
+			current_state <= S_RESET_STATE;
         else
         	current_state <= next_state;
     end
@@ -518,16 +526,35 @@ module datapathFSM(
 	wire [5:0] RpaddleY;
 	paddleFSM m3(.clock(clock), .reset(resetRightPaddle | ~resetn), .enable(current_state == S_DRAW_RIGHT_PADDLE | current_state == S_ERASE_RIGHT_PADDLE), .paddleX(RpaddleX), .paddleY(RpaddleY));
 	
+	//erase the entire screen (draw black)
+	reg resetErase;
+	wire [7:0] eraseX;
+	wire [6:0] eraseY;
+	//note resetn does not trigger reset
+	eraseAll m4(.clock(clock), .reset(resetErase), .enable(current_state == S_ERASE_STATE), .eraseX(eraseX), .eraseY(eraseY));
+	
 	//datapath control
 	always@(posedge clock)
 		begin
 			case(current_state)
+				S_RESET_STATE: begin
+					writeEn <= 1'b1;
+					resetSquare <= 1'b1;
+					resetLeftPaddle <= 1'b1;
+					resetRightPaddle <= 1'b1;
+					resetErase <= 1'b0;
+					
+					colour <= 1'b0;
+					Xout <= eraseX;
+					Yout <= eraseY;
+				end
 				S_DRAW_BORDER: begin
 					writeEn <= 1'b1;
 					
 					resetSquare <= 1'b1;
 					resetLeftPaddle <= 1'b1;
 					resetRightPaddle <= 1'b1;
+					resetErase <= 1'b1;
 					
 					enableCounter <= 1'b0;
 					
@@ -622,8 +649,8 @@ module drawBorder(enable, x, y, clk);
  	always @(posedge clk)
  	begin
  		if (x == 8'd159 & y == 7'd119) begin//we only run this at the start so that the last pixel is drawn
-			x <= 8'd80; //starting coordinates
-			y <= 7'd60;
+			x <= 1'd0; //starting coordinates
+			y <= 1'd0;
 		end
  		else if (enable) begin
  			if (x == 1'b0) begin
@@ -694,7 +721,26 @@ module paddleFSM(input clock, input enable, input reset, output reg [5:0] paddle
 	
 endmodule
 			
-					
+module eraseAll(input clock, input enable, input reset, output reg [7:0] eraseX, output reg [6:0] eraseY);
+	
+	always@(posedge clock) begin
+		if (reset) begin
+			eraseX <= 1'b0;
+			eraseY <= 1'b0;
+		end
+		else if (enable) begin
+			if(eraseY < 7'd120) begin //adjust here for paddle size
+				eraseY <= eraseY + 1'b1;
+			end
+			else begin
+				if(eraseX < 8'd160) begin
+					eraseX <= eraseX + 1'b1;
+					eraseY <= 1'b0;
+				end
+			end
+		end
+	end
+endmodule
 
 module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 	input clk;
@@ -716,14 +762,14 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 		end
 		
 		// go to right if hits left wall
-		else if (xDisplay == 8'd24) //CURRENT OFFSET: 22: 20 for paddles and 2 for border
+		else if (xDisplay == 8'd14) //CURRENT OFFSET: 22: 20 for paddles and 2 for border
 			begin 
 			   lhitPulse <= 1'b1; // hit the left wall, should have high pulse
 				rhitPulse <= 1'b0;
 				direction <= 1'b1; //reached left, has to go right
 			end
 		// go to left if hits right wall
-		else if (xDisplay >= (8'd160 - square_size - 8'd19)) //subtract square size AND BORDER SIZE to determine true boundary of x
+		else if (xDisplay >= (8'd160 - square_size - 8'd14)) //subtract square size AND BORDER SIZE to determine true boundary of x
 			begin
 			   rhitPulse <= 1'b1; // hit the right wall, should have high pulse
 				lhitPulse <= 1'b0;

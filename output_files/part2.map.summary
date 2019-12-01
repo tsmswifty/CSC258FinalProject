@@ -1,11 +1,20 @@
+<<<<<<< Updated upstream
 Analysis & Synthesis Status : Successful - Sun Dec 01 18:13:49 2019
+=======
+Analysis & Synthesis Status : Successful - Sun Dec 01 17:48:57 2019
+>>>>>>> Stashed changes
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : part2
 Top-level Entity Name : part2
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
+<<<<<<< Updated upstream
 Total registers : 273
 Total pins : 104
+=======
+Total registers : 241
+Total pins : 102
+>>>>>>> Stashed changes
 Total virtual pins : 0
 Total block memory bits : 57,600
 Total DSP Blocks : 1

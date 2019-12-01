@@ -1,5 +1,9 @@
 Assembler report for part2
+<<<<<<< Updated upstream
 Sun Dec 01 18:15:31 2019
+=======
+Sun Dec 01 17:50:57 2019
+>>>>>>> Stashed changes
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +14,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/Docments/study/FinalProject/CSC258FinalProject/output_files/part2.sof
+  5. Assembler Device Options: I:/GitHub/CSC258FinalProject/output_files/part2.sof
   6. Assembler Messages
 
 
@@ -37,7 +41,11 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
+<<<<<<< Updated upstream
 ; Assembler Status      ; Successful - Sun Dec 01 18:15:31 2019 ;
+=======
+; Assembler Status      ; Successful - Sun Dec 01 17:50:57 2019 ;
+>>>>>>> Stashed changes
 ; Revision Name         ; part2                                 ;
 ; Top-level Entity Name ; part2                                 ;
 ; Family                ; Cyclone V                             ;
@@ -52,6 +60,7 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
+<<<<<<< Updated upstream
 +--------------------------------------------------------------------------+
 ; Assembler Generated Files                                                ;
 +--------------------------------------------------------------------------+
@@ -69,6 +78,25 @@ refer to the applicable agreement for further details.
 ; JTAG usercode  ; 0x00E43D89                                                                        ;
 ; Checksum       ; 0x00E43D89                                                                        ;
 +----------------+-----------------------------------------------------------------------------------+
+=======
++-----------------------------------------------------+
+; Assembler Generated Files                           ;
++-----------------------------------------------------+
+; File Name                                           ;
++-----------------------------------------------------+
+; I:/GitHub/CSC258FinalProject/output_files/part2.sof ;
++-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Assembler Device Options: I:/GitHub/CSC258FinalProject/output_files/part2.sof ;
++----------------+--------------------------------------------------------------+
+; Option         ; Setting                                                      ;
++----------------+--------------------------------------------------------------+
+; JTAG usercode  ; 0x00E3959C                                                   ;
+; Checksum       ; 0x00E3959C                                                   ;
++----------------+--------------------------------------------------------------+
+>>>>>>> Stashed changes
 
 
 +--------------------+
@@ -77,14 +105,25 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+<<<<<<< Updated upstream
     Info: Processing started: Sun Dec 01 18:15:23 2019
+=======
+    Info: Processing started: Sun Dec 01 17:50:48 2019
+>>>>>>> Stashed changes
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
+<<<<<<< Updated upstream
     Info: Peak virtual memory: 4856 megabytes
     Info: Processing ended: Sun Dec 01 18:15:31 2019
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
+=======
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Sun Dec 01 17:50:57 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
+>>>>>>> Stashed changes
 
 
