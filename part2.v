@@ -20,6 +20,8 @@ module part2
 );
 
 	input	  CLOCK_50; //	50 MHz
+	input PS2_DAT;
+	input PS2_CLK;
 	input   [9:0]   SW;
 	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
 	input   [3:0]   KEY;
