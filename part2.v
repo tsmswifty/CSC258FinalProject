@@ -84,8 +84,23 @@ module part2
 
 	// Put your code here. Your code should produce signals x,y,colour and writeEn/plot
 	// for the VGA controller, in addition to any other functionality your design may require.
+  wire valid;
+  wire makeBreak;
+  wire [7:0] outCode;
+  assign LEDR[0] = valid;
+  assign LEDR[1] = makeBreak;
+  assign LEDR[9:2] = outCode;
+  
+  keyboard_press_driver keyDriver(
+  .CLOCK_50(CLOCK_50),
+  .valid(valid), // output valid is 1 when make or break code is ready to be read 
+  .makeBreak(makeBreak), // output 1 for make and 0 for break 
+  .outCode(outCode), //a byte representing keyboard data 
+  .PS2_DAT(PS2_DAT), // PS2 data line
+  .PS2_CLK(PS2_CLK), // PS2 clock line
+  .reset(resetn));
 	
-	wire [4:0] paddleount; //TODO: what is this
+
 	wire lhitPulse;// 1 if the object hits the left wall
 	wire rhitPulse;// 1 if the object hits the right wall
 	wire [11:0]lscore; //score for the left hand player
@@ -207,7 +222,7 @@ module part2
 		clock_counter <= clock_counter + 1'b1;
 		writeIndicator <= writeEn + writeIndicator;
 	end
-	assign LEDR[9:0] = clock_counter;
+	//assign LEDR[9:0] = clock_counter;
 	
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));

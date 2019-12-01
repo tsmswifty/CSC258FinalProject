@@ -1,8 +1,4 @@
-// CREDIT: 
-// John Loomis (http://www.johnloomis.org/)
-// http://www.johnloomis.org/digitallab/ps2lab1/ps2lab1.html
-
-module keyboard(keyboard_clk, keyboard_data, clock50, reset, read, scan_ready, scan_code);
+module keyboard_inner_driver(keyboard_clk, keyboard_data, clock50, reset, read, scan_ready, scan_code);
 input keyboard_clk;
 input keyboard_data;
 input clock50; // 50 Mhz system clock
@@ -31,7 +27,7 @@ else scan_ready <= 1;
 
 // divide-by-two 50MHz to 25MHz
 always @(posedge clock50)
-	clock <= ~clock;
+    clock <= ~clock;
 
 
 
@@ -57,30 +53,29 @@ begin
    end
    else if (keyboard_data==0 && read_char==0)
    begin
-	read_char <= 1;
-	ready_set <= 0;
+    read_char <= 1;
+    ready_set <= 0;
    end
    else
    begin
-	   // shift in next 8 data bits to assemble a scan code	
-	   if (read_char == 1)
-   		begin
-      		if (incnt < 9) 
-      		begin
-				incnt <= incnt + 1'b1;
-				shiftin = { keyboard_data, shiftin[8:1]};
-				ready_set <= 0;
-			end
-		else
-			begin
-				incnt <= 0;
-				scan_code <= shiftin[7:0];
-				read_char <= 0;
-				ready_set <= 1;
-			end
-		end
-	end
+       // shift in next 8 data bits to assemble a scan code    
+       if (read_char == 1)
+           begin
+              if (incnt < 9) 
+              begin
+                incnt <= incnt + 1'b1;
+                shiftin = { keyboard_data, shiftin[8:1]};
+                ready_set <= 0;
+            end
+        else
+            begin
+                incnt <= 0;
+                scan_code <= shiftin[7:0];
+                read_char <= 0;
+                ready_set <= 1;
+            end
+        end
+    end
 end
 
 endmodule
-

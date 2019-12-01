@@ -1,12 +1,12 @@
 |part2
-CLOCK_50 => CLOCK_50.IN3
+CLOCK_50 => CLOCK_50.IN4
 KEY[0] => _.IN1
 KEY[1] => _.IN1
 KEY[2] => _.IN1
 KEY[3] => _.IN1
 SW[0] => SW[0].IN3
 SW[1] => SW[1].IN1
-SW[2] => resetn.IN9
+SW[2] => resetn.IN10
 SW[3] => ~NO_FANOUT~
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
@@ -56,16 +56,16 @@ HEX5[3] <= hex_decoder:hexfive.segments
 HEX5[4] <= hex_decoder:hexfive.segments
 HEX5[5] <= hex_decoder:hexfive.segments
 HEX5[6] <= hex_decoder:hexfive.segments
-LEDR[0] <= clock_counter[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[1] <= clock_counter[1].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[2] <= clock_counter[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[3] <= clock_counter[3].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[4] <= clock_counter[4].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[5] <= clock_counter[5].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[6] <= clock_counter[6].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[7] <= clock_counter[7].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[8] <= clock_counter[8].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[9] <= clock_counter[9].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= keyboard_press_driver:keyDriver.valid
+LEDR[1] <= keyboard_press_driver:keyDriver.makeBreak
+LEDR[2] <= keyboard_press_driver:keyDriver.outCode
+LEDR[3] <= keyboard_press_driver:keyDriver.outCode
+LEDR[4] <= keyboard_press_driver:keyDriver.outCode
+LEDR[5] <= keyboard_press_driver:keyDriver.outCode
+LEDR[6] <= keyboard_press_driver:keyDriver.outCode
+LEDR[7] <= keyboard_press_driver:keyDriver.outCode
+LEDR[8] <= keyboard_press_driver:keyDriver.outCode
+LEDR[9] <= keyboard_press_driver:keyDriver.outCode
 VGA_CLK <= vga_adapter:VGA.VGA_CLK
 VGA_HS <= vga_adapter:VGA.VGA_HS
 VGA_VS <= vga_adapter:VGA.VGA_VS
@@ -863,6 +863,63 @@ mem_address[13] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 mem_address[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|part2|keyboard_press_driver:keyDriver
+CLOCK_50 => CLOCK_50.IN1
+valid <= valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
+makeBreak <= makeBreak~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[0] <= outCode[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[1] <= outCode[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[2] <= outCode[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[3] <= outCode[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[4] <= outCode[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[5] <= outCode[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[6] <= outCode[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+outCode[7] <= outCode[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PS2_DAT => PS2_DAT.IN1
+PS2_CLK => PS2_CLK.IN1
+reset => reset.IN1
+
+
+|part2|keyboard_press_driver:keyDriver|keyboard_inner_driver:kbd
+keyboard_clk => filter[7].DATAIN
+keyboard_data => shiftin.DATAB
+keyboard_data => always3.IN1
+clock50 => clock.CLK
+reset => incnt.OUTPUTSELECT
+reset => incnt.OUTPUTSELECT
+reset => incnt.OUTPUTSELECT
+reset => incnt.OUTPUTSELECT
+reset => read_char.OUTPUTSELECT
+reset => scan_code[1]~reg0.ENA
+reset => scan_code[0]~reg0.ENA
+reset => scan_code[2]~reg0.ENA
+reset => scan_code[3]~reg0.ENA
+reset => scan_code[4]~reg0.ENA
+reset => scan_code[5]~reg0.ENA
+reset => scan_code[6]~reg0.ENA
+reset => scan_code[7]~reg0.ENA
+reset => shiftin[0].ENA
+reset => shiftin[1].ENA
+reset => shiftin[2].ENA
+reset => shiftin[3].ENA
+reset => shiftin[4].ENA
+reset => shiftin[5].ENA
+reset => shiftin[6].ENA
+reset => shiftin[7].ENA
+reset => shiftin[8].ENA
+reset => ready_set.ENA
+read => scan_ready~reg0.ACLR
+scan_ready <= scan_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[0] <= scan_code[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[1] <= scan_code[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[2] <= scan_code[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[3] <= scan_code[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[4] <= scan_code[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[5] <= scan_code[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[6] <= scan_code[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+scan_code[7] <= scan_code[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |part2|TimeCounter:tc
 count_enable => ~NO_FANOUT~
 clk => erase~reg0.CLK
@@ -1037,23 +1094,22 @@ ypDisplay[6] <= ypDisplay[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|LeftScoreDetector:lDetect
-enable => lsignal1.ENA
-lhit => lsignal1.CLK
-lhit => lsignal2.CLK
+enable => lsignal$latch.LATCH_ENABLE
+lhit => lsignal.DATAA
 lpaddle[0] => LessThan0.IN7
 lpaddle[0] => LessThan1.IN7
-lpaddle[1] => LessThan0.IN6
-lpaddle[1] => LessThan1.IN6
-lpaddle[2] => LessThan0.IN5
-lpaddle[2] => Add0.IN10
-lpaddle[3] => LessThan0.IN4
-lpaddle[3] => Add0.IN9
-lpaddle[4] => LessThan0.IN3
-lpaddle[4] => Add0.IN8
-lpaddle[5] => LessThan0.IN2
-lpaddle[5] => Add0.IN7
-lpaddle[6] => LessThan0.IN1
-lpaddle[6] => Add0.IN6
+lpaddle[1] => Add0.IN12
+lpaddle[1] => Add1.IN12
+lpaddle[2] => Add0.IN11
+lpaddle[2] => Add1.IN11
+lpaddle[3] => Add0.IN10
+lpaddle[3] => Add1.IN10
+lpaddle[4] => Add0.IN9
+lpaddle[4] => Add1.IN9
+lpaddle[5] => Add0.IN8
+lpaddle[5] => Add1.IN8
+lpaddle[6] => Add0.IN7
+lpaddle[6] => Add1.IN7
 yobject[0] => LessThan0.IN14
 yobject[0] => LessThan1.IN14
 yobject[1] => LessThan0.IN13
@@ -1068,26 +1124,26 @@ yobject[5] => LessThan0.IN9
 yobject[5] => LessThan1.IN9
 yobject[6] => LessThan0.IN8
 yobject[6] => LessThan1.IN8
-lsignal <= lsignal.DB_MAX_OUTPUT_PORT_TYPE
+lsignal <= lsignal$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|RightScoreDetector:rDetect
-enable => rsignal.OUTPUTSELECT
-rhit => rsignal~reg0.CLK
+enable => rsignal$latch.LATCH_ENABLE
+rhit => rsignal.DATAA
 rpaddle[0] => LessThan0.IN7
 rpaddle[0] => LessThan1.IN7
-rpaddle[1] => LessThan0.IN6
-rpaddle[1] => LessThan1.IN6
-rpaddle[2] => LessThan0.IN5
-rpaddle[2] => Add0.IN10
-rpaddle[3] => LessThan0.IN4
-rpaddle[3] => Add0.IN9
-rpaddle[4] => LessThan0.IN3
-rpaddle[4] => Add0.IN8
-rpaddle[5] => LessThan0.IN2
-rpaddle[5] => Add0.IN7
-rpaddle[6] => LessThan0.IN1
-rpaddle[6] => Add0.IN6
+rpaddle[1] => Add0.IN12
+rpaddle[1] => Add1.IN12
+rpaddle[2] => Add0.IN11
+rpaddle[2] => Add1.IN11
+rpaddle[3] => Add0.IN10
+rpaddle[3] => Add1.IN10
+rpaddle[4] => Add0.IN9
+rpaddle[4] => Add1.IN9
+rpaddle[5] => Add0.IN8
+rpaddle[5] => Add1.IN8
+rpaddle[6] => Add0.IN7
+rpaddle[6] => Add1.IN7
 yobject[0] => LessThan0.IN14
 yobject[0] => LessThan1.IN14
 yobject[1] => LessThan0.IN13
@@ -1102,7 +1158,7 @@ yobject[5] => LessThan0.IN9
 yobject[5] => LessThan1.IN9
 yobject[6] => LessThan0.IN8
 yobject[6] => LessThan1.IN8
-rsignal <= rsignal~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rsignal <= rsignal$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|LeftScoreCounter:lScore
