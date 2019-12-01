@@ -14,7 +14,9 @@ module part2
 	VGA_SYNC_N, //	VGA SYNC
 	VGA_R, //	VGA Red[9:0]
 	VGA_G, //	VGA Green[9:0]
-	VGA_B //	VGA Blue[9:0]
+	VGA_B ,//	VGA Blue[9:0]
+	PS2_DAT,
+	PS2_CLK
 );
 
 	input	  CLOCK_50; //	50 MHz
