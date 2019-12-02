@@ -157,7 +157,7 @@ module part2
 	wire ldown;
 	wire rup;
 	wire rdown;
-   lKeyBoardDetector lDetect(.outCode(outCode),.makeCode(makeBreak),.lupCondition(lup),.ldownCondition(ldown));
+	lKeyBoardDetector lDetect(.outCode(outCode),.makeCode(makeBreak),.lupCondition(lup),.ldownCondition(ldown));
 	rKeyBoardDetector rDetect(.outCode(outCode),.makeCode(makeBreak),.rupCondition(rup),.rdownCondition(rdown));
 	YPaddle yleftPaddle(
 		.clk(signal),
@@ -265,21 +265,21 @@ module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] yrpa
 endmodule
 
 module testStrike(input enable, input reset, input lhitPulse,input [6:0] ylpaddle,input rhitPulse,input [6:0] yrpaddle,  input [6:0]yCounter,output logic [7:0]strikes);
-LeftScoreDetector lDetect(
+	LeftScoreDetector lDetect(
 		.enable(enable),
 		.lhit(lhitPulse),
 		.lpaddle(ylpaddle),
 		.yobject(yCounter),
 		.lsignal(lsignal));
 
-RightScoreDetector rDetect(
+	RightScoreDetector rDetect(
 		.enable(enable),
 		.rhit(rhitPulse),
 		.rpaddle(ylpaddle),
 		.yobject(yCounter),
 		.rsignal(rsignal));
 
-StrikeDetector strikeDetect(.enable(enable), .reset(reset), .rsignal(rsignal),.lsignal(lsignal),.hit(lhitPulse || rhitPulse),.strike(stikes));
+	StrikeDetector strikeDetect(.enable(enable), .reset(reset), .rsignal(rsignal),.lsignal(lsignal),.hit(lhitPulse || rhitPulse),.strike(stikes));
 endmodule
 
 module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle);
@@ -304,25 +304,24 @@ module testControl(input signal, input reset, input enable, input lup, input ldo
 endmodule
 
 module StrikeDetector(enable, reset,  rsignal, lsignal, hit,strike);
-input enable;
- input reset; 
- input rsignal; 
- input lsignal; 
- input hit;
- output logic [7:0]strike;
-	 always @(posedge hit)
-	 begin 
-	    if (reset == 1'b0 || (rsignal == 1'b1 || lsignal == 1'b1)|| strike== 8'b11111111)
-		    strike <= 8'b00000000;
-		 else if (enable == 1'b1)
-		     strike <= strike + 8'b00000001;
-	 end
+	input enable;
+	input reset;
+	input rsignal;
+	input lsignal;
+	input hit;
+	output logic [7:0]strike;
+	always @(posedge hit)
+	begin
+		if (reset == 1'b0 || (rsignal == 1'b1 || lsignal == 1'b1)|| strike== 8'b11111111)
+			strike <= 8'b00000000;
+		else if (enable == 1'b1)
+			strike <= strike + 8'b00000001;
+	end
 endmodule
-
 
 // update and count the score for the left hand side user
 module LeftScoreCounter(input enable,input reset,input rsignal,output logic [7:0] lscore=0);
-// update signal, clk is 1 when object hits the right wall
+	// update signal, clk is 1 when object hits the right wall
 
 	always @(posedge rsignal)
 	begin
@@ -335,8 +334,8 @@ endmodule
 
 // update and count the score for the right hand side user
 module RightScoreCounter(input enable,input reset,input lsignal,output logic [7:0] rscore=0);
- // update signal, clk is 1 when object hits the left wall
-	
+	// update signal, clk is 1 when object hits the left wall
+
 	always @(posedge lsignal)
 	begin
 		if(reset == 1'b0 || rscore == 8'b11111111)
@@ -421,75 +420,74 @@ module PixelCounter(clk, reset, display);
 endmodule
 module lKeyBoardDetector(input [7:0] outCode, input makeCode,output logic lupCondition = 0, output logic ldownCondition=0);
 
-always@(*)
-   begin
-	case({outCode,makeCode})
-	9'b000101011: begin 
-	              lupCondition <= 1 ; 
-					  ldownCondition<=0;
-					  end
-	9'b000101010: begin 
-	              lupCondition <= 0 ;
-	              ldownCondition<=0; 
-					  end
-	9'b000111001: begin 
-	              lupCondition <= 0; 
-					  ldownCondition<= 1;
-					  end
-	9'b000111000: begin 
-	              lupCondition <= 0; 
-	              ldownCondition<= 0;
-					  end
-//  9'b000111011: begin 
-//	              lupCondition <= lupCondition ; 
-//					  ldownCondition<= ldownCondition;
-//					  end
-//	9'b000111010: begin 
-//	              lupCondition <= lupCondition ; 
-//					  ldownCondition<= ldownCondition;
-//					  end
-//	9'b000110111: begin 
-//	              lupCondition <= lupCondition ; 
-//					  ldownCondition<= ldownCondition;
-//					  end
-//	9'b000110110: begin 
-//	              lupCondition <= lupCondition ; 
-//					  ldownCondition<= ldownCondition;
-//					  end
-	default:      begin 
-	            lupCondition <= lupCondition ; 
- 				  ldownCondition<= ldownCondition;
-					  end
-	endcase
+	always@(*)
+	begin
+		case({outCode,makeCode})
+			9'b000101011: begin
+				lupCondition <= 1 ;
+				ldownCondition<=0;
+			end
+			9'b000101010: begin
+				lupCondition <= 0 ;
+				ldownCondition<=0;
+			end
+			9'b000111001: begin
+				lupCondition <= 0;
+				ldownCondition<= 1;
+			end
+			9'b000111000: begin
+				lupCondition <= 0;
+				ldownCondition<= 0;
+			end
+			//  9'b000111011: begin 
+			//	              lupCondition <= lupCondition ; 
+			//					  ldownCondition<= ldownCondition;
+			//					  end
+			//	9'b000111010: begin 
+			//	              lupCondition <= lupCondition ; 
+			//					  ldownCondition<= ldownCondition;
+			//					  end
+			//	9'b000110111: begin 
+			//	              lupCondition <= lupCondition ; 
+			//					  ldownCondition<= ldownCondition;
+			//					  end
+			//	9'b000110110: begin 
+			//	              lupCondition <= lupCondition ; 
+			//					  ldownCondition<= ldownCondition;
+			//					  end
+			default:      begin
+				lupCondition <= lupCondition ;
+				ldownCondition<= ldownCondition;
+			end
+		endcase
 	end
 endmodule
 
-
 module rKeyBoardDetector(input [7:0] outCode, input makeCode,output logic rupCondition=0, output logic rdownCondition=0);
-always@(*)
-   begin
-	case({outCode,makeCode})
-	9'b000111011: begin 
-	              rupCondition <= 1 ; 
-					  rdownCondition<=0;
-					  end
-	9'b000111010: begin 
-	              rupCondition <= 0 ;
-	              rdownCondition<=0; 
-					  end
-	9'b000110111: begin 
-	              rupCondition <= 0; 
-					  rdownCondition<= 1;
-					  end
-	9'b000110110: begin 
-	              rupCondition <= 0; 
-	              rdownCondition<= 0;
-					  end
-	default:      begin 
-	              rupCondition <= rupCondition; 
- 				     rdownCondition<= rdownCondition;
-					  end
-	endcase
+	always@(*)
+	begin
+		case({outCode,makeCode})
+			9'b000111011: begin
+				rupCondition <= 1 ;
+				rdownCondition<=0;
+			end
+			9'b000111010: begin
+				rupCondition <= 0 ;
+				rdownCondition<=0;
+			end
+			9'b000110111: begin
+				rupCondition <= 0;
+				rdownCondition<= 1;
+			end
+			9'b000110110: begin
+				rupCondition <= 0;
+				rdownCondition<= 0;
+			end
+			default:      begin
+				rupCondition <= rupCondition;
+				rdownCondition<= rdownCondition;
+			end
+		endcase
 	end
 endmodule
 
