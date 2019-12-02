@@ -89,10 +89,9 @@ module part2
 	logic valid;
 	logic makeBreak;
 	logic [7:0] outCode;
-	//  assign LEDR[0] = valid;
-	//  assign LEDR[1] = makeBreak;
+	assign LEDR[0] = valid;
+	assign LEDR[1] = makeBreak;
 	//  assign LEDR[9:2] = outCode;
-	assign LEDR = {valid, makeBreak, outCode};
 	keyboard_press_driver keytest(
 		.CLOCK_50(CLOCK_50),
 		.valid(valid),
@@ -231,12 +230,12 @@ module part2
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));
 	hex_decoder hexone(.hex_digit(rscore[7:4]),.segments(HEX1));
-	hex_decoder hextwo(.hex_digit(rscore[11:8]),.segments(HEX2));
+	hex_decoder hextwo(.hex_digit(outCode[3:0]),.segments(HEX2));
 
 	// HEX3,HEX4,HEX5 displays the left hand player score
-	hex_decoder hexthree(.hex_digit(lscore[3:0]),.segments(HEX3));
-	hex_decoder hexfour(.hex_digit(lscore[7:4]),.segments(HEX4));
-	hex_decoder hexfive(.hex_digit(lscore[11:8]),.segments(HEX5));
+	hex_decoder hexthree(.hex_digit(outCode[7:4]),.segments(HEX3));
+	hex_decoder hexfour(.hex_digit(lscore[3:0]),.segments(HEX4));
+	hex_decoder hexfive(.hex_digit(lscore[7:4]),.segments(HEX5));
 endmodule
 
 module testScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] rightscore);
