@@ -105,8 +105,9 @@ module part2
 
 	wire lhitPulse; // 1 if the object hits the left wall
 	wire rhitPulse; // 1 if the object hits the right wall
-	wire [11:0]lscore; //score for the left hand player
-	wire [11:0]rscore; //score for the right hand player
+	wire [7:0]lscore; //score for the left hand player
+	wire [7:0]rscore; //score for the right hand player
+	wire [7:0]strike;
 
 	//timecounter signals for FSM
 	wire erase, draw, signal;
@@ -152,37 +153,41 @@ module part2
 
 	wire [6:0] ylpaddle; // the left paddle
 	wire [6:0] yrpaddle; // the right paddle
-
-	//TODO: change moveenable to something else
+	wire lup;
+	wire ldown;
+	wire rup;
+	wire rdown;
+   lKeyBoardDetector lDetect(.outCode(outCode),.makeCode(makeBreak),.lupCondition(lup),.ldownCondition(ldown));
+	rKeyBoardDetector rDetect(.outCode(outCode),.makeCode(makeBreak),.rupCondition(rup),.rdownCondition(rdown));
 	YPaddle yleftPaddle(
 		.clk(signal),
 		.reset_n(resetn),
-		.moveEnable(SW[0]),
-		.up(~KEY[3]),
-		.down(~KEY[2]),
+		.moveEnable(SW[3]),
+		.up(lup),
+		.down(ldown),
 		.ypDisplay(ylpaddle)
 	);
 
 	YPaddle yrightPaddle(
 		.clk(signal),
 		.reset_n(resetn),
-		.moveEnable(SW[0]),
-		.up(~KEY[1]),
-		.down(~KEY[0]),
+		.moveEnable(SW[3]),
+		.up(rup),
+		.down(rdown),
 		.ypDisplay(yrpaddle)
 	);
 
 	//TODO: Temporialy set KEY1,KEY2 to control left paddle; set sw[2],sw[3] to control right paddle
 	// In milestone 3 , hook up keyboard so that we can control from the keyboard
 
-	LeftScoreDetector lDetect(
+	LeftScoreDetector lDetecter(
 		.enable(SW[6]),
 		.lhit(lhitPulse),
 		.lpaddle(ylpaddle),
 		.yobject(yCounter),
 		.lsignal(lsignal));
 
-	RightScoreDetector rDetect(
+	RightScoreDetector rDetecter(
 		.enable(SW[6]),
 		.rhit(rhitPulse),
 		.rpaddle(yrpaddle),
@@ -191,6 +196,7 @@ module part2
 
 	LeftScoreCounter lScore(.enable(SW[6]),.reset(resetn),.rsignal(rsignal),.lscore(lscore));
 	RightScoreCounter rScore(.enable(SW[6]),.reset(resetn),.lsignal(lsignal),.rscore(rscore));
+	StrikeDetector strikeDetect(.enable(SW[6]), .reset(resetn), .rsignal(rsignal),.lsignal(lsignal),.hit(lhitPulse || rhitPulse),.strike(stikes));
 
 	datapathFSM fsm0(
 		.clock(CLOCK_50),
@@ -230,15 +236,15 @@ module part2
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));
 	hex_decoder hexone(.hex_digit(rscore[7:4]),.segments(HEX1));
-	hex_decoder hextwo(.hex_digit(outCode[3:0]),.segments(HEX2));
+	hex_decoder hextwo(.hex_digit(strike[3:0]),.segments(HEX2));
 
 	// HEX3,HEX4,HEX5 displays the left hand player score
-	hex_decoder hexthree(.hex_digit(outCode[7:4]),.segments(HEX3));
+	hex_decoder hexthree(.hex_digit(strike[7:4]),.segments(HEX3));
 	hex_decoder hexfour(.hex_digit(lscore[3:0]),.segments(HEX4));
 	hex_decoder hexfive(.hex_digit(lscore[7:4]),.segments(HEX5));
 endmodule
 
-module testScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] rightscore);
+module testRightScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [7:0] rightscore);
 	LeftScoreDetector lDetect(
 		.enable(enable),
 		.lhit(lhitPulse),
@@ -247,14 +253,33 @@ module testScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle
 		.lsignal(lsignal));
 	RightScoreCounter rScore(.enable(enable),.reset(reset),.lsignal(lsignal),.rscore(rightscore));
 endmodule
-module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] leftscore);
+
+module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] yrpaddle, input [6:0]yCounter, output [7:0] leftscore);
 	RightScoreDetector rDetect(
+		.enable(enable),
+		.rhit(rhitPulse),
+		.rpaddle(yrpaddle),
+		.yobject(yCounter),
+		.rsignal(rsignal));
+	LeftScoreCounter rScore(.enable(enable),.reset(reset),.rsignal(rsignal),.lscore(leftscore));
+endmodule
+
+module testStrike(input enable, input reset, input lhitPulse,input [6:0] ylpaddle,input rhitPulse,input [6:0] yrpaddle,  input [6:0]yCounter,output logic [7:0]strikes);
+LeftScoreDetector lDetect(
+		.enable(enable),
+		.lhit(lhitPulse),
+		.lpaddle(ylpaddle),
+		.yobject(yCounter),
+		.lsignal(lsignal));
+
+RightScoreDetector rDetect(
 		.enable(enable),
 		.rhit(rhitPulse),
 		.rpaddle(ylpaddle),
 		.yobject(yCounter),
 		.rsignal(rsignal));
-	LeftScoreCounter rScore(.enable(enable),.reset(reset),.rsignal(rsignal),.lscore(leftscore));
+
+StrikeDetector strikeDetect(.enable(enable), .reset(reset), .rsignal(rsignal),.lsignal(lsignal),.hit(lhitPulse || rhitPulse),.strike(stikes));
 endmodule
 
 module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle);
@@ -278,15 +303,30 @@ module testControl(input signal, input reset, input enable, input lup, input ldo
 
 endmodule
 
+module StrikeDetector(enable, reset,  rsignal, lsignal, hit,strike);
+input enable;
+ input reset; 
+ input rsignal; 
+ input lsignal; 
+ input hit;
+ output logic [7:0]strike;
+	 always @(posedge hit)
+	 begin 
+	    if (reset == 1'b0 || (rsignal == 1'b1 || lsignal == 1'b1)|| strike== 8'b11111111)
+		    strike <= 8'b00000000;
+		 else if (enable == 1'b1)
+		     strike <= strike + 8'b00000001;
+	 end
+endmodule
+
+
 // update and count the score for the left hand side user
-module LeftScoreCounter(enable,reset,rsignal,lscore);
-	input enable;
-	input rsignal; // update signal, clk is 1 when object hits the right wall
-	input reset;
-	output logic [11:0] lscore;
+module LeftScoreCounter(input enable,input reset,input rsignal,output logic [7:0] lscore=0);
+// update signal, clk is 1 when object hits the right wall
+
 	always @(posedge rsignal)
 	begin
-		if(reset == 1'b0)
+		if(reset == 1'b0 || lscore == 8'b11111111)
 			lscore <= 0;
 		else if (enable == 1'b1)
 			lscore <= lscore + 1'b1;
@@ -294,14 +334,12 @@ module LeftScoreCounter(enable,reset,rsignal,lscore);
 endmodule
 
 // update and count the score for the right hand side user
-module RightScoreCounter(enable,reset,lsignal,rscore);
-	input enable;
-	input lsignal; // update signal, clk is 1 when object hits the left wall
-	input reset;
-	output logic [11:0] rscore;
+module RightScoreCounter(input enable,input reset,input lsignal,output logic [7:0] rscore=0);
+ // update signal, clk is 1 when object hits the left wall
+	
 	always @(posedge lsignal)
 	begin
-		if(reset == 1'b0)
+		if(reset == 1'b0 || rscore == 8'b11111111)
 			rscore <= 0;
 		else if (enable == 1'b1)
 			rscore <= rscore + 1'b1;
@@ -379,6 +417,79 @@ module PixelCounter(clk, reset, display);
 			display <= 5'b10000;
 		if (display != 1'b0)
 			display <= display - 1'b1;
+	end
+endmodule
+module lKeyBoardDetector(input [7:0] outCode, input makeCode,output logic lupCondition = 0, output logic ldownCondition=0);
+
+always@(*)
+   begin
+	case({outCode,makeCode})
+	9'b000101011: begin 
+	              lupCondition <= 1 ; 
+					  ldownCondition<=0;
+					  end
+	9'b000101010: begin 
+	              lupCondition <= 0 ;
+	              ldownCondition<=0; 
+					  end
+	9'b000111001: begin 
+	              lupCondition <= 0; 
+					  ldownCondition<= 1;
+					  end
+	9'b000111000: begin 
+	              lupCondition <= 0; 
+	              ldownCondition<= 0;
+					  end
+//  9'b000111011: begin 
+//	              lupCondition <= lupCondition ; 
+//					  ldownCondition<= ldownCondition;
+//					  end
+//	9'b000111010: begin 
+//	              lupCondition <= lupCondition ; 
+//					  ldownCondition<= ldownCondition;
+//					  end
+//	9'b000110111: begin 
+//	              lupCondition <= lupCondition ; 
+//					  ldownCondition<= ldownCondition;
+//					  end
+//	9'b000110110: begin 
+//	              lupCondition <= lupCondition ; 
+//					  ldownCondition<= ldownCondition;
+//					  end
+	default:      begin 
+	            lupCondition <= lupCondition ; 
+ 				  ldownCondition<= ldownCondition;
+					  end
+	endcase
+	end
+endmodule
+
+
+module rKeyBoardDetector(input [7:0] outCode, input makeCode,output logic rupCondition=0, output logic rdownCondition=0);
+always@(*)
+   begin
+	case({outCode,makeCode})
+	9'b000111011: begin 
+	              rupCondition <= 1 ; 
+					  rdownCondition<=0;
+					  end
+	9'b000111010: begin 
+	              rupCondition <= 0 ;
+	              rdownCondition<=0; 
+					  end
+	9'b000110111: begin 
+	              rupCondition <= 0; 
+					  rdownCondition<= 1;
+					  end
+	9'b000110110: begin 
+	              rupCondition <= 0; 
+	              rdownCondition<= 0;
+					  end
+	default:      begin 
+	              rupCondition <= rupCondition; 
+ 				     rdownCondition<= rdownCondition;
+					  end
+	endcase
 	end
 endmodule
 

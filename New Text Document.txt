@@ -1,0 +1,8 @@
+assign LEDR[0] = valid;
+assign LEDR[1] = makeBreak;
+assign LEDR[9:2] = outCode;
+The outCode is 2 bytes
+So basically [9:6] is the higher byte and [5:2] is the lower byte
+Keyboard will have different outCode when pressed or released listed in the pdf file
+and makeBreak is 0 when released , 1 when presses.
+It is pretty tough to judge from the video,so could you probably help to make sure it is using Set2.

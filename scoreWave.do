@@ -1,7 +1,7 @@
 # Set the working dir, where all compiled Verilog goes.
 vlib work
-vlog -timescale 1ns/1ns  part2.v
-vsim -L altera_mf_ver testScore
+vlog -timescale 1ns/1ns  part2.sv
+vsim -L altera_mf_ver testRightScore
 log {/*}
 add wave {/*}
 

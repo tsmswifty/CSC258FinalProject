@@ -1,16 +1,16 @@
 |part2
 CLOCK_50 => CLOCK_50.IN4
-KEY[0] => _.IN1
-KEY[1] => _.IN1
-KEY[2] => _.IN1
-KEY[3] => _.IN1
-SW[0] => SW[0].IN3
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+SW[0] => SW[0].IN1
 SW[1] => SW[1].IN1
-SW[2] => resetn.IN9
-SW[3] => ~NO_FANOUT~
+SW[2] => resetn.IN10
+SW[3] => SW[3].IN2
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
-SW[6] => SW[6].IN7
+SW[6] => SW[6].IN8
 SW[7] => SW[7].IN1
 SW[8] => SW[8].IN1
 SW[9] => SW[9].IN1
@@ -57,7 +57,7 @@ HEX5[4] <= hex_decoder:hexfive.segments
 HEX5[5] <= hex_decoder:hexfive.segments
 HEX5[6] <= hex_decoder:hexfive.segments
 LEDR[0] <= keyboard_press_driver:keytest.valid
-LEDR[1] <= keyboard_press_driver:keytest.makeBreak
+LEDR[1] <= makeBreak.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[2] <= <GND>
 LEDR[3] <= <GND>
 LEDR[4] <= <GND>
@@ -1025,6 +1025,34 @@ yDisplay[5] <= yDisplay[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 yDisplay[6] <= yDisplay[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|part2|lKeyBoardDetector:lDetect
+outCode[0] => Decoder0.IN7
+outCode[1] => Decoder0.IN6
+outCode[2] => Decoder0.IN5
+outCode[3] => Decoder0.IN4
+outCode[4] => Decoder0.IN3
+outCode[5] => Decoder0.IN2
+outCode[6] => Decoder0.IN1
+outCode[7] => Decoder0.IN0
+makeCode => Decoder0.IN8
+lupCondition <= lupCondition$latch.DB_MAX_OUTPUT_PORT_TYPE
+ldownCondition <= ldownCondition$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|rKeyBoardDetector:rDetect
+outCode[0] => Decoder0.IN7
+outCode[1] => Decoder0.IN6
+outCode[2] => Decoder0.IN5
+outCode[3] => Decoder0.IN4
+outCode[4] => Decoder0.IN3
+outCode[5] => Decoder0.IN2
+outCode[6] => Decoder0.IN1
+outCode[7] => Decoder0.IN0
+makeCode => Decoder0.IN8
+rupCondition <= rupCondition$latch.DB_MAX_OUTPUT_PORT_TYPE
+rdownCondition <= rdownCondition$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |part2|YPaddle:yleftPaddle
 clk => ypDisplay[0]~reg0.CLK
 clk => ypDisplay[1]~reg0.CLK
@@ -1095,7 +1123,7 @@ ypDisplay[5] <= ypDisplay[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ypDisplay[6] <= ypDisplay[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part2|LeftScoreDetector:lDetect
+|part2|LeftScoreDetector:lDetecter
 enable => lsignal$latch.LATCH_ENABLE
 lhit => lsignal.DATAA
 lpaddle[0] => LessThan0.IN7
@@ -1129,7 +1157,7 @@ yobject[6] => LessThan1.IN8
 lsignal <= lsignal$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part2|RightScoreDetector:rDetect
+|part2|RightScoreDetector:rDetecter
 enable => rsignal$latch.LATCH_ENABLE
 rhit => rsignal.DATAA
 rpaddle[0] => LessThan0.IN7
@@ -1172,22 +1200,7 @@ enable => lscore.OUTPUTSELECT
 enable => lscore.OUTPUTSELECT
 enable => lscore.OUTPUTSELECT
 enable => lscore.OUTPUTSELECT
-enable => lscore.OUTPUTSELECT
-enable => lscore.OUTPUTSELECT
-enable => lscore.OUTPUTSELECT
-enable => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
-reset => lscore.OUTPUTSELECT
+reset => always0.IN1
 rsignal => lscore[0]~reg0.CLK
 rsignal => lscore[1]~reg0.CLK
 rsignal => lscore[2]~reg0.CLK
@@ -1196,10 +1209,6 @@ rsignal => lscore[4]~reg0.CLK
 rsignal => lscore[5]~reg0.CLK
 rsignal => lscore[6]~reg0.CLK
 rsignal => lscore[7]~reg0.CLK
-rsignal => lscore[8]~reg0.CLK
-rsignal => lscore[9]~reg0.CLK
-rsignal => lscore[10]~reg0.CLK
-rsignal => lscore[11]~reg0.CLK
 lscore[0] <= lscore[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lscore[1] <= lscore[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lscore[2] <= lscore[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1208,10 +1217,6 @@ lscore[4] <= lscore[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lscore[5] <= lscore[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lscore[6] <= lscore[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lscore[7] <= lscore[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-lscore[8] <= lscore[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-lscore[9] <= lscore[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-lscore[10] <= lscore[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-lscore[11] <= lscore[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|RightScoreCounter:rScore
@@ -1223,22 +1228,7 @@ enable => rscore.OUTPUTSELECT
 enable => rscore.OUTPUTSELECT
 enable => rscore.OUTPUTSELECT
 enable => rscore.OUTPUTSELECT
-enable => rscore.OUTPUTSELECT
-enable => rscore.OUTPUTSELECT
-enable => rscore.OUTPUTSELECT
-enable => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
-reset => rscore.OUTPUTSELECT
+reset => always0.IN1
 lsignal => rscore[0]~reg0.CLK
 lsignal => rscore[1]~reg0.CLK
 lsignal => rscore[2]~reg0.CLK
@@ -1247,10 +1237,6 @@ lsignal => rscore[4]~reg0.CLK
 lsignal => rscore[5]~reg0.CLK
 lsignal => rscore[6]~reg0.CLK
 lsignal => rscore[7]~reg0.CLK
-lsignal => rscore[8]~reg0.CLK
-lsignal => rscore[9]~reg0.CLK
-lsignal => rscore[10]~reg0.CLK
-lsignal => rscore[11]~reg0.CLK
 rscore[0] <= rscore[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rscore[1] <= rscore[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rscore[2] <= rscore[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1259,10 +1245,36 @@ rscore[4] <= rscore[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rscore[5] <= rscore[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rscore[6] <= rscore[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rscore[7] <= rscore[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rscore[8] <= rscore[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rscore[9] <= rscore[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rscore[10] <= rscore[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rscore[11] <= rscore[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part2|StrikeDetector:strikeDetect
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+enable => strike.OUTPUTSELECT
+reset => always0.IN1
+rsignal => always0.IN0
+lsignal => always0.IN1
+hit => strike[0]~reg0.CLK
+hit => strike[1]~reg0.CLK
+hit => strike[2]~reg0.CLK
+hit => strike[3]~reg0.CLK
+hit => strike[4]~reg0.CLK
+hit => strike[5]~reg0.CLK
+hit => strike[6]~reg0.CLK
+hit => strike[7]~reg0.CLK
+strike[0] <= strike[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[1] <= strike[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[2] <= strike[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[3] <= strike[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[4] <= strike[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[5] <= strike[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[6] <= strike[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+strike[7] <= strike[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |part2|datapathFSM:fsm0
