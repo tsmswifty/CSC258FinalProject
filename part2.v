@@ -232,12 +232,12 @@ module part2
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));
 	hex_decoder hexone(.hex_digit(rscore[7:4]),.segments(HEX1));
-	hex_decoder hextwo(.hex_digit(state),.segments(HEX2));
+	hex_decoder hextwo(.hex_digit(rscore[11:8]),.segments(HEX2));
 	
 	// HEX3,HEX4,HEX5 displays the left hand player score
 	hex_decoder hexthree(.hex_digit(lscore[3:0]),.segments(HEX3));
 	hex_decoder hexfour(.hex_digit(lscore[7:4]),.segments(HEX4));
-	hex_decoder hexfive(.hex_digit(lscore[11:7]),.segments(HEX5));
+	hex_decoder hexfive(.hex_digit(lscore[11:8]),.segments(HEX5));
 endmodule
 
 module testScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] rightscore);
@@ -248,6 +248,16 @@ LeftScoreDetector lDetect(
 	.yobject(yCounter),
 	.lsignal(lsignal));
 	RightScoreCounter rScore(.enable(enable),.reset(reset),.lsignal(lsignal),.rscore(rightscore));
+endmodule
+
+module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] leftscore);
+RightScoreDetector rDetect(
+	.enable(enable), 
+	.rhit(rhitPulse),
+	.rpaddle(ylpaddle),
+	.yobject(yCounter),
+	.rsignal(rsignal));
+	LeftScoreCounter rScore(.enable(enable),.reset(reset),.rsignal(rsignal),.lscore(leftscore));
 endmodule
 	
 module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle); 

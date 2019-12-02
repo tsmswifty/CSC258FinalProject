@@ -9,21 +9,21 @@ z2
 cModel Technology
 Z0 dD:/Docments/study/FinalProject/CSC258FinalProject
 vdatapathFSM
-Z1 !s110 1574989955
+Z1 !s110 1575247573
 !i10b 1
-!s100 z=3jkmFaVLSm^2:Jam:e62
-ICCgll20OfiM`]YT]9`<RI0
+!s100 bQzHP4bTO>P?[hoI5Ze`L0
+ID4U`5O`;hd?>4nLODf5HY3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1574989953
+Z3 w1575247559
 Z4 8part2.v
 Z5 Fpart2.v
-L0 356
+L0 393
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1574989955.000000
+Z7 !s108 1575247573.000000
 Z8 !s107 part2.v|
 Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|
 !i113 1
@@ -33,14 +33,14 @@ ndatapath@f@s@m
 vdrawBorder
 R1
 !i10b 1
-!s100 kiN076;licgCAhCS[@7KK1
-IA:k]6Z>JQDVcQHJnSj6NP1
+!s100 T9=mzf[I[I?M2[:9OF?m_0
+IRgg^9gYbc:bFdSD4[cda^0
 R2
 R0
 R3
 R4
 R5
-L0 589
+L0 652
 R6
 r1
 !s85 0
@@ -52,6 +52,28 @@ R9
 R10
 R11
 ndraw@border
+veraseAll
+R1
+!i10b 1
+!s100 30I;I3<<_c?5:C;kchoke3
+I^h2?>a7aR5XfEPY6FURh80
+R2
+R0
+R3
+R4
+R5
+L0 734
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nerase@all
 vFrequencyCounter
 !s110 1574979490
 !i10b 1
@@ -77,14 +99,14 @@ n@frequency@counter
 vhex_decoder
 R1
 !i10b 1
-!s100 _:?8BdC>KJgK<KbfFP92a2
-I=m_5V7jHHz[:IC_V?6Je60
+!s100 bLVB?:=BEfAKoa26LRL:N3
+Ie:bIjY;aOJa:_=gd3XCWE2
 R2
 R0
 R3
 R4
 R5
-L0 833
+L0 915
 R6
 r1
 !s85 0
@@ -98,14 +120,14 @@ R11
 vLeftScoreCounter
 R1
 !i10b 1
-!s100 ?PH=@UbjTBELTQ2[90MXG1
-Ih1Y]PPPzPQKbN>ZSdGU5L0
+!s100 QV`Uz=oh7WiT^Vf<J[XK;0
+ID`>;@4`C5V]Sd`V?QYBM22
 R2
 R0
 R3
 R4
 R5
-L0 254
+L0 285
 R6
 r1
 !s85 0
@@ -120,14 +142,14 @@ n@left@score@counter
 vLeftScoreDetector
 R1
 !i10b 1
-!s100 ^YMCU`CGHnn8OoaG^:2Zm3
-IFZNC7d25UOUWLQYN74>[50
+!s100 1WIX?;cFN9?cjTU;OfGVT2
+IlIYeji7PgWJ_KEczSooEA0
 R2
 R0
 R3
 R4
 R5
-L0 290
+L0 321
 R6
 r1
 !s85 0
@@ -142,14 +164,14 @@ n@left@score@detector
 vpaddleFSM
 R1
 !i10b 1
-!s100 53ikYMi9K[KMl=6em;ZIL3
-IeOD<^8OMX17GH6Cm:iUG`2
+!s100 ?LL=BLnPg:8ZXl^Oa<H:S2
+I>1;WEzT:18BmHTiA1OWLa3
 R2
 R0
 R3
 R4
 R5
-L0 649
+L0 712
 R6
 r1
 !s85 0
@@ -164,14 +186,14 @@ npaddle@f@s@m
 vpart2
 R1
 !i10b 1
-!s100 MEW;a=PAS[9RdF`i[Dh7`1
-I910SMAjmd3BMGz^Hc?:E^1
+!s100 fM7>YMo?dA5UH5P4LXdaY3
+I]K53U2A:HcjNJDbX`F;cz3
 R2
 R0
 R3
 R4
 R5
-L0 1
+L0 2
 R6
 r1
 !s85 0
@@ -185,14 +207,14 @@ R11
 vPixelCounter
 R1
 !i10b 1
-!s100 ``_4Pnz`bOAEZoW9]Lz]O1
-IHGdgFR[V06kZ_Rozg:Uk_1
+!s100 QVFk?jhTf2JO>^QfOCMaI0
+IB?PiAz_fDHbkJ2hV58b>g3
 R2
 R0
 R3
 R4
 R5
-L0 339
+L0 376
 R6
 r1
 !s85 0
@@ -207,14 +229,14 @@ n@pixel@counter
 vRightScoreCounter
 R1
 !i10b 1
-!s100 PbHc2VF>QC>l4iA:gCCc61
-I5E[ondBiTOWVkiV]>_LkY2
+!s100 1e<dbbedmObE0K;6eQ7Xh2
+I=J5WdGnFDHk8KX9@bPmN_1
 R2
 R0
 R3
 R4
 R5
-L0 270
+L0 301
 R6
 r1
 !s85 0
@@ -229,14 +251,14 @@ n@right@score@counter
 vRightScoreDetector
 R1
 !i10b 1
-!s100 2hzJ<cg8O8h42FgCFVBA]0
-IXeacOgQCNB8]Qa9dhY9WX0
+!s100 Iik6fPV9??^]BCj9524Rn3
+IMn;70iIbAoUaD@<P33EAW2
 R2
 R0
 R3
 R4
 R5
-L0 317
+L0 351
 R6
 r1
 !s85 0
@@ -251,14 +273,14 @@ n@right@score@detector
 vsquareFSM
 R1
 !i10b 1
-!s100 OA`ZjGKA8BSX2WHRmFC:Q2
-IdQC]gb[NoHk`dkiW=hcdK2
+!s100 hE=9EFb^nc]kT<=3T;f9L0
+ISdBKUMc=Q]Jl3<_UagT?H2
 R2
 R0
 R3
 R4
 R5
-L0 634
+L0 697
 R6
 r1
 !s85 0
@@ -273,14 +295,14 @@ nsquare@f@s@m
 vtestControl
 R1
 !i10b 1
-!s100 e9ITbFXkn?chGzS^CI:b=3
-IiTG2I5QSX90>k4OcT8^=k0
+!s100 ]iV9S0VP9glzUee2[20cM1
+I4826VHUB4jgV3RS56^Y9^1
 R2
 R0
 R3
 R4
 R5
-L0 232
+L0 263
 R6
 r1
 !s85 0
@@ -292,17 +314,39 @@ R9
 R10
 R11
 ntest@control
-vtestScore
+vtestLeftScore
 R1
 !i10b 1
-!s100 ]=QERfVHE6h[l]CGWXah>2
-Ii0L2e`eI`bnPPL87`3nj42
+!s100 C1m`7?7@RzWjLIT5D6M=z3
+IHEf5L^g@[Ne?0o<46DXoo3
 R2
 R0
 R3
 R4
 R5
-L0 222
+L0 253
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+ntest@left@score
+vtestScore
+R1
+!i10b 1
+!s100 ]59cR_;>V;SKG_AE466g?2
+IhML5j3P^`U@Fo^B=UNbZ_3
+R2
+R0
+R3
+R4
+R5
+L0 243
 R6
 r1
 !s85 0
@@ -317,14 +361,14 @@ ntest@score
 vTimeCounter
 R1
 !i10b 1
-!s100 oL@6A14k_h7]Ke@_z@95Y2
-Ii@QLee5UZ0]UIeG]XS1;43
+!s100 U2>faS7Pe6272kRV<hFFI3
+IK>ij@3aN[L>e1EgRkJZj72
 R2
 R0
 R3
 R4
 R5
-L0 787
+L0 869
 R6
 r1
 !s85 0
@@ -339,14 +383,14 @@ n@time@counter
 vXCounter
 R1
 !i10b 1
-!s100 B=bNAK3Uj=6F__gb9Kz5E2
-Im38PR_hiojXRa9;09VIc10
+!s100 l>>@dYR=e;_H@X;7oNXF?2
+ImhlP;7bIm<N@EBO`9[1mz1
 R2
 R0
 R3
 R4
 R5
-L0 673
+L0 755
 R6
 r1
 !s85 0
@@ -361,14 +405,14 @@ n@x@counter
 vYCounter
 R1
 !i10b 1
-!s100 Ed[ka8Dco9m;6:@Ma9ZL<1
-I9eBNG6PL@jUM0ReBiUF711
+!s100 HESQMebe>I]ehSD=al;kO2
+IKKiNXY^m5Wmi7Lm97Li5L0
 R2
 R0
 R3
 R4
 R5
-L0 719
+L0 801
 R6
 r1
 !s85 0
@@ -383,14 +427,14 @@ n@y@counter
 vYPaddle
 R1
 !i10b 1
-!s100 UBUbNlc6JUKKbb0g4G9Rk1
-I]GH;>fLDa6f7cJDid^iRR3
+!s100 cR<k;UzQU`8I3d09NFUC@3
+ImC0[6j^V`5`1j>?MGTfNj2
 R2
 R0
 R3
 R4
 R5
-L0 752
+L0 834
 R6
 r1
 !s85 0
