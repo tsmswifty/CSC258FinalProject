@@ -1,0 +1,7 @@
+Warning (10268): Verilog HDL information at keyboard_inner_driver.v(47): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/keyboard_inner_driver.v Line: 47
+Warning (10034): Output port "HEX0" at DE1_SoC.sv(4) has no driver File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/DE1_SoC.sv Line: 4
+Warning (10034): Output port "HEX1" at DE1_SoC.sv(4) has no driver File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/DE1_SoC.sv Line: 4
+Warning (10034): Output port "HEX2" at DE1_SoC.sv(4) has no driver File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/DE1_SoC.sv Line: 4
+Warning (10034): Output port "HEX3" at DE1_SoC.sv(4) has no driver File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/DE1_SoC.sv Line: 4
+Warning (10034): Output port "HEX4" at DE1_SoC.sv(4) has no driver File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/DE1_SoC.sv Line: 4
+Warning (10034): Output port "HEX5" at DE1_SoC.sv(4) has no driver File: I:/GitHub/CSC258FinalProject/Sim/PS2_Keyboard_Check/DE1_SoC.sv Line: 4

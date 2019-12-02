@@ -1,9 +1,5 @@
 Analysis & Synthesis report for part2
-<<<<<<< Updated upstream
-Sun Dec 01 18:13:49 2019
-=======
-Sun Dec 01 17:48:57 2019
->>>>>>> Stashed changes
+Sun Dec 01 20:03:24 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -19,63 +15,33 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
-<<<<<<< Updated upstream
- 10. State Machine - |part2|datapathFSM:fsm0|current_state
- 11. State Machine - |part2|datapathFSM:fsm0|next_state
- 12. State Machine - |part2|keyboard_press_driver:keyDriver|count
- 13. User-Specified and Inferred Latches
- 14. Registers Removed During Synthesis
- 15. Removed Registers Triggering Further Register Optimizations
- 16. General Register Statistics
- 17. Inverted Register Statistics
- 18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 24. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 25. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 26. Parameter Settings for User Entity Instance: keyboard_press_driver:keyDriver
- 27. altsyncram Parameter Settings by Entity Instance
- 28. altpll Parameter Settings by Entity Instance
- 29. Port Connectivity Checks: "hex_decoder:hexfive"
- 30. Port Connectivity Checks: "hex_decoder:hextwo"
- 31. Port Connectivity Checks: "datapathFSM:fsm0|squareFSM:m1"
- 32. Port Connectivity Checks: "datapathFSM:fsm0"
- 33. Port Connectivity Checks: "RightScoreCounter:rScore"
- 34. Port Connectivity Checks: "LeftScoreCounter:lScore"
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
- 38. Analysis & Synthesis Suppressed Messages
-=======
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
- 17. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 18. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 23. altsyncram Parameter Settings by Entity Instance
- 24. altpll Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "hex_decoder:hexfive"
- 26. Port Connectivity Checks: "hex_decoder:hextwo"
- 27. Port Connectivity Checks: "datapathFSM:fsm0|squareFSM:m1"
- 28. Port Connectivity Checks: "datapathFSM:fsm0"
- 29. Port Connectivity Checks: "RightScoreCounter:rScore"
- 30. Port Connectivity Checks: "LeftScoreCounter:lScore"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
->>>>>>> Stashed changes
+ 10. State Machine - |part2|keyboard_press_driver:keytest|count
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
+ 18. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 19. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 24. Parameter Settings for User Entity Instance: keyboard_press_driver:keytest
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. altpll Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "hex_decoder:hexfive"
+ 28. Port Connectivity Checks: "hex_decoder:hextwo"
+ 29. Port Connectivity Checks: "datapathFSM:fsm0|squareFSM:m1"
+ 30. Port Connectivity Checks: "datapathFSM:fsm0"
+ 31. Port Connectivity Checks: "RightScoreCounter:rScore"
+ 32. Port Connectivity Checks: "LeftScoreCounter:lScore"
+ 33. Post-Synthesis Netlist Statistics for Top Partition
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
+ 36. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -101,23 +67,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-<<<<<<< Updated upstream
-; Analysis & Synthesis Status     ; Successful - Sun Dec 01 18:13:49 2019       ;
-=======
-; Analysis & Synthesis Status     ; Successful - Sun Dec 01 17:48:57 2019       ;
->>>>>>> Stashed changes
+; Analysis & Synthesis Status     ; Successful - Sun Dec 01 20:03:24 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-<<<<<<< Updated upstream
-; Total registers                 ; 273                                         ;
+; Total registers                 ; 290                                         ;
 ; Total pins                      ; 104                                         ;
-=======
-; Total registers                 ; 241                                         ;
-; Total pins                      ; 102                                         ;
->>>>>>> Stashed changes
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600                                      ;
 ; Total DSP Blocks                ; 1                                           ;
@@ -226,86 +183,46 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-<<<<<<< Updated upstream
-; Maximum used               ; 4           ;
-=======
 ; Maximum used               ; 12          ;
->>>>>>> Stashed changes
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-<<<<<<< Updated upstream
-;     Processors 3-4         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
-+---------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
-+---------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
-; KeyboardFiles/keyboard_press_driver.v ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v ;         ;
-; KeyboardFiles/keyboard_inner_driver.v ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v ;         ;
-; vga_adapter/vga_adapter.v             ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v             ;         ;
-; vga_adapter/vga_address_translator.v  ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_address_translator.v  ;         ;
-; vga_adapter/vga_controller.v          ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_controller.v          ;         ;
-; vga_adapter/vga_pll.v                 ; yes             ; User Wizard-Generated File   ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v                 ;         ;
-; part2.v                               ; yes             ; Auto-Found Verilog HDL File  ; D:/Docments/study/FinalProject/CSC258FinalProject/part2.v                               ;         ;
-; altsyncram.tdf                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                   ;         ;
-; stratix_ram_block.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc            ;         ;
-; lpm_mux.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                      ;         ;
-; lpm_decode.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                   ;         ;
-; aglobal181.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                   ;         ;
-; a_rdenreg.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                    ;         ;
-; altrom.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                       ;         ;
-; altram.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                       ;         ;
-; altdpram.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                     ;         ;
-; db/altsyncram_m6m1.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf                ;         ;
-; db/decode_7la.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_7la.tdf                     ;         ;
-; db/decode_01a.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_01a.tdf                     ;         ;
-; db/mux_ifb.tdf                        ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/mux_ifb.tdf                        ;         ;
-; altpll.tdf                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                       ;         ;
-; stratix_pll.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                  ;         ;
-; stratixii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                ;         ;
-; cycloneii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                ;         ;
-; db/altpll_80u.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/altpll_80u.tdf                     ;         ;
-+---------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
-=======
 ;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+--------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+--------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; vga_adapter/vga_adapter.v            ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v                       ;         ;
-; vga_adapter/vga_address_translator.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v            ;         ;
-; vga_adapter/vga_controller.v         ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v                    ;         ;
-; vga_adapter/vga_pll.v                ; yes             ; User Wizard-Generated File   ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v                           ;         ;
-; part2.v                              ; yes             ; Auto-Found Verilog HDL File  ; I:/GitHub/CSC258FinalProject/part2.v                                         ;         ;
-; altsyncram.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal181.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
-; a_rdenreg.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_m6m1.tdf               ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf                          ;         ;
-; db/decode_7la.tdf                    ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_7la.tdf                               ;         ;
-; db/decode_01a.tdf                    ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_01a.tdf                               ;         ;
-; db/mux_ifb.tdf                       ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/mux_ifb.tdf                                  ;         ;
-; altpll.tdf                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; stratix_pll.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/altpll_80u.tdf                    ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf                               ;         ;
-+--------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
->>>>>>> Stashed changes
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; KeyboardFiles/keyboard_press_driver.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v           ;         ;
+; KeyboardFiles/keyboard_inner_driver.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v           ;         ;
+; vga_adapter/vga_adapter.v             ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v                       ;         ;
+; vga_adapter/vga_address_translator.v  ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v            ;         ;
+; vga_adapter/vga_controller.v          ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v                    ;         ;
+; vga_adapter/vga_pll.v                 ; yes             ; User Wizard-Generated File   ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v                           ;         ;
+; part2.sv                              ; yes             ; User SystemVerilog HDL File  ; I:/GitHub/CSC258FinalProject/part2.sv                                        ;         ;
+; altsyncram.tdf                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_m6m1.tdf                ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf                          ;         ;
+; db/decode_7la.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_7la.tdf                               ;         ;
+; db/decode_01a.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_01a.tdf                               ;         ;
+; db/mux_ifb.tdf                        ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/mux_ifb.tdf                                  ;         ;
+; altpll.tdf                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; stratix_pll.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/altpll_80u.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf                               ;         ;
++---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -313,29 +230,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-<<<<<<< Updated upstream
-; Estimate of Logic utilization (ALMs needed) ; 312            ;
+; Estimate of Logic utilization (ALMs needed) ; 340            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 513            ;
+; Combinational ALUT usage for logic          ; 562            ;
 ;     -- 7 input functions                    ; 3              ;
-;     -- 6 input functions                    ; 100            ;
-;     -- 5 input functions                    ; 92             ;
-;     -- 4 input functions                    ; 87             ;
-;     -- <=3 input functions                  ; 231            ;
+;     -- 6 input functions                    ; 108            ;
+;     -- 5 input functions                    ; 104            ;
+;     -- 4 input functions                    ; 88             ;
+;     -- <=3 input functions                  ; 259            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 273            ;
-=======
-; Estimate of Logic utilization (ALMs needed) ; 324            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 543            ;
-;     -- 7 input functions                    ; 2              ;
-;     -- 6 input functions                    ; 101            ;
-;     -- 5 input functions                    ; 96             ;
-;     -- 4 input functions                    ; 83             ;
-;     -- <=3 input functions                  ; 261            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 241            ;
->>>>>>> Stashed changes
+; Dedicated logic registers                   ; 290            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 104            ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -347,15 +251,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-<<<<<<< Updated upstream
-; Maximum fan-out                             ; 181            ;
-; Total fan-out                               ; 3187           ;
-; Average fan-out                             ; 3.17           ;
-=======
-; Maximum fan-out                             ; 173            ;
-; Total fan-out                               ; 3224           ;
-; Average fan-out                             ; 3.23           ;
->>>>>>> Stashed changes
+; Maximum fan-out                             ; 198            ;
+; Total fan-out                               ; 3483           ;
+; Average fan-out                             ; 3.25           ;
 +---------------------------------------------+----------------+
 
 
@@ -364,13 +262,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
-<<<<<<< Updated upstream
-; |part2                                                  ; 513 (1)             ; 273 (0)                   ; 57600             ; 1          ; 104  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
-;    |LeftScoreDetector:lDetect|                          ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|LeftScoreDetector:lDetect                                                                      ; LeftScoreDetector      ; work         ;
-=======
-; |part2                                                  ; 543 (11)            ; 241 (10)                  ; 57600             ; 1          ; 102  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
+; |part2                                                  ; 562 (1)             ; 290 (0)                   ; 57600             ; 1          ; 104  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
 ;    |LeftScoreDetector:lDetect|                          ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|LeftScoreDetector:lDetect                                                                      ; LeftScoreDetector      ; work         ;
->>>>>>> Stashed changes
 ;    |RightScoreCounter:rScore|                           ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|RightScoreCounter:rScore                                                                       ; RightScoreCounter      ; work         ;
 ;    |TimeCounter:tc|                                     ; 62 (62)             ; 23 (23)                   ; 0                 ; 1          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
 ;    |XCounter:xc|                                        ; 12 (12)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
@@ -385,8 +278,8 @@ refer to the applicable agreement for further details.
 ;       |squareFSM:m1|                                    ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0|squareFSM:m1                                                                  ; squareFSM              ; work         ;
 ;    |hex_decoder:hexone|                                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|hex_decoder:hexone                                                                             ; hex_decoder            ; work         ;
 ;    |hex_decoder:hexzero|                                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|hex_decoder:hexzero                                                                            ; hex_decoder            ; work         ;
-;    |keyboard_press_driver:keyDriver|                    ; 28 (14)             ; 58 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|keyboard_press_driver:keyDriver                                                                ; keyboard_press_driver  ; work         ;
-;       |keyboard_inner_driver:kbd|                       ; 14 (14)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|keyboard_press_driver:keyDriver|keyboard_inner_driver:kbd                                      ; keyboard_inner_driver  ; work         ;
+;    |keyboard_press_driver:keytest|                      ; 28 (14)             ; 58 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|keyboard_press_driver:keytest                                                                  ; keyboard_press_driver  ; work         ;
+;       |keyboard_inner_driver:kbd|                       ; 14 (14)             ; 34 (34)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|keyboard_press_driver:keytest|keyboard_inner_driver:kbd                                        ; keyboard_inner_driver  ; work         ;
 ;    |vga_adapter:VGA|                                    ; 63 (2)              ; 30 (0)                    ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA                                                                                ; vga_adapter            ; work         ;
 ;       |altsyncram:VideoMemory|                          ; 9 (0)               ; 4 (0)                     ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA|altsyncram:VideoMemory                                                         ; altsyncram             ; work         ;
 ;          |altsyncram_m6m1:auto_generated|               ; 9 (0)               ; 4 (4)                     ; 57600             ; 0          ; 0    ; 0            ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated                          ; altsyncram_m6m1        ; work         ;
@@ -424,28 +317,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; LeftScoreDetector:lDetect|lsignal                  ; SW[6]               ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 Encoding Type:  One-Hot
-+--------------------------------------------------------------+
-; State Machine - |part2|keyboard_press_driver:keyDriver|count ;
-+----------+----------+----------+----------+------------------+
-; Name     ; count.11 ; count.10 ; count.01 ; count.00         ;
-+----------+----------+----------+----------+------------------+
-; count.00 ; 0        ; 0        ; 0        ; 0                ;
-; count.01 ; 0        ; 0        ; 1        ; 1                ;
-; count.10 ; 0        ; 1        ; 0        ; 1                ;
-; count.11 ; 1        ; 0        ; 0        ; 1                ;
-+----------+----------+----------+----------+------------------+
++------------------------------------------------------------+
+; State Machine - |part2|keyboard_press_driver:keytest|count ;
++----------+----------+----------+----------+----------------+
+; Name     ; count.11 ; count.10 ; count.01 ; count.00       ;
++----------+----------+----------+----------+----------------+
+; count.00 ; 0        ; 0        ; 0        ; 0              ;
+; count.01 ; 0        ; 0        ; 1        ; 1              ;
+; count.10 ; 0        ; 1        ; 0        ; 1              ;
+; count.11 ; 1        ; 0        ; 0        ; 1              ;
++----------+----------+----------+----------+----------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -471,28 +353,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; XCounter:xc|xDisplay[0]                     ; Merged with YCounter:yc|yDisplay[0]                  ;
 ; datapathFSM:fsm0|paddleFSM:m3|paddleX[1]    ; Stuck at GND due to stuck port data_in               ;
 ; datapathFSM:fsm0|paddleFSM:m2|paddleX[1]    ; Stuck at GND due to stuck port data_in               ;
-<<<<<<< Updated upstream
-; datapathFSM:fsm0|current_state~13           ; Lost fanout                                          ;
-; datapathFSM:fsm0|current_state~14           ; Lost fanout                                          ;
-; datapathFSM:fsm0|current_state~15           ; Lost fanout                                          ;
-; datapathFSM:fsm0|current_state~16           ; Lost fanout                                          ;
-; datapathFSM:fsm0|next_state~3               ; Lost fanout                                          ;
-; datapathFSM:fsm0|next_state~4               ; Lost fanout                                          ;
-; datapathFSM:fsm0|next_state~5               ; Lost fanout                                          ;
-; datapathFSM:fsm0|next_state~6               ; Lost fanout                                          ;
-; keyboard_press_driver:keyDriver|count~6     ; Lost fanout                                          ;
-; keyboard_press_driver:keyDriver|count~7     ; Lost fanout                                          ;
-=======
->>>>>>> Stashed changes
+; keyboard_press_driver:keytest|count~6       ; Lost fanout                                          ;
+; keyboard_press_driver:keytest|count~7       ; Lost fanout                                          ;
 ; datapathFSM:fsm0|squareFSM:m1|display[4]    ; Lost fanout                                          ;
 ; RightScoreCounter:rScore|rscore[8..11]      ; Lost fanout                                          ;
 ; datapathFSM:fsm0|paddleFSM:m3|paddleY[5]    ; Stuck at GND due to stuck port data_in               ;
 ; datapathFSM:fsm0|paddleFSM:m2|paddleY[5]    ; Stuck at GND due to stuck port data_in               ;
-<<<<<<< Updated upstream
-; Total Number of Removed Registers = 41      ;                                                      ;
-=======
-; Total Number of Removed Registers = 32      ;                                                      ;
->>>>>>> Stashed changes
+; Total Number of Removed Registers = 33      ;                                                      ;
 +---------------------------------------------+------------------------------------------------------+
 
 
@@ -521,21 +388,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-<<<<<<< Updated upstream
-; Total registers                              ; 273   ;
-; Number of registers using Synchronous Clear  ; 68    ;
-; Number of registers using Synchronous Load   ; 21    ;
+; Total registers                              ; 290   ;
+; Number of registers using Synchronous Clear  ; 100   ;
+; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 21    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 141   ;
-=======
-; Total registers                              ; 241   ;
-; Number of registers using Synchronous Clear  ; 91    ;
-; Number of registers using Synchronous Load   ; 20    ;
-; Number of registers using Asynchronous Clear ; 20    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 137   ;
->>>>>>> Stashed changes
+; Number of registers using Clock Enable       ; 177   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -580,77 +438,43 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
-<<<<<<< Updated upstream
-; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |part2|RightScoreCounter:rScore|rscore[11]                                                               ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|keyboard_press_driver:keyDriver|filter_scan[0]                                                    ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[14]                                                                              ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[0]                                             ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[3]                                                          ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[8]                                                                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|keyboard_press_driver:keyDriver|keyboard_inner_driver:kbd|incnt[3]                                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[6]                                                               ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[7]                                                               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[5]                                                                  ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[6]                                                                 ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[4]                                                             ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[1]                                                             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[3]                                                              ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[1]                                                                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[0]                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[0]                                                                   ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[0]                                                          ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[1]                                                          ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[4]                                                               ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[6]                                                               ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|Xout[7]                                                                          ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Yout[5]                                                                          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[9]                                                                   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[5]                                                             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[5]                                                             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[4]                                                              ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[2]                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[2]                                                                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[4]                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[1] ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add8                                                                             ;
-; 8:1                ; 9 bits    ; 45 LEs        ; 27 LEs               ; 18 LEs                 ; No         ; |part2|datapathFSM:fsm0|Add8                                                                             ;
-=======
 ; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |part2|RightScoreCounter:rScore|rscore[9]                                                                ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[9]                                                                               ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[2]                                             ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[1]                                                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseX[5]                                                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[0]                                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|keyboard_press_driver:keytest|filter_scan[2]                                                      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[4]                                             ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[0]                                                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseX[4]                                                            ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[15]                                                                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|keyboard_press_driver:keytest|keyboard_inner_driver:kbd|incnt[3]                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[5]                                                               ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[0]                                                                   ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[1]                                                                  ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[3]                                                                 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[6]                                                                  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[5]                                                                 ;
 ; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|colour[1]                                                                        ;
 ; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Xout[6]                                                                          ;
-; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Yout[2]                                                                          ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseY[5]                                                            ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 0 LEs                ; 27 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|resetCount[1]                                                                    ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[4]                                                             ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Yout[0]                                                                          ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseY[4]                                                            ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 0 LEs                ; 27 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|resetCount[0]                                                                    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[0]                                                             ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[0]                                                             ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[0]                                                              ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[4]                                                                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[3]                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[0]                                                                   ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[1]                                                          ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[5]                                                          ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[0]                                                               ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[3]                                                                   ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|resetCount[2]                                                                    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[0]                                                                  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[4]                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[2]                                                                   ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[4]                                                          ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[4]                                                          ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[2]                                                               ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[4]                                                                   ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|resetCount[11]                                                                   ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[2]                                                             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[2]                                                             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[1]                                                              ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[2]                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[6]                                                             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[4]                                                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[5]                                                                  ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[2]                                                                  ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[4]                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[2] ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add9                                                                             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add8                                                                             ;
 ; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |part2|datapathFSM:fsm0|Add9                                                                             ;
->>>>>>> Stashed changes
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 
 
@@ -1151,15 +975,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: keyboard_press_driver:keyDriver ;
-+----------------+----------+--------------------------------------------------+
-; Parameter Name ; Value    ; Type                                             ;
-+----------------+----------+--------------------------------------------------+
-; FIRST          ; 0        ; Unsigned Binary                                  ;
-; SEENF0         ; 1        ; Unsigned Binary                                  ;
-; NULL           ; 00000000 ; Unsigned Binary                                  ;
-+----------------+----------+--------------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: keyboard_press_driver:keytest ;
++----------------+----------+------------------------------------------------+
+; Parameter Name ; Value    ; Type                                           ;
++----------------+----------+------------------------------------------------+
+; FIRST          ; 0        ; Unsigned Binary                                ;
+; SEENF0         ; 1        ; Unsigned Binary                                ;
+; NULL           ; 00000000 ; Unsigned Binary                                ;
++----------------+----------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1267,83 +1091,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-<<<<<<< Updated upstream
-; arriav_ff             ; 273                         ;
+; arriav_ff             ; 290                         ;
 ;     CLR               ; 1                           ;
 ;     CLR SCLR          ; 10                          ;
-;     ENA               ; 90                          ;
+;     ENA               ; 95                          ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 22                          ;
+;     ENA SCLR          ; 53                          ;
 ;     ENA SLD           ; 19                          ;
-;     SCLR              ; 26                          ;
-;     SLD               ; 2                           ;
-;     plain             ; 93                          ;
-; arriav_lcell_comb     ; 516                         ;
-;     arith             ; 145                         ;
-;         1 data inputs ; 112                         ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 12                          ;
-;         5 data inputs ; 4                           ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 348                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 39                          ;
-;         3 data inputs ; 28                          ;
-;         4 data inputs ; 87                          ;
-;         5 data inputs ; 88                          ;
-;         6 data inputs ; 100                         ;
-;     shared            ; 20                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 2                           ;
-=======
-; arriav_ff             ; 241                         ;
-;     CLR SCLR          ; 10                          ;
-;     ENA               ; 63                          ;
-;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 45                          ;
-;     ENA SLD           ; 19                          ;
-;     SCLR              ; 26                          ;
+;     SCLR              ; 27                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 67                          ;
-; arriav_lcell_comb     ; 546                         ;
-;     arith             ; 194                         ;
+;     plain             ; 74                          ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 565                         ;
+;     arith             ; 185                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 144                         ;
-;         2 data inputs ; 22                          ;
+;         1 data inputs ; 136                         ;
+;         2 data inputs ; 21                          ;
 ;         3 data inputs ; 15                          ;
 ;         4 data inputs ; 4                           ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 340                         ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 367                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 42                          ;
-;         4 data inputs ; 79                          ;
-;         5 data inputs ; 88                          ;
-;         6 data inputs ; 101                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 27                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 84                          ;
+;         5 data inputs ; 96                          ;
+;         6 data inputs ; 108                         ;
 ;     shared            ; 10                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 6                           ;
 ;         3 data inputs ; 1                           ;
->>>>>>> Stashed changes
 ; arriav_mac            ; 1                           ;
 ; boundary_port         ; 104                         ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-<<<<<<< Updated upstream
-; Average LUT depth     ; 2.36                        ;
-=======
-; Average LUT depth     ; 2.46                        ;
->>>>>>> Stashed changes
+; Average LUT depth     ; 2.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1362,25 +1150,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-<<<<<<< Updated upstream
-    Info: Processing started: Sun Dec 01 18:13:36 2019
-=======
-    Info: Processing started: Sun Dec 01 17:48:41 2019
->>>>>>> Stashed changes
+    Info: Processing started: Sun Dec 01 20:03:11 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
-Info (16303): High Power Effort optimization mode selected -- dynamic power will be prioritized at the potential cost of increased compilation time
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-<<<<<<< Updated upstream
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_scancoderaw_driver.v
-    Info (12023): Found entity 1: keyboard_scancoderaw_driver File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_scancoderaw_driver.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_press_driver.v
-    Info (12023): Found entity 1: keyboard_press_driver File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_inner_driver.v
-    Info (12023): Found entity 1: keyboard_inner_driver File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 1
-=======
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
->>>>>>> Stashed changes
+Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_scancoderaw_driver.v
+    Info (12023): Found entity 1: keyboard_scancoderaw_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_scancoderaw_driver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_press_driver.v
+    Info (12023): Found entity 1: keyboard_press_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_inner_driver.v
+    Info (12023): Found entity 1: keyboard_inner_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
     Info (12023): Found entity 1: vga_adapter File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
@@ -1388,71 +1167,38 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
     Info (12023): Found entity 1: vga_controller File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
-<<<<<<< Updated upstream
-    Info (12023): Found entity 1: vga_pll File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
-Warning (12125): Using design file part2.v, which is not specified as a design file for the current project, but contains definitions for 17 design units and 17 entities in project
-    Info (12023): Found entity 1: part2 File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 2
-    Info (12023): Found entity 2: testScore File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 242
-    Info (12023): Found entity 3: testControl File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 252
-    Info (12023): Found entity 4: LeftScoreCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 274
-    Info (12023): Found entity 5: RightScoreCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 290
-    Info (12023): Found entity 6: LeftScoreDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 310
-    Info (12023): Found entity 7: RightScoreDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 340
-    Info (12023): Found entity 8: PixelCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 365
-    Info (12023): Found entity 9: datapathFSM File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 382
-    Info (12023): Found entity 10: drawBorder File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 615
-    Info (12023): Found entity 11: squareFSM File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 660
-    Info (12023): Found entity 12: paddleFSM File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 675
-    Info (12023): Found entity 13: XCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 699
-    Info (12023): Found entity 14: YCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 745
-    Info (12023): Found entity 15: YPaddle File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 778
-    Info (12023): Found entity 16: TimeCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 813
-    Info (12023): Found entity 17: hex_decoder File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 859
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(137): created implicit net for "pause" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 137
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(184): created implicit net for "lsignal" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 184
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(191): created implicit net for "rsignal" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 191
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(234): created implicit net for "state" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 234
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(248): created implicit net for "lsignal" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 248
-Info (12127): Elaborating entity "part2" for the top level hierarchy
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 83
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-=======
     Info (12023): Found entity 1: vga_pll File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
-Warning (12125): Using design file part2.v, which is not specified as a design file for the current project, but contains definitions for 18 design units and 18 entities in project
-    Info (12023): Found entity 1: part2 File: I:/GitHub/CSC258FinalProject/part2.v Line: 2
-    Info (12023): Found entity 2: testScore File: I:/GitHub/CSC258FinalProject/part2.v Line: 224
-    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.v Line: 234
-    Info (12023): Found entity 4: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.v Line: 256
-    Info (12023): Found entity 5: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.v Line: 272
-    Info (12023): Found entity 6: LeftScoreDetector File: I:/GitHub/CSC258FinalProject/part2.v Line: 292
-    Info (12023): Found entity 7: RightScoreDetector File: I:/GitHub/CSC258FinalProject/part2.v Line: 322
-    Info (12023): Found entity 8: PixelCounter File: I:/GitHub/CSC258FinalProject/part2.v Line: 347
-    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.v Line: 364
-    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.v Line: 623
-    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.v Line: 668
-    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.v Line: 683
-    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.v Line: 705
-    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.v Line: 726
-    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.v Line: 772
-    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.v Line: 805
-    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.v Line: 840
-    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.v Line: 886
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(118): created implicit net for "pause" File: I:/GitHub/CSC258FinalProject/part2.v Line: 118
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(166): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.v Line: 166
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(173): created implicit net for "rsignal" File: I:/GitHub/CSC258FinalProject/part2.v Line: 173
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(216): created implicit net for "state" File: I:/GitHub/CSC258FinalProject/part2.v Line: 216
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(230): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.v Line: 230
-Warning (10236): Verilog HDL Implicit Net warning at part2.v(515): created implicit net for "S_ERASE_STATE" File: I:/GitHub/CSC258FinalProject/part2.v Line: 515
+Info (12021): Found 18 design units, including 18 entities, in source file part2.sv
+    Info (12023): Found entity 1: part2 File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1
+    Info (12023): Found entity 2: testScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 243
+    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 253
+    Info (12023): Found entity 4: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 275
+    Info (12023): Found entity 5: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 291
+    Info (12023): Found entity 6: LeftScoreDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 311
+    Info (12023): Found entity 7: RightScoreDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 341
+    Info (12023): Found entity 8: PixelCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 366
+    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 383
+    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 642
+    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 687
+    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 702
+    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 724
+    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 745
+    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 791
+    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 824
+    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 859
+    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 905
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(137): created implicit net for "pause" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 137
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(185): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 185
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(192): created implicit net for "rsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 192
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(235): created implicit net for "state" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 235
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(249): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 249
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(534): created implicit net for "S_ERASE_STATE" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 534
 Info (12127): Elaborating entity "part2" for the top level hierarchy
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: I:/GitHub/CSC258FinalProject/part2.v Line: 79
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 82
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
 Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
 Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
 Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
->>>>>>> Stashed changes
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1469,23 +1215,6 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
-<<<<<<< Updated upstream
-    Info (12023): Found entity 1: altsyncram_m6m1 File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
-Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
-    Info (12023): Found entity 1: decode_7la File: D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_7la.tdf Line: 22
-Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 46
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
-    Info (12023): Found entity 1: decode_01a File: D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_01a.tdf Line: 22
-Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
-    Info (12023): Found entity 1: mux_ifb File: D:/Docments/study/FinalProject/CSC258FinalProject/db/mux_ifb.tdf Line: 22
-Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 49
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-=======
     Info (12023): Found entity 1: altsyncram_m6m1 File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
 Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
@@ -1501,7 +1230,6 @@ Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pl
 Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
 Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
 Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
->>>>>>> Stashed changes
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1514,174 +1242,505 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
-<<<<<<< Updated upstream
-    Info (12023): Found entity 1: altpll_80u File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altpll_80u.tdf Line: 25
-Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keyDriver" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 105
-Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keyDriver|keyboard_inner_driver:kbd" File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 138
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 146
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 153
-Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 165
-Info (12128): Elaborating entity "LeftScoreDetector" for hierarchy "LeftScoreDetector:lDetect" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 184
-Warning (10235): Verilog HDL Always Construct warning at part2.v(318): variable "enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 318
-Warning (10235): Verilog HDL Always Construct warning at part2.v(320): variable "lpaddle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 320
-Warning (10235): Verilog HDL Always Construct warning at part2.v(320): variable "yobject" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 320
-Warning (10240): Verilog HDL Always Construct warning at part2.v(316): inferring latch(es) for variable "lsignal", which holds its previous value in one or more paths through the always construct File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 316
-Info (10041): Inferred latch for "lsignal" at part2.v(316) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 316
-Info (12128): Elaborating entity "RightScoreDetector" for hierarchy "RightScoreDetector:rDetect" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 191
-Warning (10235): Verilog HDL Always Construct warning at part2.v(348): variable "enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 348
-Warning (10235): Verilog HDL Always Construct warning at part2.v(350): variable "rpaddle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 350
-Warning (10235): Verilog HDL Always Construct warning at part2.v(350): variable "yobject" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 350
-Warning (10240): Verilog HDL Always Construct warning at part2.v(346): inferring latch(es) for variable "rsignal", which holds its previous value in one or more paths through the always construct File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 346
-Info (10041): Inferred latch for "rsignal" at part2.v(346) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 346
-Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 193
-Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 194
-Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 217
-Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 501
-Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 506
-Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 512
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 232
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 34
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 35
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 36
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 49
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 15 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file D:/Docments/study/FinalProject/CSC258FinalProject/output_files/part2.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altpll_80u.tdf Line: 33
-    Info: Must be connected
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[3]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[4]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[5]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.v Line: 25
-Info (21057): Implemented 680 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 87 output pins
-    Info (21061): Implemented 565 logic cells
-    Info (21064): Implemented 9 RAM segments
-    Info (21065): Implemented 1 PLLs
-    Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Sun Dec 01 18:13:49 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:26
-=======
     Info (12023): Found entity 1: altpll_80u File: I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 25
 Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: I:/GitHub/CSC258FinalProject/part2.v Line: 119
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: I:/GitHub/CSC258FinalProject/part2.v Line: 127
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:/GitHub/CSC258FinalProject/part2.v Line: 134
-Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.v Line: 147
-Info (12128): Elaborating entity "LeftScoreDetector" for hierarchy "LeftScoreDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.v Line: 166
-Warning (10235): Verilog HDL Always Construct warning at part2.v(300): variable "enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.v Line: 300
-Warning (10235): Verilog HDL Always Construct warning at part2.v(302): variable "lpaddle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.v Line: 302
-Warning (10235): Verilog HDL Always Construct warning at part2.v(302): variable "yobject" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.v Line: 302
-Warning (10240): Verilog HDL Always Construct warning at part2.v(298): inferring latch(es) for variable "lsignal", which holds its previous value in one or more paths through the always construct File: I:/GitHub/CSC258FinalProject/part2.v Line: 298
-Info (10041): Inferred latch for "lsignal" at part2.v(298) File: I:/GitHub/CSC258FinalProject/part2.v Line: 298
-Info (12128): Elaborating entity "RightScoreDetector" for hierarchy "RightScoreDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.v Line: 173
-Warning (10235): Verilog HDL Always Construct warning at part2.v(330): variable "enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.v Line: 330
-Warning (10235): Verilog HDL Always Construct warning at part2.v(332): variable "rpaddle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.v Line: 332
-Warning (10235): Verilog HDL Always Construct warning at part2.v(332): variable "yobject" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.v Line: 332
-Warning (10240): Verilog HDL Always Construct warning at part2.v(328): inferring latch(es) for variable "rsignal", which holds its previous value in one or more paths through the always construct File: I:/GitHub/CSC258FinalProject/part2.v Line: 328
-Info (10041): Inferred latch for "rsignal" at part2.v(328) File: I:/GitHub/CSC258FinalProject/part2.v Line: 328
-Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.v Line: 175
-Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.v Line: 176
-Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.v Line: 199
-Warning (10858): Verilog HDL warning at part2.v(515): object S_ERASE_STATE used but never assigned File: I:/GitHub/CSC258FinalProject/part2.v Line: 515
-Warning (10030): Net "S_ERASE_STATE" at part2.v(515) has no driver or initial value, using a default initial value '0' File: I:/GitHub/CSC258FinalProject/part2.v Line: 515
-Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.v Line: 490
-Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.v Line: 495
-Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.v Line: 501
-Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.v Line: 515
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.v Line: 214
+Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keytest" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 105
+Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keytest|keyboard_inner_driver:kbd" File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
+Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 138
+Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 146
+Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 153
+Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 166
+Info (12128): Elaborating entity "LeftScoreDetector" for hierarchy "LeftScoreDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 185
+Warning (10235): Verilog HDL Always Construct warning at part2.sv(319): variable "enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.sv Line: 319
+Warning (10235): Verilog HDL Always Construct warning at part2.sv(321): variable "lpaddle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.sv Line: 321
+Warning (10235): Verilog HDL Always Construct warning at part2.sv(321): variable "yobject" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.sv Line: 321
+Warning (10240): Verilog HDL Always Construct warning at part2.sv(317): inferring latch(es) for variable "lsignal", which holds its previous value in one or more paths through the always construct File: I:/GitHub/CSC258FinalProject/part2.sv Line: 317
+Info (10041): Inferred latch for "lsignal" at part2.sv(317) File: I:/GitHub/CSC258FinalProject/part2.sv Line: 317
+Info (12128): Elaborating entity "RightScoreDetector" for hierarchy "RightScoreDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 192
+Warning (10235): Verilog HDL Always Construct warning at part2.sv(349): variable "enable" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.sv Line: 349
+Warning (10235): Verilog HDL Always Construct warning at part2.sv(351): variable "rpaddle" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.sv Line: 351
+Warning (10235): Verilog HDL Always Construct warning at part2.sv(351): variable "yobject" is read inside the Always Construct but isn't in the Always Construct's Event Control File: I:/GitHub/CSC258FinalProject/part2.sv Line: 351
+Warning (10240): Verilog HDL Always Construct warning at part2.sv(347): inferring latch(es) for variable "rsignal", which holds its previous value in one or more paths through the always construct File: I:/GitHub/CSC258FinalProject/part2.sv Line: 347
+Info (10041): Inferred latch for "rsignal" at part2.sv(347) File: I:/GitHub/CSC258FinalProject/part2.sv Line: 347
+Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 194
+Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 195
+Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 218
+Warning (10858): Verilog HDL warning at part2.sv(534): object S_ERASE_STATE used but never assigned File: I:/GitHub/CSC258FinalProject/part2.sv Line: 534
+Warning (10030): Net "S_ERASE_STATE" at part2.sv(534) has no driver or initial value, using a default initial value '0' File: I:/GitHub/CSC258FinalProject/part2.sv Line: 534
+Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 509
+Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 514
+Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 520
+Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 534
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 233
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 22
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.v Line: 27
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.v Line: 30
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.v Line: 31
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.v Line: 32
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.v Line: 45
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 30
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 33
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 34
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 35
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 48
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 409 assignments for entity "DE1_SoC" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DOUT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCLRCK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_BCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACLRCK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_XCK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK4_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FAN_CTRL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[32] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[33] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[34] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[35] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[32] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[34] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[35] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_CONV_USB_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CKE -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ODT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "1.5 V" -to HPS_DDR3_RZQ -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_WE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_GTX_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_INT_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_MDC -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_MDIO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DV -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_EN -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_NCSO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_GSENSOR_INT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C1_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C1_SDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C2_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C2_SDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C_CONTROL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_KEY -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_LED -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_LTC_GPIO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_CMD -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_MISO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_MOSI -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_SS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_UART_RX -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_UART_TX -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_CLKOUT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DIR -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_NXT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_STP -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_RXD -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_TXD -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_CLK27 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_HS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_VS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_EMPTY -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_FULL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_OE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_RD_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_SCL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_SDA -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_WR_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE1_SoC -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE1_SoC -section_id Top was ignored
 Info (144001): Generated suppressed messages file I:/GitHub/CSC258FinalProject/output_files/part2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 33
     Info: Must be connected
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[3]" File: I:/GitHub/CSC258FinalProject/part2.v Line: 21
-    Warning (15610): No output dependent on input pin "SW[4]" File: I:/GitHub/CSC258FinalProject/part2.v Line: 21
-    Warning (15610): No output dependent on input pin "SW[5]" File: I:/GitHub/CSC258FinalProject/part2.v Line: 21
-Info (21057): Implemented 663 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[3]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
+    Warning (15610): No output dependent on input pin "SW[4]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
+    Warning (15610): No output dependent on input pin "SW[5]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
+Info (21057): Implemented 727 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 87 output pins
-    Info (21061): Implemented 550 logic cells
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 612 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 4912 megabytes
-    Info: Processing ended: Sun Dec 01 17:48:57 2019
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:30
->>>>>>> Stashed changes
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 466 warnings
+    Info: Peak virtual memory: 4911 megabytes
+    Info: Processing ended: Sun Dec 01 20:03:24 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+

@@ -6,7 +6,7 @@ KEY[2] => _.IN1
 KEY[3] => _.IN1
 SW[0] => SW[0].IN3
 SW[1] => SW[1].IN1
-SW[2] => resetn.IN10
+SW[2] => resetn.IN9
 SW[3] => ~NO_FANOUT~
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
@@ -56,16 +56,16 @@ HEX5[3] <= hex_decoder:hexfive.segments
 HEX5[4] <= hex_decoder:hexfive.segments
 HEX5[5] <= hex_decoder:hexfive.segments
 HEX5[6] <= hex_decoder:hexfive.segments
-LEDR[0] <= keyboard_press_driver:keyDriver.valid
-LEDR[1] <= keyboard_press_driver:keyDriver.makeBreak
-LEDR[2] <= keyboard_press_driver:keyDriver.outCode
-LEDR[3] <= keyboard_press_driver:keyDriver.outCode
-LEDR[4] <= keyboard_press_driver:keyDriver.outCode
-LEDR[5] <= keyboard_press_driver:keyDriver.outCode
-LEDR[6] <= keyboard_press_driver:keyDriver.outCode
-LEDR[7] <= keyboard_press_driver:keyDriver.outCode
-LEDR[8] <= keyboard_press_driver:keyDriver.outCode
-LEDR[9] <= keyboard_press_driver:keyDriver.outCode
+LEDR[0] <= keyboard_press_driver:keytest.outCode
+LEDR[1] <= keyboard_press_driver:keytest.outCode
+LEDR[2] <= keyboard_press_driver:keytest.outCode
+LEDR[3] <= keyboard_press_driver:keytest.outCode
+LEDR[4] <= keyboard_press_driver:keytest.outCode
+LEDR[5] <= keyboard_press_driver:keytest.outCode
+LEDR[6] <= keyboard_press_driver:keytest.outCode
+LEDR[7] <= keyboard_press_driver:keytest.outCode
+LEDR[8] <= keyboard_press_driver:keytest.makeBreak
+LEDR[9] <= keyboard_press_driver:keytest.valid
 VGA_CLK <= vga_adapter:VGA.VGA_CLK
 VGA_HS <= vga_adapter:VGA.VGA_HS
 VGA_VS <= vga_adapter:VGA.VGA_VS
@@ -101,8 +101,8 @@ VGA_B[6] <= vga_adapter:VGA.VGA_B
 VGA_B[7] <= vga_adapter:VGA.VGA_B
 VGA_B[8] <= vga_adapter:VGA.VGA_B
 VGA_B[9] <= vga_adapter:VGA.VGA_B
-PS2_DAT => PS2_DAT.IN1
-PS2_CLK => PS2_CLK.IN1
+PS2_DAT <> keyboard_press_driver:keytest.PS2_DAT
+PS2_CLK <> keyboard_press_driver:keytest.PS2_CLK
 
 
 |part2|vga_adapter:VGA
@@ -865,7 +865,7 @@ mem_address[13] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 mem_address[14] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|part2|keyboard_press_driver:keyDriver
+|part2|keyboard_press_driver:keytest
 CLOCK_50 => CLOCK_50.IN1
 valid <= valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
 makeBreak <= makeBreak~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -882,7 +882,7 @@ PS2_CLK => PS2_CLK.IN1
 reset => reset.IN1
 
 
-|part2|keyboard_press_driver:keyDriver|keyboard_inner_driver:kbd
+|part2|keyboard_press_driver:keytest|keyboard_inner_driver:kbd
 keyboard_clk => filter[7].DATAIN
 keyboard_data => shiftin.DATAB
 keyboard_data => always3.IN1

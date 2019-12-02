@@ -20,8 +20,8 @@ module part2
 );
 
 	input	  CLOCK_50; //	50 MHz
-	input PS2_DAT;
-	input PS2_CLK;
+	inout PS2_DAT;
+	inout PS2_CLK;
 	input   [9:0]   SW;
 	// Use SW[0] to enable the Delay/Frame counter so that the output will be 1 for these.
 	input   [3:0]   KEY;
@@ -91,10 +91,10 @@ module part2
   wire valid;
   wire makeBreak;
   wire [7:0] outCode;
-  assign LEDR[0] = valid;
-  assign LEDR[1] = makeBreak;
-  assign LEDR[9:2] = outCode;
-  
+//  assign LEDR[0] = valid;
+//  assign LEDR[1] = makeBreak;
+//  assign LEDR[9:2] = outCode;
+	assign LEDR = {valid, makeBreak, outCode};
   keyboard_press_driver keyDriver(
   .CLOCK_50(CLOCK_50),
   .valid(valid), // output valid is 1 when make or break code is ready to be read 
@@ -102,7 +102,8 @@ module part2
   .outCode(outCode), //a byte representing keyboard data 
   .PS2_DAT(PS2_DAT), // PS2 data line
   .PS2_CLK(PS2_CLK), // PS2 clock line
-  .reset(resetn));
+  .reset(resetn)
+  );
 	
 
 	wire lhitPulse;// 1 if the object hits the left wall
