@@ -229,15 +229,15 @@ module part2
 	end
 	//assign LEDR[9:0] = clock_counter;
 	
-	// HEXO,HEX1,HEX2 displays the right hand player score
+	// HEXO,HEX1 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));
 	hex_decoder hexone(.hex_digit(rscore[7:4]),.segments(HEX1));
-	hex_decoder hextwo(.hex_digit(rscore[11:8]),.segments(HEX2));
 	
-	// HEX3,HEX4,HEX5 displays the left hand player score
-	hex_decoder hexthree(.hex_digit(lscore[3:0]),.segments(HEX3));
-	hex_decoder hexfour(.hex_digit(lscore[7:4]),.segments(HEX4));
-	hex_decoder hexfive(.hex_digit(lscore[11:8]),.segments(HEX5));
+	hex_decoder hextwo(.hex_digit(state),.segments(HEX2));
+	
+	//HEX4,HEX5 displays the left hand player score
+	hex_decoder hexfour(.hex_digit(lscore[3:0]),.segments(HEX4));
+	hex_decoder hexfive(.hex_digit(lscore[7:4]),.segments(HEX5));
 endmodule
 
 module testScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [11:0] rightscore);
@@ -286,7 +286,7 @@ module LeftScoreCounter(enable,reset,rsignal,lscore);
 	input enable;
 	input rsignal;// update signal, clk is 1 when object hits the right wall
 	input reset;
-	output reg [11:0] lscore;
+	output reg [7:0] lscore;
 	always @(posedge rsignal)
 	begin
 		if(reset == 1'b0)
@@ -302,7 +302,7 @@ module RightScoreCounter(enable,reset,lsignal,rscore);
 	input enable;
 	input lsignal;// update signal, clk is 1 when object hits the left wall
 	input reset;
-	output reg [11:0] rscore;
+	output reg [7:0] rscore;
 	always @(posedge lsignal)
 	begin
 		if(reset == 1'b0)
