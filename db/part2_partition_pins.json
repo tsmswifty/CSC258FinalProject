@@ -232,6 +232,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "PS2_DAT",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK",
+					"strict" : false
+				},
+				{
 					"name" : "SW[2]",
 					"strict" : false
 				},
@@ -241,10 +249,6 @@
 				},
 				{
 					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
-					"name" : "PS2_DAT",
 					"strict" : false
 				},
 				{
@@ -269,10 +273,6 @@
 				},
 				{
 					"name" : "KEY[3]",
-					"strict" : false
-				},
-				{
-					"name" : "PS2_CLK",
 					"strict" : false
 				},
 				{
