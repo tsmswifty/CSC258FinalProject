@@ -1,5 +1,5 @@
 Flow report for part2
-Tue Dec 03 11:12:35 2019
+Tue Dec 03 12:37:50 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Dec 03 11:12:24 2019       ;
+; Flow Status                     ; Successful - Tue Dec 03 12:37:39 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 417 / 32,070 ( 1 % )                        ;
-; Total registers                 ; 363                                         ;
+; Logic utilization (in ALMs)     ; 416 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 361                                         ;
 ; Total pins                      ; 104 / 457 ( 23 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600 / 4,065,280 ( 1 % )                  ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/03/2019 11:10:25 ;
+; Start date & time ; 12/03/2019 12:35:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; part2               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 136847139708781.157538942518472        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 1098620466640.157539454115212          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; DE1_SoC     ; Top        ;
@@ -99,11 +99,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4874 MB             ; 00:00:29                           ;
-; Fitter               ; 00:01:33     ; 1.1                     ; 6658 MB             ; 00:02:48                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4860 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:10     ; 1.4                     ; 5216 MB             ; 00:00:12                           ;
-; Total                ; 00:02:05     ; --                      ; --                  ; 00:03:37                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4909 MB             ; 00:00:27                           ;
+; Fitter               ; 00:01:33     ; 1.1                     ; 7396 MB             ; 00:06:14                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4845 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.8                     ; 5306 MB             ; 00:00:14                           ;
+; Total                ; 00:02:04     ; --                      ; --                  ; 00:07:03                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,10 +112,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-4BMPCJV  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-D38P7LM  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

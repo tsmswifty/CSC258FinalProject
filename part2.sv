@@ -264,15 +264,15 @@ module part2
 	//assign LEDR[9:0] = clock_counter;
 
 	// HEXO,HEX1,HEX2 displays the right hand player score
-	hex_decoder hexzero(.hex_digit(rscore[3:0]),.segments(HEX0));
-	hex_decoder hexone(.hex_digit(rscore[7:4]),.segments(HEX1));
+	hex_decoder hexzero(.hex_digit(lscore[3:0]),.segments(HEX0));
+	hex_decoder hexone(.hex_digit(lscore[7:4]),.segments(HEX1));
 	hex_decoder hextwo(.hex_digit(strike[3:0]),.segments(HEX2));
 	//	hex_decoder hextwo(.hex_digit(outCode[3:0]),.segments(HEX2));
 	// HEX3,HEX4,HEX5 displays the left hand player score
 	hex_decoder hexthree(.hex_digit(strike[7:4]),.segments(HEX3));
 	//	hex_decoder hexthree(.hex_digit(outCode[7:4]),.segments(HEX3));
-	hex_decoder hexfour(.hex_digit(lscore[3:0]),.segments(HEX4));
-	hex_decoder hexfive(.hex_digit(lscore[7:4]),.segments(HEX5));
+	hex_decoder hexfour(.hex_digit(rscore[3:0]),.segments(HEX4));
+	hex_decoder hexfive(.hex_digit(rscore[7:4]),.segments(HEX5));
 endmodule
 
 module testRightScore(input enable, input reset, input lhitPulse,input [6:0] ylpaddle, input [6:0]yCounter, output [7:0] rightscore);
@@ -498,19 +498,19 @@ module lKeyBoardDetector(input logic clock, input [7:0] outCode, input makeCode,
 	always@(posedge clock)
 	begin
 		case({outCode,makeCode})
-			9'b000101011: begin
+			9'b000111011: begin
 				lupCondition <= 1 ;
 				ldownCondition<=0;
 			end
-			9'b000101010: begin
+			9'b000111010: begin
 				lupCondition <= 0 ;
 				ldownCondition<=0;
 			end
-			9'b000111001: begin
+			9'b000110111: begin
 				lupCondition <= 0;
 				ldownCondition<= 1;
 			end
-			9'b000111000: begin
+			9'b000110110: begin
 				lupCondition <= 0;
 				ldownCondition<= 0;
 			end
