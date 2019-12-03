@@ -356,7 +356,7 @@ module StrikeDetector(enable, reset, lstrike, rstrike,strike);
 	output logic [7:0]strike;
 	always @(*)
 	begin
-		if (reset == 1'b0 || strike== 8'b11111111 || rstrike == 8'b00000000 || lstrike == 8'b00000000)
+		if (reset == 1'b0 || strike== 8'b11111111)
 			strike <= 8'b00000000;
 		else if (enable == 1'b1)
 			strike <= lstrike + rstrike;
