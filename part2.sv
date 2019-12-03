@@ -351,56 +351,56 @@ module StrikeDetector(enable, reset, lstrike, rstrike,strike);
 	//TODO: change it so it only counts hits, not nonhits
 	input enable;
 	input reset;
-   input  logic [7:0]lstrike;
+	input  logic [7:0]lstrike;
 	input  logic [7:0]rstrike;
 	output logic [7:0]strike;
 	always @(*)
-   begin
-	if (reset == 1'b0 || strike== 8'b11111111 || rstrike == 8'b00000000 || lstrike == 8'b00000000)
-	strike <= 8'b00000000;
-	else if (enable == 1'b1)
-	strike <= lstrike + rstrike;
+	begin
+		if (reset == 1'b0 || strike== 8'b11111111 || rstrike == 8'b00000000 || lstrike == 8'b00000000)
+			strike <= 8'b00000000;
+		else if (enable == 1'b1)
+			strike <= lstrike + rstrike;
 	end
 endmodule
 
 // update and count the score for the left hand side user
 module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] lpaddle, input reset, output logic [7:0] lscore,
-output logic [7:0] lstrike,input inResetStrike,output logic outResetStrike);
+	output logic [7:0] lstrike,input inResetStrike,output logic outResetStrike);
 	// update signal, clk is 1 when object hits the right wall
 	logic [6:0] lPaddleMin;
 	always @(posedge clock)
 	begin
 		if(reset == 1'b0)
 			lscore <= 1'b0;
-		else if (enable) 
-		begin
-			lPaddleMin = (lpaddle <= 7'd4) ? 1'b0 : lpaddle - 7'd4;
-			if (lPaddleMin <= Ypos & Ypos <= lpaddle + 7'd20) 
-				begin
-					if (reset == 1'b0 || lstrike== 8'b11111111 || inResetStrike == 1'b1)
-					   begin 
-							lstrike <= 8'b00000000;
-							outResetStrike <= 1'b0;
-						end
-					else
-					   begin 
-							lstrike <= lstrike + 8'b00000001;
-							outResetStrike <= 1'b0;
-						end
-				end
-			else 
-				begin
-					lscore <= lscore + 1'b1;
-					lstrike <= 8'b00000000;
-					outResetStrike <= 1'b1;
-				end
+		else if (enable)
+			begin
+				lPaddleMin = (lpaddle <= 7'd4) ? 1'b0 : lpaddle - 7'd4;
+				if (lPaddleMin <= Ypos & Ypos <= lpaddle + 7'd20)
+					begin
+						if (reset == 1'b0 || lstrike== 8'b11111111 || inResetStrike == 1'b1)
+							begin
+								lstrike <= 8'b00000000;
+								outResetStrike <= 1'b0;
+							end
+						else
+							begin
+								lstrike <= lstrike + 8'b00000001;
+								outResetStrike <= 1'b0;
+							end
+					end
+				else
+					begin
+						lscore <= lscore + 1'b1;
+						lstrike <= 8'b00000000;
+						outResetStrike <= 1'b1;
+					end
 			end
-		end
+	end
 endmodule
 
 // update and count the score for the right hand side user
 module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] rpaddle, input reset, output logic [7:0] rscore,
-output logic [7:0] rstrike, input inResetStrike,output logic outResetStrike);
+	output logic [7:0] rstrike, input inResetStrike,output logic outResetStrike);
 	// update signal, clk is 1 when object hits the left wall
 
 	logic [6:0] rPaddleMin;
@@ -408,23 +408,23 @@ output logic [7:0] rstrike, input inResetStrike,output logic outResetStrike);
 	begin
 		if(reset == 1'b0)
 			rscore <= 1'b0;
-		else if (enable) 
+		else if (enable)
 			begin
 				rPaddleMin = (rpaddle <= 7'd4) ? 1'b0 : rpaddle - 7'd4;
-				if (rPaddleMin <= Ypos & Ypos <= rpaddle + 7'd20) 
+				if (rPaddleMin <= Ypos & Ypos <= rpaddle + 7'd20)
 					begin
 						if (reset == 1'b0 || rstrike== 8'b11111111 || inResetStrike == 1'b1)
-						   begin
+							begin
 								rstrike <= 8'b00000000;
 								outResetStrike <= 1'b0;
 							end
 						else
-						   begin
+							begin
 								rstrike <= rstrike + 8'b00000001;
 								outResetStrike <= 1'b0;
-							end 
+							end
 					end
-				else 
+				else
 					begin
 						rscore <= rscore + 1'b1;
 						rstrike <= 8'b00000000;
@@ -1035,7 +1035,7 @@ module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay);
 	input moveEnable;
 	input up;
 	input down;
-	output logic [6:0]ypDisplay;
+	output logic [6:0] ypDisplay;
 	logic [5:0] paddle_size = 6'd20; //size of edge of square
 	always @(posedge clk)
 	begin
@@ -1045,7 +1045,7 @@ module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay);
 				ypDisplay <= 7'd50; //initialize to 50
 			end
 
-		if (moveEnable)
+		else if (moveEnable)
 			begin
 				if (up == 1'b0 && down == 1'b1)
 					begin
