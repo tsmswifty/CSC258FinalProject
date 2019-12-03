@@ -186,6 +186,8 @@ module part2
 	logic lsignal, rsignal;
 	logic [7:0] lstrike;
 	logic [7:0] rstrike;
+	wire rreset;
+	wire lreset;
 	LeftScoreDetector lDetecter(
 		.clock(CLOCK_50),
 		.enable(enableHEX),
@@ -209,7 +211,9 @@ module part2
 		.lpaddle(ylpaddle),
 		.reset(resetn),
 		.lscore(lscore),
-		.lstrike(lstrike)
+		.lstrike(lstrike),
+		.inResetStrike(rreset),
+		.outResetStrike(lreset)
 	);
 	RightScoreCounter rScore(
 		.clock(signal),
@@ -218,7 +222,9 @@ module part2
 		.reset(resetn),
 		.rpaddle(yrpaddle),
 		.rscore(rscore),
-		.rstrike(rstrike)
+		.rstrike(rstrike),
+		.inResetStrike(lreset),
+		.outResetStrike(rreset)
 	);
 	StrikeDetector strikeDetect(
 		.enable(enableHEX),
@@ -350,7 +356,7 @@ module StrikeDetector(enable, reset, lstrike, rstrike,strike);
 	output logic [7:0]strike;
 	always @(*)
    begin
-	if (reset == 1'b0 || strike== 8'b11111111)
+	if (reset == 1'b0 || strike== 8'b11111111 || rstrike == 8'b00000000 || lstrike == 8'b00000000)
 	strike <= 8'b00000000;
 	else if (enable == 1'b1)
 	strike <= lstrike + rstrike;
@@ -359,36 +365,42 @@ endmodule
 
 // update and count the score for the left hand side user
 module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] lpaddle, input reset, output logic [7:0] lscore,
-output logic [7:0] lstrike);
+output logic [7:0] lstrike,input inResetStrike,output logic outResetStrike);
 	// update signal, clk is 1 when object hits the right wall
 	logic [6:0] lPaddleMin;
 	always @(posedge clock)
 	begin
 		if(reset == 1'b0)
 			lscore <= 1'b0;
-		else if (enable) begin
+		else if (enable) 
+		begin
 			lPaddleMin = (lpaddle <= 7'd4) ? 1'b0 : lpaddle - 7'd4;
 			if (lPaddleMin <= Ypos & Ypos <= lpaddle + 7'd20) 
-			begin
-				//hit paddle
-				//do nothing
-			if (reset == 1'b0 || lstrike== 8'b11111111)
-			lstrike <= 8'b00000000;
-		   else
-			lstrike <= lstrike + 8'b00000001;
-			end
+				begin
+					if (reset == 1'b0 || lstrike== 8'b11111111 || inResetStrike == 1'b1)
+					   begin 
+							lstrike <= 8'b00000000;
+							outResetStrike <= 1'b0;
+						end
+					else
+					   begin 
+							lstrike <= lstrike + 8'b00000001;
+							outResetStrike <= 1'b0;
+						end
+				end
 			else 
-			begin
-				lscore <= lscore + 1'b1;
-				lstrike <= 8'b00000000;
+				begin
+					lscore <= lscore + 1'b1;
+					lstrike <= 8'b00000000;
+					outResetStrike <= 1'b1;
+				end
 			end
 		end
-	end
 endmodule
 
 // update and count the score for the right hand side user
 module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] rpaddle, input reset, output logic [7:0] rscore,
-output logic [7:0] rstrike);
+output logic [7:0] rstrike, input inResetStrike,output logic outResetStrike);
 	// update signal, clk is 1 when object hits the left wall
 
 	logic [6:0] rPaddleMin;
@@ -396,21 +408,29 @@ output logic [7:0] rstrike);
 	begin
 		if(reset == 1'b0)
 			rscore <= 1'b0;
-		else if (enable) begin
-			rPaddleMin = (rpaddle <= 7'd4) ? 1'b0 : rpaddle - 7'd4;
-			if (rPaddleMin <= Ypos & Ypos <= rpaddle + 7'd20) begin
-				//hit paddle
-				//do nothing
-			if (reset == 1'b0 || rstrike== 8'b11111111)
-			rstrike <= 8'b00000000;
-		   else
-			rstrike <= rstrike + 8'b00000001;
+		else if (enable) 
+			begin
+				rPaddleMin = (rpaddle <= 7'd4) ? 1'b0 : rpaddle - 7'd4;
+				if (rPaddleMin <= Ypos & Ypos <= rpaddle + 7'd20) 
+					begin
+						if (reset == 1'b0 || rstrike== 8'b11111111 || inResetStrike == 1'b1)
+						   begin
+								rstrike <= 8'b00000000;
+								outResetStrike <= 1'b0;
+							end
+						else
+						   begin
+								rstrike <= rstrike + 8'b00000001;
+								outResetStrike <= 1'b0;
+							end 
+					end
+				else 
+					begin
+						rscore <= rscore + 1'b1;
+						rstrike <= 8'b00000000;
+						outResetStrike <= 1'b1;
+					end
 			end
-			else begin
-				rscore <= rscore + 1'b1;
-				rstrike <= 8'b00000000;
-			end
-		end
 	end
 endmodule
 
