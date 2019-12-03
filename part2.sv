@@ -888,9 +888,10 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 				direction <= 1'b0; //reached rightmost area, has to go left
 			end
 		else
+		begin
 			lhitPulse <= 1'b0; // the object is in the middle, should have low pulse
-		rhitPulse <= 1'b0;
-
+		   rhitPulse <= 1'b0;
+		end
 		if (direction == 1'b0)
 			xDisplay <= xDisplay - 1'b1; //going left
 		else
