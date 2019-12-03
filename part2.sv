@@ -948,23 +948,7 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 				lhitPulse <= 1'b0; // the object is in the middle, should have low pulse
 				rhitPulse <= 1'b0;
 			end
-			// go to left if hits right wall
-		else if (xDisplay >= (8'd160 - square_size - 8'd14)) //subtract square size AND BORDER SIZE to determine true boundary of x
-			begin
-				rhitPulse <= 1'b1; // hit the right wall, should have high pulse
-				lhitPulse <= 1'b0;
-				direction <= 1'b0; //reached rightmost area, has to go left
-			end
-		else
-		begin
-			lhitPulse <= 1'b0; // the object is in the middle, should have low pulse
-		   rhitPulse <= 1'b0;
 		end
-		if (direction == 1'b0)
-			xDisplay <= xDisplay - 1'b1; //going left
-		else
-			xDisplay <= xDisplay + 1'b1; //going right	
-
 	end
 endmodule
 
