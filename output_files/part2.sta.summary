@@ -2,256 +2,280 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'TimeCounter:tc|display'
-Slack : -5.787
-TNS   : -206.330
+Type  : Slow 1100mV 85C Model Setup 'SW[6]'
+Slack : -6.202
+TNS   : -43.949
 
-Type  : Slow 1100mV 85C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -4.153
-TNS   : -33.212
+Type  : Slow 1100mV 85C Model Setup 'TimeCounter:tc|display'
+Slack : -4.951
+TNS   : -231.317
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -4.036
-TNS   : -133.313
+Slack : -4.058
+TNS   : -117.465
 
 Type  : Slow 1100mV 85C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -2.057
-TNS   : -34.894
+Slack : -2.197
+TNS   : -34.584
 
 Type  : Slow 1100mV 85C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : -1.900
-TNS   : -13.279
+Slack : -2.030
+TNS   : -10.146
 
 Type  : Slow 1100mV 85C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 34.432
+Slack : 34.531
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.131
+Slack : -0.064
+TNS   : -0.064
+
+Type  : Slow 1100mV 85C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.401
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : 0.194
+Slack : 0.408
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : 0.256
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.427
+Slack : 0.451
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'TimeCounter:tc|display'
-Slack : 0.550
+Slack : 0.535
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'XCounter:xc|lhitPulse'
-Slack : 0.797
+Type  : Slow 1100mV 85C Model Hold 'SW[6]'
+Slack : 0.995
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : -2.932
-TNS   : -2.932
+Slack : -3.279
+TNS   : -3.279
+
+Type  : Slow 1100mV 85C Model Recovery 'SW[6]'
+Slack : -3.065
+TNS   : -19.082
+
+Type  : Slow 1100mV 85C Model Removal 'SW[6]'
+Slack : 1.246
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : 2.352
+Slack : 2.743
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'TimeCounter:tc|display'
 Slack : -0.394
-TNS   : -29.948
+TNS   : -41.649
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
 Slack : -0.394
-TNS   : -12.762
+TNS   : -12.189
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
 Slack : -0.394
-TNS   : -7.701
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
-Slack : -0.394
-TNS   : -4.363
+TNS   : -5.612
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
 Slack : -0.394
-TNS   : -0.547
+TNS   : -0.510
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SW[6]'
+Slack : 0.105
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.871
+Slack : 8.873
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.776
+Slack : 18.778
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'TimeCounter:tc|display'
-Slack : -5.564
-TNS   : -205.029
+Type  : Slow 1100mV 0C Model Setup 'SW[6]'
+Slack : -6.039
+TNS   : -42.857
 
-Type  : Slow 1100mV 0C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -4.244
-TNS   : -33.937
+Type  : Slow 1100mV 0C Model Setup 'TimeCounter:tc|display'
+Slack : -5.058
+TNS   : -230.454
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -3.931
-TNS   : -119.776
+Slack : -3.849
+TNS   : -104.358
 
 Type  : Slow 1100mV 0C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -2.108
-TNS   : -33.651
+Slack : -2.099
+TNS   : -33.278
 
 Type  : Slow 1100mV 0C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : -1.926
-TNS   : -13.106
+Slack : -2.092
+TNS   : -10.182
 
 Type  : Slow 1100mV 0C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 34.723
+Slack : 34.761
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.189
-TNS   : -0.383
-
-Type  : Slow 1100mV 0C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : 0.297
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : 0.308
-TNS   : 0.000
+Slack : -0.389
+TNS   : -0.896
 
 Type  : Slow 1100mV 0C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.403
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
+Slack : 0.418
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'TimeCounter:tc|display'
-Slack : 0.458
+Slack : 0.526
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'XCounter:xc|lhitPulse'
-Slack : 0.775
+Type  : Slow 1100mV 0C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
+Slack : 0.533
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'SW[6]'
+Slack : 0.752
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : -3.047
-TNS   : -3.047
+Slack : -3.372
+TNS   : -3.372
+
+Type  : Slow 1100mV 0C Model Recovery 'SW[6]'
+Slack : -2.961
+TNS   : -18.866
+
+Type  : Slow 1100mV 0C Model Removal 'SW[6]'
+Slack : 1.156
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : 2.485
+Slack : 2.851
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'TimeCounter:tc|display'
 Slack : -0.394
-TNS   : -29.230
+TNS   : -40.642
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
 Slack : -0.394
-TNS   : -12.528
+TNS   : -12.101
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
 Slack : -0.394
-TNS   : -7.467
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
-Slack : -0.394
-TNS   : -4.392
+TNS   : -5.656
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
 Slack : -0.394
-TNS   : -0.548
+TNS   : -0.512
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SW[6]'
+Slack : 0.023
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.825
+Slack : 8.833
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.761
+Slack : 18.763
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Setup 'TimeCounter:tc|display'
-Slack : -3.248
-TNS   : -107.680
+Type  : Fast 1100mV 85C Model Setup 'SW[6]'
+Slack : -3.673
+TNS   : -26.162
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -3.189
-TNS   : -91.902
+Slack : -3.233
+TNS   : -79.215
 
-Type  : Fast 1100mV 85C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -2.091
-TNS   : -16.725
-
-Type  : Fast 1100mV 85C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : -0.930
-TNS   : -5.520
+Type  : Fast 1100mV 85C Model Setup 'TimeCounter:tc|display'
+Slack : -2.538
+TNS   : -111.949
 
 Type  : Fast 1100mV 85C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -0.890
-TNS   : -13.918
+Slack : -1.131
+TNS   : -14.370
+
+Type  : Fast 1100mV 85C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
+Slack : -0.848
+TNS   : -3.611
 
 Type  : Fast 1100mV 85C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 36.210
+Slack : 36.314
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -0.202
+TNS   : -0.202
+
+Type  : Fast 1100mV 85C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
+Slack : 0.026
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -0.127
-TNS   : -0.127
-
-Type  : Fast 1100mV 85C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : -0.084
-TNS   : -0.084
-
-Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.073
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'TimeCounter:tc|display'
-Slack : 0.137
+Slack : 0.047
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.236
+Slack : 0.232
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'XCounter:xc|lhitPulse'
-Slack : 0.408
+Type  : Fast 1100mV 85C Model Hold 'TimeCounter:tc|display'
+Slack : 0.246
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'SW[6]'
+Slack : 0.400
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : -1.323
-TNS   : -1.323
+Slack : -1.538
+TNS   : -1.538
 
-Type  : Fast 1100mV 85C Model Removal 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : 1.124
+Type  : Fast 1100mV 85C Model Recovery 'SW[6]'
+Slack : -1.438
+TNS   : -7.538
+
+Type  : Fast 1100mV 85C Model Removal 'SW[6]'
+Slack : 0.696
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -0.001
-TNS   : -0.003
+Type  : Fast 1100mV 85C Model Removal 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
+Slack : 1.365
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SW[6]'
+Slack : -0.240
+TNS   : -3.610
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'TimeCounter:tc|display'
-Slack : 0.023
+Slack : -0.004
+TNS   : -0.022
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
+Slack : 0.080
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : 0.035
+Slack : 0.143
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : 0.072
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
-Slack : 0.142
+Slack : 0.144
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -259,87 +283,95 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.808
+Slack : 8.812
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.890
+Slack : 18.892
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Setup 'TimeCounter:tc|display'
-Slack : -2.841
-TNS   : -97.008
+Type  : Fast 1100mV 0C Model Setup 'SW[6]'
+Slack : -3.062
+TNS   : -21.523
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.703
-TNS   : -70.875
+Slack : -2.700
+TNS   : -60.374
 
-Type  : Fast 1100mV 0C Model Setup 'XCounter:xc|lhitPulse'
-Slack : -2.015
-TNS   : -16.114
-
-Type  : Fast 1100mV 0C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : -0.864
-TNS   : -4.505
+Type  : Fast 1100mV 0C Model Setup 'TimeCounter:tc|display'
+Slack : -2.426
+TNS   : -101.207
 
 Type  : Fast 1100mV 0C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -0.781
-TNS   : -11.516
+Slack : -0.963
+TNS   : -11.906
+
+Type  : Fast 1100mV 0C Model Setup 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
+Slack : -0.794
+TNS   : -2.937
 
 Type  : Fast 1100mV 0C Model Setup 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 36.711
+Slack : 36.769
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : -0.122
-TNS   : -0.800
+Slack : -0.421
+TNS   : -2.673
 
 Type  : Fast 1100mV 0C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : -0.118
-TNS   : -0.118
+Slack : 0.003
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : -0.093
-TNS   : -0.093
+Slack : 0.025
+TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'TimeCounter:tc|display'
-Slack : 0.067
+Type  : Fast 1100mV 0C Model Hold 'SW[6]'
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.215
+Slack : 0.214
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'XCounter:xc|lhitPulse'
-Slack : 0.368
+Type  : Fast 1100mV 0C Model Hold 'TimeCounter:tc|display'
+Slack : 0.219
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : -1.316
-TNS   : -1.316
+Slack : -1.508
+TNS   : -1.508
+
+Type  : Fast 1100mV 0C Model Recovery 'SW[6]'
+Slack : -1.216
+TNS   : -6.339
+
+Type  : Fast 1100mV 0C Model Removal 'SW[6]'
+Slack : 0.617
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : 1.134
+Slack : 1.345
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SW[6]'
+Slack : -0.258
+TNS   : -3.974
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'TimeCounter:tc|display'
+Slack : 0.031
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|keyboard_clk_filtered'
-Slack : 0.034
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'TimeCounter:tc|display'
-Slack : 0.058
+Slack : 0.103
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|clock'
-Slack : 0.064
+Slack : 0.143
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'keyboard_press_driver:keytest|keyboard_inner_driver:kbd|ready_set'
-Slack : 0.092
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'XCounter:xc|lhitPulse'
-Slack : 0.155
+Slack : 0.146
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -347,11 +379,11 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.803
+Slack : 8.805
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'VGA|mypll|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.886
+Slack : 18.889
 TNS   : 0.000
 
 ------------------------------------------------------------

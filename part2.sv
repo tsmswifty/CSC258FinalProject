@@ -51,6 +51,8 @@ module part2
 
 	logic resetn;
 	assign resetn = SW[2];
+	logic enableHEX;
+	assign enableHEX = SW[6];
 
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
 	// Notice that we need 8 bits for x input and 7 bits for y input
@@ -127,7 +129,7 @@ module part2
 
 	//	drawBorder draw0(.x(xcount), .y(ycount), .clk(clock_25), .colour(colour_count), .done(systemPause));
 	TimeCounter tc(
-		.count_enable(SW[6]),
+		.count_enable(enableHEX),
 		.clk(CLOCK_50),
 		.reset_n(resetn),
 		.difficulty(SW[1:0]),
@@ -137,7 +139,7 @@ module part2
 		.pause(pause)
 	);
 	XCounter xc(
-		.count_enable(SW[6]),
+		.count_enable(enableHEX),
 		.clk(signal),
 		.reset_n(resetn),
 		.xDisplay(xCounter),
@@ -146,7 +148,7 @@ module part2
 	);
 
 	YCounter yc(
-		.count_enable(SW[6]), //not implemented yet
+		.count_enable(enableHEX), //not implemented yet
 		.clk(signal),
 		.reset_n(resetn),
 		.yDisplay(yCounter)
@@ -182,9 +184,11 @@ module part2
 	// In milestone 3 , hook up keyboard so that we can control from the keyboard
 
 	logic lsignal, rsignal;
+	logic [7:0] lstrike;
+	logic [7:0] rstrike;
 	LeftScoreDetector lDetecter(
 		.clock(CLOCK_50),
-		.enable(SW[6]),
+		.enable(enableHEX),
 		.lhit(lhitPulse),
 		.lpaddle(ylpaddle),
 		.yobject(yCounter),
@@ -192,7 +196,7 @@ module part2
 
 	RightScoreDetector rDetecter(
 		.clock(CLOCK_50),
-		.enable(SW[6]),
+		.enable(enableHEX),
 		.rhit(rhitPulse),
 		.rpaddle(yrpaddle),
 		.yobject(yCounter),
@@ -204,7 +208,8 @@ module part2
 		.Ypos(yCounter),
 		.lpaddle(ylpaddle),
 		.reset(resetn),
-		.lscore(lscore)
+		.lscore(lscore),
+		.lstrike(lstrike)
 	);
 	RightScoreCounter rScore(
 		.clock(signal),
@@ -212,14 +217,14 @@ module part2
 		.Ypos(yCounter),
 		.reset(resetn),
 		.rpaddle(yrpaddle),
-		.rscore(rscore)
+		.rscore(rscore),
+		.rstrike(rstrike)
 	);
 	StrikeDetector strikeDetect(
-		.enable(SW[6]),
+		.enable(enableHEX),
 		.reset(resetn),
-		.rsignal(rsignal),
-		.lsignal(lsignal),
-		.hit(lhitPulse || rhitPulse),
+		.lstrike(lstrike),
+		.rstrike(rstrike),
 		.strike(strike)
 	);
 
@@ -280,33 +285,40 @@ module testRightScore(input enable, input reset, input lhitPulse,input [6:0] ylp
 	RightScoreCounter rScore(.enable(enable),.reset(reset),.lsignal(lsignal),.rscore(rightscore));
 endmodule
 
-module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] yrpaddle, input [6:0]yCounter, output [7:0] leftscore);
-	RightScoreDetector rDetect(
-		.enable(enable),
-		.rhit(rhitPulse),
-		.rpaddle(yrpaddle),
-		.yobject(yCounter),
-		.rsignal(rsignal));
-	LeftScoreCounter rScore(.enable(enable),.reset(reset),.rsignal(rsignal),.lscore(leftscore));
-endmodule
-
-module testStrike(input enable, input reset, input lhitPulse,input [6:0] ylpaddle,input rhitPulse,input [6:0] yrpaddle,  input [6:0]yCounter,output logic [7:0]strikes);
-	LeftScoreDetector lDetect(
-		.enable(enable),
-		.lhit(lhitPulse),
-		.lpaddle(ylpaddle),
-		.yobject(yCounter),
-		.lsignal(lsignal));
-
-	RightScoreDetector rDetect(
-		.enable(enable),
-		.rhit(rhitPulse),
-		.rpaddle(ylpaddle),
-		.yobject(yCounter),
-		.rsignal(rsignal));
-
-	StrikeDetector strikeDetect(.enable(enable), .reset(reset), .rsignal(rsignal),.lsignal(lsignal),.hit(lhitPulse || rhitPulse),.strike(strikes));
-endmodule
+//module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] yrpaddle, input [6:0]yCounter, output [7:0] leftscore);
+//	RightScoreDetector rDetect(
+//		.enable(enable),
+//		.rhit(rhitPulse),
+//		.rpaddle(yrpaddle),
+//		.yobject(yCounter),
+//		.rsignal(rsignal));
+//	LeftScoreCounter rScore(.enable(enable),.reset(reset),.rsignal(rsignal),.lscore(leftscore));
+//endmodule
+//
+//module testStrike(input enable, 
+//input reset, 
+//input lhitPulse,
+//input [6:0] ylpaddle,
+//input rhitPulse,
+//input [6:0] yrpaddle,  
+//input [6:0]yCounter,
+//output logic [7:0]strikes);
+//LeftScoreDetector lDetect(
+//		.enable(enable),
+//		.lhit(lhitPulse),
+//		.lpaddle(ylpaddle),
+//		.yobject(yCounter),
+//		.lsignal(lsignal));
+//
+//RightScoreDetector rDetect(
+//		.enable(enable),
+//		.rhit(rhitPulse),
+//		.rpaddle(ylpaddle),
+//		.yobject(yCounter),
+//		.rsignal(rsignal));
+//
+//StrikeDetector strikeDetect(.enable(enable), .reset(reset), .rstrike(rsignal),.lstrike(lsignal),.strike(strikes));
+//endmodule
 
 module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle);
 	YPaddle yleftPaddle(
@@ -329,25 +341,25 @@ module testControl(input signal, input reset, input enable, input lup, input ldo
 
 endmodule
 
-module StrikeDetector(enable, reset,  rsignal, lsignal, hit,strike);
+module StrikeDetector(enable, reset, lstrike, rstrike,strike);
 	//TODO: change it so it only counts hits, not nonhits
 	input enable;
 	input reset;
-	input rsignal;
-	input lsignal;
-	input hit;
+   input  logic [7:0]lstrike;
+	input  logic [7:0]rstrike;
 	output logic [7:0]strike;
-	always @(posedge hit)
-	begin
-		if (reset == 1'b0 || (rsignal == 1'b1 || lsignal == 1'b1)|| strike== 8'b11111111)
-			strike <= 8'b00000000;
-		else if (enable == 1'b1)
-			strike <= strike + 8'b00000001;
+	always @(*)
+   begin
+	if (reset == 1'b0 || strike== 8'b11111111)
+	strike <= 8'b00000000;
+	else if (enable == 1'b1)
+	strike <= lstrike + rstrike;
 	end
 endmodule
 
 // update and count the score for the left hand side user
-module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] lpaddle, input reset, output logic [7:0] lscore);
+module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] lpaddle, input reset, output logic [7:0] lscore,
+output logic [7:0] lstrike);
 	// update signal, clk is 1 when object hits the right wall
 	logic [6:0] lPaddleMin;
 	always @(posedge clock)
@@ -356,19 +368,27 @@ module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0]
 			lscore <= 1'b0;
 		else if (enable) begin
 			lPaddleMin = (lpaddle <= 7'd4) ? 1'b0 : lpaddle - 7'd4;
-			if (lPaddleMin <= Ypos & Ypos <= lpaddle + 7'd20) begin
+			if (lPaddleMin <= Ypos & Ypos <= lpaddle + 7'd20) 
+			begin
 				//hit paddle
 				//do nothing
+			if (reset == 1'b0 || lstrike== 8'b11111111)
+			lstrike <= 8'b00000000;
+		   else
+			lstrike <= lstrike + 8'b00000001;
 			end
-			else begin
+			else 
+			begin
 				lscore <= lscore + 1'b1;
+				lstrike <= 8'b00000000;
 			end
 		end
 	end
 endmodule
 
 // update and count the score for the right hand side user
-module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] rpaddle, input reset, output logic [7:0] rscore);
+module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0] rpaddle, input reset, output logic [7:0] rscore,
+output logic [7:0] rstrike);
 	// update signal, clk is 1 when object hits the left wall
 
 	logic [6:0] rPaddleMin;
@@ -381,9 +401,14 @@ module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0
 			if (rPaddleMin <= Ypos & Ypos <= rpaddle + 7'd20) begin
 				//hit paddle
 				//do nothing
+			if (reset == 1'b0 || rstrike== 8'b11111111)
+			rstrike <= 8'b00000000;
+		   else
+			rstrike <= rstrike + 8'b00000001;
 			end
 			else begin
 				rscore <= rscore + 1'b1;
+				rstrike <= 8'b00000000;
 			end
 		end
 	end

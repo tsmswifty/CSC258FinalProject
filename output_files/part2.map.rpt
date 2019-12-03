@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Tue Dec 03 00:14:51 2019
+Tue Dec 03 11:10:40 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,27 +18,30 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. State Machine - |part2|datapathFSM:fsm0|current_state
  11. State Machine - |part2|datapathFSM:fsm0|next_state
  12. State Machine - |part2|keyboard_press_driver:keytest|count
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
- 19. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 20. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 24. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 25. Parameter Settings for User Entity Instance: keyboard_press_driver:keytest
- 26. altsyncram Parameter Settings by Entity Instance
- 27. altpll Parameter Settings by Entity Instance
- 28. Port Connectivity Checks: "datapathFSM:fsm0|squareFSM:m1"
- 29. Port Connectivity Checks: "datapathFSM:fsm0"
- 30. Post-Synthesis Netlist Statistics for Top Partition
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+ 13. User-Specified and Inferred Latches
+ 14. Registers Removed During Synthesis
+ 15. Removed Registers Triggering Further Register Optimizations
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated
+ 20. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 21. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 24. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 25. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 26. Parameter Settings for User Entity Instance: keyboard_press_driver:keytest
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. altpll Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "datapathFSM:fsm0|squareFSM:m1"
+ 30. Port Connectivity Checks: "datapathFSM:fsm0"
+ 31. Port Connectivity Checks: "RightScoreDetector:rDetecter"
+ 32. Port Connectivity Checks: "LeftScoreDetector:lDetecter"
+ 33. Post-Synthesis Netlist Statistics for Top Partition
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
+ 36. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -64,13 +67,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 03 00:14:51 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue Dec 03 11:10:40 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 330                                         ;
+; Total registers                 ; 336                                         ;
 ; Total pins                      ; 104                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600                                      ;
@@ -176,50 +179,50 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; KeyboardFiles/keyboard_press_driver.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v           ;         ;
-; KeyboardFiles/keyboard_inner_driver.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v           ;         ;
-; vga_adapter/vga_adapter.v             ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v                       ;         ;
-; vga_adapter/vga_address_translator.v  ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v            ;         ;
-; vga_adapter/vga_controller.v          ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v                    ;         ;
-; vga_adapter/vga_pll.v                 ; yes             ; User Wizard-Generated File   ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v                           ;         ;
-; part2.sv                              ; yes             ; User SystemVerilog HDL File  ; I:/GitHub/CSC258FinalProject/part2.sv                                        ;         ;
-; altsyncram.tdf                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal181.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
-; a_rdenreg.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_m6m1.tdf                ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf                          ;         ;
-; db/decode_7la.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_7la.tdf                               ;         ;
-; db/decode_01a.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_01a.tdf                               ;         ;
-; db/mux_ifb.tdf                        ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/mux_ifb.tdf                                  ;         ;
-; altpll.tdf                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; stratix_pll.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/altpll_80u.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf                               ;         ;
-+---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++---------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++---------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; KeyboardFiles/keyboard_press_driver.v ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v ;         ;
+; KeyboardFiles/keyboard_inner_driver.v ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v ;         ;
+; vga_adapter/vga_adapter.v             ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v             ;         ;
+; vga_adapter/vga_address_translator.v  ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_address_translator.v  ;         ;
+; vga_adapter/vga_controller.v          ; yes             ; User Verilog HDL File        ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_controller.v          ;         ;
+; vga_adapter/vga_pll.v                 ; yes             ; User Wizard-Generated File   ; D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v                 ;         ;
+; part2.sv                              ; yes             ; User SystemVerilog HDL File  ; D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv                              ;         ;
+; altsyncram.tdf                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                   ;         ;
+; stratix_ram_block.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc            ;         ;
+; lpm_mux.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                      ;         ;
+; lpm_decode.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                   ;         ;
+; aglobal181.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                   ;         ;
+; a_rdenreg.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                    ;         ;
+; altrom.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc                       ;         ;
+; altram.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc                       ;         ;
+; altdpram.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                     ;         ;
+; db/altsyncram_m6m1.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf                ;         ;
+; db/decode_7la.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_7la.tdf                     ;         ;
+; db/decode_01a.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_01a.tdf                     ;         ;
+; db/mux_ifb.tdf                        ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/mux_ifb.tdf                        ;         ;
+; altpll.tdf                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf                       ;         ;
+; stratix_pll.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc                  ;         ;
+; stratixii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                ;         ;
+; cycloneii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                ;         ;
+; db/altpll_80u.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Docments/study/FinalProject/CSC258FinalProject/db/altpll_80u.tdf                     ;         ;
++---------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -227,16 +230,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 444            ;
+; Estimate of Logic utilization (ALMs needed) ; 429            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 703            ;
+; Combinational ALUT usage for logic          ; 702            ;
 ;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 178            ;
-;     -- 5 input functions                    ; 81             ;
-;     -- 4 input functions                    ; 129            ;
-;     -- <=3 input functions                  ; 314            ;
+;     -- 6 input functions                    ; 148            ;
+;     -- 5 input functions                    ; 88             ;
+;     -- 4 input functions                    ; 141            ;
+;     -- <=3 input functions                  ; 324            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 330            ;
+; Dedicated logic registers                   ; 336            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 104            ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -248,9 +251,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 220            ;
-; Total fan-out                               ; 4174           ;
-; Average fan-out                             ; 3.33           ;
+; Maximum fan-out                             ; 218            ;
+; Total fan-out                               ; 4127           ;
+; Average fan-out                             ; 3.28           ;
 +---------------------------------------------+----------------+
 
 
@@ -259,12 +262,10 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |part2                                                  ; 703 (2)             ; 330 (0)                   ; 57600             ; 1          ; 104  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
-;    |LeftScoreCounter:lScore|                            ; 36 (36)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|LeftScoreCounter:lScore                                                                        ; LeftScoreCounter       ; work         ;
-;    |LeftScoreDetector:lDetecter|                        ; 7 (7)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|LeftScoreDetector:lDetecter                                                                    ; LeftScoreDetector      ; work         ;
-;    |RightScoreCounter:rScore|                           ; 36 (36)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|RightScoreCounter:rScore                                                                       ; RightScoreCounter      ; work         ;
-;    |RightScoreDetector:rDetecter|                       ; 7 (7)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|RightScoreDetector:rDetecter                                                                   ; RightScoreDetector     ; work         ;
-;    |StrikeDetector:strikeDetect|                        ; 12 (12)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|StrikeDetector:strikeDetect                                                                    ; StrikeDetector         ; work         ;
+; |part2                                                  ; 702 (1)             ; 336 (0)                   ; 57600             ; 1          ; 104  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
+;    |LeftScoreCounter:lScore|                            ; 40 (40)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|LeftScoreCounter:lScore                                                                        ; LeftScoreCounter       ; work         ;
+;    |RightScoreCounter:rScore|                           ; 40 (40)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|RightScoreCounter:rScore                                                                       ; RightScoreCounter      ; work         ;
+;    |StrikeDetector:strikeDetect|                        ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|StrikeDetector:strikeDetect                                                                    ; StrikeDetector         ; work         ;
 ;    |TimeCounter:tc|                                     ; 62 (62)             ; 23 (23)                   ; 0                 ; 1          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
 ;    |XCounter:xc|                                        ; 39 (39)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
 ;    |YCounter:yc|                                        ; 11 (11)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YCounter:yc                                                                                    ; YCounter               ; work         ;
@@ -378,6 +379,24 @@ Encoding Type:  One-Hot
 +----------+----------+----------+----------+----------------+
 
 
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; StrikeDetector:strikeDetect|strike[0]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[1]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[2]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[3]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[4]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[5]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[6]              ; SW[6]               ; yes                    ;
+; StrikeDetector:strikeDetect|strike[7]              ; SW[6]               ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +----------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                 ;
 +---------------------------------------------+------------------------------------------------------+
@@ -421,12 +440,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 330   ;
-; Number of registers using Synchronous Clear  ; 115   ;
+; Total registers                              ; 336   ;
+; Number of registers using Synchronous Clear  ; 123   ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 21    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 197   ;
+; Number of registers using Clock Enable       ; 203   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -471,45 +490,46 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|RightScoreCounter:rScore|rscore[5]                                                                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|StrikeDetector:strikeDetect|strike[1]                                                             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|LeftScoreCounter:lScore|lscore[6]                                                                 ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|keyboard_press_driver:keytest|filter_scan[4]                                                      ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[5]                                                                               ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[4]                                                          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[8]                                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|RightScoreCounter:rScore|rscore[7]                                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|LeftScoreCounter:lScore|lscore[3]                                                                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|keyboard_press_driver:keytest|filter_scan[3]                                                      ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[6]                                                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|RightScoreCounter:rScore|rstrike[4]                                                               ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|LeftScoreCounter:lScore|lstrike[4]                                                                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[1]                                                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[0]                                             ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseX[4]                                                            ;
 ; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[8]                                                                   ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|keyboard_press_driver:keytest|keyboard_inner_driver:kbd|incnt[3]                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[5]                                                               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[6]                                                                 ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[2]                                                                  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[0]                                                                           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|keyboard_press_driver:keytest|keyboard_inner_driver:kbd|incnt[1]                                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[6]                                                               ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[0]                                                                 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[0]                                                                  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[3]                                                                           ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[4]                                                                           ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 0 LEs                ; 27 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|resetCount[6]                                                                    ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[0]                                                             ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[1]                                                             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[0]                                                              ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[3]                                                                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[4]                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[0]                                                                   ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 0 LEs                ; 27 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|resetCount[9]                                                                    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[4]                                                             ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[4]                                                             ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[3]                                                              ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[1]                                                                  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[1]                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[2]                                                                   ;
 ; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseY[6]                                                            ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[2]                                                          ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[1]                                                          ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[0]                                                          ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[5]                                                          ;
 ; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[6]                                                               ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Xout[5]                                                                          ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Xout[2]                                                                          ;
 ; 9:1                ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Yout[5]                                                                          ;
-; 512:1              ; 2 bits    ; 682 LEs       ; 4 LEs                ; 678 LEs                ; Yes        ; |part2|lKeyBoardDetector:lDetect|lupCondition                                                            ;
+; 512:1              ; 2 bits    ; 682 LEs       ; 4 LEs                ; 678 LEs                ; Yes        ; |part2|lKeyBoardDetector:lDetect|ldownCondition                                                          ;
 ; 512:1              ; 2 bits    ; 682 LEs       ; 4 LEs                ; 678 LEs                ; Yes        ; |part2|rKeyBoardDetector:rDetect|rdownCondition                                                          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[6]                                                                   ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|resetCount[3]                                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[3]                                                                   ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|resetCount[11]                                                                   ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[5]                                                             ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[6]                                                             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[1]                                                              ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[6]                                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[5]                                                                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[4]                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[0] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[5]                                                             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[4]                                                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[2]                                                                  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[6]                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[1]                                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[2] ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add8                                                                             ;
 ; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add9                                                                             ;
 ; 9:1                ; 9 bits    ; 54 LEs        ; 36 LEs               ; 18 LEs                 ; No         ; |part2|datapathFSM:fsm0|Add9                                                                             ;
@@ -1088,38 +1108,56 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RightScoreDetector:rDetecter"                                                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; rsignal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LeftScoreDetector:lDetecter"                                                           ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; lsignal ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 330                         ;
+; arriav_ff             ; 336                         ;
 ;     CLR               ; 1                           ;
 ;     CLR SCLR          ; 10                          ;
-;     ENA               ; 99                          ;
+;     ENA               ; 97                          ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 69                          ;
+;     ENA SCLR          ; 77                          ;
 ;     ENA SLD           ; 19                          ;
 ;     SCLR              ; 26                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 95                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 710                         ;
-;     arith             ; 207                         ;
-;         1 data inputs ; 168                         ;
-;         2 data inputs ; 15                          ;
+; arriav_lcell_comb     ; 709                         ;
+;     arith             ; 223                         ;
+;         1 data inputs ; 176                         ;
+;         2 data inputs ; 23                          ;
 ;         3 data inputs ; 17                          ;
 ;         5 data inputs ; 7                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 482                         ;
+;     normal            ; 465                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 8                           ;
-;         2 data inputs ; 50                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 129                         ;
-;         5 data inputs ; 74                          ;
-;         6 data inputs ; 178                         ;
+;         2 data inputs ; 46                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 141                         ;
+;         5 data inputs ; 81                          ;
+;         6 data inputs ; 148                         ;
 ;     shared            ; 20                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 4                           ;
@@ -1131,7 +1169,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.70                        ;
-; Average LUT depth     ; 2.47                        ;
+; Average LUT depth     ; 2.44                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1140,7 +1178,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1150,59 +1188,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 03 00:14:38 2019
+    Info: Processing started: Tue Dec 03 11:10:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_scancoderaw_driver.v
-    Info (12023): Found entity 1: keyboard_scancoderaw_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_scancoderaw_driver.v Line: 1
+    Info (12023): Found entity 1: keyboard_scancoderaw_driver File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_scancoderaw_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_press_driver.v
-    Info (12023): Found entity 1: keyboard_press_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 1
+    Info (12023): Found entity 1: keyboard_press_driver File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_inner_driver.v
-    Info (12023): Found entity 1: keyboard_inner_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 1
+    Info (12023): Found entity 1: keyboard_inner_driver File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v Line: 4
+    Info (12023): Found entity 1: vga_address_translator File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
+    Info (12023): Found entity 1: vga_controller File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
-Info (12021): Found 23 design units, including 23 entities, in source file part2.sv
-    Info (12023): Found entity 1: part2 File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1
-    Info (12023): Found entity 2: testRightScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 273
-    Info (12023): Found entity 3: testLeftScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 283
-    Info (12023): Found entity 4: testStrike File: I:/GitHub/CSC258FinalProject/part2.sv Line: 293
-    Info (12023): Found entity 5: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 311
-    Info (12023): Found entity 6: StrikeDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 332
-    Info (12023): Found entity 7: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 350
-    Info (12023): Found entity 8: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 371
-    Info (12023): Found entity 9: LeftScoreDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 398
-    Info (12023): Found entity 10: RightScoreDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 431
-    Info (12023): Found entity 11: PixelCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 458
-    Info (12023): Found entity 12: lKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 471
-    Info (12023): Found entity 13: rKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 516
-    Info (12023): Found entity 14: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 545
-    Info (12023): Found entity 15: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 804
-    Info (12023): Found entity 16: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 849
-    Info (12023): Found entity 17: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 864
-    Info (12023): Found entity 18: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 886
-    Info (12023): Found entity 19: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 907
-    Info (12023): Found entity 20: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 955
-    Info (12023): Found entity 21: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 987
-    Info (12023): Found entity 22: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1021
-    Info (12023): Found entity 23: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1067
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(279): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 279
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(289): created implicit net for "rsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 289
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(299): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 299
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(306): created implicit net for "rsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 306
+    Info (12023): Found entity 1: vga_pll File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
+Info (12021): Found 21 design units, including 21 entities, in source file part2.sv
+    Info (12023): Found entity 1: part2 File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 1
+    Info (12023): Found entity 2: testRightScore File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 278
+    Info (12023): Found entity 3: testControl File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 323
+    Info (12023): Found entity 4: StrikeDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 344
+    Info (12023): Found entity 5: LeftScoreCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 361
+    Info (12023): Found entity 6: RightScoreCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 390
+    Info (12023): Found entity 7: LeftScoreDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 423
+    Info (12023): Found entity 8: RightScoreDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 456
+    Info (12023): Found entity 9: PixelCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 483
+    Info (12023): Found entity 10: lKeyBoardDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 496
+    Info (12023): Found entity 11: rKeyBoardDetector File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 541
+    Info (12023): Found entity 12: datapathFSM File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 570
+    Info (12023): Found entity 13: drawBorder File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 829
+    Info (12023): Found entity 14: squareFSM File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 874
+    Info (12023): Found entity 15: paddleFSM File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 889
+    Info (12023): Found entity 16: eraseAll File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 911
+    Info (12023): Found entity 17: XCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 932
+    Info (12023): Found entity 18: YCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 980
+    Info (12023): Found entity 19: YPaddle File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 1012
+    Info (12023): Found entity 20: TimeCounter File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 1046
+    Info (12023): Found entity 21: hex_decoder File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 1092
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(284): created implicit net for "lsignal" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 284
 Info (12127): Elaborating entity "part2" for the top level hierarchy
-Warning (10034): Output port "LEDR[9..2]" at part2.sv(39) has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 81
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Warning (10034): Output port "LEDR[9..2]" at part2.sv(39) has no driver File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 83
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1219,21 +1252,21 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
-    Info (12023): Found entity 1: altsyncram_m6m1 File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
+    Info (12023): Found entity 1: altsyncram_m6m1 File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
 Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
-    Info (12023): Found entity 1: decode_7la File: I:/GitHub/CSC258FinalProject/db/decode_7la.tdf Line: 22
-Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 46
+    Info (12023): Found entity 1: decode_7la File: D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_7la.tdf Line: 22
+Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
-    Info (12023): Found entity 1: decode_01a File: I:/GitHub/CSC258FinalProject/db/decode_01a.tdf Line: 22
-Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
+    Info (12023): Found entity 1: decode_01a File: D:/Docments/study/FinalProject/CSC258FinalProject/db/decode_01a.tdf Line: 22
+Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
-    Info (12023): Found entity 1: mux_ifb File: I:/GitHub/CSC258FinalProject/db/mux_ifb.tdf Line: 22
-Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 49
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_ifb File: D:/Docments/study/FinalProject/CSC258FinalProject/db/mux_ifb.tdf Line: 22
+Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 49
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1246,41 +1279,50 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
-    Info (12023): Found entity 1: altpll_80u File: I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 25
+    Info (12023): Found entity 1: altpll_80u File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altpll_80u.tdf Line: 25
 Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keytest" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 103
-Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keytest|keyboard_inner_driver:kbd" File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 138
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 146
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 153
-Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 161
-Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 162
-Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 170
-Info (12128): Elaborating entity "LeftScoreDetector" for hierarchy "LeftScoreDetector:lDetecter" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 191
-Info (12128): Elaborating entity "RightScoreDetector" for hierarchy "RightScoreDetector:rDetecter" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 199
-Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 208
-Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 216
-Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 224
-Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 247
-Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 671
-Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 676
-Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 682
-Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 696
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 262
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: D:/Docments/study/FinalProject/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keytest" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 105
+Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keytest|keyboard_inner_driver:kbd" File: D:/Docments/study/FinalProject/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
+Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 140
+Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 148
+Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 155
+Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 163
+Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 164
+Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 172
+Info (12128): Elaborating entity "LeftScoreDetector" for hierarchy "LeftScoreDetector:lDetecter" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 195
+Info (12128): Elaborating entity "RightScoreDetector" for hierarchy "RightScoreDetector:rDetecter" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 203
+Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 213
+Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 222
+Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 229
+Warning (10240): Verilog HDL Always Construct warning at part2.sv(353): inferring latch(es) for variable "strike", which holds its previous value in one or more paths through the always construct File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[0]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[1]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[2]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[3]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[4]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[5]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[6]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (10041): Inferred latch for "strike[7]" at part2.sv(353) File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 353
+Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 252
+Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 696
+Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 701
+Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 707
+Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 721
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 267
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 22
-    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 23
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 22
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 47
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 47
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 11 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 409 assignments for entity "DE1_SoC" -- entity does not exist in design
@@ -1693,36 +1735,36 @@ Warning (20013): Ignored 409 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE1_SoC -section_id Top was ignored
-Info (144001): Generated suppressed messages file I:/GitHub/CSC258FinalProject/output_files/part2.map.smsg
+Info (144001): Generated suppressed messages file D:/Docments/study/FinalProject/CSC258FinalProject/output_files/part2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 33
+Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: D:/Docments/study/FinalProject/CSC258FinalProject/db/altpll_80u.tdf Line: 33
     Info: Must be connected
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[1]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[2]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[3]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "SW[4]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
-    Warning (15610): No output dependent on input pin "SW[5]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
-Info (21057): Implemented 869 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "SW[4]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 24
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/Docments/study/FinalProject/CSC258FinalProject/part2.sv Line: 24
+Info (21057): Implemented 868 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 87 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 754 logic cells
+    Info (21061): Implemented 753 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 437 warnings
-    Info: Peak virtual memory: 4912 megabytes
-    Info: Processing ended: Tue Dec 03 00:14:51 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 435 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Tue Dec 03 11:10:40 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in I:/GitHub/CSC258FinalProject/output_files/part2.map.smsg.
+The suppressed messages can be found in D:/Docments/study/FinalProject/CSC258FinalProject/output_files/part2.map.smsg.
 
 

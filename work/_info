@@ -10,23 +10,23 @@ cModel Technology
 Z0 dD:/Docments/study/FinalProject/CSC258FinalProject
 vdatapathFSM
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1575308972
+Z2 !s110 1575386230
 !i10b 1
-!s100 ola=cg5mYcHf:IX;hl`VA1
-Ig0_G6mlWAEBbh;^SP@_z[1
+!s100 ^UE:]9b5G^NdodVn1ILz;2
+IYbDdozzXNQSk4mK=zi@Y<1
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 part2_sv_unit
 S1
 R0
-Z5 w1575308968
+Z5 w1575386162
 Z6 8part2.sv
 Z7 Fpart2.sv
-L0 495
+L0 552
 Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1575308972.000000
+Z9 !s108 1575386230.000000
 Z10 !s107 part2.sv|
 Z11 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.sv|
 !i113 1
@@ -37,8 +37,8 @@ vdrawBorder
 R1
 R2
 !i10b 1
-!s100 X4_QmKJiZoaD^UAFR_=9a3
-IcZi4S:9LC3ljC>@c;;jAZ1
+!s100 hWcOnJG2zJocN1bOPGCNP3
+I6A5WW[AfKX0F^nMm@WU801
 R3
 R4
 S1
@@ -46,7 +46,7 @@ R0
 R5
 R6
 R7
-L0 754
+L0 811
 R8
 r1
 !s85 0
@@ -62,8 +62,8 @@ veraseAll
 R1
 R2
 !i10b 1
-!s100 moKo3DSY?8=d]mBhoZJKV2
-IhN0?d1jL1h3Lo5;h8X6N41
+!s100 NI5OJnDF3GZdRe=No^Vab1
+I_K3?E42cVBIzR6EH^jZ3j3
 R3
 R4
 S1
@@ -71,7 +71,7 @@ R0
 R5
 R6
 R7
-L0 836
+L0 893
 R8
 r1
 !s85 0
@@ -109,8 +109,8 @@ vhex_decoder
 R1
 R2
 !i10b 1
-!s100 nG4i]TW6<4ANU<J:OBHT60
-I94;`A;^jJ?g3LK`fHEL3<0
+!s100 9Z[noRYXm8:jF4D2n8Q3Q3
+I2SELAl:mh_5?i1kiTkXh>1
 R3
 R4
 S1
@@ -118,7 +118,7 @@ R0
 R5
 R6
 R7
-L0 1014
+L0 1074
 R8
 r1
 !s85 0
@@ -158,8 +158,8 @@ vLeftScoreCounter
 R1
 R2
 !i10b 1
-!s100 5b7Th:dS1E96^F3ZcTTaJ0
-I<zWXCCilUHXR[Mia_03jJ2
+!s100 l>KcJ4n?MRGgmReK]]K_62
+IB8B;YmK=lXQ__cZF;k6@S3
 R3
 R4
 S1
@@ -167,7 +167,7 @@ R0
 R5
 R6
 R7
-L0 322
+L0 357
 R8
 r1
 !s85 0
@@ -183,8 +183,8 @@ vLeftScoreDetector
 R1
 R2
 !i10b 1
-!s100 >_PR31[6[IC;<mE]MPWYg3
-IE729Nzzn58H91JAPOPfo60
+!s100 TQB9ZfkAd8=hBjmc[fn7O3
+I<nP2l2[hSJihkdQ^b3na50
 R3
 R4
 S1
@@ -192,7 +192,7 @@ R0
 R5
 R6
 R7
-L0 353
+L0 405
 R8
 r1
 !s85 0
@@ -208,8 +208,8 @@ vlKeyBoardDetector
 R1
 R2
 !i10b 1
-!s100 ^R:d705eTh1ZP`=88NOAf1
-IZWiMU^Z<Dh?fTTa?E7P`D2
+!s100 mfX3M6IB?do]Q9:=PJoi?3
+Ib<hbEO^@?3?FSIXz7C`8F3
 R3
 R4
 S1
@@ -217,7 +217,7 @@ R0
 R5
 R6
 R7
-L0 420
+L0 478
 R8
 r1
 !s85 0
@@ -233,8 +233,8 @@ vpaddleFSM
 R1
 R2
 !i10b 1
-!s100 kf65>95@=NL`>I@S2dU@l1
-IGK1:<Xo^^8K7ZP123X5W01
+!s100 PBIG`]Oc3QURmVDRSZzH>0
+IF`>nS0W>ed<N<ZPF_K]VW0
 R3
 R4
 S1
@@ -242,7 +242,7 @@ R0
 R5
 R6
 R7
-L0 814
+L0 871
 R8
 r1
 !s85 0
@@ -258,8 +258,8 @@ vpart2
 R1
 R2
 !i10b 1
-!s100 ODh]BZ[SJCNF_>VN`T9h@3
-IHXXgRPK[D6Wf6[9_0koM<1
+!s100 iA3c9HN@^69?K>N8ebjXP0
+I87`H8AH>mz=XoeRgCl18F0
 R3
 R4
 S1
@@ -282,8 +282,8 @@ vPixelCounter
 R1
 R2
 !i10b 1
-!s100 f1a7bnb1RKb?TYR=J2z962
-IeRX]QfEZ4EGbdSYL`E5:F1
+!s100 PBdYjzQe_bi[WhhVk4mNi1
+IHLRNzc2@JHD;W:7X641Hc0
 R3
 R4
 S1
@@ -291,7 +291,7 @@ R0
 R5
 R6
 R7
-L0 407
+L0 465
 R8
 r1
 !s85 0
@@ -307,8 +307,8 @@ vRightScoreCounter
 R1
 R2
 !i10b 1
-!s100 J_4LENz2dg]@68Mf8Mjjg2
-IIZIl@oTj;8K1FIUKeD0ee0
+!s100 ;:gRYgK76ZDTM7^[XN50T3
+IC[BfU@L<[Dh]KF_Bg5d>>3
 R3
 R4
 S1
@@ -316,7 +316,7 @@ R0
 R5
 R6
 R7
-L0 335
+L0 378
 R8
 r1
 !s85 0
@@ -332,8 +332,8 @@ vRightScoreDetector
 R1
 R2
 !i10b 1
-!s100 g^`@K5Wh5e=EME=UWk[c^2
-IfTEDmIJo5W3B:3HTIIT_K1
+!s100 P]hT^AQ;8L>=kB`bgckJK2
+I@C`@LVTYIafWSY[Tg0YI30
 R3
 R4
 S1
@@ -341,7 +341,7 @@ R0
 R5
 R6
 R7
-L0 383
+L0 438
 R8
 r1
 !s85 0
@@ -357,8 +357,8 @@ vrKeyBoardDetector
 R1
 R2
 !i10b 1
-!s100 MzDIA]RRATL4AHZHcdMW43
-IgX@`dQ:XRkmi03cYZfZ:U0
+!s100 ]z@PRmobVXMSPSm<HTZKm2
+Ijlheo4125Q7gO[LMUIMVX3
 R3
 R4
 S1
@@ -366,7 +366,7 @@ R0
 R5
 R6
 R7
-L0 466
+L0 523
 R8
 r1
 !s85 0
@@ -382,8 +382,8 @@ vsquareFSM
 R1
 R2
 !i10b 1
-!s100 em`lALhLP1a>zoL_nGR>:3
-IU_5U6?CkTkf`I:lPBdTSd2
+!s100 ZiT`0E5zmk<nFDl=m9d:n2
+IOXbo?]dgIXZna8?m1=66^2
 R3
 R4
 S1
@@ -391,7 +391,7 @@ R0
 R5
 R6
 R7
-L0 799
+L0 856
 R8
 r1
 !s85 0
@@ -405,23 +405,23 @@ R13
 nsquare@f@s@m
 vStrikeDetector
 R1
-!s110 1575308934
+R2
 !i10b 1
-!s100 i9NX<A]8@o9iU]Y`TSEbh1
-I9HmaTbj>eZHI6AYVWo33=3
+!s100 Zeb@_JclK4P^;KJKV_RYH2
+I3Kz^h_<>4^VgA_VA:Fd_D0
 R3
 R4
 S1
 R0
-w1575308931
+R5
 R6
 R7
-L0 304
+L0 339
 R8
 r1
 !s85 0
 31
-!s108 1575308934.000000
+R9
 R10
 R11
 !i113 1
@@ -432,8 +432,33 @@ vtestControl
 R1
 R2
 !i10b 1
-!s100 l52_kgDX1k6=on2z9WFkc3
-IKb>BbV5k2BBe7F>4R9o^O1
+!s100 <4hB7AZ^^V]1T8LcdjdSH1
+I@^l6e0le5EOYFz`TIiBK>0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 318
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+ntest@control
+vtestLeftScore
+R1
+R2
+!i10b 1
+!s100 1Kgh5g[Jekn>@FL0TPjAQ2
+IZA0ENN`KF?BQ^R7P=[Uk62
 R3
 R4
 S1
@@ -452,38 +477,13 @@ R11
 !i113 1
 R12
 R13
-ntest@control
-vtestLeftScore
-R1
-R2
-!i10b 1
-!s100 7RgOBg7F^FP]hAEdl7a@62
-IYNi:nD<729zS6SkKf55`d2
-R3
-R4
-S1
-R0
-R5
-R6
-R7
-L0 255
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 1
-R12
-R13
 ntest@left@score
 vtestRightScore
 R1
 R2
 !i10b 1
-!s100 G<[Bh5ooVhKm<KQ?kk^SL0
-I5hc[gT]@M`65?V2Mfl4Fa3
+!s100 Ji30eS^L7kgPD:z1MnH`X1
+I1XMDll363K;Q2GFciMC^Q2
 R3
 R4
 S1
@@ -491,7 +491,7 @@ R0
 R5
 R6
 R7
-L0 245
+L0 273
 R8
 r1
 !s85 0
@@ -529,8 +529,8 @@ vtestStrike
 R1
 R2
 !i10b 1
-!s100 37JRFi^LNhzHIS^?XFn@l3
-IZ`fg6OnGaYNloW[CKMMM13
+!s100 Q2j6S0eJ6Pl@zVQOYCXe;2
+IPeM?l]4`Imd?DzW2<JgX92
 R3
 R4
 S1
@@ -538,7 +538,7 @@ R0
 R5
 R6
 R7
-L0 265
+L0 293
 R8
 r1
 !s85 0
@@ -554,8 +554,8 @@ vTimeCounter
 R1
 R2
 !i10b 1
-!s100 M9iJ^m=C4REaWjT<l<lXg3
-INzDg2;>ied`kQYbIFG`z42
+!s100 glh;zaQHVl`kX=5IR]l=R0
+IFg?`Bbz5<Jia6S?`OTbbc1
 R3
 R4
 S1
@@ -563,7 +563,7 @@ R0
 R5
 R6
 R7
-L0 968
+L0 1028
 R8
 r1
 !s85 0
@@ -579,8 +579,8 @@ vXCounter
 R1
 R2
 !i10b 1
-!s100 oNjL@;`KI38CD0aGaiHAf2
-Ig<jMoTnjJzmYB2@zdOWHD0
+!s100 g`TcjCSG^GLnR@FNnY2QM3
+IZZf<<a]<F5e;RJU@A0>j30
 R3
 R4
 S1
@@ -588,7 +588,7 @@ R0
 R5
 R6
 R7
-L0 857
+L0 914
 R8
 r1
 !s85 0
@@ -604,8 +604,8 @@ vYCounter
 R1
 R2
 !i10b 1
-!s100 `F=gHIzW[o_CTI]n0iW<]3
-IGD6O^L7K4`[8ob@5N9;5:0
+!s100 iCJVje=M`IoLU]GZ?m3DK1
+I?oZcoiL8TPPjBCC7kW3H30
 R3
 R4
 S1
@@ -613,7 +613,7 @@ R0
 R5
 R6
 R7
-L0 902
+L0 962
 R8
 r1
 !s85 0
@@ -629,8 +629,8 @@ vYPaddle
 R1
 R2
 !i10b 1
-!s100 6eS;C?lWT7LcV93hh@_Hn1
-IA4=b?]If;07UKO9SXLfn@0
+!s100 2lWdY1?ORl^ac<JRhzFN50
+IkMIUC@DMVg:;A[LC<Wd791
 R3
 R4
 S1
@@ -638,7 +638,7 @@ R0
 R5
 R6
 R7
-L0 934
+L0 994
 R8
 r1
 !s85 0
