@@ -360,7 +360,7 @@ module StrikeDetector(enable, reset, lstrike, rstrike,strike,loutResetStrike,rou
 	input routResetStrike;
 	always @(*)
 	begin
-		if (reset == 1'b0 || strike== 8'b11111111)
+		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b1 || routResetStrike == 1'b1)
 			strike <= 8'b00000000;
 		else if (enable == 1'b1)
 			strike <= lstrike + rstrike;
@@ -389,7 +389,7 @@ module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0]
 						else
 							begin
 								lstrike <= lstrike + 8'b00000001;
-								outResetStrike <= 1'b1;
+								outResetStrike <= 1'b0;
 							end
 					end
 				else
@@ -425,7 +425,7 @@ module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0
 						else
 							begin
 								rstrike <= rstrike + 8'b00000001;
-								outResetStrike <= 1'b1;
+								outResetStrike <= 1'b0;
 							end
 					end
 				else
