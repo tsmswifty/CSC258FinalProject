@@ -389,7 +389,7 @@ module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0]
 						else
 							begin
 								lstrike <= lstrike + 8'b00000001;
-								outResetStrike <= 1'b0;
+								outResetStrike <= 1'b1;
 							end
 					end
 				else
