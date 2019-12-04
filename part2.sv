@@ -231,7 +231,9 @@ module part2
 		.reset(resetn),
 		.lstrike(lstrike),
 		.rstrike(rstrike),
-		.strike(strike)
+		.strike(strike),
+		.loutResetStrike(lreset),
+		.routResetStrike(rreset)
 	);
 
 	datapathFSM fsm0(
@@ -347,16 +349,18 @@ module testControl(input signal, input reset, input enable, input lup, input ldo
 
 endmodule
 
-module StrikeDetector(enable, reset, lstrike, rstrike,strike);
+module StrikeDetector(enable, reset, lstrike, rstrike,strike,loutResetStrike,routResetStrike);
 	//TODO: change it so it only counts hits, not nonhits
 	input enable;
 	input reset;
 	input  logic [7:0]lstrike;
 	input  logic [7:0]rstrike;
 	output logic [7:0]strike;
+	input loutResetStrike;
+	input routResetStrike;
 	always @(*)
 	begin
-		if (reset == 1'b0 || strike== 8'b11111111)
+		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b ||  routResetStrike == 1'b)
 			strike <= 8'b00000000;
 		else if (enable == 1'b1)
 			strike <= lstrike + rstrike;
@@ -379,7 +383,7 @@ module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0]
 					begin
 						if (reset == 1'b0 || lstrike== 8'b11111111 || inResetStrike == 1'b1)
 							begin
-								lstrike <= 8'b00000000;
+								lstrike <= 8'b00000001;
 								outResetStrike <= 1'b0;
 							end
 						else
@@ -415,13 +419,13 @@ module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0
 					begin
 						if (reset == 1'b0 || rstrike== 8'b11111111 || inResetStrike == 1'b1)
 							begin
-								rstrike <= 8'b00000000;
+								rstrike <= 8'b00000001;
 								outResetStrike <= 1'b0;
 							end
 						else
 							begin
 								rstrike <= rstrike + 8'b00000001;
-								outResetStrike <= 1'b0;
+								outResetStrike <= 1'b1;
 							end
 					end
 				else
