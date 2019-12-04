@@ -124,12 +124,12 @@ module part2
 
 	wire enableCounter;
 	logic pause;
-	
+
 	logic [6:0] lPaddleMin;
 	assign lPaddleMin = (ylpaddle <= 7'd4) ? 1'b0 : ylpaddle - 7'd4;
 	logic [6:0] rPaddleMin;
 	assign rPaddleMin = (yrpaddle <= 7'd4) ? 1'b0 : yrpaddle - 7'd4;
-	
+
 	logic softReset; //Soft reset is for repositioning paddles and balls. When it goes high, all balls+paddles should reposition
 	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
 
@@ -197,21 +197,21 @@ module part2
 	logic [7:0] rstrike;
 	wire rreset;
 	wire lreset;
-//	LeftScoreDetector lDetecter(
-//		.clock(CLOCK_50),
-//		.enable(enableHEX),
-//		.lhit(lhitPulse),
-//		.lpaddle(ylpaddle),
-//		.yobject(yCounter),
-//		.lsignal(lsignal));
-//
-//	RightScoreDetector rDetecter(
-//		.clock(CLOCK_50),
-//		.enable(enableHEX),
-//		.rhit(rhitPulse),
-//		.rpaddle(yrpaddle),
-//		.yobject(yCounter),
-//		.rsignal(rsignal));
+	//	LeftScoreDetector lDetecter(
+	//		.clock(CLOCK_50),
+	//		.enable(enableHEX),
+	//		.lhit(lhitPulse),
+	//		.lpaddle(ylpaddle),
+	//		.yobject(yCounter),
+	//		.lsignal(lsignal));
+	//
+	//	RightScoreDetector rDetecter(
+	//		.clock(CLOCK_50),
+	//		.enable(enableHEX),
+	//		.rhit(rhitPulse),
+	//		.rpaddle(yrpaddle),
+	//		.yobject(yCounter),
+	//		.rsignal(rsignal));
 
 	LeftScoreCounter lScore(
 		.clock(signal),
@@ -272,14 +272,14 @@ module part2
 
 
 	//register to display clock speed
-//	logic [9:0] clock_counter = 1'b0;
-//	logic [3:0] writeIndicator = 1'b0;
-//	always@(posedge signal)
-//	begin
-//		clock_counter <= clock_counter + 1'b1;
-//		writeIndicator <= writeEn + writeIndicator;
-//	end
-//	//assign LEDR[9:0] = clock_counter;
+	//	logic [9:0] clock_counter = 1'b0;
+	//	logic [3:0] writeIndicator = 1'b0;
+	//	always@(posedge signal)
+	//	begin
+	//		clock_counter <= clock_counter + 1'b1;
+	//		writeIndicator <= writeEn + writeIndicator;
+	//	end
+	//	//assign LEDR[9:0] = clock_counter;
 
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(lscore[3:0]),.segments(HEX0));
@@ -667,8 +667,8 @@ module datapathFSM(
 			RerasePaddleCount <= 7'd100;
 			resetCount <= 15'd19500;
 		end
-	else if (softReset) begin
-		borderCount <= 10'd600;
+		else if (softReset) begin
+			borderCount <= 10'd600;
 			squareCount <= 5'd18;
 			LpaddleCount <= 7'd100;
 			RpaddleCount <= 7'd100;
@@ -995,8 +995,8 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse, softRes
 			lhitPulse <= 1'b0;
 			rhitPulse <= 1'b0;
 		end
-	else if (softReset) begin
-		xDisplay <= 8'd50;
+		else if (softReset) begin
+			xDisplay <= 8'd50;
 			direction <= 1'b1;
 			lhitPulse <= 1'b0;
 			rhitPulse <= 1'b0;
@@ -1049,23 +1049,23 @@ module YCounter(count_enable, clk, reset_n,yDisplay, softReset);
 			end
 			// go down if hits upper wall
 		else if (softReset) begin
-				yDisplay <= 7'd50; //initialize to 0
-				direction <= 1'b0;
+			yDisplay <= 7'd50; //initialize to 0
+			direction <= 1'b0;
 		end
 		else begin
-			
-		if (yDisplay <= 2'd2)
-			direction <= 1'b0; //reached top of screen; has to go down.
-			// go up if hits lower wall
 
-		else if (yDisplay >= (7'd120 - square_size - 2'd2)) //subtract square size to determine true boundary of y
-			direction <= 1'b1; //reached bottom of screen; has to go up.
+			if (yDisplay <= 2'd2)
+				direction <= 1'b0; //reached top of screen; has to go down.
+				// go up if hits lower wall
+
+			else if (yDisplay >= (7'd120 - square_size - 2'd2)) //subtract square size to determine true boundary of y
+				direction <= 1'b1; //reached bottom of screen; has to go up.
 			if (direction == 1'b0)
 				yDisplay <= yDisplay + 1'b1; //going down
 			else
 				yDisplay <= yDisplay - 1'b1; //going up
 		end
-		
+
 
 	end
 endmodule

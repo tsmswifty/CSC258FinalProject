@@ -8,7 +8,7 @@ SW[0] => SW[0].IN1
 SW[1] => SW[1].IN1
 SW[2] => SW[2].IN10
 SW[3] => SW[3].IN2
-SW[4] => softReset.IN1
+SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
 SW[6] => enableHEX.IN4
 SW[7] => SW[7].IN1
@@ -1368,8 +1368,8 @@ strike[4] <= strike[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
 strike[5] <= strike[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
 strike[6] <= strike[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 strike[7] <= strike[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
-loutResetStrike => ~NO_FANOUT~
-routResetStrike => ~NO_FANOUT~
+loutResetStrike => always0.IN1
+routResetStrike => always0.IN1
 
 
 |part2|datapathFSM:fsm0
