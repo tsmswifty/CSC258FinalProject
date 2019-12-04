@@ -1,5 +1,5 @@
-Warning (10268): Verilog HDL information at keyboard_inner_driver.v(47): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 47
-Info (10281): Verilog HDL Declaration information at part2.sv(110): object "lscore" differs only in case from object "lScore" in the same scope File: I:/GitHub/CSC258FinalProject/part2.sv Line: 110
-Info (10281): Verilog HDL Declaration information at part2.sv(111): object "rscore" differs only in case from object "rScore" in the same scope File: I:/GitHub/CSC258FinalProject/part2.sv Line: 111
-Warning (10268): Verilog HDL information at part2.sv(371): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/part2.sv Line: 371
-Warning (10268): Verilog HDL information at part2.sv(407): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/part2.sv Line: 407
+Warning (10268): Verilog HDL information at keyboard_inner_driver.v(47): always construct contains both blocking and non-blocking assignments File: D:/Docments/study/FinalProjectCS/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 47
+Info (10281): Verilog HDL Declaration information at part2.sv(110): object "lscore" differs only in case from object "lScore" in the same scope File: D:/Docments/study/FinalProjectCS/CSC258FinalProject/part2.sv Line: 110
+Info (10281): Verilog HDL Declaration information at part2.sv(111): object "rscore" differs only in case from object "rScore" in the same scope File: D:/Docments/study/FinalProjectCS/CSC258FinalProject/part2.sv Line: 111
+Warning (10268): Verilog HDL information at part2.sv(375): always construct contains both blocking and non-blocking assignments File: D:/Docments/study/FinalProjectCS/CSC258FinalProject/part2.sv Line: 375
+Warning (10268): Verilog HDL information at part2.sv(411): always construct contains both blocking and non-blocking assignments File: D:/Docments/study/FinalProjectCS/CSC258FinalProject/part2.sv Line: 411

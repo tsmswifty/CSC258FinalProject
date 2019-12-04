@@ -360,7 +360,7 @@ module StrikeDetector(enable, reset, lstrike, rstrike,strike,loutResetStrike,rou
 	input routResetStrike;
 	always @(*)
 	begin
-		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b ||  routResetStrike == 1'b)
+		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b1 ||  routResetStrike == 1'b1)
 			strike <= 8'b00000000;
 		else if (enable == 1'b1)
 			strike <= lstrike + rstrike;
