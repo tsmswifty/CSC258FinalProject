@@ -7,374 +7,477 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/gitHub/csc258finalProject/sim
-vcombine
-Z1 !s110 1574054472
-!i10b 1
-!s100 g8GRWGdG7;:Zi[VkGEA7T2
-IFQ22gAImo_=8cOFmgf@073
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1574054466
-Z4 8part2.v
-Z5 Fpart2.v
-L0 173
-Z6 OV;L;10.5b;63
-r1
-!s85 0
-31
-Z7 !s108 1574054472.000000
-Z8 !s107 part2.v|
-Z9 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.v|
-!i113 1
-Z10 o-timescale 1ns/1ns
-Z11 tCvgOpt 0
-vdatapath
-R1
-!i10b 1
-!s100 F`kbjij5^FG;k@DCEn@W30
-Ikk9UgYLPRhj`N@Cci^E?f1
-R2
-R0
-R3
-R4
-R5
-L0 190
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 1
-R10
-R11
+Z0 dI:/GitHub/csc258FinalProject/sim
 vdatapathFSM
-Z12 !s110 1574985849
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1575427304
 !i10b 1
-!s100 59mXRa8R;IYO>l`a7dJ<[0
-I7FNc_@7JPSVPb=?Z=g:MC1
-R2
-Z13 dD:/Docments/study/FinalProject/CSC258FinalProject/Sim
-Z14 w1574970415
-R4
-R5
-L0 303
-R6
+!s100 REF[kf2aN3F^84nQZC7N[1
+Ig9UW>NL;6HUb3hoHJO3?W1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 part2_sv_unit
+S1
+R0
+Z5 w1575427299
+Z6 8part2.sv
+Z7 Fpart2.sv
+L0 547
+Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z15 !s108 1574985848.000000
-R8
-R9
+Z9 !s108 1575427304.000000
+Z10 !s107 part2.sv|
+Z11 !s90 -reportprogress|300|-timescale|1ns/1ns|part2.sv|
 !i113 1
-R10
-R11
+Z12 o-timescale 1ns/1ns
+Z13 tCvgOpt 0
 ndatapath@f@s@m
 vdrawBorder
-R12
-!i10b 1
-!s100 kC=O@g2hQcce:_TBR1^G?3
-Il[1=>BzOYT9X4f?QV@[Vg3
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 LCgVL`=P00d[R_cXWZQgn1
+IY9LQ8LVzGzAX1>PLz]:U?1
+R3
 R4
+S1
+R0
 R5
-L0 531
 R6
+R7
+L0 806
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 ndraw@border
-vFrequencyCounter
-R12
-!i10b 1
-!s100 E4j89gkaf>=>0T=2B;SC03
-I4<:>VC:@f[ggL[AcZ@H`13
+veraseAll
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 FEFeD;C7JB`c:RCD`ohmA1
+I`oS17jHf4][j4oN6eeFdQ1
+R3
 R4
+S1
+R0
 R5
-L0 743
 R6
+R7
+L0 888
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
-n@frequency@counter
+!i113 1
+R12
+R13
+nerase@all
 vhex_decoder
-R12
-!i10b 1
-!s100 :oaU6G<EZS<aXAR6f[VCA1
-IMUXzYC@4gRKQZBTP1T_Kz1
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 meYg`CaH31@WUl5KciaOh2
+I?4EMc5N71eL9gNNHzPd<03
+R3
 R4
+S1
+R0
 R5
-L0 757
 R6
+R7
+L0 1069
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 vLeftScoreCounter
-R12
-!i10b 1
-!s100 Uo_jZLV<lAleoKNh[21Oe2
-ID<F70LBFHG^3DPW:1iz8:3
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 cC:46R>Na8kSoH2KPFYDH2
+IgME>OzVQj;<]Z?[E0:LFL0
+R3
 R4
+S1
+R0
 R5
-L0 202
 R6
+R7
+L0 324
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 n@left@score@counter
-vLeftScoreDetector
-R12
-!i10b 1
-!s100 >lDUG4b_eY8GNlGj7:Bz;1
-IT]_lcc5YObz`7VF2[023l0
+vlKeyBoardDetector
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 dcYae7[Nj5dcDL8d4[`T[2
+IbbHR9]I]XFiYiCbP[MTIf3
+R3
 R4
+S1
+R0
 R5
-L0 238
 R6
+R7
+L0 473
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
-n@left@score@detector
+!i113 1
+R12
+R13
+nl@key@board@detector
 vpaddleFSM
-R12
-!i10b 1
-!s100 `jM4PB9DZ5dk`l<1TDm2Q0
-IR[<QTn0Nb^7gOBBI`UQfU0
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 ;?a1`IzgB@AABM5^d42K>0
+IG?]c`TM^N^ZCz0S44=WJE2
+R3
 R4
+S1
+R0
 R5
-L0 591
 R6
+R7
+L0 866
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 npaddle@f@s@m
 vpart2
-R12
-!i10b 1
-!s100 <Ng=]zU5F=S>k:ZjOR:fT3
-I3K^YE9]hV<AGlVg9:KSJn0
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 9GTaL[O;6kC>ZE4?[<z@Z2
+ISa4]mQn9Ez^lF00z0T8fi3
+R3
 R4
+S1
+R0
 R5
+R6
+R7
 L0 1
-R6
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
-vPixelCounter
+!i113 1
 R12
-!i10b 1
-!s100 XEPPPkLM`=QRf82h=2AoU0
-I=MOE]P]<NQ@=X;NDCGaBj1
-R2
 R13
-R14
+vPixelCounter
+R1
+R2
+!i10b 1
+!s100 z4<:@dNUoT72576F5B;8M3
+IRLz?dKzE9<6Cz:`4JQ7a12
+R3
 R4
+S1
+R0
 R5
-L0 286
 R6
+R7
+L0 460
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 n@pixel@counter
 vRightScoreCounter
-R12
-!i10b 1
-!s100 AbAghBoA4hUTl4V:c]hPc2
-Iz``z7`eG_T83ld:8H^oiR3
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 nak`@l`C>0NFIbLfJ2`PG2
+I_991NNjA`M@UDi6d>__PC3
+R3
 R4
+S1
+R0
 R5
-L0 218
 R6
+R7
+L0 359
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 n@right@score@counter
-vRightScoreDetector
-R12
-!i10b 1
-!s100 <YhYIoW<Bi`_U3bUUbJ9L2
-I;f[hH=3>5?a6>dPb6lcYX2
+vrKeyBoardDetector
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 i@N1RW;F?cdJ`f`L8XSmO2
+IoK]FeP@ZTUWAO];V12==82
+R3
 R4
+S1
+R0
 R5
-L0 264
 R6
+R7
+L0 518
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
-n@right@score@detector
+!i113 1
+R12
+R13
+nr@key@board@detector
 vsquareFSM
-R12
-!i10b 1
-!s100 jK@fag^Nl3R3@MN]UYV2<2
-I3PUKKE:Ff5^D``m[7eFSf2
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 o=i[Mgi@<o7ej79M[e]L@3
+IoCeW4;bz`NJGHFe<=NlSD2
+R3
 R4
+S1
+R0
 R5
-L0 576
 R6
+R7
+L0 851
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 nsquare@f@s@m
-vTimeCounter
-R12
-!i10b 1
-!s100 Y:V>BQMNFSlX;=V6Q^;c=3
-I=]UINBnckKYb=H0I2605W2
+vStrikeDetector
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 DZU1W`_RoNYlW=BAkL25>3
+I<69[KSWkkXN_7?iFcZG;F3
+R3
 R4
+S1
+R0
 R5
-L0 696
 R6
+R7
+L0 307
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
+n@strike@detector
+vtestControl
+R1
+R2
+!i10b 1
+!s100 `X<9J>6Pn>=[:^<DmA8X63
+I;k0dVJzgKVMgjEROW]6FJ3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 286
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+ntest@control
+vtestRightScore
+R1
+R2
+!i10b 1
+!s100 _2Jh9`kHe?9hSd_ec^jK12
+IQ6gg:5AB9jz78biOSGRXf3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 241
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+ntest@right@score
+vTimeCounter
+R1
+R2
+!i10b 1
+!s100 S^MNWJgSeMf?l;Z;R0=;R0
+IfjMY6QGT8L[Xzk]h98c0T2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1023
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
 n@time@counter
 vXCounter
-R12
-!i10b 1
-!s100 85hYd=O@3G8d^6SdNAMXU1
-ISM63I4V`JbmMae^0W`CbK2
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 =V6fX4Z4d`[TkYdK52TSN2
+I6_`6`Pza3g`X=a:WR7A?F0
+R3
 R4
+S1
+R0
 R5
-L0 615
 R6
+R7
+L0 909
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 n@x@counter
 vYCounter
-R12
-!i10b 1
-!s100 NPJoLDR;AafhQS4NEMb]70
-IOD:@V1Kb2U_=;A_cTYbb:2
+R1
 R2
-R13
-R14
+!i10b 1
+!s100 U@9KD:z;hj<g4[2JQWQX51
+IdSS5kl4T[SDOTMz?@MKh13
+R3
 R4
+S1
+R0
 R5
-L0 663
 R6
+R7
+L0 957
+R8
 r1
 !s85 0
 31
-R15
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R12
+R13
 n@y@counter
+vYPaddle
+R1
+R2
+!i10b 1
+!s100 Y6L<_EZI:;09V3oz:j^7N3
+IWEE=idd3UhT?Kzb5@dlZ?3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 989
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+n@y@paddle

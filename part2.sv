@@ -49,8 +49,6 @@ module part2
 	output	[9:0]	VGA_G; //	VGA Green[9:0]
 	output	[9:0]	VGA_B; //	VGA Blue[9:0]
 
-	logic resetn;
-	assign resetn = SW[2];
 	logic enableHEX;
 	assign enableHEX = SW[6];
 
@@ -66,7 +64,7 @@ module part2
 	// Define the number of colours as well as the initial background
 	// image file (.MIF) for the controller.
 	vga_adapter VGA(
-		.resetn(resetn),
+		.resetn(SW[2]),
 		.clock(CLOCK_50),
 		.colour(colour),
 		.x(x),
@@ -101,7 +99,7 @@ module part2
 		.outCode(outCode),
 		.PS2_DAT(PS2_DAT),
 		.PS2_CLK(PS2_CLK),
-		.reset(~resetn)
+		.reset(~SW[2])
 	);
 
 
@@ -126,12 +124,19 @@ module part2
 
 	wire enableCounter;
 	logic pause;
+	
+	logic [6:0] lPaddleMin;
+	assign lPaddleMin = (ylpaddle <= 7'd4) ? 1'b0 : ylpaddle - 7'd4;
+	logic [6:0] rPaddleMin;
+	assign rPaddleMin = (yrpaddle <= 7'd4) ? 1'b0 : yrpaddle - 7'd4;
+	
+	logic softReset; //Soft reset is for repositioning paddles and balls. When it goes high, all balls+paddles should reposition
+	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
 
-	//	drawBorder draw0(.x(xcount), .y(ycount), .clk(clock_25), .colour(colour_count), .done(systemPause));
 	TimeCounter tc(
 		.count_enable(enableHEX),
 		.clk(CLOCK_50),
-		.reset_n(resetn),
+		.reset_n(SW[2]),
 		.difficulty(SW[1:0]),
 		.display(signal), //1 tick
 		.erase(erase),
@@ -141,17 +146,19 @@ module part2
 	XCounter xc(
 		.count_enable(enableHEX),
 		.clk(signal),
-		.reset_n(resetn),
+		.reset_n(SW[2]),
 		.xDisplay(xCounter),
 		.lhitPulse(lhitPulse),
-		.rhitPulse(rhitPulse)
+		.rhitPulse(rhitPulse),
+		.softReset(softReset)
 	);
 
 	YCounter yc(
 		.count_enable(enableHEX), //not implemented yet
 		.clk(signal),
-		.reset_n(resetn),
-		.yDisplay(yCounter)
+		.reset_n(SW[2]),
+		.yDisplay(yCounter),
+		.softReset(softReset)
 	);
 
 	wire [6:0] ylpaddle; // the left paddle
@@ -164,20 +171,22 @@ module part2
 	rKeyBoardDetector rDetect(.clock(CLOCK_50), .outCode(outCode),.makeCode(makeBreak),.rupCondition(rup),.rdownCondition(rdown));
 	YPaddle yleftPaddle(
 		.clk(signal),
-		.reset_n(resetn),
+		.reset_n(SW[2]),
 		.moveEnable(SW[3]),
 		.up(lup),
 		.down(ldown),
-		.ypDisplay(ylpaddle)
+		.ypDisplay(ylpaddle),
+		.softReset(softReset)
 	);
 
 	YPaddle yrightPaddle(
 		.clk(signal),
-		.reset_n(resetn),
+		.reset_n(SW[2]),
 		.moveEnable(SW[3]),
 		.up(rup),
 		.down(rdown),
-		.ypDisplay(yrpaddle)
+		.ypDisplay(yrpaddle),
+		.softReset(softReset)
 	);
 
 	//TODO: Temporialy set KEY1,KEY2 to control left paddle; set sw[2],sw[3] to control right paddle
@@ -188,28 +197,28 @@ module part2
 	logic [7:0] rstrike;
 	wire rreset;
 	wire lreset;
-	LeftScoreDetector lDetecter(
-		.clock(CLOCK_50),
-		.enable(enableHEX),
-		.lhit(lhitPulse),
-		.lpaddle(ylpaddle),
-		.yobject(yCounter),
-		.lsignal(lsignal));
-
-	RightScoreDetector rDetecter(
-		.clock(CLOCK_50),
-		.enable(enableHEX),
-		.rhit(rhitPulse),
-		.rpaddle(yrpaddle),
-		.yobject(yCounter),
-		.rsignal(rsignal));
+//	LeftScoreDetector lDetecter(
+//		.clock(CLOCK_50),
+//		.enable(enableHEX),
+//		.lhit(lhitPulse),
+//		.lpaddle(ylpaddle),
+//		.yobject(yCounter),
+//		.lsignal(lsignal));
+//
+//	RightScoreDetector rDetecter(
+//		.clock(CLOCK_50),
+//		.enable(enableHEX),
+//		.rhit(rhitPulse),
+//		.rpaddle(yrpaddle),
+//		.yobject(yCounter),
+//		.rsignal(rsignal));
 
 	LeftScoreCounter lScore(
 		.clock(signal),
 		.enable(lhitPulse),
 		.Ypos(yCounter),
 		.lpaddle(ylpaddle),
-		.reset(resetn),
+		.reset(SW[2]),
 		.lscore(lscore),
 		.lstrike(lstrike),
 		.inResetStrike(rreset),
@@ -219,7 +228,7 @@ module part2
 		.clock(signal),
 		.enable(rhitPulse),
 		.Ypos(yCounter),
-		.reset(resetn),
+		.reset(SW[2]),
 		.rpaddle(yrpaddle),
 		.rscore(rscore),
 		.rstrike(rstrike),
@@ -228,7 +237,7 @@ module part2
 	);
 	StrikeDetector strikeDetect(
 		.enable(enableHEX),
-		.reset(resetn),
+		.reset(SW[2]),
 		.lstrike(lstrike),
 		.rstrike(rstrike),
 		.strike(strike),
@@ -250,26 +259,27 @@ module part2
 		//right paddle inputs
 		.rightPaddleXin(rightPaddleXpos),
 		.rightPaddleYin(yrpaddle),
-		.resetn(resetn), //key0, active low, as pressing key results in 0
+		.resetn(SW[2]), //key0, active low, as pressing key results in 0
 		.colorSwitch(SW[9:7]), //switches determine color - optional
 		.enableCounter(enableCounter),
 		.Xout(x),
 		.Yout(y),
 		.colour(colour),
-		.writeEn(writeEn)
+		.writeEn(writeEn),
+		.softReset(softReset)
 	);
 
 
 
 	//register to display clock speed
-	logic [9:0] clock_counter = 1'b0;
-	logic [3:0] writeIndicator = 1'b0;
-	always@(posedge signal)
-	begin
-		clock_counter <= clock_counter + 1'b1;
-		writeIndicator <= writeEn + writeIndicator;
-	end
-	//assign LEDR[9:0] = clock_counter;
+//	logic [9:0] clock_counter = 1'b0;
+//	logic [3:0] writeIndicator = 1'b0;
+//	always@(posedge signal)
+//	begin
+//		clock_counter <= clock_counter + 1'b1;
+//		writeIndicator <= writeEn + writeIndicator;
+//	end
+//	//assign LEDR[9:0] = clock_counter;
 
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(lscore[3:0]),.segments(HEX0));
@@ -372,9 +382,9 @@ module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0]
 	output logic [7:0] lstrike,input inResetStrike,output logic outResetStrike);
 	// update signal, clk is 1 when object hits the right wall
 	logic [6:0] lPaddleMin;
-	always @(posedge clock)
+	always @(posedge clock, negedge reset)
 	begin
-		if(reset == 1'b0)
+		if(!reset)
 			lscore <= 1'b0;
 		else if (enable)
 			begin
@@ -389,7 +399,7 @@ module LeftScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0]
 						else
 							begin
 								lstrike <= lstrike + 8'b00000001;
-								outResetStrike <= 1'b0;
+								outResetStrike <= 1'b1;
 							end
 					end
 				else
@@ -408,9 +418,9 @@ module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0
 	// update signal, clk is 1 when object hits the left wall
 
 	logic [6:0] rPaddleMin;
-	always @(posedge clock)
+	always @(posedge clock, negedge reset)
 	begin
-		if(reset == 1'b0)
+		if(!reset)
 			rscore <= 1'b0;
 		else if (enable)
 			begin
@@ -444,79 +454,79 @@ endmodule
 // lpaddle should be the top y coordinate of the left paddle
 // we hardcode the length of the paddle to be 20 pxl
 
-module LeftScoreDetector(clock, enable,lhit,lpaddle,yobject,lsignal);
-	input logic clock;
-	input enable; //TODO: implement this
-	input lhit; // update signal, lhit is 1 when object hits the left wall
-	input [6:0]lpaddle; // ycoordinate of the left paddle
-	input [6:0] yobject; // ycoordinate of the object
-	output logic lsignal; // output 1 if the left paddle missed the object
-	logic [6:0] minLocation; //minimum location of paddle
-	assign minLocation = (lpaddle <= 6'd4) ? 1'b0 : lpaddle;
-	always @(posedge clock)
-	begin
-		if (enable == 1'b1)
-			begin
-				if (minLocation <= yobject  && yobject <= lpaddle + 6'd20)
-					lsignal <= 1'b0;
-				else
-					begin
-						if (lhit)
-							lsignal <= 1'b1;
-						else
-							lsignal <= 1'b0;
-					end
-			end
-	end
-
-endmodule
-
-// Check and update if the object hits the right paddle
-// Generate pulse 1 if object hits the right paddle
-// Generate pulse o if object does not hit the right paddle
-// rpaddle should be the top y coordinate of the right paddle
-// we hardcode the length of the paddle to be 20 pxl
-
-module RightScoreDetector(clock, enable,rhit,rpaddle,yobject,rsignal);
-	input logic clock;
-	input enable; //TODO: implement this
-	input rhit; // update signal, rhit is 1 when object hits the right wall
-	input [6:0] rpaddle; // ycoordinate of the righgt paddle
-	input [6:0] yobject; // ycoordinate of the object
-	output logic rsignal; // output 1 if the right paddle missed the object
-	logic [6:0] minLocation;
-	assign minLocation = (rpaddle <= 6'd4) ? 1'b0 : rpaddle;
-	always @(posedge clock)
-	begin
-		if (enable == 1'b1)
-			begin
-				if (minLocation <= yobject  && yobject <= rpaddle + 6'd20)
-					rsignal <= 1'b0;
-				else
-					begin
-						if (rhit)
-							rsignal <= 1'b1;
-						else
-							rsignal <= 1'b0;
-					end
-			end
-	end
-endmodule
+//module LeftScoreDetector(clock, enable,lhit,lpaddle,yobject,lsignal);
+//	input logic clock;
+//	input enable; //TODO: implement this
+//	input lhit; // update signal, lhit is 1 when object hits the left wall
+//	input [6:0]lpaddle; // ycoordinate of the left paddle
+//	input [6:0] yobject; // ycoordinate of the object
+//	output logic lsignal; // output 1 if the left paddle missed the object
+//	logic [6:0] minLocation; //minimum location of paddle
+//	assign minLocation = (lpaddle <= 6'd4) ? 1'b0 : lpaddle;
+//	always @(posedge clock)
+//	begin
+//		if (enable == 1'b1)
+//			begin
+//				if (minLocation <= yobject  && yobject <= lpaddle + 6'd20)
+//					lsignal <= 1'b0;
+//				else
+//					begin
+//						if (lhit)
+//							lsignal <= 1'b1;
+//						else
+//							lsignal <= 1'b0;
+//					end
+//			end
+//	end
+//
+//endmodule
+//
+//// Check and update if the object hits the right paddle
+//// Generate pulse 1 if object hits the right paddle
+//// Generate pulse o if object does not hit the right paddle
+//// rpaddle should be the top y coordinate of the right paddle
+//// we hardcode the length of the paddle to be 20 pxl
+//
+//module RightScoreDetector(clock, enable,rhit,rpaddle,yobject,rsignal);
+//	input logic clock;
+//	input enable; //TODO: implement this
+//	input rhit; // update signal, rhit is 1 when object hits the right wall
+//	input [6:0] rpaddle; // ycoordinate of the righgt paddle
+//	input [6:0] yobject; // ycoordinate of the object
+//	output logic rsignal; // output 1 if the right paddle missed the object
+//	logic [6:0] minLocation;
+//	assign minLocation = (rpaddle <= 6'd4) ? 1'b0 : rpaddle;
+//	always @(posedge clock)
+//	begin
+//		if (enable == 1'b1)
+//			begin
+//				if (minLocation <= yobject  && yobject <= rpaddle + 6'd20)
+//					rsignal <= 1'b0;
+//				else
+//					begin
+//						if (rhit)
+//							rsignal <= 1'b1;
+//						else
+//							rsignal <= 1'b0;
+//					end
+//			end
+//	end
+//endmodule
 
 //outputs the coordinates needed for drawing a square
-module PixelCounter(clk, reset, display);
-	input clk;
-	input reset;
-	output logic [4:0] display;
-
-	always @(posedge clk)
-	begin
-		if (reset)
-			display <= 5'b10000;
-		if (display != 1'b0)
-			display <= display - 1'b1;
-	end
-endmodule
+//module PixelCounter(clk, reset, display);
+//	input clk;
+//	input reset;
+//	output logic [4:0] display;
+//
+//	always @(posedge clk)
+//	begin
+//		if (reset)
+//			display <= 5'b10000;
+//		if (display != 1'b0)
+//			display <= display - 1'b1;
+//	end
+//endmodule
 module lKeyBoardDetector(input logic clock, input [7:0] outCode, input makeCode,output logic lupCondition = 0, output logic ldownCondition=0);
 
 	always@(posedge clock)
@@ -611,7 +621,8 @@ module datapathFSM(
 	output logic [7:0] Xout,
 	output logic [6:0] Yout,
 	output logic [2:0] colour,
-	output logic writeEn
+	output logic writeEn,
+	input softReset
 );
 
 	//states 
@@ -644,10 +655,20 @@ module datapathFSM(
 	//	logic drawBorder, initObj, drawSquare, drawPaddles, eraseSquare, erasePaddles;
 
 	//counters
-	always@(posedge clock)
+	always@(posedge clock, negedge resetn, posedge softReset)
 	begin
 		if(~resetn) begin
 			borderCount <= 10'd600;
+			squareCount <= 5'd18;
+			LpaddleCount <= 7'd100;
+			RpaddleCount <= 7'd100;
+			eraseSquareCount <= 5'd18;
+			LerasePaddleCount <= 7'd100;
+			RerasePaddleCount <= 7'd100;
+			resetCount <= 15'd19500;
+		end
+	else if (softReset) begin
+		borderCount <= 10'd600;
 			squareCount <= 5'd18;
 			LpaddleCount <= 7'd100;
 			RpaddleCount <= 7'd100;
@@ -707,8 +728,10 @@ module datapathFSM(
 	end
 
 	//update states
-	always@(posedge clock) begin
+	always@(posedge clock, negedge resetn, posedge softReset) begin
 		if(~resetn)
+			current_state <= S_RESET_STATE;
+		else if(softReset)
 			current_state <= S_RESET_STATE;
 		else
 			current_state <= next_state;
@@ -953,20 +976,27 @@ module eraseAll(input clock, input enable, input reset, output logic [7:0] erase
 	end
 endmodule
 
-module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
+module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse, softReset);
 	input clk;
 	input reset_n;
 	input count_enable; //TODO: use count_enable to activate counter
+	input softReset;
 	output logic lhitPulse; // When the object hits the left side of the wall,lhitPulse is 1,otherwise it is 0
 	output logic rhitPulse; // When the object hits the right side of the wall,rhitPulse is 1,otherwise it is 0
 	output logic [7:0] xDisplay;
 	logic direction; //0 = left, 1 = right:note to go right is to increase x
 	logic [3:0] square_size = 4'd4; //size of edge of square
-	always @(posedge clk)
+	always @(posedge clk, posedge softReset, negedge reset_n)
 	begin
 		// reset position and diretion
-		if(reset_n == 1'b0) begin
+		if(!reset_n) begin
 			xDisplay <= 8'd50;
+			direction <= 1'b1;
+			lhitPulse <= 1'b0;
+			rhitPulse <= 1'b0;
+		end
+	else if (softReset) begin
+		xDisplay <= 8'd50;
 			direction <= 1'b1;
 			lhitPulse <= 1'b0;
 			rhitPulse <= 1'b0;
@@ -1001,54 +1031,64 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse);
 	end
 endmodule
 
-module YCounter(count_enable, clk, reset_n,yDisplay);
+module YCounter(count_enable, clk, reset_n,yDisplay, softReset);
 	input clk;
 	input reset_n;
 	input count_enable; //TODO: use count_enable to activate counter
+	input softReset;
 	output logic [6:0]yDisplay;
 	logic direction; //0 = down, 1 = up: note to go up is to decrease y
 	logic [3:0] square_size = 4'd4; //size of edge of square
-	always @(posedge clk)
+	always @(posedge clk, posedge softReset, negedge reset_n)
 	begin
 		// reset position and diretion
-		if (reset_n == 1'b0)
+		if (~reset_n)
 			begin
 				yDisplay <= 7'd50; //initialize to 0
 				direction <= 1'b0;
 			end
 			// go down if hits upper wall
-
-		else if (yDisplay <= 2'd2)
+		else if (softReset) begin
+				yDisplay <= 7'd50; //initialize to 0
+				direction <= 1'b0;
+		end
+		else begin
+			
+		if (yDisplay <= 2'd2)
 			direction <= 1'b0; //reached top of screen; has to go down.
 			// go up if hits lower wall
 
 		else if (yDisplay >= (7'd120 - square_size - 2'd2)) //subtract square size to determine true boundary of y
 			direction <= 1'b1; //reached bottom of screen; has to go up.
-
-		if (direction == 1'b0)
-			yDisplay <= yDisplay + 1'b1; //going down
-		else
-			yDisplay <= yDisplay - 1'b1; //going up
+			if (direction == 1'b0)
+				yDisplay <= yDisplay + 1'b1; //going down
+			else
+				yDisplay <= yDisplay - 1'b1; //going up
+		end
+		
 
 	end
 endmodule
 
-module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay);
+module YPaddle(clk, reset_n,moveEnable,up,down,ypDisplay, softReset);
 	input clk;
-	input reset_n;
+	input logic reset_n;
 	input moveEnable;
 	input up;
 	input down;
+	input softReset;
 	output logic [6:0] ypDisplay;
 	logic [5:0] paddle_size = 6'd20; //size of edge of square
-	always @(posedge clk)
+
+	always @(posedge clk, posedge softReset, negedge reset_n)
 	begin
 		// reset position and diretion
-		if (reset_n == 1'b0)
+		if (!reset_n)
 			begin
 				ypDisplay <= 7'd50; //initialize to 50
 			end
-
+		else if (softReset)
+			ypDisplay <= 7'd50; //initialize to 50
 		else if (moveEnable)
 			begin
 				if (up == 1'b0 && down == 1'b1)
