@@ -1,5 +1,5 @@
 Warning (10268): Verilog HDL information at keyboard_inner_driver.v(47): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 47
 Info (10281): Verilog HDL Declaration information at part2.sv(108): object "lscore" differs only in case from object "lScore" in the same scope File: I:/GitHub/CSC258FinalProject/part2.sv Line: 108
 Info (10281): Verilog HDL Declaration information at part2.sv(109): object "rscore" differs only in case from object "rScore" in the same scope File: I:/GitHub/CSC258FinalProject/part2.sv Line: 109
-Warning (10268): Verilog HDL information at part2.sv(385): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/part2.sv Line: 385
-Warning (10268): Verilog HDL information at part2.sv(421): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/part2.sv Line: 421
+Warning (10268): Verilog HDL information at part2.sv(435): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/part2.sv Line: 435
+Warning (10268): Verilog HDL information at part2.sv(471): always construct contains both blocking and non-blocking assignments File: I:/GitHub/CSC258FinalProject/part2.sv Line: 471

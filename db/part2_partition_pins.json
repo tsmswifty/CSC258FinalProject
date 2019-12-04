@@ -180,6 +180,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_HS",
 					"strict" : false
 				},
@@ -317,6 +329,10 @@
 				},
 				{
 					"name" : "PS2_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{

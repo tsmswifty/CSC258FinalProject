@@ -131,8 +131,11 @@ module part2
 	assign rPaddleMin = (yrpaddle <= 7'd4) ? 1'b0 : yrpaddle - 7'd4;
 
 	logic softReset; //Soft reset is for repositioning paddles and balls. When it goes high, all balls+paddles should reposition
-	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
-
+//	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
+	assign softReset = LmissedPaddle | RmissedPaddle | SW[4];
+	assign LEDR[9] = softReset;
+	assign LEDR[8] = LmissedPaddle;
+	assign LEDR[7] = RmissedPaddle;
 	TimeCounter tc(
 		.count_enable(enableHEX),
 		.clk(CLOCK_50),
@@ -161,6 +164,27 @@ module part2
 		.softReset(softReset)
 	);
 
+	//loop to detect if score, and if so, trigger soft reset
+	always@(posedge CLOCK_50) begin
+		if(lhitPulse) begin
+			if (yCounter < lPaddleMin | yCounter > ylpaddle + 7'd20) begin
+				//missed paddle
+				LmissedPaddle <= 1'b1;
+				end
+			end
+		else if (rhitPulse) begin
+			if (yCounter < rPaddleMin | yCounter > yrpaddle + 7'd20) begin
+				//missed paddle
+				RmissedPaddle <= 1'b1;
+				end
+			end
+		else begin
+			LmissedPaddle <= 1'b0;
+			RmissedPaddle <= 1'b0;
+		end
+	end
+			
+	
 	wire [6:0] ylpaddle; // the left paddle
 	wire [6:0] yrpaddle; // the right paddle
 	wire lup;
@@ -212,7 +236,7 @@ module part2
 	//		.rpaddle(yrpaddle),
 	//		.yobject(yCounter),
 	//		.rsignal(rsignal));
-
+	logic LmissedPaddle, RmissedPaddle;
 	LeftScoreCounter lScore(
 		.clock(signal),
 		.enable(lhitPulse),
@@ -246,14 +270,9 @@ module part2
 //	);
 
 	StrikeDetector strikeDetect(
-		.enable(enableHEX),
-<<<<<<< HEAD
-		.reset(resetn),
-=======
+		.enable(enableHEX & (lhitPulse | rhitPulse)),
 		.reset(SW[2]),
-		.lstrike(lstrike),
-		.rstrike(rstrike),
->>>>>>> 1e88b20008a4316ac156bb70ffb07006d32194a1
+		.softReset(softReset),
 		.strike(strike),
 		.clock(signal)
 	);
@@ -390,16 +409,19 @@ endmodule
 //endmodule
 
 
-module StrikeDetector(enable, reset,clock,strike);
+module StrikeDetector(enable, reset,clock,softReset, strike);
 	//TODO: change it so it only counts hits, not nonhits
 	input enable;
 	input reset;
+	input softReset;
 	input clock;
 	output logic [7:0]strike;
-	always @(posedge clock)
+	always @(posedge clock, negedge reset, posedge softReset)
 	begin
-		if (reset == 1'b0 || strike== 8'b11111111)
-			strike <= 8'b00000000;
+		if (!reset)
+			strike <= 1'b0;
+		else if (softReset)
+			strike <= 1'b0;
 		else if (enable == 1'b1)
 			strike <= strike + 1'b1;
 	end
