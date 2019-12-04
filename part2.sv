@@ -131,7 +131,7 @@ module part2
 	assign rPaddleMin = (yrpaddle <= 7'd4) ? 1'b0 : yrpaddle - 7'd4;
 
 	logic softReset; //Soft reset is for repositioning paddles and balls. When it goes high, all balls+paddles should reposition
-//	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
+	//	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
 	assign softReset = LmissedPaddle | RmissedPaddle | SW[4];
 	assign LEDR[9] = softReset;
 	assign LEDR[8] = LmissedPaddle;
@@ -170,21 +170,21 @@ module part2
 			if (yCounter < lPaddleMin | yCounter > ylpaddle + 7'd20) begin
 				//missed paddle
 				LmissedPaddle <= 1'b1;
-				end
 			end
+		end
 		else if (rhitPulse) begin
 			if (yCounter < rPaddleMin | yCounter > yrpaddle + 7'd20) begin
 				//missed paddle
 				RmissedPaddle <= 1'b1;
-				end
 			end
+		end
 		else begin
 			LmissedPaddle <= 1'b0;
 			RmissedPaddle <= 1'b0;
 		end
 	end
-			
-	
+
+
 	wire [6:0] ylpaddle; // the left paddle
 	wire [6:0] yrpaddle; // the right paddle
 	wire lup;
@@ -259,15 +259,15 @@ module part2
 		.inResetStrike(lreset),
 		.outResetStrike(rreset)
 	);
-//	StrikeDetector strikeDetect(
-//		.enable(enableHEX),
-//		.reset(resetn),
-//		.lstrike(lstrike),
-//		.rstrike(rstrike),
-//		.strike(strike),
-//		.loutResetStrike(lreset),
-//		.routResetStrike(rreset)
-//	);
+	//	StrikeDetector strikeDetect(
+	//		.enable(enableHEX),
+	//		.reset(resetn),
+	//		.lstrike(lstrike),
+	//		.rstrike(rstrike),
+	//		.strike(strike),
+	//		.loutResetStrike(lreset),
+	//		.routResetStrike(rreset)
+	//	);
 
 	StrikeDetector strikeDetect(
 		.enable(enableHEX & (lhitPulse | rhitPulse)),
