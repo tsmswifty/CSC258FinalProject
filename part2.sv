@@ -235,16 +235,28 @@ module part2
 		.inResetStrike(lreset),
 		.outResetStrike(rreset)
 	);
+//	StrikeDetector strikeDetect(
+//		.enable(enableHEX),
+//		.reset(resetn),
+//		.lstrike(lstrike),
+//		.rstrike(rstrike),
+//		.strike(strike),
+//		.loutResetStrike(lreset),
+//		.routResetStrike(rreset)
+//	);
+
 	StrikeDetector strikeDetect(
 		.enable(enableHEX),
+<<<<<<< HEAD
+		.reset(resetn),
+=======
 		.reset(SW[2]),
 		.lstrike(lstrike),
 		.rstrike(rstrike),
+>>>>>>> 1e88b20008a4316ac156bb70ffb07006d32194a1
 		.strike(strike),
-		.loutResetStrike(lreset),
-		.routResetStrike(rreset)
+		.clock(signal)
 	);
-
 	datapathFSM fsm0(
 		.clock(CLOCK_50),
 		//draw/erase signals from ratedivider
@@ -359,21 +371,37 @@ module testControl(input signal, input reset, input enable, input lup, input ldo
 
 endmodule
 
-module StrikeDetector(enable, reset, lstrike, rstrike,strike,loutResetStrike,routResetStrike);
+//module StrikeDetector(enable, reset, lstrike, rstrike,strike,loutResetStrike,routResetStrike);
+//	//TODO: change it so it only counts hits, not nonhits
+//	input enable;
+//	input reset;
+//	input  logic [7:0]lstrike;
+//	input  logic [7:0]rstrike;
+//	output logic [7:0]strike;
+//	input loutResetStrike;
+//	input routResetStrike;
+//	always @(*)
+//	begin
+//		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b1 || routResetStrike == 1'b1)
+//			strike <= 8'b00000000;
+//		else if (enable == 1'b1)
+//			strike <= lstrike + rstrike;
+//	end
+//endmodule
+
+
+module StrikeDetector(enable, reset,clock,strike);
 	//TODO: change it so it only counts hits, not nonhits
 	input enable;
 	input reset;
-	input  logic [7:0]lstrike;
-	input  logic [7:0]rstrike;
+	input clock;
 	output logic [7:0]strike;
-	input loutResetStrike;
-	input routResetStrike;
-	always @(*)
+	always @(posedge clock)
 	begin
-		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b1 || routResetStrike == 1'b1)
+		if (reset == 1'b0 || strike== 8'b11111111)
 			strike <= 8'b00000000;
 		else if (enable == 1'b1)
-			strike <= lstrike + rstrike;
+			strike <= strike + 1'b1;
 	end
 endmodule
 
