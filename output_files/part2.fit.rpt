@@ -1,5 +1,5 @@
 Fitter report for part2
-Wed Dec 04 22:52:45 2019
+Thu Dec 05 12:18:40 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Dec 04 22:52:45 2019       ;
+; Fitter Status                   ; Successful - Thu Dec 05 12:18:40 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
@@ -164,8 +164,8 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   1.0%      ;
-;     Processor 3            ;   0.7%      ;
-;     Processor 4            ;   0.7%      ;
+;     Processor 3            ;   0.6%      ;
+;     Processor 4            ;   0.6%      ;
 ;     Processor 5            ;   0.6%      ;
 ;     Processor 6            ;   0.6%      ;
 ;     Processor 7            ;   0.6%      ;
@@ -2864,32 +2864,32 @@ Warning (15705): Ignored locations or region assignments to the following nodes
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:15
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:24
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:22
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 14% of the available device resources in the region that extends from location X0_Y0 to location X10_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:24
-Info (11888): Total time spent on timing analysis during the Fitter is 3.43 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:22
+Info (11888): Total time spent on timing analysis during the Fitter is 3.17 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:09
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:08
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 2 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin PS2_DAT has a permanently disabled output enable File: I:/GitHub/CSC258FinalProject/part2.sv Line: 22
     Info (169065): Pin PS2_CLK has a permanently disabled output enable File: I:/GitHub/CSC258FinalProject/part2.sv Line: 23
 Info (144001): Generated suppressed messages file I:/GitHub/CSC258FinalProject/output_files/part2.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 172 warnings
-    Info: Peak virtual memory: 7397 megabytes
-    Info: Processing ended: Wed Dec 04 22:52:46 2019
-    Info: Elapsed time: 00:02:13
-    Info: Total CPU time (on all processors): 00:08:42
+    Info: Peak virtual memory: 7388 megabytes
+    Info: Processing ended: Thu Dec 05 12:18:41 2019
+    Info: Elapsed time: 00:02:05
+    Info: Total CPU time (on all processors): 00:08:24
 
 
 +----------------------------+

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Wed Dec 04 22:50:33 2019
+Thu Dec 05 12:16:35 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec 04 22:50:32 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 05 12:16:35 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
@@ -1188,7 +1188,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Dec 04 22:50:18 2019
+    Info: Processing started: Thu Dec 05 12:16:22 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1208,24 +1208,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
     Info (12023): Found entity 1: vga_pll File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
 Info (12021): Found 18 design units, including 18 entities, in source file part2.sv
     Info (12023): Found entity 1: part2 File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1
-    Info (12023): Found entity 2: testRightScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 351
-    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 396
-    Info (12023): Found entity 4: StrikeDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 436
-    Info (12023): Found entity 5: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 455
-    Info (12023): Found entity 6: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 490
-    Info (12023): Found entity 7: lKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 604
-    Info (12023): Found entity 8: rKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 649
-    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 678
-    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 950
-    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 995
-    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1010
-    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1032
-    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1053
-    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1109
-    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1149
-    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1186
-    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1232
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(357): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 357
+    Info (12023): Found entity 2: testRightScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 313
+    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 323
+    Info (12023): Found entity 4: StrikeDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 344
+    Info (12023): Found entity 5: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 363
+    Info (12023): Found entity 6: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 398
+    Info (12023): Found entity 7: lKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 433
+    Info (12023): Found entity 8: rKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 462
+    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 491
+    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 763
+    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 808
+    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 823
+    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 845
+    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 866
+    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 922
+    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 962
+    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 999
+    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1042
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(319): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 319
 Info (12127): Elaborating entity "part2" for the top level hierarchy
 Warning (10034): Output port "LEDR[6..2]" at part2.sv(39) has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 81
@@ -1287,21 +1287,21 @@ Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:
 Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 218
 Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 219
 Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 228
-Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 274
-Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 285
-Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 302
-Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 325
-Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 817
-Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 822
-Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 828
-Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 842
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 340
+Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 256
+Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 267
+Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 275
+Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 298
+Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 630
+Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 635
+Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 641
+Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 655
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 301
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "PS2_DAT" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 22
     Warning (13040): bidirectional pin "PS2_CLK" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 23
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "YCounter:yc|direction" is converted into an equivalent circuit using register "YCounter:yc|direction~_emulated" and latch "YCounter:yc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1116
-    Warning (13310): Register "XCounter:xc|direction" is converted into an equivalent circuit using register "XCounter:xc|direction~_emulated" and latch "XCounter:xc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1062
+    Warning (13310): Register "YCounter:yc|direction" is converted into an equivalent circuit using register "YCounter:yc|direction~_emulated" and latch "YCounter:yc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 929
+    Warning (13310): Register "XCounter:xc|direction" is converted into an equivalent circuit using register "XCounter:xc|direction~_emulated" and latch "XCounter:xc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 875
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
     Warning (13410): Pin "LEDR[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
@@ -1741,10 +1741,10 @@ Info (21057): Implemented 866 device resources after synthesis - the final resou
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 433 warnings
-    Info: Peak virtual memory: 4915 megabytes
-    Info: Processing ended: Wed Dec 04 22:50:33 2019
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 4914 megabytes
+    Info: Processing ended: Thu Dec 05 12:16:35 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+
