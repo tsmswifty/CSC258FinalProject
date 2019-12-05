@@ -125,6 +125,15 @@ module part2
 	wire enableCounter;
 	logic pause;
 
+	//5 bits of RNG
+	logic [27:0] rng;
+	always@(posedge CLOCK_50, negedge SW[2]) begin
+		if (~SW[2]) 
+			rng <= 1'b0;
+		else 
+			rng <= rng + 1'b1;
+	end
+	
 	logic [6:0] lPaddleMin;
 	assign lPaddleMin = (ylpaddle <= 7'd4) ? 1'b0 : ylpaddle - 7'd4;
 	logic [6:0] rPaddleMin;
@@ -134,8 +143,8 @@ module part2
 	//	assign softReset = ((lPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & lhitPulse) | ((rPaddleMin > yCounter | yCounter > ylpaddle + 7'd20) & rhitPulse) | SW[4];
 	assign softReset = LmissedPaddle | RmissedPaddle | SW[4];
 	assign LEDR[9] = softReset;
-	assign LEDR[8] = LmissedPaddle;
-	assign LEDR[7] = RmissedPaddle;
+	assign LEDR[8] = delayedLMP;
+	assign LEDR[7] = delayedRMP;
 	TimeCounter tc(
 		.count_enable(enableHEX),
 		.clk(CLOCK_50),
@@ -153,7 +162,8 @@ module part2
 		.xDisplay(xCounter),
 		.lhitPulse(lhitPulse),
 		.rhitPulse(rhitPulse),
-		.softReset(softReset)
+		.softReset(softReset),
+		.rng(rng[25] ^ rng[1])
 	);
 
 	YCounter yc(
@@ -161,11 +171,14 @@ module part2
 		.clk(signal),
 		.reset_n(SW[2]),
 		.yDisplay(yCounter),
-		.softReset(softReset)
+		.softReset(softReset),
+		.rng(rng[23] ^ rng[3])
 	);
-
+	logic clock25;
 	//loop to detect if score, and if so, trigger soft reset
 	always@(posedge CLOCK_50) begin
+		
+		clock25 <= ~clock25;
 		if(lhitPulse) begin
 			if (yCounter < lPaddleMin | yCounter > ylpaddle + 7'd20) begin
 				//missed paddle
@@ -178,12 +191,23 @@ module part2
 				RmissedPaddle <= 1'b1;
 			end
 		end
-		else begin
+		else if (delayedLMP | delayedRMP) begin
 			LmissedPaddle <= 1'b0;
 			RmissedPaddle <= 1'b0;
 		end
 	end
-
+	
+	logic delayedLMP, delayedRMP;
+	always@(posedge clock25) begin
+		if(LmissedPaddle)
+			delayedLMP <= 1'b1;
+		else if (RmissedPaddle) 
+			delayedRMP <= 1'b1;
+		else begin
+			delayedLMP <= 1'b0;
+			delayedRMP <= 1'b0;
+		end
+	end
 
 	wire [6:0] ylpaddle; // the left paddle
 	wire [6:0] yrpaddle; // the right paddle
@@ -238,7 +262,7 @@ module part2
 	//		.rsignal(rsignal));
 	logic LmissedPaddle, RmissedPaddle;
 	LeftScoreCounter lScore(
-		.clock(signal),
+		.clock(CLOCK_50),
 		.enable(lhitPulse),
 		.Ypos(yCounter),
 		.lpaddle(ylpaddle),
@@ -249,7 +273,7 @@ module part2
 		.outResetStrike(lreset)
 	);
 	RightScoreCounter rScore(
-		.clock(signal),
+		.clock(CLOCK_50),
 		.enable(rhitPulse),
 		.Ypos(yCounter),
 		.reset(SW[2]),
@@ -1026,11 +1050,12 @@ module eraseAll(input clock, input enable, input reset, output logic [7:0] erase
 	end
 endmodule
 
-module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse, softReset);
+module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse, softReset, rng);
 	input clk;
 	input reset_n;
 	input count_enable; //TODO: use count_enable to activate counter
 	input softReset;
+	input rng;
 	output logic lhitPulse; // When the object hits the left side of the wall,lhitPulse is 1,otherwise it is 0
 	output logic rhitPulse; // When the object hits the right side of the wall,rhitPulse is 1,otherwise it is 0
 	output logic [7:0] xDisplay;
@@ -1040,14 +1065,14 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse, softRes
 	begin
 		// reset position and diretion
 		if(!reset_n) begin
-			xDisplay <= 8'd50;
-			direction <= 1'b1;
+			xDisplay <= 8'd77;
+			direction <= rng;
 			lhitPulse <= 1'b0;
 			rhitPulse <= 1'b0;
 		end
 		else if (softReset) begin
-			xDisplay <= 8'd50;
-			direction <= 1'b1;
+			xDisplay <= 8'd77;
+			direction <= rng;
 			lhitPulse <= 1'b0;
 			rhitPulse <= 1'b0;
 		end
@@ -1081,11 +1106,12 @@ module XCounter(count_enable, clk, reset_n,xDisplay,lhitPulse,rhitPulse, softRes
 	end
 endmodule
 
-module YCounter(count_enable, clk, reset_n,yDisplay, softReset);
+module YCounter(count_enable, clk, reset_n,yDisplay, softReset, rng);
 	input clk;
 	input reset_n;
 	input count_enable; //TODO: use count_enable to activate counter
 	input softReset;
+	input rng;
 	output logic [6:0]yDisplay;
 	logic direction; //0 = down, 1 = up: note to go up is to decrease y
 	logic [3:0] square_size = 4'd4; //size of edge of square
@@ -1094,13 +1120,13 @@ module YCounter(count_enable, clk, reset_n,yDisplay, softReset);
 		// reset position and diretion
 		if (~reset_n)
 			begin
-				yDisplay <= 7'd50; //initialize to 0
-				direction <= 1'b0;
+				yDisplay <= 7'd57; //initialize to 0
+				direction <= rng;
 			end
 			// go down if hits upper wall
 		else if (softReset) begin
-			yDisplay <= 7'd50; //initialize to 0
-			direction <= 1'b0;
+			yDisplay <= 7'd57; //initialize to 0
+			direction <= rng;
 		end
 		else begin
 

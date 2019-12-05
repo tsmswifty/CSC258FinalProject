@@ -1,5 +1,5 @@
 |part2
-CLOCK_50 => CLOCK_50.IN6
+CLOCK_50 => CLOCK_50.IN8
 KEY[0] => ~NO_FANOUT~
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
@@ -63,8 +63,8 @@ LEDR[3] <= <GND>
 LEDR[4] <= <GND>
 LEDR[5] <= <GND>
 LEDR[6] <= <GND>
-LEDR[7] <= RmissedPaddle.DB_MAX_OUTPUT_PORT_TYPE
-LEDR[8] <= LmissedPaddle.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= delayedRMP.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= delayedLMP.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[9] <= softReset.DB_MAX_OUTPUT_PORT_TYPE
 VGA_CLK <= vga_adapter:VGA.VGA_CLK
 VGA_HS <= vga_adapter:VGA.VGA_HS
@@ -1003,6 +1003,7 @@ xDisplay[7] <= xDisplay[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lhitPulse <= lhitPulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rhitPulse <= rhitPulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
 softReset => xDisplay[7].IN1
+rng => direction.ADATA
 
 
 |part2|YCounter:yc
@@ -1024,6 +1025,7 @@ yDisplay[4] <= yDisplay[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 yDisplay[5] <= yDisplay[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 yDisplay[6] <= yDisplay[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 softReset => yDisplay[6].IN1
+rng => direction.ADATA
 
 
 |part2|lKeyBoardDetector:lDetect

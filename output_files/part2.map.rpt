@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Wed Dec 04 00:04:52 2019
+Wed Dec 04 22:50:33 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -66,13 +66,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec 04 00:04:52 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 04 22:50:32 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 330                                         ;
+; Total registers                 ; 359                                         ;
 ; Total pins                      ; 104                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 57,600                                      ;
@@ -187,7 +187,13 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -229,16 +235,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 385            ;
+; Estimate of Logic utilization (ALMs needed) ; 394            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 645            ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 116            ;
+; Combinational ALUT usage for logic          ; 684            ;
+;     -- 7 input functions                    ; 2              ;
+;     -- 6 input functions                    ; 95             ;
 ;     -- 5 input functions                    ; 88             ;
-;     -- 4 input functions                    ; 144            ;
-;     -- <=3 input functions                  ; 296            ;
+;     -- 4 input functions                    ; 168            ;
+;     -- <=3 input functions                  ; 331            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 330            ;
+; Dedicated logic registers                   ; 359            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 104            ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -250,9 +256,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 220            ;
-; Total fan-out                               ; 3889           ;
-; Average fan-out                             ; 3.25           ;
+; Maximum fan-out                             ; 263            ;
+; Total fan-out                               ; 4025           ;
+; Average fan-out                             ; 3.18           ;
 +---------------------------------------------+----------------+
 
 
@@ -261,17 +267,17 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name            ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |part2                                                  ; 645 (4)             ; 330 (2)                   ; 57600             ; 1          ; 104  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
+; |part2                                                  ; 684 (36)            ; 359 (31)                  ; 57600             ; 1          ; 104  ; 0            ; |part2                                                                                                ; part2                  ; work         ;
 ;    |LeftScoreCounter:lScore|                            ; 29 (29)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|LeftScoreCounter:lScore                                                                        ; LeftScoreCounter       ; work         ;
-;    |RightScoreCounter:rScore|                           ; 29 (29)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|RightScoreCounter:rScore                                                                       ; RightScoreCounter      ; work         ;
+;    |RightScoreCounter:rScore|                           ; 31 (31)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|RightScoreCounter:rScore                                                                       ; RightScoreCounter      ; work         ;
 ;    |StrikeDetector:strikeDetect|                        ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|StrikeDetector:strikeDetect                                                                    ; StrikeDetector         ; work         ;
 ;    |TimeCounter:tc|                                     ; 62 (62)             ; 23 (23)                   ; 0                 ; 1          ; 0    ; 0            ; |part2|TimeCounter:tc                                                                                 ; TimeCounter            ; work         ;
-;    |XCounter:xc|                                        ; 37 (37)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
-;    |YCounter:yc|                                        ; 14 (14)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YCounter:yc                                                                                    ; YCounter               ; work         ;
+;    |XCounter:xc|                                        ; 39 (39)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|XCounter:xc                                                                                    ; XCounter               ; work         ;
+;    |YCounter:yc|                                        ; 15 (15)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YCounter:yc                                                                                    ; YCounter               ; work         ;
 ;    |YPaddle:yleftPaddle|                                ; 13 (13)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YPaddle:yleftPaddle                                                                            ; YPaddle                ; work         ;
 ;    |YPaddle:yrightPaddle|                               ; 13 (13)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|YPaddle:yrightPaddle                                                                           ; YPaddle                ; work         ;
-;    |datapathFSM:fsm0|                                   ; 297 (214)           ; 156 (110)                 ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0                                                                               ; datapathFSM            ; work         ;
-;       |drawBorder:m0|                                   ; 37 (37)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0|drawBorder:m0                                                                 ; drawBorder             ; work         ;
+;    |datapathFSM:fsm0|                                   ; 299 (217)           ; 156 (110)                 ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0                                                                               ; datapathFSM            ; work         ;
+;       |drawBorder:m0|                                   ; 36 (36)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0|drawBorder:m0                                                                 ; drawBorder             ; work         ;
 ;       |eraseAll:m4|                                     ; 21 (21)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0|eraseAll:m4                                                                   ; eraseAll               ; work         ;
 ;       |paddleFSM:m2|                                    ; 10 (10)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0|paddleFSM:m2                                                                  ; paddleFSM              ; work         ;
 ;       |paddleFSM:m3|                                    ; 10 (10)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |part2|datapathFSM:fsm0|paddleFSM:m3                                                                  ; paddleFSM              ; work         ;
@@ -398,9 +404,10 @@ Encoding Type:  One-Hot
 ; keyboard_press_driver:keytest|count~6       ; Lost fanout                                          ;
 ; keyboard_press_driver:keytest|count~7       ; Lost fanout                                          ;
 ; datapathFSM:fsm0|squareFSM:m1|display[4]    ; Lost fanout                                          ;
+; rng[26,27]                                  ; Lost fanout                                          ;
 ; datapathFSM:fsm0|paddleFSM:m3|paddleY[5]    ; Stuck at GND due to stuck port data_in               ;
 ; datapathFSM:fsm0|paddleFSM:m2|paddleY[5]    ; Stuck at GND due to stuck port data_in               ;
-; Total Number of Removed Registers = 23      ;                                                      ;
+; Total Number of Removed Registers = 25      ;                                                      ;
 +---------------------------------------------+------------------------------------------------------+
 
 
@@ -421,10 +428,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 330   ;
+; Total registers                              ; 359   ;
 ; Number of registers using Synchronous Clear  ; 83    ;
 ; Number of registers using Synchronous Load   ; 7     ;
-; Number of registers using Asynchronous Clear ; 153   ;
+; Number of registers using Asynchronous Clear ; 179   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 152   ;
 ; Number of registers using Preset             ; 0     ;
@@ -436,26 +443,27 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; YPaddle:yleftPaddle|ypDisplay[1]        ; 7       ;
-; YPaddle:yleftPaddle|ypDisplay[5]        ; 12      ;
-; YPaddle:yleftPaddle|ypDisplay[4]        ; 13      ;
-; YCounter:yc|yDisplay[1]                 ; 8       ;
+; YPaddle:yleftPaddle|ypDisplay[1]        ; 6       ;
+; YPaddle:yleftPaddle|ypDisplay[5]        ; 11      ;
+; YPaddle:yleftPaddle|ypDisplay[4]        ; 11      ;
+; YCounter:yc|yDisplay[3]                 ; 10      ;
+; YCounter:yc|yDisplay[0]                 ; 8       ;
 ; YCounter:yc|yDisplay[4]                 ; 12      ;
-; YCounter:yc|yDisplay[5]                 ; 12      ;
+; YCounter:yc|yDisplay[5]                 ; 11      ;
+; YPaddle:yrightPaddle|ypDisplay[4]       ; 11      ;
 ; YPaddle:yrightPaddle|ypDisplay[1]       ; 7       ;
-; YPaddle:yrightPaddle|ypDisplay[5]       ; 12      ;
-; YPaddle:yrightPaddle|ypDisplay[4]       ; 13      ;
-; XCounter:xc|xDisplay[5]                 ; 6       ;
-; XCounter:xc|xDisplay[4]                 ; 6       ;
-; XCounter:xc|xDisplay[1]                 ; 5       ;
-; XCounter:xc|direction                   ; 8       ;
+; YPaddle:yrightPaddle|ypDisplay[5]       ; 11      ;
+; XCounter:xc|xDisplay[6]                 ; 6       ;
+; XCounter:xc|xDisplay[3]                 ; 5       ;
+; XCounter:xc|xDisplay[2]                 ; 5       ;
+; XCounter:xc|xDisplay[0]                 ; 5       ;
 ; datapathFSM:fsm0|resetCount[14]         ; 3       ;
 ; datapathFSM:fsm0|resetCount[11]         ; 3       ;
 ; datapathFSM:fsm0|resetCount[10]         ; 3       ;
 ; datapathFSM:fsm0|resetCount[5]          ; 3       ;
 ; datapathFSM:fsm0|resetCount[3]          ; 3       ;
 ; datapathFSM:fsm0|resetCount[2]          ; 3       ;
-; datapathFSM:fsm0|borderCount[4]         ; 5       ;
+; datapathFSM:fsm0|borderCount[4]         ; 4       ;
 ; datapathFSM:fsm0|borderCount[9]         ; 3       ;
 ; datapathFSM:fsm0|borderCount[6]         ; 3       ;
 ; datapathFSM:fsm0|borderCount[3]         ; 3       ;
@@ -475,7 +483,7 @@ Encoding Type:  One-Hot
 ; datapathFSM:fsm0|LerasePaddleCount[2]   ; 3       ;
 ; datapathFSM:fsm0|eraseSquareCount[4]    ; 3       ;
 ; datapathFSM:fsm0|eraseSquareCount[1]    ; 5       ;
-; Total number of inverted registers = 39 ;         ;
+; Total number of inverted registers = 40 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -484,44 +492,44 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|resetCount[7]                                                                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|keyboard_press_driver:keytest|filter_scan[7]                                                      ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[4]                                                             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[4]                                                             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[2]                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[0]                                                                  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[0]                                                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[0]                                                                   ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[2]                                                                   ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[11]                                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[0]                                                                  ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|resetCount[13]                                                                   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|keyboard_press_driver:keytest|filter_scan[0]                                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[0]                                                             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[1]                                                             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[0]                                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[4]                                                                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[1]                                                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[2]                                                                   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[5]                                                                   ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |part2|TimeCounter:tc|q[15]                                                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[3]                                                                  ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[2]                                                                 ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[2]                                                          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[8]                                             ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareFSM:m1|display[4]                                                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |part2|vga_adapter:VGA|vga_controller:controller|yCounter[2]                                             ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseX[4]                                                            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[3]                                                                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[4]                                                                           ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|keyboard_press_driver:keytest|keyboard_inner_driver:kbd|incnt[3]                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[7]                                                               ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseY[3]                                                            ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[2]                                                          ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[3]                                                          ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[2]                                                               ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Xout[2]                                                                          ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Yout[2]                                                                          ;
-; 512:1              ; 2 bits    ; 682 LEs       ; 4 LEs                ; 678 LEs                ; Yes        ; |part2|lKeyBoardDetector:lDetect|ldownCondition                                                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|x[4]                                                               ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseAll:m4|eraseY[5]                                                            ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m3|paddleY[1]                                                          ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|paddleFSM:m2|paddleY[5]                                                          ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|drawBorder:m0|y[1]                                                               ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Xout[5]                                                                          ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 14 LEs               ; 28 LEs                 ; Yes        ; |part2|datapathFSM:fsm0|Yout[3]                                                                          ;
+; 512:1              ; 2 bits    ; 682 LEs       ; 4 LEs                ; 678 LEs                ; Yes        ; |part2|lKeyBoardDetector:lDetect|lupCondition                                                            ;
 ; 512:1              ; 2 bits    ; 682 LEs       ; 4 LEs                ; 678 LEs                ; Yes        ; |part2|rKeyBoardDetector:rDetect|rdownCondition                                                          ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|resetCount[2]                                                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[6]                                                             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|resetCount[3]                                                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RerasePaddleCount[2]                                                             ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LerasePaddleCount[6]                                                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[4]                                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|eraseSquareCount[1]                                                              ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|RpaddleCount[5]                                                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[5]                                                                  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[1]                                                                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[6]                                                                   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[1]                                                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[5]                                                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[5]                                                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[2] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|LpaddleCount[2]                                                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|squareCount[4]                                                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |part2|datapathFSM:fsm0|borderCount[9]                                                                   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|YPaddle:yleftPaddle|ypDisplay[4]                                                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |part2|YPaddle:yrightPaddle|ypDisplay[4]                                                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |part2|XCounter:xc|xDisplay[6]                                                                           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |part2|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3|result_node[1] ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add8                                                                             ;
 ; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |part2|datapathFSM:fsm0|Add9                                                                             ;
 ; 9:1                ; 9 bits    ; 54 LEs        ; 36 LEs               ; 18 LEs                 ; No         ; |part2|datapathFSM:fsm0|Add9                                                                             ;
@@ -1123,8 +1131,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 330                         ;
-;     CLR               ; 86                          ;
+; arriav_ff             ; 359                         ;
+;     CLR               ; 112                         ;
 ;     CLR SCLR          ; 10                          ;
 ;     ENA               ; 58                          ;
 ;     ENA CLR           ; 38                          ;
@@ -1132,24 +1140,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 30                          ;
 ;     ENA SLD           ; 7                           ;
 ;     SCLR              ; 24                          ;
-;     plain             ; 58                          ;
+;     plain             ; 61                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 653                         ;
-;     arith             ; 204                         ;
-;         1 data inputs ; 162                         ;
-;         2 data inputs ; 18                          ;
+; arriav_lcell_comb     ; 692                         ;
+;     arith             ; 229                         ;
+;         1 data inputs ; 186                         ;
+;         2 data inputs ; 19                          ;
 ;         3 data inputs ; 17                          ;
 ;         5 data inputs ; 7                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 428                         ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 441                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 22                          ;
-;         2 data inputs ; 24                          ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 144                         ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 168                         ;
 ;         5 data inputs ; 81                          ;
-;         6 data inputs ; 116                         ;
+;         6 data inputs ; 95                          ;
 ;     shared            ; 20                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 4                           ;
@@ -1160,8 +1168,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.70                        ;
-; Average LUT depth     ; 2.53                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.69                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1170,7 +1178,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1180,7 +1188,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Dec 04 00:04:37 2019
+    Info: Processing started: Wed Dec 04 22:50:18 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1200,24 +1208,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_ada
     Info (12023): Found entity 1: vga_pll File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
 Info (12021): Found 18 design units, including 18 entities, in source file part2.sv
     Info (12023): Found entity 1: part2 File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1
-    Info (12023): Found entity 2: testRightScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 327
-    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 372
-    Info (12023): Found entity 4: StrikeDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 412
-    Info (12023): Found entity 5: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 431
-    Info (12023): Found entity 6: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 466
-    Info (12023): Found entity 7: lKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 580
-    Info (12023): Found entity 8: rKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 625
-    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 654
-    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 926
-    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 971
-    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 986
-    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1008
-    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1029
-    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1084
-    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1123
-    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1160
-    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1206
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(333): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 333
+    Info (12023): Found entity 2: testRightScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 351
+    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 396
+    Info (12023): Found entity 4: StrikeDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 436
+    Info (12023): Found entity 5: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 455
+    Info (12023): Found entity 6: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 490
+    Info (12023): Found entity 7: lKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 604
+    Info (12023): Found entity 8: rKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 649
+    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 678
+    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 950
+    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 995
+    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1010
+    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1032
+    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1053
+    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1109
+    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1149
+    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1186
+    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1232
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(357): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 357
 Info (12127): Elaborating entity "part2" for the top level hierarchy
 Warning (10034): Output port "LEDR[6..2]" at part2.sv(39) has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 81
@@ -1273,24 +1281,27 @@ Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
 Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keytest" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 103
 Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keytest|keyboard_inner_driver:kbd" File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 148
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 157
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 165
-Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 194
-Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 195
-Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 204
-Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 250
-Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 261
-Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 278
-Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 301
-Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 793
-Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 798
-Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 804
-Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 818
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 316
+Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 157
+Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 167
+Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 176
+Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 218
+Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 219
+Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 228
+Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 274
+Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 285
+Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 302
+Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 325
+Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 817
+Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 822
+Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 828
+Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 842
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 340
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "PS2_DAT" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 22
     Warning (13040): bidirectional pin "PS2_CLK" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 23
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "YCounter:yc|direction" is converted into an equivalent circuit using register "YCounter:yc|direction~_emulated" and latch "YCounter:yc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1116
+    Warning (13310): Register "XCounter:xc|direction" is converted into an equivalent circuit using register "XCounter:xc|direction~_emulated" and latch "XCounter:xc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1062
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
     Warning (13410): Pin "LEDR[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
@@ -1299,7 +1310,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[6]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
     Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 47
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 11 registers lost all their fanouts during netlist optimizations.
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 409 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN -entity DE1_SoC was ignored
@@ -1721,19 +1732,19 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
     Warning (15610): No output dependent on input pin "KEY[3]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
     Warning (15610): No output dependent on input pin "SW[5]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
-Info (21057): Implemented 825 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 866 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 87 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 710 logic cells
+    Info (21061): Implemented 751 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 430 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Wed Dec 04 00:04:52 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 433 warnings
+    Info: Peak virtual memory: 4915 megabytes
+    Info: Processing ended: Wed Dec 04 22:50:33 2019
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
