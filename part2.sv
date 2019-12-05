@@ -125,15 +125,15 @@ module part2
 	wire enableCounter;
 	logic pause;
 
-	//5 bits of RNG
+	//28 bits of RNG
 	logic [27:0] rng;
 	always@(posedge CLOCK_50, negedge SW[2]) begin
-		if (~SW[2]) 
+		if (~SW[2])
 			rng <= 1'b0;
-		else 
+		else
 			rng <= rng + 1'b1;
 	end
-	
+
 	logic [6:0] lPaddleMin;
 	assign lPaddleMin = (ylpaddle <= 7'd4) ? 1'b0 : ylpaddle - 7'd4;
 	logic [6:0] rPaddleMin;
@@ -177,7 +177,7 @@ module part2
 	logic clock25;
 	//loop to detect if score, and if so, trigger soft reset
 	always@(posedge CLOCK_50) begin
-		
+
 		clock25 <= ~clock25;
 		if(lhitPulse) begin
 			if (yCounter < lPaddleMin | yCounter > ylpaddle + 7'd20) begin
@@ -196,12 +196,12 @@ module part2
 			RmissedPaddle <= 1'b0;
 		end
 	end
-	
+
 	logic delayedLMP, delayedRMP;
 	always@(posedge clock25) begin
 		if(LmissedPaddle)
 			delayedLMP <= 1'b1;
-		else if (RmissedPaddle) 
+		else if (RmissedPaddle)
 			delayedRMP <= 1'b1;
 		else begin
 			delayedLMP <= 1'b0;
@@ -237,29 +237,11 @@ module part2
 		.softReset(softReset)
 	);
 
-	//TODO: Temporialy set KEY1,KEY2 to control left paddle; set sw[2],sw[3] to control right paddle
-	// In milestone 3 , hook up keyboard so that we can control from the keyboard
-
 	logic lsignal, rsignal;
 	logic [7:0] lstrike;
 	logic [7:0] rstrike;
 	wire rreset;
 	wire lreset;
-	//	LeftScoreDetector lDetecter(
-	//		.clock(CLOCK_50),
-	//		.enable(enableHEX),
-	//		.lhit(lhitPulse),
-	//		.lpaddle(ylpaddle),
-	//		.yobject(yCounter),
-	//		.lsignal(lsignal));
-	//
-	//	RightScoreDetector rDetecter(
-	//		.clock(CLOCK_50),
-	//		.enable(enableHEX),
-	//		.rhit(rhitPulse),
-	//		.rpaddle(yrpaddle),
-	//		.yobject(yCounter),
-	//		.rsignal(rsignal));
 	logic LmissedPaddle, RmissedPaddle;
 	LeftScoreCounter lScore(
 		.clock(CLOCK_50),
@@ -283,15 +265,6 @@ module part2
 		.inResetStrike(lreset),
 		.outResetStrike(rreset)
 	);
-	//	StrikeDetector strikeDetect(
-	//		.enable(enableHEX),
-	//		.reset(resetn),
-	//		.lstrike(lstrike),
-	//		.rstrike(rstrike),
-	//		.strike(strike),
-	//		.loutResetStrike(lreset),
-	//		.routResetStrike(rreset)
-	//	);
 
 	StrikeDetector strikeDetect(
 		.enable(enableHEX & (lhitPulse | rhitPulse)),
@@ -324,23 +297,12 @@ module part2
 		.softReset(softReset)
 	);
 
-
-
-	//register to display clock speed
-	//	logic [9:0] clock_counter = 1'b0;
-	//	logic [3:0] writeIndicator = 1'b0;
-	//	always@(posedge signal)
-	//	begin
-	//		clock_counter <= clock_counter + 1'b1;
-	//		writeIndicator <= writeEn + writeIndicator;
-	//	end
-	//	//assign LEDR[9:0] = clock_counter;
-
 	// HEXO,HEX1,HEX2 displays the right hand player score
 	hex_decoder hexzero(.hex_digit(lscore[3:0]),.segments(HEX0));
 	hex_decoder hexone(.hex_digit(lscore[7:4]),.segments(HEX1));
 	hex_decoder hextwo(.hex_digit(strike[3:0]),.segments(HEX2));
 	//	hex_decoder hextwo(.hex_digit(outCode[3:0]),.segments(HEX2));
+
 	// HEX3,HEX4,HEX5 displays the left hand player score
 	hex_decoder hexthree(.hex_digit(strike[7:4]),.segments(HEX3));
 	//	hex_decoder hexthree(.hex_digit(outCode[7:4]),.segments(HEX3));
@@ -357,41 +319,6 @@ module testRightScore(input enable, input reset, input lhitPulse,input [6:0] ylp
 		.lsignal(lsignal));
 	RightScoreCounter rScore(.enable(enable),.reset(reset),.lsignal(lsignal),.rscore(rightscore));
 endmodule
-
-//module testLeftScore(input enable, input reset, input rhitPulse,input [6:0] yrpaddle, input [6:0]yCounter, output [7:0] leftscore);
-//	RightScoreDetector rDetect(
-//		.enable(enable),
-//		.rhit(rhitPulse),
-//		.rpaddle(yrpaddle),
-//		.yobject(yCounter),
-//		.rsignal(rsignal));
-//	LeftScoreCounter rScore(.enable(enable),.reset(reset),.rsignal(rsignal),.lscore(leftscore));
-//endmodule
-//
-//module testStrike(input enable, 
-//input reset, 
-//input lhitPulse,
-//input [6:0] ylpaddle,
-//input rhitPulse,
-//input [6:0] yrpaddle,  
-//input [6:0]yCounter,
-//output logic [7:0]strikes);
-//LeftScoreDetector lDetect(
-//		.enable(enable),
-//		.lhit(lhitPulse),
-//		.lpaddle(ylpaddle),
-//		.yobject(yCounter),
-//		.lsignal(lsignal));
-//
-//RightScoreDetector rDetect(
-//		.enable(enable),
-//		.rhit(rhitPulse),
-//		.rpaddle(ylpaddle),
-//		.yobject(yCounter),
-//		.rsignal(rsignal));
-//
-//StrikeDetector strikeDetect(.enable(enable), .reset(reset), .rstrike(rsignal),.lstrike(lsignal),.strike(strikes));
-//endmodule
 
 module testControl(input signal, input reset, input enable, input lup, input ldown, input rup, input rdown, output [6:0] ylpaddle,output [6:0] yrpaddle);
 	YPaddle yleftPaddle(
@@ -413,25 +340,6 @@ module testControl(input signal, input reset, input enable, input lup, input ldo
 	);
 
 endmodule
-
-//module StrikeDetector(enable, reset, lstrike, rstrike,strike,loutResetStrike,routResetStrike);
-//	//TODO: change it so it only counts hits, not nonhits
-//	input enable;
-//	input reset;
-//	input  logic [7:0]lstrike;
-//	input  logic [7:0]rstrike;
-//	output logic [7:0]strike;
-//	input loutResetStrike;
-//	input routResetStrike;
-//	always @(*)
-//	begin
-//		if (reset == 1'b0 || strike== 8'b11111111 || loutResetStrike == 1'b1 || routResetStrike == 1'b1)
-//			strike <= 8'b00000000;
-//		else if (enable == 1'b1)
-//			strike <= lstrike + rstrike;
-//	end
-//endmodule
-
 
 module StrikeDetector(enable, reset,clock,softReset, strike);
 	//TODO: change it so it only counts hits, not nonhits
@@ -522,85 +430,6 @@ module RightScoreCounter(input clock, input enable, input [6:0] Ypos, input [6:0
 	end
 endmodule
 
-// Check and update if the object hits the left paddle
-// Generate pulse 1 if object hits the left paddle
-// Generate pulse o if object does not hit the left paddle
-// lpaddle should be the top y coordinate of the left paddle
-// we hardcode the length of the paddle to be 20 pxl
-
-//module LeftScoreDetector(clock, enable,lhit,lpaddle,yobject,lsignal);
-//	input logic clock;
-//	input enable; //TODO: implement this
-//	input lhit; // update signal, lhit is 1 when object hits the left wall
-//	input [6:0]lpaddle; // ycoordinate of the left paddle
-//	input [6:0] yobject; // ycoordinate of the object
-//	output logic lsignal; // output 1 if the left paddle missed the object
-//	logic [6:0] minLocation; //minimum location of paddle
-//	assign minLocation = (lpaddle <= 6'd4) ? 1'b0 : lpaddle;
-//	always @(posedge clock)
-//	begin
-//		if (enable == 1'b1)
-//			begin
-//				if (minLocation <= yobject  && yobject <= lpaddle + 6'd20)
-//					lsignal <= 1'b0;
-//				else
-//					begin
-//						if (lhit)
-//							lsignal <= 1'b1;
-//						else
-//							lsignal <= 1'b0;
-//					end
-//			end
-//	end
-//
-//endmodule
-//
-//// Check and update if the object hits the right paddle
-//// Generate pulse 1 if object hits the right paddle
-//// Generate pulse o if object does not hit the right paddle
-//// rpaddle should be the top y coordinate of the right paddle
-//// we hardcode the length of the paddle to be 20 pxl
-//
-//module RightScoreDetector(clock, enable,rhit,rpaddle,yobject,rsignal);
-//	input logic clock;
-//	input enable; //TODO: implement this
-//	input rhit; // update signal, rhit is 1 when object hits the right wall
-//	input [6:0] rpaddle; // ycoordinate of the righgt paddle
-//	input [6:0] yobject; // ycoordinate of the object
-//	output logic rsignal; // output 1 if the right paddle missed the object
-//	logic [6:0] minLocation;
-//	assign minLocation = (rpaddle <= 6'd4) ? 1'b0 : rpaddle;
-//	always @(posedge clock)
-//	begin
-//		if (enable == 1'b1)
-//			begin
-//				if (minLocation <= yobject  && yobject <= rpaddle + 6'd20)
-//					rsignal <= 1'b0;
-//				else
-//					begin
-//						if (rhit)
-//							rsignal <= 1'b1;
-//						else
-//							rsignal <= 1'b0;
-//					end
-//			end
-//	end
-//endmodule
-
-//outputs the coordinates needed for drawing a square
-//module PixelCounter(clk, reset, display);
-//	input clk;
-//	input reset;
-//	output logic [4:0] display;
-//
-//	always @(posedge clk)
-//	begin
-//		if (reset)
-//			display <= 5'b10000;
-//		if (display != 1'b0)
-//			display <= display - 1'b1;
-//	end
-//endmodule
 module lKeyBoardDetector(input logic clock, input [7:0] outCode, input makeCode,output logic lupCondition = 0, output logic ldownCondition=0);
 
 	always@(posedge clock)
@@ -622,22 +451,6 @@ module lKeyBoardDetector(input logic clock, input [7:0] outCode, input makeCode,
 				lupCondition <= 0;
 				ldownCondition<= 0;
 			end
-			//  9'b000111011: begin 
-			//	              lupCondition <= lupCondition ; 
-			//					  ldownCondition<= ldownCondition;
-			//					  end
-			//	9'b000111010: begin 
-			//	              lupCondition <= lupCondition ; 
-			//					  ldownCondition<= ldownCondition;
-			//					  end
-			//	9'b000110111: begin 
-			//	              lupCondition <= lupCondition ; 
-			//					  ldownCondition<= ldownCondition;
-			//					  end
-			//	9'b000110110: begin 
-			//	              lupCondition <= lupCondition ; 
-			//					  ldownCondition<= ldownCondition;
-			//					  end
 			default:      begin
 				lupCondition <= lupCondition ;
 				ldownCondition<= ldownCondition;
@@ -1224,9 +1037,6 @@ module TimeCounter(count_enable, clk, reset_n, difficulty, display, erase, draw,
 	end
 	//assigning these values outside of the @loop might be unstable
 	//note: the reason why the square was not drawing itself properly is because it was only able to draw one or two pixels before display went to 0, thus disabling drawing.
-	//	assign erase = (q == 20'd601000 | q == 20'd600900) ? 1 : 0; //goes high around 400000 ticks before increment - decreasing gap seems to decrease speed
-	//	assign display = (q == 20'd590000) ? 1 : 0; //this only goes high every 1/60th of a second for 1/50M of a second - increment when this is high
-	//	assign draw = (q == 20'd200000 | q == 20'd201000) ? 1 : 0; //goes high 100 ticks after increment
 endmodule
 
 module hex_decoder(hex_digit, segments);
