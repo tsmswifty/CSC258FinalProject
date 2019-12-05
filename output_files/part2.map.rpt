@@ -1,5 +1,5 @@
 Analysis & Synthesis report for part2
-Thu Dec 05 12:16:35 2019
+Thu Dec 05 18:06:20 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Dec 05 12:16:35 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 05 18:06:20 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; part2                                       ;
 ; Top-level Entity Name           ; part2                                       ;
@@ -179,10 +179,10 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -191,9 +191,6 @@ refer to the applicable agreement for further details.
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -202,13 +199,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
 +---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; KeyboardFiles/keyboard_press_driver.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v           ;         ;
-; KeyboardFiles/keyboard_inner_driver.v ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v           ;         ;
-; vga_adapter/vga_adapter.v             ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v                       ;         ;
-; vga_adapter/vga_address_translator.v  ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v            ;         ;
-; vga_adapter/vga_controller.v          ; yes             ; User Verilog HDL File        ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v                    ;         ;
-; vga_adapter/vga_pll.v                 ; yes             ; User Wizard-Generated File   ; I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v                           ;         ;
-; part2.sv                              ; yes             ; User SystemVerilog HDL File  ; I:/GitHub/CSC258FinalProject/part2.sv                                        ;         ;
+; KeyboardFiles/keyboard_press_driver.v ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v        ;         ;
+; KeyboardFiles/keyboard_inner_driver.v ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v        ;         ;
+; vga_adapter/vga_adapter.v             ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v                    ;         ;
+; vga_adapter/vga_address_translator.v  ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_address_translator.v         ;         ;
+; vga_adapter/vga_controller.v          ; yes             ; User Verilog HDL File        ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_controller.v                 ;         ;
+; vga_adapter/vga_pll.v                 ; yes             ; User Wizard-Generated File   ; D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v                        ;         ;
+; part2.sv                              ; yes             ; User SystemVerilog HDL File  ; D:/Git repos/CSC258FinalProject/part2.sv                                     ;         ;
 ; altsyncram.tdf                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -218,15 +215,15 @@ refer to the applicable agreement for further details.
 ; altrom.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_m6m1.tdf                ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf                          ;         ;
-; db/decode_7la.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_7la.tdf                               ;         ;
-; db/decode_01a.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/decode_01a.tdf                               ;         ;
-; db/mux_ifb.tdf                        ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/mux_ifb.tdf                                  ;         ;
+; db/altsyncram_m6m1.tdf                ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf                       ;         ;
+; db/decode_7la.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/decode_7la.tdf                            ;         ;
+; db/decode_01a.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/decode_01a.tdf                            ;         ;
+; db/mux_ifb.tdf                        ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/mux_ifb.tdf                               ;         ;
 ; altpll.tdf                            ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
 ; stratix_pll.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
 ; stratixii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
 ; cycloneii_pll.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/altpll_80u.tdf                     ; yes             ; Auto-Generated Megafunction  ; I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf                               ;         ;
+; db/altpll_80u.tdf                     ; yes             ; Auto-Generated Megafunction  ; D:/Git repos/CSC258FinalProject/db/altpll_80u.tdf                            ;         ;
 +---------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
@@ -1178,7 +1175,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1188,51 +1185,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Dec 05 12:16:22 2019
+    Info: Processing started: Thu Dec 05 18:06:08 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_scancoderaw_driver.v
-    Info (12023): Found entity 1: keyboard_scancoderaw_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_scancoderaw_driver.v Line: 1
+    Info (12023): Found entity 1: keyboard_scancoderaw_driver File: D:/Git repos/CSC258FinalProject/KeyboardFiles/keyboard_scancoderaw_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_press_driver.v
-    Info (12023): Found entity 1: keyboard_press_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 1
+    Info (12023): Found entity 1: keyboard_press_driver File: D:/Git repos/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file keyboardfiles/keyboard_inner_driver.v
-    Info (12023): Found entity 1: keyboard_inner_driver File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 1
+    Info (12023): Found entity 1: keyboard_inner_driver File: D:/Git repos/CSC258FinalProject/KeyboardFiles/keyboard_inner_driver.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
-    Info (12023): Found entity 1: vga_adapter File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
+    Info (12023): Found entity 1: vga_adapter File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_address_translator.v
-    Info (12023): Found entity 1: vga_address_translator File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_address_translator.v Line: 4
+    Info (12023): Found entity 1: vga_address_translator File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_address_translator.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_controller.v
-    Info (12023): Found entity 1: vga_controller File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
+    Info (12023): Found entity 1: vga_controller File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_controller.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
-    Info (12023): Found entity 1: vga_pll File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
+    Info (12023): Found entity 1: vga_pll File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 36
 Info (12021): Found 18 design units, including 18 entities, in source file part2.sv
-    Info (12023): Found entity 1: part2 File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1
-    Info (12023): Found entity 2: testRightScore File: I:/GitHub/CSC258FinalProject/part2.sv Line: 313
-    Info (12023): Found entity 3: testControl File: I:/GitHub/CSC258FinalProject/part2.sv Line: 323
-    Info (12023): Found entity 4: StrikeDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 344
-    Info (12023): Found entity 5: LeftScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 363
-    Info (12023): Found entity 6: RightScoreCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 398
-    Info (12023): Found entity 7: lKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 433
-    Info (12023): Found entity 8: rKeyBoardDetector File: I:/GitHub/CSC258FinalProject/part2.sv Line: 462
-    Info (12023): Found entity 9: datapathFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 491
-    Info (12023): Found entity 10: drawBorder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 763
-    Info (12023): Found entity 11: squareFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 808
-    Info (12023): Found entity 12: paddleFSM File: I:/GitHub/CSC258FinalProject/part2.sv Line: 823
-    Info (12023): Found entity 13: eraseAll File: I:/GitHub/CSC258FinalProject/part2.sv Line: 845
-    Info (12023): Found entity 14: XCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 866
-    Info (12023): Found entity 15: YCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 922
-    Info (12023): Found entity 16: YPaddle File: I:/GitHub/CSC258FinalProject/part2.sv Line: 962
-    Info (12023): Found entity 17: TimeCounter File: I:/GitHub/CSC258FinalProject/part2.sv Line: 999
-    Info (12023): Found entity 18: hex_decoder File: I:/GitHub/CSC258FinalProject/part2.sv Line: 1042
-Warning (10236): Verilog HDL Implicit Net warning at part2.sv(319): created implicit net for "lsignal" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 319
+    Info (12023): Found entity 1: part2 File: D:/Git repos/CSC258FinalProject/part2.sv Line: 1
+    Info (12023): Found entity 2: testRightScore File: D:/Git repos/CSC258FinalProject/part2.sv Line: 313
+    Info (12023): Found entity 3: testControl File: D:/Git repos/CSC258FinalProject/part2.sv Line: 323
+    Info (12023): Found entity 4: StrikeDetector File: D:/Git repos/CSC258FinalProject/part2.sv Line: 344
+    Info (12023): Found entity 5: LeftScoreCounter File: D:/Git repos/CSC258FinalProject/part2.sv Line: 363
+    Info (12023): Found entity 6: RightScoreCounter File: D:/Git repos/CSC258FinalProject/part2.sv Line: 398
+    Info (12023): Found entity 7: lKeyBoardDetector File: D:/Git repos/CSC258FinalProject/part2.sv Line: 433
+    Info (12023): Found entity 8: rKeyBoardDetector File: D:/Git repos/CSC258FinalProject/part2.sv Line: 462
+    Info (12023): Found entity 9: datapathFSM File: D:/Git repos/CSC258FinalProject/part2.sv Line: 491
+    Info (12023): Found entity 10: drawBorder File: D:/Git repos/CSC258FinalProject/part2.sv Line: 763
+    Info (12023): Found entity 11: squareFSM File: D:/Git repos/CSC258FinalProject/part2.sv Line: 808
+    Info (12023): Found entity 12: paddleFSM File: D:/Git repos/CSC258FinalProject/part2.sv Line: 823
+    Info (12023): Found entity 13: eraseAll File: D:/Git repos/CSC258FinalProject/part2.sv Line: 845
+    Info (12023): Found entity 14: XCounter File: D:/Git repos/CSC258FinalProject/part2.sv Line: 866
+    Info (12023): Found entity 15: YCounter File: D:/Git repos/CSC258FinalProject/part2.sv Line: 922
+    Info (12023): Found entity 16: YPaddle File: D:/Git repos/CSC258FinalProject/part2.sv Line: 962
+    Info (12023): Found entity 17: TimeCounter File: D:/Git repos/CSC258FinalProject/part2.sv Line: 999
+    Info (12023): Found entity 18: hex_decoder File: D:/Git repos/CSC258FinalProject/part2.sv Line: 1042
+Warning (10236): Verilog HDL Implicit Net warning at part2.sv(319): created implicit net for "lsignal" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 319
 Info (12127): Elaborating entity "part2" for the top level hierarchy
-Warning (10034): Output port "LEDR[6..2]" at part2.sv(39) has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 81
-Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
-Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
-Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Warning (10034): Output port "LEDR[6..2]" at part2.sv(39) has no driver File: D:/Git repos/CSC258FinalProject/part2.sv Line: 39
+Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 81
+Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 192
+Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|altsyncram:VideoMemory" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
+Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory" with the following parameter: File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
     Info (12134): Parameter "WIDTH_A" = "3"
     Info (12134): Parameter "WIDTH_B" = "3"
     Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "Cyclone II"
@@ -1249,21 +1246,22 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|altsyncram:VideoMemory"
     Info (12134): Parameter "POWER_UP_UNINITIALIZED" = "FALSE"
     Info (12134): Parameter "INIT_FILE" = "black.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m6m1.tdf
-    Info (12023): Found entity 1: altsyncram_m6m1 File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
+    Info (12023): Found entity 1: altsyncram_m6m1 File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 33
 Info (12128): Elaborating entity "altsyncram_m6m1" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Critical Warning (127003): Can't find Memory Initialization File or Hexadecimal (Intel-Format) File D:/Git repos/CSC258FinalProject/black.mif -- setting all initial values to 0 File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 213
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7la.tdf
-    Info (12023): Found entity 1: decode_7la File: I:/GitHub/CSC258FinalProject/db/decode_7la.tdf Line: 22
-Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 46
+    Info (12023): Found entity 1: decode_7la File: D:/Git repos/CSC258FinalProject/db/decode_7la.tdf Line: 22
+Info (12128): Elaborating entity "decode_7la" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_7la:decode2" File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_01a.tdf
-    Info (12023): Found entity 1: decode_01a File: I:/GitHub/CSC258FinalProject/db/decode_01a.tdf Line: 22
-Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
+    Info (12023): Found entity 1: decode_01a File: D:/Git repos/CSC258FinalProject/db/decode_01a.tdf Line: 22
+Info (12128): Elaborating entity "decode_01a" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|decode_01a:rden_decode_b" File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ifb.tdf
-    Info (12023): Found entity 1: mux_ifb File: I:/GitHub/CSC258FinalProject/db/mux_ifb.tdf Line: 22
-Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: I:/GitHub/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 49
-Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
-Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
-Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+    Info (12023): Found entity 1: mux_ifb File: D:/Git repos/CSC258FinalProject/db/mux_ifb.tdf Line: 22
+Info (12128): Elaborating entity "mux_ifb" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_m6m1:auto_generated|mux_ifb:mux3" File: D:/Git repos/CSC258FinalProject/db/altsyncram_m6m1.tdf Line: 49
+Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_adapter:VGA|vga_pll:mypll" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 231
+Info (12128): Elaborating entity "altpll" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+Info (12130): Elaborated megafunction instantiation "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
+Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component" with the following parameter: File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_pll.v Line: 53
     Info (12134): Parameter "operation_mode" = "NORMAL"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altpll"
@@ -1276,39 +1274,39 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altpll_80u.tdf
-    Info (12023): Found entity 1: altpll_80u File: I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 25
+    Info (12023): Found entity 1: altpll_80u File: D:/Git repos/CSC258FinalProject/db/altpll_80u.tdf Line: 25
 Info (12128): Elaborating entity "altpll_80u" for hierarchy "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: I:/GitHub/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
-Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keytest" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 103
-Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keytest|keyboard_inner_driver:kbd" File: I:/GitHub/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
-Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 157
-Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 167
-Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 176
-Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 218
-Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 219
-Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 228
-Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 256
-Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 267
-Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 275
-Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 298
-Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 630
-Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 635
-Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 641
-Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 655
-Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 301
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller" File: D:/Git repos/CSC258FinalProject/vga_adapter/vga_adapter.v Line: 252
+Info (12128): Elaborating entity "keyboard_press_driver" for hierarchy "keyboard_press_driver:keytest" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 103
+Info (12128): Elaborating entity "keyboard_inner_driver" for hierarchy "keyboard_press_driver:keytest|keyboard_inner_driver:kbd" File: D:/Git repos/CSC258FinalProject/KeyboardFiles/keyboard_press_driver.v Line: 38
+Info (12128): Elaborating entity "TimeCounter" for hierarchy "TimeCounter:tc" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 157
+Info (12128): Elaborating entity "XCounter" for hierarchy "XCounter:xc" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 167
+Info (12128): Elaborating entity "YCounter" for hierarchy "YCounter:yc" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 176
+Info (12128): Elaborating entity "lKeyBoardDetector" for hierarchy "lKeyBoardDetector:lDetect" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 218
+Info (12128): Elaborating entity "rKeyBoardDetector" for hierarchy "rKeyBoardDetector:rDetect" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 219
+Info (12128): Elaborating entity "YPaddle" for hierarchy "YPaddle:yleftPaddle" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 228
+Info (12128): Elaborating entity "LeftScoreCounter" for hierarchy "LeftScoreCounter:lScore" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 256
+Info (12128): Elaborating entity "RightScoreCounter" for hierarchy "RightScoreCounter:rScore" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 267
+Info (12128): Elaborating entity "StrikeDetector" for hierarchy "StrikeDetector:strikeDetect" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 275
+Info (12128): Elaborating entity "datapathFSM" for hierarchy "datapathFSM:fsm0" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 298
+Info (12128): Elaborating entity "drawBorder" for hierarchy "datapathFSM:fsm0|drawBorder:m0" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 630
+Info (12128): Elaborating entity "squareFSM" for hierarchy "datapathFSM:fsm0|squareFSM:m1" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 635
+Info (12128): Elaborating entity "paddleFSM" for hierarchy "datapathFSM:fsm0|paddleFSM:m2" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 641
+Info (12128): Elaborating entity "eraseAll" for hierarchy "datapathFSM:fsm0|eraseAll:m4" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 655
+Info (12128): Elaborating entity "hex_decoder" for hierarchy "hex_decoder:hexzero" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 301
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 22
-    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: I:/GitHub/CSC258FinalProject/part2.sv Line: 23
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver File: D:/Git repos/CSC258FinalProject/part2.sv Line: 22
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver File: D:/Git repos/CSC258FinalProject/part2.sv Line: 23
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "YCounter:yc|direction" is converted into an equivalent circuit using register "YCounter:yc|direction~_emulated" and latch "YCounter:yc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 929
-    Warning (13310): Register "XCounter:xc|direction" is converted into an equivalent circuit using register "XCounter:xc|direction~_emulated" and latch "XCounter:xc|direction~1" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 875
+    Warning (13310): Register "YCounter:yc|direction" is converted into an equivalent circuit using register "YCounter:yc|direction~_emulated" and latch "YCounter:yc|direction~1" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 929
+    Warning (13310): Register "XCounter:xc|direction" is converted into an equivalent circuit using register "XCounter:xc|direction~_emulated" and latch "XCounter:xc|direction~1" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 875
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: I:/GitHub/CSC258FinalProject/part2.sv Line: 39
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: I:/GitHub/CSC258FinalProject/part2.sv Line: 47
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/Git repos/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Git repos/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Git repos/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Git repos/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Git repos/CSC258FinalProject/part2.sv Line: 39
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: D:/Git repos/CSC258FinalProject/part2.sv Line: 47
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 409 assignments for entity "DE1_SoC" -- entity does not exist in design
@@ -1721,17 +1719,17 @@ Warning (20013): Ignored 409 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE1_SoC -section_id Top was ignored
-Info (144001): Generated suppressed messages file I:/GitHub/CSC258FinalProject/output_files/part2.map.smsg
+Info (144001): Generated suppressed messages file D:/Git repos/CSC258FinalProject/output_files/part2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: I:/GitHub/CSC258FinalProject/db/altpll_80u.tdf Line: 33
+Warning: RST port on the PLL is not properly connected on instance vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: D:/Git repos/CSC258FinalProject/db/altpll_80u.tdf Line: 33
     Info: Must be connected
 Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[1]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[2]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "KEY[3]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 26
-    Warning (15610): No output dependent on input pin "SW[5]" File: I:/GitHub/CSC258FinalProject/part2.sv Line: 24
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 26
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/Git repos/CSC258FinalProject/part2.sv Line: 24
 Info (21057): Implemented 866 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 87 output pins
@@ -1740,16 +1738,16 @@ Info (21057): Implemented 866 device resources after synthesis - the final resou
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 433 warnings
-    Info: Peak virtual memory: 4914 megabytes
-    Info: Processing ended: Thu Dec 05 12:16:35 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 434 warnings
+    Info: Peak virtual memory: 4878 megabytes
+    Info: Processing ended: Thu Dec 05 18:06:20 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in I:/GitHub/CSC258FinalProject/output_files/part2.map.smsg.
+The suppressed messages can be found in D:/Git repos/CSC258FinalProject/output_files/part2.map.smsg.
 
 
